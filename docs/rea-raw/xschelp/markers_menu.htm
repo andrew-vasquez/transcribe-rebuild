@@ -1,0 +1,173 @@
+
+
+
+
+
+
+
+<HTML><HEAD><TITLE>Transcribe! : Markers Menu</TITLE></HEAD>
+<BODY BGCOLOR=#ffffff TEXT=#000000 LINK=#ff0000 ALINK=#ff0000 VLINK=#ff0000>
+
+<TABLE BORDER="0" CELLSPACING="0" CELLPADDING="0" WIDTH="100%">
+   <TR>
+      <TD ALIGN="CENTER" VALIGN="MIDDLE"><H2>Markers Menu</H2></TD>
+      <TD ALIGN="RIGHT" VALIGN="MIDDLE">
+<A HREF="contents.htm"><img align=center src="contents.png" BORDER=0 ALT="Home"></A>
+<A HREF="menus.htm"><img align=center src="up.png" BORDER=0 ALT="Up"></A>
+<A HREF="play_menu.htm"><img align=center src="back.png" BORDER=0 ALT="Previous"></A>
+<A HREF="text_menu.htm"><img align=center src="forward.png" BORDER=0 ALT="Next"></A>
+      </TD>
+   </TR>
+</TABLE>
+
+
+<HR>
+
+<H3>About the Current Point - the Little Red Triangle</H3>
+
+The little red triangle is a bit different from the Section, Measure and Beat markers - it is the current point, the place where playback will start if you press the Play button or the spacebar. And since playback always has to begin somewhere, you can't delete the current point. You can position the current point by clicking on the waveform. See <A HREF="gs_window.htm">Help - Getting Started</A> for more information. Also there is a "Back to the beginning" button in the lower toolbar which will move the current point to the start of the track.<P>
+
+
+<H3>About Markers</H3>
+
+Markers can be placed anywhere in the piece and come in three flavours : "Section", "Measure" (bar) and "Beat". Markers are displayed as little triangles, except beat markers which get just a little black tick line. Each marker type has a different color and each marker can have a text label which is displayed above the little triangle. See <A HREF="gs_window.htm">The Transcription Window</A> for a picture showing all of these features. There can also be automatically generated subdivision markers, displayed as little red tick lines - these are described below.<P>
+
+You can Undo/Redo all marker operations, using the usual Undo/Redo menu commands or keyboard shortcuts.<p>
+
+Markers are displayed in the marker zone, a narrow strip above the waveform profile, and they are aligned to the corresponding point in the waveform, so naturally they scroll when the waveform scrolls.<p>
+
+You can optionally have the <A HREF="gs_window.htm#navbar">navigation bar</A> displayed. This is below the main scroll bar and, like the scroll bar, it always represents the entire duration of the piece. It shows section markers and optionally measure markers, and you can click on it to jump immediately to any part of the piece.<p>
+
+Markers are for your benefit : Transcribe! doesn't care where you put them, or whether you use them at all. However, if you have ever transcribed music using conventional music players then you will know that finding your way around is always a bit tedious - when you want to hear the last bit again, how far should you wind back? When you want to hear the middle section again, where was it? By placing markers, you can locate the desired spot very easily. You don't, of course, need to place markers throughout the whole piece - only the part you are interested in.<P>
+
+The "Export Markers and Text Blocks" command on the File menu can also export markers to a text file if you ask it to.<p>
+
+Markers are primarily intended for navigation. If you want to add textual annotations to your transcription then you may find <A HREF="text_menu.htm">Text Blocks</A> more useful.<P>
+
+Markers can also help you to select precise numbers of beats or measures : if you
+hold down the &lt;option&gt; key
+when clicking or dragging the mouse on the waveform then the selection will "snap" to the nearest marker if there is one near.
+<p>
+
+Usually the easiest way to place new markers is to set the piece playing and
+use the "New marker" keyboard shortcuts 'S', 'M' and 'B' for new section,
+measure (bar) and beat marker respectively. Thus tapping the keyboard in
+time with the music, "SBBBMBBBMBBBMBBB" marks a four measure section with
+four beats per measure. The measure markers mark the first beat of each
+measure (bar), and the section marker marks the first measure of the section.<P>
+
+In other words you use a section marker instead of a measure marker to mark the first measure of a section, and
+you use a measure marker instead of a beat marker to mark the first beat of a measure.<p>
+
+It can happen, if there is latency in your sound system, that markers placed this way end up placed consistently late in the track. You can adjust for this with the latency setting in Preferences - Markers. This will also have the effect of synchronizing the position of the moving play position indicator with the sound you are hearing.<p>
+
+If you use these commands while music is not playing then you will be
+offered the option of placing the new marker at the current point or
+at the paused play point if you are paused. However if you hold the &lt;Shift&gt; key down when using
+the keyboard shortcuts 'S', 'M' and 'B' then this will bypass the dialog and
+the marker will be placed directly at the paused point (if paused) or the current point.<P>
+
+You can also place a new marker by double clicking in the marker zone above the waveform. If you double click in the navigation bar below the scroll bar then this will start playback, just like double clicking on the waveform.<P>
+
+<H3>Editing Markers</H3>
+
+If you control-click in the marker zone above the waveform then you will get a popup menu from which you can select various marker related commands. If you clicked on an existing marker then you can change its type, edit, or delete it. Otherwise you will be offered choices for creating a new marker at the clicked point. If you control-click in the navigation bar then you will get a popup menu offering to "go to" a particular marker.<P>
+
+You can edit (change its type or label) or delete an existing marker by double clicking on it in the marker zone above the waveform.<P>
+
+If you want to delete a lot of markers then select the relevant section of the piece (so the waveform profile is highlit) and then use the Delete Markers command (below).<P>
+
+<H3>Moving a Marker</H3>
+
+You can move an existing marker by clicking on it in the marker zone above the waveform, and dragging.<P>
+
+<H3>Copying a Marker</H3>
+
+Hold down the Alt key to create a copy, instead of moving the original.<p>
+
+<H3>Moving or Copying Multiple Markers</H3>
+
+You can also move or copy multiple markers at once. 
+To do this you should drag with the Command key pressed (and the Alt key as well if you want to copy multiple markers).
+If there is a selection (highlight) on the waveform and you are dragging a marker whose original position is within that selection, then you will move or copy just those markers within the selection. Otherwise you will move (but not copy) all markers. If this would cause a marker to "fall off the end" then the marker will be moved to the end of the track.<p>
+
+
+
+<H3>Marker subdivision</H3>
+The "Subdivide" options in the Edit Marker dialog refer to the automatic
+generation of subdivisions between markers. These are shown as little red tick
+lines. These are not true markers - they cannot be moved, edited or deleted individually.<P>
+
+They are for your convenience : if a piece is in (say) 4/4 then you could
+decide to mark just the measures (bars), but tell Transcribe! to divide each
+into 4 which would effectively mark the beats. Or if it is in sections of 8
+measures you could mark just the section beginnings, but tell Transcribe! to divide
+each into 8 which would effectively mark the measures.<P>
+
+You can specify the subdivisions for each marker individually if you want.
+The choices are :
+<UL>
+<LI>Same as previous (the default) : the same number of subdivisions will be used for this marker as were used for the last.
+<LI>No : no subdivisions.
+<LI>Yes, this many subdivisions : specify the number required by adjusting the number in the "spin control".
+</UL><P>
+
+
+<H3>Marker labelling</H3>
+Text labels are used to distinguish one marker from another. The text is
+displayed above the marker zone triangles. By default, section markers are automatically labelled A, B,
+C etc, measure markers are labelled using numbers appended to the section label
+thus A2, A3 etc. and beat markers are not labelled. By editing a marker you can
+override this and give it any label you want.<P>
+
+You can also change the way in which automatic marker labelling is carried out, in <A HREF="prefs_markers.htm">Preferences</A>. Here are the preference choices for Auto Labelling.<P>
+
+<B>Number measures continuously:</B> If this is not checked then you get the default behaviour mentioned above, where measure numbers are reset to "1" by any section marker. However if you check this box then measure numbers increase continuously through section and measure markers.<P>
+
+<B>Numbering override tip:</B> You can reset the measure numbering at any section or measure marker by editing the marker and giving it a label which ends in a number followed by ")". Thus a marker which you label as "Verse 3 (92)" will be considered to be measure 92 and the next will be 93 etc.<P>
+
+<B>Section:</B> If you ask for a letter then automatically generated section labels will be lettered, going through the alphabet in order.<P>
+
+<B>Measure:</B> If you ask for a letter then it will be the first letter from the most recent section marker.<P>
+
+<B>Beat:</B> Automatic labelling of beats means simply numbering them.<P>
+
+Remember though, that you can always edit any marker and give it any label you want.<P>
+
+
+<HR><CENTER><H3>The Commands on the Markers Menu</H3></CENTER>
+
+<H3>New Section/Measure/Beat Marker</H3>
+These do what they say. It's usually easier to use the keyboard shortcuts S/M/B.<P>
+
+
+<H3>Delete Selected Markers</H3>
+For deleting many markers at once. First select an area which includes the markers you want to delete, so it is highlit. Then select this command to delete them.<P>
+
+
+<H3>Equally Space Selected Markers</H3>
+For adjusting the spacing of existing markers. First select an area on the waveform which includes the markers you want to re-space, so it is highlit. Then select this command to re-space them.<P>
+What this command actually does is locate the first and last Measure or Section markers in the selected section, and it will leave those unmoved but will distribute all the Measure and Section markers between those points with equal spacing. This means that you must have selected at least two Measure or Section markers. If there are beat markers then it will distribute those evenly within the measure they belong to.
+There is an entry in our FAQ that describes using this function to generate markers for a section of the piece.  You will find it on this page https://www.seventhstring.com/xscribe/faq3.html look for "Can I generate markers automatically?"<P>
+
+
+<H3>Compute Tempo<A NAME="compute_tempo"></A></H3>
+This command computes the tempo of the piece in beats per minute. You must
+first use the mouse to select a
+region of the piece, and this region must have exactly one marker (section, measure,
+beat, or automatically generated subdivision marker) on each beat or the
+computation will be wrong. Transcribe! simply counts how
+many markers there are in the selected region, measures the time from the first
+marker to the last, does a division to get the average time per beat, and reports
+this in beats per minute. Transcribe! reports the tempo of the original file, and also the altered speed
+if a speed alteration is in force. The result is also displayed on the <A HREF="fx_speed.htm">Speed page</A>.<P>
+
+This command also checks that the markers in the selected
+region are reasonably evenly spaced, and issues a warning if they're not.
+This is in case you accidentally put one marker on top of another, which would
+cause an incorrect tempo calculation.<P>
+
+Transcribe! does assume that a measure marker is also the first beat of that measure, and a section marker is also the first measure of that section (and also, therefore, the first beat). So if you have placed a section or measure marker, you should <i>not</i> also place a beat marker at that point.<p>
+
+
+</HTML>

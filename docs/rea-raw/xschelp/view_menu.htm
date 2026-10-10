@@ -1,0 +1,127 @@
+
+
+
+
+
+
+
+<HTML><HEAD><TITLE>Transcribe! : View Menu</TITLE></HEAD>
+<BODY BGCOLOR=#ffffff TEXT=#000000 LINK=#ff0000 ALINK=#ff0000 VLINK=#ff0000>
+
+<TABLE BORDER="0" CELLSPACING="0" CELLPADDING="0" WIDTH="100%">
+   <TR>
+      <TD ALIGN="CENTER" VALIGN="MIDDLE"><H2>View Menu</H2></TD>
+      <TD ALIGN="RIGHT" VALIGN="MIDDLE">
+<A HREF="contents.htm"><img align=center src="contents.png" BORDER=0 ALT="Home"></A>
+<A HREF="menus.htm"><img align=center src="up.png" BORDER=0 ALT="Up"></A>
+<A HREF="stems.htm"><img align=center src="back.png" BORDER=0 ALT="Previous"></A>
+<A HREF="play_menu.htm"><img align=center src="forward.png" BORDER=0 ALT="Next"></A>
+      </TD>
+   </TR>
+</TABLE>
+
+
+<HR>
+
+<CENTER><H3>The Commands on the View Menu</H3></CENTER>
+
+
+
+
+<H3>Navigation Bar<A NAME="navbar"></A></H3>
+Here you can decide whether and how to display the navigation bar. The navigation bar always shows the section markers and never shows beat markers. You can choose whether or not it should show measure markers. Text labels are displayed for sections but not measures. When you control-click the navigation bar a menu pops up : you can select in a similar way whether this menu should show sections and measures, or sections only.<P>
+
+You can also have a <A HREF="view_menu.htm#show_timeline">time line</A> displayed in the navigation bar if you want.<p>
+
+And you can have <A HREF="view_menu.htm#show_loopline">stored loops</A> displayed in the navigation bar if you want.<p>
+
+For information about how to use the navigation bar, <A HREF="gs_window.htm#navbar">click here</A>.<P>
+
+
+<H3>Show Spectrum<A NAME="show_spectrum"></A></H3>
+You can choose whether or not the spectrum should be displayed. If you turn off the spectrum then note and chord guessing are also turned off. If you want to hide both spectrum and piano, you can drag the splitter bar down to the bottom of the window.<P>
+For more information about the spectrum, <A HREF="gs_window.htm#spectrum">click here</A>.<P>
+
+<H3>Show Note Guesses<A NAME="show_note_guesses"></A></H3>
+Note guesses are little green (in tune) and red (out of tune) blobs that Transcribe! places on the piano keyboard display, showing what notes might be being played. This is derived from the spectrum information.<P>
+For more information about note guessing, <A HREF="guess.htm">click here</A>.<P>
+
+<H3>Show Chord Guesses<A NAME="show_chord_guesses"></A></H3>
+Chord guesses are shown as text at the right of the spectrum display area.
+They are Transcribe!'s attempt to come up with chord names to describe the combination of notes that are being played.
+This is derived from the spectrum information.<P>
+For more information about chord guessing, <A HREF="guess.htm">click here</A>.<P>
+
+<H3>Show Video<A NAME="show_video"></A></H3>
+If the file you have loaded has video then you can choose whether or not it is displayed. This command will be disabled if the file has no video.<p>
+For more information about video, <A HREF="video.htm">click here</A>.<P>
+
+<H3>Display as Mono<A NAME="display_as_mono"></A></H3>
+If the file you have loaded is stereo then you can nevertheless display it as mono. This is useful if you want to save space on screen, and also in conjuction with "Show dB lines" below, it makes it easy to determine the peak dB level in either channel. This only affects the display, it does not affect playback.<P>
+
+<H3>Show dB Lines<A NAME="show_db"></A></H3>
+You can choose to have decibel (dB) calibration lines displayed on the waveform and spectrum. The waveform will change to a "rectified" display where both the positive and negative excursions of the signal are shown in an upward direction, as this is easier to interpret. If you want to find the largest peak in a stereo signal then you might also select "Display as Mono" above, and <A HREF="view_menu.htm#fitwhole">Fit Whole File</A>.<p>
+
+If you want to export a sound file with the level adjusted then, once you have decided how many dB to adjust by, you can use the
+<A HREF="fx_eq.htm">EQ</A> to adjust the level by a precise number of dB.<P>
+By default, if there is a reasonable amount of signal then the spectrum rescales so the largest peak fits the available height : this results in the dB lines jumping around. If you don't like this then adjust <A HREF="prefs_general.htm#scale_spectrum">Preferences - Vertical scale of spectrum display</A>.<p>
+
+The 0dB line is the highest, indicating maximum possible signal level. Every 10dB down, another line is displayed and labelled. If there is room between these then there will be lighter lines dividing the 10dB into subdivisions of 5dB or 2dB. If the signal happened to be a pure sinewave on its own, then 0dB on the waveform display would correspond to 0dB on the spectrum. But in fact there are typically many sinewave components present at any moment, each of which will be much lower in level than the waveform, and which add together to produce the waveform.<p>
+
+<H3>Show Time Line<A NAME="show_timeline"></A></H3>
+You can choose to have a Time Line displayed above the waveform, showing the time as minutes:seconds. If you choose to show the <A HREF="view_menu.htm#navbar">Navigation Bar</A> then a time line showing the entire duration of the track will appear in the navigation bar too.<p>
+
+The time line has a light red background, and shows the current selection (if any) as a darker red. If you click on the time line then playback will start at the clicked point without changing your current point or selection. This is the same as command-clicking the waveform profile.<P>
+
+<H3>Show Loop Line<A NAME="show_loopline"></A></H3>
+You can choose to have a Loop Line displayed above the waveform, showing the stored loops which are also displayed on the 
+<A HREF="fx_misc.htm">Misc page of the Fx window</A>. If you choose to show the <A HREF="view_menu.htm#navbar">Navigation Bar</A> then a loop line showing the entire duration of the track will appear in the navigation bar too.<p>
+
+The loop line shows the start of each loop as a thin red line, and then shows the duration of the loop in the colour you have chosen for that loop, with a black underline to increase visibility. We call them loops but they can in fact mark a position with no duration in which case they will appear simply as a red line. If you click on or near a loop in the loop line then the current position and selection will be set from that loop. If you control-click on or near a loop in the loop line then you get a popup menu allowing you to change the colour of the loop, give it a name, etc. This is similar to the menu you get when you control-click a loop button on the Misc page of the Fx window. There is one new command though : "New Loop From Selection" which does not affect the existing loops but inserts a new one from the current selection on the waveform. You can also double-click a loop in the loop line to start it playing, and you can shift-click a loop in the loop line to extend the current selection to include that loop.<P>
+
+For more information about loops please see <A HREF="fx_misc.htm">Misc page of the Fx window</A>.
+
+<H3>Split<A NAME="split"></A></H3>
+This is how you can have multiple views of the same transcription if you want. It gives you two (or more) views in the same transcription window, separated by a wide splitter bar. This can be useful if you want to compare two different parts of the sound file, or if you want to have two different Audio Effect setups, and switch easily between them.<P>
+
+You can tell which view is active by the colours used for the waveform and spectrum. Click on a view to activate it. Note that when you save your transcription, only the state of the currently active view is saved.<P>
+
+<H3>Unsplit<A NAME="unsplit"></A></H3>
+If you have more than one view of the current transcription then this command will remove the currently active view. The cross at the left-hand end of the upper toolbar has the same effect.<P>
+
+<H3>Synchronize Views<A NAME="unsplit"></A></H3>
+If you have more than one view of the current transcription then you can choose whether they should scroll together or independently.<P>
+
+<H3>Select Sound Track<A NAME="select_soundtrack"></A></H3>
+If the media file has multiple sound tracks (e.g. a video with sound tracks in different languages, or a stem file) then you can select which one should appear in this view. If you have more than one view of the current transcription then you can have different sound tracks displayed in each view.<P>
+
+<H3>Show All Sound Tracks</H3>
+If the media file has multiple sound tracks then this command will add split views as necessary so that all the sound tracks are displayed.<P>
+
+<H3>Fit Selection<A NAME="fitsel"></A></H3>
+If part of the waveform is selected then this will rescale the display horizontally so the selection fills the window.<P>
+
+
+<H3>Fit Whole File<A NAME="fitwhole"></A></H3>
+This will rescale the display horizontally so the whole sound file fills the window.<P>
+
+
+<H3>Zoom In<A NAME="zoomin"></A></H3>
+This will enlarge the display scale horizontally. An easier way of adjusting horizontal scale is to use the slider in the lower toolbar, or control-click on the scrollbar and drag.<P>
+
+
+<H3>Zoom Out<A NAME="zoomout"></A></H3>
+This will reduce the display scale horizontally.<P>
+
+
+<H3>Vertical Zoom In<A NAME="vzoomin"></A></H3>
+This will enlarge the display scale vertically.<P>
+
+
+<H3>Vertical Zoom Out<A NAME="vzoomout"></A></H3>
+This will reduce the display scale vertically.<P>
+
+<H3>Full Screen</H3>
+Standard full screen option. You can instead use the green button in the title bar of the app, and with the green button you can also use split screen which is standard on the Mac (two applications side by side).<P>
+
+</HTML>

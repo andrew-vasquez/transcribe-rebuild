@@ -1,0 +1,164 @@
+
+
+
+
+
+
+
+<HTML><HEAD><TITLE>Transcribe! : Interpreting the Spectrum</TITLE></HEAD>
+<BODY BGCOLOR=#ffffff TEXT=#000000 LINK=#ff0000 ALINK=#ff0000 VLINK=#ff0000>
+
+<TABLE BORDER="0" CELLSPACING="0" CELLPADDING="0" WIDTH="100%">
+   <TR>
+      <TD ALIGN="CENTER" VALIGN="MIDDLE"><H2>Interpreting the Spectrum</H2></TD>
+      <TD ALIGN="RIGHT" VALIGN="MIDDLE">
+<A HREF="contents.htm"><img align=center src="contents.png" BORDER=0 ALT="Home"></A>
+<A HREF="various.htm"><img align=center src="up.png" BORDER=0 ALT="Up"></A>
+<A HREF="organise.htm"><img align=center src="back.png" BORDER=0 ALT="Previous"></A>
+<A HREF="guess.htm"><img align=center src="forward.png" BORDER=0 ALT="Next"></A>
+      </TD>
+   </TR>
+</TABLE>
+
+
+<HR>
+
+See <A HREF="gs_window.htm">The Transcription Window</A> for a picture
+of an example spectrum, with a brief discussion of its meaning. Also on
+that page are instructions on how to scroll the piano keyboard graphic, so as to choose which part (higher/lower) of the spectrum to bring into view.<P>
+
+Transcribe! can compute a "point spectrum" meaning the spectrum of a fixed-width zone (0.25 seconds in fact) centred on a particular point. This size is chosen to be big enough to resolve the pitch of low notes, but small enough not to be too confused by rapidly changing notes, which change within the analysed zone.<P>
+
+However if you select part of the waveform with the mouse then Transcribe! will show you the spectrum of that selection. This gives more accurate results as you can select exactly the chord you want to analyse. Transcribe! will report at the left of the spectrum whether it is the spectrum of your selection, or is the spectrum at the playing point or paused point or whatever.<P>
+
+Transcribe! can also make guesses about what notes and chords are being played. See <A HREF="guess.htm">Note and Chord Guessing</A> for a more detailed discussion of this.<P>
+
+You can also have a "Live Spectrum" meaning that the spectrum, and also note and chord guesses, are updated regularly to follow the music while it is playing. See <A HREF="prefs_general.htm#prefs_livespectrum">Preferences</A>.<P>
+
+Transcribe! also offers a <A HREF="pianoroll_menu.htm">Piano Roll view</A> which shows note guesses in the style of a piano roll from left to right, alongside the waveform profile. This is not as precisely controllable as the spectrum described here, but has the advantage of giving an overview instead of just analysing one point at a time.<p>
+
+<HR>
+
+Any waveform, no matter how complex, can be regarded as the combination
+of a number of pure sine wave tones. Transcribe! calculates the spectrum graph
+by a "discrete fourier transform" which can take any waveform and "separate out"
+the sine wave tones which are present in it, determining the pitch and amplitude of each.<P>
+
+The spectrum for a sound which is a pure sine wave would consist of a single
+narrow spike. Real musical instruments do typically (but not always) produce a strong sine wave
+component at the note being played, and it is this spike in the spectrum that
+shows us the note being played. However, real instruments also produce a lot
+of other stuff which can confuse the picture, especially when several instruments are playing.<P>
+
+<UL>
+<LI>Harmonics: these are more-or-less exact multiples (2 times, 3 times, etc) of
+the fundamental frequency (the note being played). This means that they appear at
+intervals above the fundamental of 1 octave, 1 octave + 5<SUP>th</SUP>, 2 octaves,
+2 octaves + 3<SUP>rd</SUP>, 2 octaves + 5<SUP>th</SUP>, 2 octaves +
+minor 7<SUP>th</SUP>, 3 octaves, etc. Look up "harmonic series" in a musical reference
+book if you want to know more. For a very "raspy" sounding instrument, it can happen that some of the harmonics may be stronger (a taller spike) than the fundamental. Mellow sounding instruments have weaker harmonics.<BR>
+<LI>Vibrato or glissando: obviously, any variation of the pitch of the note during the
+section you have selected for spectrum analysis, will result in a smearing of the spectrum.<BR>
+<LI>Spurious tuned notes: some instruments, tuned percussion especially, produce extra
+notes that are not on the harmonic series. Beware of bells and timpani.<BR>
+<LI>Other percussion: non-tuned drums, cymbals etc, tend to produce a broad fuzzy lump
+in the spectrum.<BR>
+<LI>Other noises: e.g. the "wind noise" in the blowing of a flute, the clicking of the
+keys, finger noise on a guitar, lots of brief noises associated with the beginning of
+a note on most instruments, audience noise, recording noise, resonances of rooms,
+instruments etc. This kind of stuff can produce a lot of small spikes right across the spectrum.
+</UL><P>
+
+Transcribe! has a feature to help you identify harmonics. If you click with the
+mouse on the spectrum display Transcribe! displays a series of vertical lines
+extending five octaves either side of the clicked point. Those above the clicked
+point indicate other notes which might be harmonics of the point you clicked, while
+those below the clicked point indicate notes of which the clicked point might be a
+harmonic. Naturally, the pattern of lines is symmetrical either side of the clicked
+point. I find this feature can sometimes be surprisingly useful. I have come across
+heavily distorted single-note guitar sounds where the pitch is clear to the ear but
+the note that the ear hears does not show up at all clearly on the spectrum. By
+clicking on the spectrum and moving the mouse around, you can get a perfect fit
+on the whole harmonic series, which reveals the true pitch of the note even though
+there is no peak in the spectrum there (at the clicked point). What is happening
+is that the guitar distortion generates lots of harmonics but has lost - probably
+by subsequent filtering - most of the fundamental. When we hear this, the ear is
+clever enough to recognise the harmonic series and tell us what note is really
+being played.<P>
+
+The first step in getting the cleanest picture you can is to select as large a segment
+as possible, during which the chord you want remains constant. Do not expand the
+selection to include any part of the chord before or after as this will really
+confuse things. The easiest way to get the selection right is to set Transcribe!
+playing it round and round (turn on "loop" playback mode) while you adjust the
+selection length with the mouse. You can adjust one end of an existing selection
+by dragging with the mouse, or with the <A HREF="kb.htm">keyboard</A>.<P>
+
+The maximum length of selection for a spectrum is one second : if you
+select more than this then the spectrum you get will be of only the first second
+of the selection.<P>
+
+If the main peaks in the spectrum are consistently mis-aligned with the
+note-centre pitches (the vertical black and white lines rising from the keyboard
+graphic) then it might be that you have not adjusted the piece to concert pitch
+(A = 440Hz). See the <A HREF="fx_tuning.htm">Tuning</A> and <A HREF="fx_transposition.htm">Transposition</A> pages.
+If note guessing is turned on then you can also see whether most notes are showing as green (in tune) or red (out of tune) blobs.
+Of course, if some peaks are aligned while others are not then this could mean that the musicians
+are playing out of tune with one another, or they are not using an even-tempered scale, and that's the way it is.
+Bear in mind that the tuning of a piece can vary from moment to moment if it's
+been recorded on wonky old analog equipment.<P>
+
+Usually the messiest part of a complicated spectrum is the upper part since
+this is where harmonics proliferate. However if you listen by ear to the segment,
+in context, then it's often quite easy to make a judgement about what the highest
+note being played really is (play notes by buttoning the keyboard graphic, to
+locate the spike in the spectrum which corresponds to it). You can then dismiss
+everything above this point as irrelevant. Scroll the piano keyboard so this stuff
+disappears off the right of the view and doesn't distract you.<P>
+
+If the spectrum shows more notes than you think should be present, then is
+it possible that some of the notes are actually changing during the segment you
+have selected? Listen carefully. Try making the selection shorter at one end or
+the other and see if some of the notes in the spectrum disappear (see above
+about adjusting the selection with mouse or keyboard).<P>
+
+If the Sound file you are working on is stereo then try the <A HREF="fx_mix.htm">Mono/Karaoke</A> page. You
+may be able to find a mix which emphasises the instruments you want to hear while reducing the volume of distracting sounds.
+(If the sound file is stereo but the Mono/Karaoke page is Bypassed then Transcribe! will apply a simple mono mix for spectrum computation, but if it is Active then the proportions you specify will be used).<P>
+
+Use the <A HREF="view_menu.htm#split">Split</A> command so you can view two or more spectra at the same time. Then look for other occurrences of what you suspect may be the same chord, and compare their spectra.<P>
+
+You have to make a judgement about which peaks are notes being played, which
+are harmonics, and which are irrelevant noise. You must use your ear and your brain,
+try playing the various possible chords on your own piano or whatever and see
+what sounds right. Of course, this is exactly what you would be doing if you
+didn't have Transcribe!. Transcribe! simply gives you an additional source of
+information on the sounds, to be added to what your ear tells you. This brings
+us back to the point mentioned in the <A HREF="overview.htm">Overview</A>,
+that Transcribe! should be seen as an assistant, and cannot do the whole job for you.
+To some extent the peaks in the spectrum graph should be seen merely as suggestions.<P>
+
+As mentioned above, you can also have Transcribe! attempt to make these judgements for you. See <A HREF="guess.htm">Note and Chord Guessing</A>.<P>
+
+By default the spectrum display is automatically scaled vertically so that the highest peak fills the space
+available. However you can choose instead to have fixed vertical scaling - see
+<A HREF="prefs_general.htm#scale_spectrum">Vertical scale of spectrum display</A> in the Preferences.
+This is useful if you want to compare the strength of a tone at two different places in the track : if the
+two spectra were scaled differently then the comparison would be meaningless, so use fixed scaling.
+It's up to you to chose a suitable value, but if at some point in the track the signal is very weak,
+then it's appropriate to enlarge the profile display using the <A HREF="view_menu.htm#vzoomin">vertical zoom</A>
+commands, and if you do this then the spectrum will also be enlarged.<p>
+
+You can choose to have dB calibration lines displayed on the spectrum. See <A HREF="view_menu.htm#show_db">Show dB Lines</A>.<p>
+
+Here's a fun little trick : try making a short selection (either using the mouse, or try the keyboard shortcuts j,k,l).
+Then you can slide this selection along with the square-bracket keyboard shortcuts, watching the spectrum change as you go.
+It can be best to use fixed scaling of the spectrum for this - see the previous paragraph. You can get a similar effect by turning on "Live Spectrum"
+(see <A HREF="prefs_general.htm#prefs_livespectrum">Preferences</A>) and starting playback - possibly at a slow speed.<p>
+
+I find that mains hum is present on an astonishingly large number of recordings, even modern
+digital ones, especially if they are live recordings. European hum at 50Hz shows up around G, two-and-a-half
+octaves below middle C. American hum at 60Hz is the B above that. At low levels it is not
+audible, but it is visible on the spectrum.<P>
+
+</HTML>

@@ -1,0 +1,298 @@
+
+
+
+
+
+
+
+<HTML><HEAD><TITLE>Transcribe! : Automation</TITLE></HEAD>
+<BODY BGCOLOR=#ffffff TEXT=#000000 LINK=#ff0000 ALINK=#ff0000 VLINK=#ff0000>
+
+<TABLE BORDER="0" CELLSPACING="0" CELLPADDING="0" WIDTH="100%">
+   <TR>
+      <TD ALIGN="CENTER" VALIGN="MIDDLE"><H2>Automation</H2></TD>
+      <TD ALIGN="RIGHT" VALIGN="MIDDLE">
+<A HREF="contents.htm"><img align=center src="contents.png" BORDER=0 ALT="Home"></A>
+<A HREF="various.htm"><img align=center src="up.png" BORDER=0 ALT="Up"></A>
+<A HREF="xsc_files.htm"><img align=center src="back.png" BORDER=0 ALT="Previous"></A>
+<A HREF="cmnddoc.htm"><img align=center src="forward.png" BORDER=0 ALT="Next"></A>
+      </TD>
+   </TR>
+</TABLE>
+
+
+<HR>
+
+We have a simple method whereby commands for Transcribe! can be placed in a text file and Transcribe! can be told to run those commands. This is pretty technical stuff and most people won't be interested, but it can be useful for certain things. For instance suppose you want to load a sound file, change its speed, and export it. That's simple enough. Now suppose you have a folder with 200 files in and you want to do all of them. With automation, it is possible to put the necessary commands in a text file and then leave it working while you have a cup of tea.<p>
+
+Also, automation makes it possible to control Transcribe! from another application or script or command line : the controlling app can put commands into a Transcribe! script file and then send them to Transcribe! to be carried out. It can continue doing this in real time, sending further commands as needed.<p>
+
+The basic idea is very simple. Transcribe!'s commands have always had textual names which you will have seen if you have ever programmed keyboard shortcuts. There are also additional commands which can be used for automation though not for shortcuts because they have "parameters" (e.g. a file name, or some numbers). So you can put a list of commands into a plain text file, which must have the extension "xscscpt" meaning "Transcribe! Script". Simply opening this file in Transcribe! will cause the commands to be carried out.<p>
+
+
+<b>How To Create a Transcribe! Script File</b><p>
+
+This needs to be a plain unformatted UTF8 text file.<p>
+
+On Windows: Use Notepad from "Start Menu - Windows Accessories". When you Save you will see an "Encoding" option : select UTF-8. Also select "Save as type: All Files". When you have saved and closed it, right-click it, "Properties", and check its name on the "General" tab. You may find that Notepad has appended ".txt" to the name so it becomes e.g. "mycmndfile.xscscpt.txt". If so then delete the ".txt" off the end and hit enter.<p>
+
+On Mac: Launch TextEdit so you have an empty document. On the Format menu select "Make Plain Text" if the option is offered (if it isn't offered then it is already plain text). When you Save you will see a "Plain Text Encoding" option : select UTF-8. Uncheck the box which says "If no extension is provided, use .txt". When you have saved and closed it, right-click (control-click) it in Finder, "Get Info", and look where it says "Name & extension". You may find that TextEdit has appended ".txt" to the name so it becomes e.g. "mycmndfile.xscscpt.txt". If so then delete the ".txt" off the end and hit enter.<p>
+
+On Linux: I'm sure you'll figure it out.<p>
+
+In all cases when you have saved and closed the file, make sure its name ends in ".xscscpt" because that's how Transcribe! will recognise it as a script file.<p>
+
+You will find some sample scripts which you can download at https://www.seventhstring.com/xscribe/scripts.html<p>
+
+Another way of creating a script file of the appropriate type and name, would be to take one of the example scripts as a starting point and edit it.<p>
+
+
+<b>Script File Contents</b><p>
+
+A script file can contain any number of commands. A semicolon is required to end each command. All text from '#' to end of line is a comment. On a UK Mac keyboard, '#' is typed as &lt;option&gt;-3. Literal text (filenames, mostly) in an xscscpt file is always enclosed in double-blip quotes.<p>
+
+<A HREF="cmnddoc.htm">See this page</A> for a list of commands available.<p>
+
+Commands in an xscscpt file are separated by semicolons. Newlines are not significant, it's the semicolons which matter.<p>
+
+Where a command uses parameters, these are placed in parentheses after the command name. They are described as "int" meaning a whole number, "double" meaning a number which can include a decimal point, or "text" meaning quoted text using double-blip quotes.<p>
+
+When you specify a filename in a script, in order to avoid ambiguity it's best to use "absolute" file names which specify the location in full from the root of the file system. This means that on Windows your filenames should start with "C:\" (or a different drive letter) while on Mac or Linux they should start wth "/". However, you can use the escape sequence "+D" (see below) to specify your documents folder very easily, or +H to specify your home folder.<p>
+
+Thus a typical location for a sound file on Windows 10 might be "+H\Music\soundfile.mp3". On a Mac it might be "+H/Music/soundfile.mp3". The examples below show typical Linux names.<p>
+
+Some of the examples here use literal filenames in the scripts. You should of course substitute appropriate filenames and locations in place of the examples given here.<p>
+
+
+<b>Text Escapes</b><p>
+
+We use "+" (our "escape character") to insert various special characters into text. Here is a list of the escapes you can use:
+<ul>
+<li>++ <i>translates to +</i></li>
+<li>+" <i>translates to " so you can have a double-blip quote in your text.</i></li>
+<li>+n <i>translates to newline so you can have multi-line text.</i></li>
+<li>+ followed by line-end <i>also translates to newline</i></li>
+<li>+/ <i>translates to the filename separator character, backslash on Windows, slash on Mac or Linux</i></li>
+</ul><p>
+
+And here are five special escapes which translate to file or folder names. The folder names do not have a separator at the end.
+<ul>
+<li>+H <i>translates to the location of your Home folder.</i></li>
+<li>+D <i>translates to the location of your Documents folder.</i></li>
+<li>+S <i>translates to the folder where this script file is.</i></li>
+<li>+N <i>translates to the name (without path) of this script file.</i></li>
+<li>+F <i>translates to the full name of this script file, including path.</i></li>
+</ul><p>
+
+If you want, for example, to have "+D" actually appear in your text then you must write "++D" so that the "++" will translate to "+", and this will not then translate "+D" to the location of your documents folder. Also if you use "+" followed by a character not listed above then no translation will happen, so for instance "+a" and "++a" will both produce "+a" in the text, since "+a" is not a recognised escape.<p>
+
+<b>Running Script Files</b><p>
+
+Opening a script file causes its commands to be run. If any command fails then you will get a message about it and the script will be stopped (remaining commands are thrown away). There is a "ScriptAbort" command which you can configure a keyboard shortcut for if you want (there would be no point in putting it into a script file!). But in fact <i>any</i> command other than Pause issued directly by you (not from a script) will abort a running script - e.g. press the Play or Stop buttons on the toolbar, or indeed any other toolbar button (except Pause) which is enabled. You <i>can</i> Pause and resume playback while a script is running (using the Pause button in the lower toolbar, or the ',' key), and the script will simply continue.<p>
+
+Transcribe! scripting is not a true programming language. It has no loops, conditionals, or variables.<p>
+
+You can have one script "call" another simply by using the FileOpenNamed command in one script, to open another.<p>
+
+It is also perfectly ok for a script to call itself, this creates an infinite loop but that's ok because you can stop it any time by pressing any enabled button on the toolbar as already described. There is an example below showing a use for this technique. There is absolutely no point in putting any more commands in the script file after a "self-call" because they can never be reached.<p>
+
+When you run commands from a script file, the setting of your "Keep playing when in background" preference will be ignored, and Transcribe! will play if you tell it to.<p>
+
+A great many of Transcribe!'s commands only make sense if a sound file is loaded - for instance any command relating to making a selection, or playing, or adjusting audio effects settings. If a script attempts any such command when there is no sound file, the command will fail and the script will abort.<p>
+
+Transcribe! only ever runs one script at a time even if you have multiple transcription windows open - for instance if the script contains a "PlaySelectionStart" command, it will be sent to whichever transcription window is in front. In fact it's usually best to make sure that you only have one transcription window open at a time while running scripts. You can do this by using the "FileCloseNoSaveNoVeto" command to empty the current transcription window, before opening a new sound file or transcription file.<p>
+
+
+<b>Simple Examples Using Drag-n-Drop</b><p>
+
+For our first example here, we will just have one command in the file, which in fact will increase play speed by 1%. Create a script file as described above, containing just this one line (the part after the '#' is an optional comment):<p>
+
+&nbsp;&nbsp;&nbsp;SpeedIncrement(0.01); # increase speed by 1%<p>
+
+Save the file. Start Transcribe! and set it playing something. Each time you drag-n-drop the script file onto Transcribe!'s window, the speed will increase by 1%.<p>
+
+Sometimes people ask me whether there is any way of slowly increasing speed while playing. Personally I'm not sure that it's a good way of practising, but anyway here it is (this script is not needed these days because we have the "Speed Up" command on the Play menu):<p>
+
+&nbsp;&nbsp;&nbsp;ScriptWait(5); # wait 5 seconds<br>
+&nbsp;&nbsp;&nbsp;SpeedIncrement(0.01); # increase speed by 1%<br>
+&nbsp;&nbsp;&nbsp;# this is our own filename, so calling it will repeat the same for ever.<br>
+&nbsp;&nbsp;&nbsp;# once speed reaches 200% (the maximum) the script will continue<br>
+&nbsp;&nbsp;&nbsp;# to run but will have no further effect.<br>
+&nbsp;&nbsp;&nbsp;FileOpenNamed("+F");<p>
+
+Save the file. Start Transcribe! and set it playing something. Drag-n-drop the script file onto Transcribe!'s window and the speed will increase by 1% every 5 seconds until you stop it.<p>
+
+Or, here is an example which will play the selection twice, then increase speed by 1% and play again:<p>
+
+&nbsp;&nbsp;&nbsp;PlayLoopOff;		# turn looping *off*<br>
+&nbsp;&nbsp;&nbsp;PlaySelectionStart;	# start playing<br>
+&nbsp;&nbsp;&nbsp;ScriptWait(0);	# wait until play is finished<br>
+&nbsp;&nbsp;&nbsp;PlaySelectionStart;	# play again<br>
+&nbsp;&nbsp;&nbsp;ScriptWait(0);	# wait until play is finished<br>
+&nbsp;&nbsp;&nbsp;SpeedIncrement(0.01); # increase speed by 1%<br>
+&nbsp;&nbsp;&nbsp;FileOpenNamed("+F");	# self call<p>
+
+<h3>Processing Sound Files From the Command Line</h3><p>
+
+It has always been possible to tell Transcribe! to load a file by launching Transcribe! from the command line (aka Command Prompt or Terminal) and specifying the filename on the command line. This can be a useful technique for scripts and I will describe it in some detail because Windows and Mac users are often not familiar with this way of doing things.<p>
+
+<b>Step 1: Identify full names of required files</b><p>
+
+You will need to use the "absolute" (see above) names of the Transcribe! program file, the xscscpt file, and any sound files. On Windows the Transcribe! program file might typically be "C:\Program Files\Transcribe!\Transcribe.exe". On Mac the Transcribe! application is really a folder (an "application bundle" whose name ends ".app") and the program file is buried inside it. Use a Terminal and "cd" to look inside the application bundle. "pwd" (Print Working Directory) will tell you the full name of the folder where you are. "ls" will list the contents of the current folder. Depending where you have put the app, the full name of the program file might be something like "/Applications/Transcribe!.app/Contents/MacOS/Transcribe!". On Linux the full name of the program file might be something like "/home/andy/Transcribe/transcribe".<p>
+
+In what follows you should of course use the correct name on your system, in place of the example names given here which are for my system. I use quotes around all filenames which we type on the command line, though if you are an expert then you will be aware that this isn't always necessary.<p>
+
+<b>Step 2: Reality check: launch Transcribe! from the command line</b><p>
+
+On Windows: from "Start Menu - Windows System" launch "Command Prompt". At the prompt, type (note the double-blip quotes):<br>
+&nbsp;&nbsp;&nbsp;"C:\Program Files\Transcribe!\Transcribe.exe"<br>
+On Mac: from "Applications - Utilities" launch "Terminal". At the prompt, type (note the single-blip quotes):<br>
+&nbsp;&nbsp;&nbsp;'/Applications/Transcribe!.app/Contents/MacOS/Transcribe!'<br>
+On Linux launch a console. At the prompt, type (note the single-blip quotes):<br>
+&nbsp;&nbsp;&nbsp;'/home/andy/Transcribe/transcribe'<p>
+
+Then hit &lt;enter&gt; and Transcribe! should launch, unless it was already running in which case it will merely come to the front. Close it down again.<p>
+
+<b>Step 3: Create a Transcribe! Script file</b><p>
+
+Here are commands to load a sound file, raise pitch by one semitone, slow it to 50% speed, export it, and quit Transcribe!. You should of course substitute appropriate filenames and locations in place of the examples given here.<p>
+
+&nbsp;&nbsp;&nbsp;# A Transcribe! Script file.<br>
+&nbsp;&nbsp;&nbsp;FileOpenNamed("+H/Music/test.mp3"); # load a sound file<br>
+&nbsp;&nbsp;&nbsp;FxClear; # clear all audio effects<br>
+&nbsp;&nbsp;&nbsp;TuningSemitoneSet(1); # set pitch to one semitone high<br>
+&nbsp;&nbsp;&nbsp;SpeedSet(0.5); # set 50% speed<br>
+&nbsp;&nbsp;&nbsp;DeleteFile("+H/Music/test export.wav"); # delete the destination file in case it exists<br>
+&nbsp;&nbsp;&nbsp;FileExportSoundNamed("+H/Music/test export.wav"); # export to this file<br>
+&nbsp;&nbsp;&nbsp;QuitNoSaveNoVeto; # quit Transcribe! without asking questions<p>
+
+<b>Step 4: Do it!</b><p>
+
+Repeat step 2 to launch Transcribe! but this time, after the program name, give the name of the xscscpt file enclosed in double-blip quotes on Windows, or single-blip quotes on Mac or Linux. You should see Transcribe! launch, perform the requested commands and then quit, leaving the exported modified sound file where you told it to.<p>
+
+<b>Notes:</b> The reason why we "FxClear" is because when you load a sound file you will get whatever Fx settings may have been configured in Preferences - New Windows. For our purposes here, we want to start with a clean slate. The reason for "DeleteFile" is that "FileExportSoundNamed" will fail if the file already exists.<p>
+
+
+<h3>More Examples</h3><p>
+
+Here is a file which will select 3.5 seconds of sound starting 5 seconds in, it will loop those 3.5 seconds for 10 seconds, then stop. It doesn't load a file first so it will fail (nothing to play) if you try to use it alone on the command line, though if you specified a sound file first on the command line it would work. More interesting though is to drag-n-drop it onto an already existing Transcribe! window.<p>
+
+&nbsp;&nbsp;&nbsp;ViewSetSelectionSeconds(5, 3.5);<br>
+&nbsp;&nbsp;&nbsp;PlayLoopOn;<br>
+&nbsp;&nbsp;&nbsp;PlaySelectionStart;<br>
+&nbsp;&nbsp;&nbsp;ScriptWait(10);<br>
+&nbsp;&nbsp;&nbsp;PlayStop;<p>
+
+Here is one which loads a sound file, plays the first 10 seconds, empties the window and waits for 5 seconds of silence, then loads another sound file and plays the first 10 seconds.<p>
+
+&nbsp;&nbsp;&nbsp;FileOpenNamed("+H/Music/SOS.wav"); # load a sound file<br>
+&nbsp;&nbsp;&nbsp;PlayLoopOff; # with looping, playback would never stop<br>
+&nbsp;&nbsp;&nbsp;ViewSetSelectionSeconds(0, 10);<br>
+&nbsp;&nbsp;&nbsp;PlaySelectionStart;<br>
+&nbsp;&nbsp;&nbsp;ScriptWait(0); # play the selected music to the end. we don't need to issue a "stop" command<br>
+&nbsp;&nbsp;&nbsp;FileCloseNoSaveNoVeto; # close the file so the next one will open in the same window<br>
+&nbsp;&nbsp;&nbsp;ScriptWait(5); # 5 seconds of silence<br>
+&nbsp;&nbsp;&nbsp;FileOpenNamed("+H/Music/test.mp3"); # load another sound file<br>
+&nbsp;&nbsp;&nbsp;PlayLoopOff; # is necessary again since we have loaded a new file<br>
+&nbsp;&nbsp;&nbsp;ViewSetSelectionSeconds(0, 10);<br>
+&nbsp;&nbsp;&nbsp;PlaySelectionStart;<br>
+&nbsp;&nbsp;&nbsp;ScriptWait(0); # play the selected music to the end. we don't need to issue a "stop" command<p>
+
+Here is a rather different one. I had recorded a one hour theatrical performance and wanted to burn it to CD. I wanted to divide it into tracks because it's difficult to locate any particular section on a CD player, if the CD has just a single hour-long track. I decided the best thing would be to divide it into one-minute tracks and then burn it to CD with no gaps between the tracks. Naturally, the way to do this is to place section markers and then use the <A HREF="file_menu.htm#export_split_sound">Export Split Sound File</A> command. But what is the best way to place section markers every minute in a one-hour file? You could do it by hand, but you might prefer to create a script like this:<p>
+
+&nbsp;&nbsp;&nbsp;MarkerNewSeconds("S", 0);<br>
+&nbsp;&nbsp;&nbsp;MarkerNewSeconds("S", 60);<br>
+&nbsp;&nbsp;&nbsp;MarkerNewSeconds("S", 120);<br>
+&nbsp;&nbsp;&nbsp;MarkerNewSeconds("S", 180);<br>
+&nbsp;&nbsp;&nbsp;MarkerNewSeconds("S", 240);<br>
+&nbsp;&nbsp;&nbsp;MarkerNewSeconds("S", 300);<br>
+&nbsp;&nbsp;&nbsp;MarkerNewSeconds("S", 360);<br>
+&nbsp;&nbsp;&nbsp;MarkerNewSeconds("S", 420);<br>
+&nbsp;&nbsp;&nbsp;MarkerNewSeconds("S", 480);<br>
+&nbsp;&nbsp;&nbsp;MarkerNewSeconds("S", 540);<br>
+&nbsp;&nbsp;&nbsp;MarkerNewSeconds("S", 600);<br>
+... and so on, up to 3600 seconds or one hour.<p>
+
+Of course it's a bit tedious creating this script but once you have it, you can drag-n-drop it onto any transcription, to place markers every minute through the track. It doesn't matter if the track is shorter : MarkerNewSeconds ignores markers whose positions are "off the end".<p>
+
+In fact the sample scripts referred to above have this file as an example, so you don't have to construct it yourself.<p>
+
+
+<h3>The Various Ways of Of Opening xscscpt files</h3><p>
+
+As already mentioned, you can open an xscscpt file by any of the usual ways that Transcribe! opens files and Transcribe! will run its commands.<p>
+
+Running from the command line has already been described in detail as it's unusual, but it is particularly useful if you want to use Transcribe! without user intervention to process or play sound files under the control of another application, or a shell script or batch file. On Mac &amp; Linux, the  Terminal will wait until Transcribe! exits before continuing. In Windows' "Command Prompt" however the command described above will complete immediately while Transcribe! is still running. If you are using a batch file where one line uses Transcribe! to generate a modified sound file and the next lines uses that file, then this is inconvenient. You can get the behaviour you want with a "vbs" script for Windows, see below.<p>
+
+Drag-n-drop is rather fun, as already mentioned.<p>
+
+You can double-click an xscscpt file.<p>
+
+You can use the "Open" command on the File menu. You will need to view "all files" to see xscscpt files.<p>
+
+You can use a vbs script on Windows, or AppleScript on Mac, to instruct Transcribe! to open a file (Transcribe! for Linux does not at present support this technique). This gives a different approach where you launch Transcribe! once and leave it running, sending it commands when you want them done. If necessary you can use simple semaphores based on FileCreate and FileDelete, for the caller to know when Transcribe! has completed something.<p>
+
+<b>Scripting on Windows</b><p>
+We use Visual Basic, which means a text file whose name ends in ".vbs". Here is an example vbs file to run an xscscpt file.<p>
+
+I find that if I use Notepad to create a vbscript file then I must save as "ANSI" (not UTF8) or we get "VBScript compilation error: Invalid character" caused by the UTF8 BOM (look it up).<p>
+
+&nbsp;&nbsp;&nbsp;Option Explicit<br>
+<br>
+&nbsp;&nbsp;&nbsp;' Create the shell object which will run Transcribe! for us<br>
+&nbsp;&nbsp;&nbsp;Dim objShell<br>
+&nbsp;&nbsp;&nbsp;Set objShell = CreateObject("WScript.Shell")<br>
+<br>
+&nbsp;&nbsp;&nbsp;' Tell Windows to "open" the xscscpt file. Note you must have<br>
+&nbsp;&nbsp;&nbsp;' run Transcribe! at least once before, to create the necessary<br>
+&nbsp;&nbsp;&nbsp;' associations so Windows will know that Transcribe! is the<br>
+&nbsp;&nbsp;&nbsp;' application for opening xscscpt files.<br>
+&nbsp;&nbsp;&nbsp;' (*Triple* double-blip quotes at each end ??? Don't ask.)<br>
+&nbsp;&nbsp;&nbsp;objShell.Run """C:\Users\andy\Documents\Scripts\myscrpt.xscscpt"""<br>
+<br>
+&nbsp;&nbsp;&nbsp;' now loop, waiting until Transcribe.exe is no longer runnning.<br>
+&nbsp;&nbsp;&nbsp;Dim winmgmts, xscprocesses, proclist, xscprocess, xscfound<br>
+&nbsp;&nbsp;&nbsp;Set winmgmts = GetObject("winmgmts:")<br>
+&nbsp;&nbsp;&nbsp;Do<br>
+&nbsp;&nbsp;&nbsp;WScript.Sleep 100 ' wait 100 ms<br>
+&nbsp;&nbsp;&nbsp;xscprocesses = "select * from Win32_Process where name='Transcribe.exe'"<br>
+&nbsp;&nbsp;&nbsp;Set proclist = winmgmts.ExecQuery(xscprocesses)<br>
+&nbsp;&nbsp;&nbsp;xscfound = 0<br>
+&nbsp;&nbsp;&nbsp;For Each xscprocess in proclist<br>
+&nbsp;&nbsp;&nbsp;xscfound = xscfound + 1<br>
+&nbsp;&nbsp;&nbsp;Next<br>
+&nbsp;&nbsp;&nbsp;If xscfound = 0 Then Exit Do<br>
+&nbsp;&nbsp;&nbsp;Loop<p>
+
+Invoke it from a command line with "cscript filename.vbs". You can omit the second part of the script if you're not concerned about waiting for Transcribe! to exit.<p>
+
+You will find documentation for VBS Script on the Microsoft official website, and many other places. I suspect though, that PowerShell is really the modern way to do this on Windows but I haven't researched it yet.<p>
+
+<b>AppleScript on the Mac</b><p>
+
+Here is an Apple Script which will launch Transcribe! if it isn't already running, and run an xscscpt file. I haven't included code to wait for Transcribe! to quit. Transcribe! does not provide lots of commands for AppleScript to use. Instead you put your commands into the xscscpt file, and "open file" is the only AppleScript command you need. The curious filename syntax with colons is because of the history of AppleScript on Mac Classic.<p>
+
+on run {}<br>
+&nbsp;&nbsp;&nbsp;tell application "Transcribe!"<br>
+&nbsp;&nbsp;&nbsp;open file "Macintosh HD:Users:andy:xsccomnd.xscscpt"<br>
+&nbsp;&nbsp;&nbsp;end tell<br>
+end run<p>
+
+You will find documentation for Apple Script on the Apple official website, and many other places. You will find the Script Editor application in Applications/Utilities and you can run an Apple Script in a terminal by typing "osascript &lt;scriptname&gt;". If you do this then after the script has run you will see a message in the terminal saying "missing value". This is not an error, it merely indicates that the operation has not returned any value, because it doesn't need to.<p>
+
+
+<b>Using Transcribe! to post files to Transcribe!</b><p>
+
+Here is another technique for telling Transcribe! (when already running) to open and run a script file (or a sound or transcription file for that matter). This method can be used on Windows, Mac and Linux - in fact it is the only way on Linux, for getting this result.<p>
+
+Normally, if you launch Transcribe! from the command line then you can put filename(s) on that command line and Transcribe! will open them. But if you do this when there is another instance of Transcribe! already running then the new instance of Transcribe! will pass these filenames over to the already-running instance, and then exit immediately.<p>
+
+See "Launch Transcribe! from the command line" above for how to do this. So your command line looks like:<br>
+&lt;transcribe-executable-filename&gt;&nbsp;&nbsp;&lt;script-filename&gt;<p>
+
+There is a special option "-flush" you can use on the command line (which can be followed by filenames if you want). This has the effect of flushing (removing) any script commands that were waiting to run. Thus:<br>
+&lt;transcribe-executable-filename&gt;&nbsp;&nbsp;-flush<p>
+
+You can do this from a console/terminal, but since scripting languages in other applications usually allow you to execute arbitrary commands with parameters, that means you can remotely control Transcribe! while it is running, from other applications. Have fun.<p>
+
+</HTML>

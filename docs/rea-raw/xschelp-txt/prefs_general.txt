@@ -1,0 +1,43 @@
+Transcribe! : Preferences - General
+ | 
+Preferences - General
+ | 
+Reload open windows at launch.
+If this is checked then on launch Transcribe! will reopen the windows which were open when it was last shut down. If this option is on then you can nevertheless prevent this by holding down the shift key while Transcribe! launches.
+Reduced CPU.
+This will reduce the amount of processor power used during playback. It is purely a matter of graphics and does not affect playback quality. It simply slows down the rate at which the display is refreshed, which will result in the waveform and play position scrolling movement on screen becoming slightly less smooth. Also see "High quality slowdown and tuning" in Preferences - Playback
+Live Spectrum following playback.
+This means that the spectrum, and also note and chord guesses, are updated regularly to follow the music while it is playing. This uses extra processing power so don't use it if your computer can't keep up.
+Compute Piano Roll while playing.
+Sometimes, on some machines, computing the piano roll data in the background while playing can cause playback interruptions (drop outs), or late marker placement (press 'M' while playing and the marker ends up rather later than the desired point). 
+If this is happening to you then you can turn off this option, meaning that Piano Roll data is only computed when playback is stopped. Also if you turn off the Piano Roll view altogether (on the PianoRoll menu) then Piano Roll data will not be computed at all.
+Show Tool Tips.
+Tooltips are the little yellow pop-up boxes with descriptive text, which appear when you hold the mouse pointer over toolbar buttons etc. They are useful for beginners but you may want to switch them off if they annoy you.
+Closing last window closes application immediately.
+This does what it says. See here for more discussion of this issue.
+Default new transcription files to the same folder as the sound file.
+By default when you create a new transcription file (that is, if you load a sound file and then Save for the first time), the initial folder for saving will be the same folder you last saved a new transcription file to. Of course you can then select any folder you want. However if you check this box then the initial folder for saving will instead be the same folder that the sound file is located in. This will not be hugely useful if the sound file is in a read-only location such as an audio CD.
+Recent files list: How many entries?
+How many of your most recently opened transcription files would you like to see in the Recent Files list (on the File menu)? (default 16, maximum 32)
+Recent files list: Show folders?
+By default, transcription files appearing in the Recent Files list (on the File menu) are displayed with folder information. Here you can choose whether they should instead show names only, without folder information.
+Recent folders list: How many entries?
+How many of your most recently used folders would you like to see in the Recent Folders list (on the File menu)? (default 16, maximum 32)
+Middle C is.
+You can choose whether Transcribe! considers middle C to be C3, C4 or C5. "Who uses C5?" do I hear you ask? Handbell ringers, apparently.
+Pixel aspect ratio of display
+Many displays have pixels that are not quite square, so videos do not display with the correct proportions. Here you can correct for this. First you need to measure the pixel aspect ratio of your display. Make sure that you currently have this set to "1", then load a square video into Transcribe! Measure the width and height of the video image in millimetres (ignoring any black borders). If they are equal then all is well. If not then calculate width divided by height, which should give you a number a little bigger or smaller than 1.0, and enter that number. Now the image should display as a square. If you don't happen to have a square video handy then you can find one at
+https://www.seventhstring.com/resources/Square500x500.mp4
+Now the video should display as a square on screen.
+Label piano keys if wider than.
+By default Transcribe! labels only the "C"s on the piano keyboard, giving their MIDI octave numbers for reference. If you want then you can also have note names appear on all the white notes. If you specify 0 here (the default) then Transcribe! will only label the "C"s. Otherwise, Transcribe! will label all the white notes whenever their size on the screen is wider than the number of pixels you specify. About 20 or 30 is usually a suitable sort of value.
+Mouse Wheel Sensitivity.
+Mouse Wheels vary in sensitivity so here you can make adjustment. 10 is the default here, and 0 will turn it off altogether.
+Vertical scale of spectrum display.
+The default value here is 0, meaning that the spectrum display
+will be scaled automatically so that the largest peak fills the vertical space available (unless its amplitude is very small). But if you set any other value then you will get fixed vertical scaling of the spectrum. The larger the value, the higher the peaks will be - a value of about 10 may be suitable.
+See Interpreting the Spectrum for a more detailed discussion of this.
+Screen dots per inch.
+Here you can specify the resolution of your display screen. When adjusted correctly, the line displayed should be one inch long (2.54 cm). This is not a hugely important figure but it affects things like the thickness of lines used for drawing some things, and the default size of marker triangles. It does not affect text - Transcribe! uses the same text sizes used by the system. The reason for providing this adjustment is because there isn't really any other reliable way of determining this in all situations - for instance if you have a multi-display system where the displays have different characteristics.
+Size of "Go To Marker" and "Go To Text Block" menus.
+When you control-click the navigation bar you get a popup menu of markers which you can jump to. And when you control-click the text zone you get a popup menu of text blocks which you can jump to. This preference determines how large the menu will be, by specifying the maximum number of items either side of the clicked point which will appear in the menu.

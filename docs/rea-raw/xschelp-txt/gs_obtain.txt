@@ -1,0 +1,15 @@
+Transcribe! : Obtaining a Sound File
+ | 
+Obtaining a Sound File
+ | 
+Transcribe! reads and plays music from "sound" files, which are large files containing audio sample data. Transcribe! plays many popular types of sound file such as
+wav, aiff, mp3, aac, m4a, ogg, flac
+etc. So the first thing you need is a sound file on your hard disk, of the track you want to transcribe. There is more about sound files here.
+Once you have a track on your hard disk, the simplest way to load it into Transcribe! is to drag-n-drop from Finder to the Transcribe! window.
+These days more and more people listen to music by streaming (Spotify, Apple Music, etc), but these streaming services do not allow you to download tracks as files which can be loaded into other software. So you cannot use these streaming services directly with Transcribe!, although you can connect an audio lead from the headphone output to the line-in or mic-in on your computer and record it (unless this violates the license terms of the service).
+If you buy tracks on iTunes (not streaming) then you get them downloaded to your computer so you can use them. Or Amazon and other sites sell mp3's. You can also download from YouTube, see https://www.seventhstring.com/xscribe/video.html and see the FAQ for more information about obtaining sound files.
+Transcribe! will allow you to open an audio CD track directly as a sound file but in fact it is usually better to copy the track to your hard disk first. This is better than working directly from the CD because the sound file will still be there when you take the CD out.
+There are many ways of copying tracks from audio CD to your hard disk. In fact Finder will copy tracks by the usual drag-n-drop from the CD to your hard disk. iTunes will do it too, and it will save in compressed formats which you may prefer. You will need to find where, on your hard disk, it has put the sound file so you can open it with Transcribe!.
+You can also drag-n-drop a track directly from iTunes to Transcribe!, as long as the track is stored on your disk in a format Transcribe! can handle. In other words, this won't work when iTunes is showing a track on an audio CD, or an m4p protected file. If iTunes is showing you a track in the cloud then you may be able to click the download icon to download it to your computer, so that you can then open it in Transcribe!. If you use iTunes for managing music anyway then this drag-n-drop is very convenient as it saves having to hunt around the hard disk to find where iTunes has copied the track to.
+You can also drag-n-drop directly from Spotlight results to Transcribe!.
+If you have some other audio source such as cassette, vinyl, minidisc etc then you will need to connect an audio lead from the source to the line-in or mic-in on your computer and record it (this technique will also work with audio CDs of course, if you have any difficulty with digital copying). Transcribe! can record to hard disk with the Record new sound file command, and so can many other programs.

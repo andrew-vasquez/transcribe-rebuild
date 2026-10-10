@@ -1,0 +1,142 @@
+
+
+
+
+
+
+
+<HTML><HEAD><TITLE>Transcribe! : Foot Pedals (non-keyboard and not MIDI)</TITLE></HEAD>
+<BODY BGCOLOR=#ffffff TEXT=#000000 LINK=#ff0000 ALINK=#ff0000 VLINK=#ff0000>
+
+<TABLE BORDER="0" CELLSPACING="0" CELLPADDING="0" WIDTH="100%">
+   <TR>
+      <TD ALIGN="CENTER" VALIGN="MIDDLE"><H2>Foot Pedals (non-keyboard and not MIDI)</H2></TD>
+      <TD ALIGN="RIGHT" VALIGN="MIDDLE">
+<A HREF="contents.htm"><img align=center src="contents.png" BORDER=0 ALT="Home"></A>
+<A HREF="app_menu.htm"><img align=center src="up.png" BORDER=0 ALT="Up"></A>
+<A HREF="midi.htm"><img align=center src="back.png" BORDER=0 ALT="Previous"></A>
+<A HREF="file_menu.htm"><img align=center src="forward.png" BORDER=0 ALT="Next"></A>
+      </TD>
+   </TR>
+</TABLE>
+
+
+<HR>
+
+This page is about pedals which do not emulate a keyboard (if you have a pedal which emulates a keyboard then you should configure it using the Keyboard Shortcuts command since it is pretending to be a keyboard) and also which are not MIDI pedals. That means pedals which we access via the HID or Joystick interfaces.<p>
+
+As mentioned elsewhere, you can use <A HREF="midi.htm">MIDI pedals</A> to control Transcribe! - start and stop playback with your feet. However there are also foot pedals available which are specifically intended for controlling playback software, and which are often used by typists who are typing from dictation. They are usually connected by USB and they do not use MIDI. They usually have a large Play/Stop pedal in the middle, and smaller Rewind and Fast-Forward pedals on either side. Transcribe! can be controlled by some of these pedals, if compatible.<p>
+
+Whatever pedal you have, plug it in and try it as it may be compatible. When you press the "Select pedal" button in the Foot Pedals dialog (see below), Transcribe! shows you a list of whatever compatible pedals it has found. Here is the present situation but check the "Pedals" page on the Seventh String website where there is more recent and specific information, including information about where to buy pedals.<p>
+
+
+<b>IMPORTANT NOTE</b><p>
+Some pedals come with software provided, to help interface the pedal to the applications you want to control. You do <b>not</b> need
+to install such software to use these pedals with Transcribe!, because Transcribe! talks directly to the pedal. It may be best not to install such software at all. But if you do install it in order to use the pedal with other applications, then you should <b>not</b> tell the pedal software anything about Transcribe! or you may get a conflict between Transcribe! and the pedal software both trying to read the pedal at the same time.<p>
+
+
+<b>Joystick pedals</b><p>
+
+Some pedals present themselves as being joystick / game controller devices and Transcribe! should be able to use these on Windows, Mac and Linux.
+Of course, these pedals aren't really intended for games, it's just that they use the same interface.
+The specific game controller pedal which I use is the VPedal, but in fact any joystick / game controller should work, even those which aren't pedals at all.<p>
+
+
+
+<b>USB HID pedals</b><p>
+There are various USB pedals available which are not joysticks. They use the HID (Human Interface Device) standard interface and should work with Transcribe! on Windows, Mac and Linux. Check the "Pedals" page on the Seventh String website for information about specific pedals.<p>
+
+It is possible for all kinds of strange devices to show up as HID devices,
+you can look up the "vendor id" on the web if you're curious about what they might be.<p>
+
+
+<b>"Macro" pedals</b><p>
+Some pedals can be configured to generate keystrokes as if from a keyboard. Since Transcribe! can be configured to respond to keyboard shortcuts in any way you want, these pedals are naturally compatible with Transcribe! on Windows, Mac and Linux. But Transcribe! won't see them as pedals of course, since they are pretending to be keyboards.<p>
+
+<b>Apple InfraRed Remote</b><p>
+Some Macs come with a little remote controller which will show up as a FootPedal in Transcribe! (well you could always work it with your toes). You can use it to control Transcribe! but it is a bit quirky. The "+", "-" and "MENU" buttons all have special functionality for controlling the Mac, and I'm not sure if there's any easy way to disable this, so it's best not to try to use these buttons for controlling Transcribe!. That leaves the left & right buttons, and the central Play/Pause button. These have quirky behaviour, which you will see reported in Transcribe!'s Foot Pedal dialog as follows:<br>
+Left button: Short press &amp; release produces (at the moment of release) Button 14 Press &amp; immediate Release (you won't see the Press displayed as it's too quick). Longer press produces Button 18 Press after a while, then Button 18 Release when you release it.<br>
+Right button: Same as Left button, with a different pair of button numbers, as you will see when you try it.<br>
+Play button: Short press &amp; release produces  (at the moment of release) Button 12 Press &amp; immediate Release (you won't see the Press displayed as it's too quick). Very long press produces Button 9 Press after a while, which puts the computer to sleep.<br>
+Here's a setup which can be useful. Program the long press of the left &amp; right buttons as PlayReviewStart and PlayCueStart, and the release of the long press as PlayPauseOnNoRewind. Program the short press of the Play button as PlayResume. That gives you basic playback control, and you can program the short press of left &amp; right buttons to do something else useful.<p>
+
+
+<H3>The Foot Pedals dialog</H3>
+
+The Foot Pedals dialog enables you to set up Transcribe!'s response to Foot Pedal controls (not MIDI),
+so you can use the foot pedal to start and stop Transcribe!'s playback, or indeed to trigger any of Transcribe!'s commands you want to.<P>
+
+<B>Quick Setup<A NAME="quicksetup"></A></B><P>
+If "Pedal Status" says "Input device working properly" then you can use one of the Quick Setup buttons if you like. These enable you to create one of three recommended setups. You will be prompted to press each of the three pedals one after the other. If you mess it up then just do it again. Quick Setup will also set "Respond to Pedals" to "Always" : make sure that in Preferences you have selected <A HREF="prefs_playback.htm#playinbg">"Keep playing when in background"</A> if you want to control playback while Transcribe! is in the background.<p>
+
+A couple of other preferences that may be useful when using pedals are
+<A HREF="prefs_playback.htm#pausefs">"Paused playback point follows selection"</A> and
+<A HREF="prefs_playback.htm#rewindop">"Rewind on pause"</A>.<p>
+
+<UL>
+<LI>Quick Setup for Speech : this will set the pedals as follows:
+	<UL>
+	<LI>Rewind pedal, on Press: PlayReviewStart, on Release: PlayPauseOnNoRewind
+	<LI>Play pedal, on Press: PlayResume, on Release: PlayTapRelease
+	<LI>Forwards pedal, on Press: PlayCueStart, on Release: PlayPauseOnNoRewind
+	<LI>This means that you can press and hold the rewind or forwards buttons to skip backwards or forwards.
+	Press and hold the Play button to play until you release the pedal, or tap it briefly to start playback without holding the pedal down.
+	<LI>If you prefer playback to continue (rather than pausing) when you release the Rewind or Forwards pedals, then you
+	should change the "Release" command from "PlayPauseOnNoRewind" to "PlayCueReviewEnd".
+	</UL><P>
+
+<LI>Quick Setup for Music with measure markers : you must place measure markers to use this setup. This will set the pedals as follows:
+	<UL>
+	<LI>Rewind pedal, on Press: SelectionMoveLeftMeasure, on Release: none
+	<LI>Play pedal, on Press: PlaySelectionStart, on Release: PlayTapRelease
+	<LI>Forwards pedal, on Press: SelectionMoveRightMeasure, on Release: none
+	<LI>This means that the left and right pedals simply move you backwards or forwards a whole measure at a time.
+	Press and hold the Play button to play until you release the pedal, or tap it briefly to start playback without holding the pedal down.
+	</UL><P>
+
+<LI>Quick Setup for Music without measure markers : this will set the pedals as follows:
+	<UL>
+	<LI>Rewind pedal, on Press: SelectionMakeZero, on Release: none
+	<LI>Play pedal, on Press: PlaySelectionStart, on Release: PlayPauseOn
+	<LI>Forwards pedal, on Press: PlayResume, on Release: PlayPauseOn
+	<LI>This means that you can use the Play pedal to play repeatedly from the current point, use the Right pedal to continue playing
+	from the point you reached, and when you have finished with a couple of measures you can use the Play pedal
+	and stop exactly at the end of those two measures, then press the Left pedal to advance the current point to this new position.
+	</UL><P>
+
+</UL>
+
+
+<B>Respond to Pedals</B><P>
+Here you can select :<P>
+<UL>
+<LI>Never. Do not respond to foot pedals.<BR>
+<LI>Only when in foreground. When you click another application to bring it to the front, Transcribe! will stop listening to the pedal.<BR>
+<LI>Always. Transcribe! will continue to respond to the foot pedal even when in the background. If you want Transcribe! to be able to play when in the background then you must also select
+<A HREF="prefs_playback.htm#playinbg">Keep playing when in background</A>.<BR>
+</UL>
+
+<b>Note:</b> if you unplug your pedal then Transcribe!, not being able to find it, will set "Respond to Pedals" to "Never" in order to avoid endless error messages as long as the thing is missing. So when you plug it back in again, you will need to run this dialog to switch responses back on again.<p>
+
+<B>Allow auto-repeat</B><P>
+Some commands will auto-repeat if you hold the pedal down (e.g. the SelectionMoveRightMeasure command will then step forward from measure to measure until you release the pedal). If you want that to happen, then check this box.<P>
+
+<B>Pedal Status</B><P>
+This reports on whether the Foot Pedal device was opened successfully and allows you to select a different one if you have more than one.
+<P>
+
+<B>Configuring Pedal Shortcuts</B><P>
+
+When you press a pedal you should see its description appear in the "Press a pedal to create a new shortcut" box. This also has the effect of creating a new shortcut listed in the table above, if there wasn't one already. This is different from configuring keyboard or midi shortcuts, where we don't automatically create a new shortcut every time you touch the keyboard.<p>
+
+You can configure the action for Press and Release in exactly the same way as configuring keyboard shortcuts, so read about it <A HREF="kb.htm">here</A>.<P>
+
+
+<H3>Export and Import Foot Pedal Shortcuts</H3>
+
+These commands are very useful if you want to have different pedal setups for different purposes. With these commands you can save multiple different setups to files named e.g. "speech_pedals.txt" and "music_pedals.txt" or whatever, and then switch between them by importing the appropriate one.<p>
+
+These work the same as exporting and importing keyboard shortcuts, so read about it <A HREF="kb.htm">here</A>.<P>
+There is one slight difference which is that when you Import Foot Pedal Shortcuts, the previously configured foot pedal shortcuts will be cleared out first (not kept).<P>
+
+</HTML>

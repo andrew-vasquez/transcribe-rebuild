@@ -1,0 +1,10 @@
+Transcribe! : Help Menu
+ | 
+Help Menu
+ | 
+The Commands on the Help Menu
+Transcribe! Help
+This brings up the Contents page of Transcribe!'s Help.
+FAQ (Seventh String website)
+This will launch your default web browser and take you to the FAQ (Frequently Asked Questions) page on the Seventh String website.
+This is a very useful resource for any kind of Transcribe! question, and it may contain more up-to-date information than the Help does.

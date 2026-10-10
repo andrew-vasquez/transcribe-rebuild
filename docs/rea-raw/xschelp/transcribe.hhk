@@ -1,0 +1,296 @@
+<!DOCTYPE HTML PUBLIC "-//IETF//DTD HTML//EN">
+<HTML>
+<HEAD>
+<meta name="GENERATOR" content="Anthemion HelpBlocks">
+<!-- Sitemap 1.0 -->
+</HEAD><BODY>
+<OBJECT type="text/site properties">
+    <param name="Font" value="MS Sans Serif,8,0">
+</OBJECT>
+<UL>
+    <LI> <OBJECT TYPE="text/sitemap">
+             <PARAM NAME="Name" VALUE="Contents">
+             <PARAM NAME="Local" VALUE="contents.htm">
+         </OBJECT>
+    <LI> <OBJECT TYPE="text/sitemap">
+             <PARAM NAME="Name" VALUE="Overview">
+             <PARAM NAME="Local" VALUE="overview.htm">
+         </OBJECT>
+    <LI> <OBJECT TYPE="text/sitemap">
+             <PARAM NAME="Name" VALUE="Installing, Uninstalling, and System Requirements">
+             <PARAM NAME="Local" VALUE="install.htm">
+         </OBJECT>
+    <LI> <OBJECT TYPE="text/sitemap">
+             <PARAM NAME="Name" VALUE="Getting Started">
+             <PARAM NAME="Local" VALUE="getstarted.htm">
+         </OBJECT>
+    <LI> <OBJECT TYPE="text/sitemap">
+             <PARAM NAME="Name" VALUE="Obtaining a Sound File">
+             <PARAM NAME="Local" VALUE="gs_obtain.htm">
+         </OBJECT>
+    <LI> <OBJECT TYPE="text/sitemap">
+             <PARAM NAME="Name" VALUE="Creating a New Transcription">
+             <PARAM NAME="Local" VALUE="gs_create.htm">
+         </OBJECT>
+    <LI> <OBJECT TYPE="text/sitemap">
+             <PARAM NAME="Name" VALUE="The Transcription Window">
+             <PARAM NAME="Local" VALUE="gs_window.htm">
+         </OBJECT>
+    <LI> <OBJECT TYPE="text/sitemap">
+             <PARAM NAME="Name" VALUE="Starting to Transcribe">
+             <PARAM NAME="Local" VALUE="gs_startxsc.htm">
+         </OBJECT>
+    <LI> <OBJECT TYPE="text/sitemap">
+             <PARAM NAME="Name" VALUE="Menus and Toolbar">
+             <PARAM NAME="Local" VALUE="menus.htm">
+         </OBJECT>
+    <LI> <OBJECT TYPE="text/sitemap">
+             <PARAM NAME="Name" VALUE="Application Menu">
+             <PARAM NAME="Local" VALUE="app_menu.htm">
+         </OBJECT>
+    <LI> <OBJECT TYPE="text/sitemap">
+             <PARAM NAME="Name" VALUE="Preferences - General">
+             <PARAM NAME="Local" VALUE="prefs_general.htm">
+         </OBJECT>
+    <LI> <OBJECT TYPE="text/sitemap">
+             <PARAM NAME="Name" VALUE="Preferences - New Windows">
+             <PARAM NAME="Local" VALUE="prefs_newwindows.htm">
+         </OBJECT>
+    <LI> <OBJECT TYPE="text/sitemap">
+             <PARAM NAME="Name" VALUE="Preferences - Playback">
+             <PARAM NAME="Local" VALUE="prefs_playback.htm">
+         </OBJECT>
+    <LI> <OBJECT TYPE="text/sitemap">
+             <PARAM NAME="Name" VALUE="Preferences - Export">
+             <PARAM NAME="Local" VALUE="prefs_export.htm">
+         </OBJECT>
+    <LI> <OBJECT TYPE="text/sitemap">
+             <PARAM NAME="Name" VALUE="Preferences - Markers">
+             <PARAM NAME="Local" VALUE="prefs_markers.htm">
+         </OBJECT>
+    <LI> <OBJECT TYPE="text/sitemap">
+             <PARAM NAME="Name" VALUE="Preferences - Fret Display">
+             <PARAM NAME="Local" VALUE="prefs_frets.htm">
+         </OBJECT>
+    <LI> <OBJECT TYPE="text/sitemap">
+             <PARAM NAME="Name" VALUE="Preferences - Toolbar">
+             <PARAM NAME="Local" VALUE="prefs_toolbar.htm">
+         </OBJECT>
+    <LI> <OBJECT TYPE="text/sitemap">
+             <PARAM NAME="Name" VALUE="Keyboard Shortcuts">
+             <PARAM NAME="Local" VALUE="kb.htm">
+         </OBJECT>
+    <LI> <OBJECT TYPE="text/sitemap">
+             <PARAM NAME="Name" VALUE="Keyboard Shortcuts 9.25 Update">
+             <PARAM NAME="Local" VALUE="kb925.htm">
+         </OBJECT>
+    <LI> <OBJECT TYPE="text/sitemap">
+             <PARAM NAME="Name" VALUE="Vidami Pedal">
+             <PARAM NAME="Local" VALUE="vidami.htm">
+         </OBJECT>
+    <LI> <OBJECT TYPE="text/sitemap">
+             <PARAM NAME="Name" VALUE="MIDI Shortcuts">
+             <PARAM NAME="Local" VALUE="midi.htm">
+         </OBJECT>
+    <LI> <OBJECT TYPE="text/sitemap">
+             <PARAM NAME="Name" VALUE="Foot Pedals">
+             <PARAM NAME="Local" VALUE="footpedal.htm">
+         </OBJECT>
+    <LI> <OBJECT TYPE="text/sitemap">
+             <PARAM NAME="Name" VALUE="File menu">
+             <PARAM NAME="Local" VALUE="file_menu.htm">
+         </OBJECT>
+    <LI> <OBJECT TYPE="text/sitemap">
+             <PARAM NAME="Name" VALUE="Record New Sound File">
+             <PARAM NAME="Local" VALUE="record.htm">
+         </OBJECT>
+    <LI> <OBJECT TYPE="text/sitemap">
+             <PARAM NAME="Name" VALUE="Stem Files">
+             <PARAM NAME="Local" VALUE="stems.htm">
+         </OBJECT>
+    <LI> <OBJECT TYPE="text/sitemap">
+             <PARAM NAME="Name" VALUE="View menu">
+             <PARAM NAME="Local" VALUE="view_menu.htm">
+         </OBJECT>
+    <LI> <OBJECT TYPE="text/sitemap">
+             <PARAM NAME="Name" VALUE="Play Menu">
+             <PARAM NAME="Local" VALUE="play_menu.htm">
+         </OBJECT>
+    <LI> <OBJECT TYPE="text/sitemap">
+             <PARAM NAME="Name" VALUE="Markers Menu">
+             <PARAM NAME="Local" VALUE="markers_menu.htm">
+         </OBJECT>
+    <LI> <OBJECT TYPE="text/sitemap">
+             <PARAM NAME="Name" VALUE="Text Menu">
+             <PARAM NAME="Local" VALUE="text_menu.htm">
+         </OBJECT>
+    <LI> <OBJECT TYPE="text/sitemap">
+             <PARAM NAME="Name" VALUE="Piano Roll Menu">
+             <PARAM NAME="Local" VALUE="pianoroll_menu.htm">
+         </OBJECT>
+    <LI> <OBJECT TYPE="text/sitemap">
+             <PARAM NAME="Name" VALUE="Window Menu">
+             <PARAM NAME="Local" VALUE="window_menu.htm">
+         </OBJECT>
+    <LI> <OBJECT TYPE="text/sitemap">
+             <PARAM NAME="Name" VALUE="Help Menu">
+             <PARAM NAME="Local" VALUE="help_menu.htm">
+         </OBJECT>
+    <LI> <OBJECT TYPE="text/sitemap">
+             <PARAM NAME="Name" VALUE="Toolbar">
+             <PARAM NAME="Local" VALUE="toolbar.htm">
+         </OBJECT>
+    <LI> <OBJECT TYPE="text/sitemap">
+             <PARAM NAME="Name" VALUE="Mouse Commands">
+             <PARAM NAME="Local" VALUE="mouse.htm">
+         </OBJECT>
+    <LI> <OBJECT TYPE="text/sitemap">
+             <PARAM NAME="Name" VALUE="Audio Effects and Controls Window">
+             <PARAM NAME="Local" VALUE="fx.htm">
+         </OBJECT>
+    <LI> <OBJECT TYPE="text/sitemap">
+             <PARAM NAME="Name" VALUE="Mono/Karaoke">
+             <PARAM NAME="Local" VALUE="fx_mix.htm">
+         </OBJECT>
+    <LI> <OBJECT TYPE="text/sitemap">
+             <PARAM NAME="Name" VALUE="EQ">
+             <PARAM NAME="Local" VALUE="fx_eq.htm">
+         </OBJECT>
+    <LI> <OBJECT TYPE="text/sitemap">
+             <PARAM NAME="Name" VALUE="Tuning">
+             <PARAM NAME="Local" VALUE="fx_tuning.htm">
+         </OBJECT>
+    <LI> <OBJECT TYPE="text/sitemap">
+             <PARAM NAME="Name" VALUE="Transposition">
+             <PARAM NAME="Local" VALUE="fx_transposition.htm">
+         </OBJECT>
+    <LI> <OBJECT TYPE="text/sitemap">
+             <PARAM NAME="Name" VALUE="Speed">
+             <PARAM NAME="Local" VALUE="fx_speed.htm">
+         </OBJECT>
+    <LI> <OBJECT TYPE="text/sitemap">
+             <PARAM NAME="Name" VALUE="Misc">
+             <PARAM NAME="Local" VALUE="fx_misc.htm">
+         </OBJECT>
+    <LI> <OBJECT TYPE="text/sitemap">
+             <PARAM NAME="Name" VALUE="Various Topics">
+             <PARAM NAME="Local" VALUE="various.htm">
+         </OBJECT>
+    <LI> <OBJECT TYPE="text/sitemap">
+             <PARAM NAME="Name" VALUE="Introduction to Transcribing Music">
+             <PARAM NAME="Local" VALUE="introxsc.htm">
+         </OBJECT>
+    <LI> <OBJECT TYPE="text/sitemap">
+             <PARAM NAME="Name" VALUE="Sound Files">
+             <PARAM NAME="Local" VALUE="sound.htm">
+         </OBJECT>
+    <LI> <OBJECT TYPE="text/sitemap">
+             <PARAM NAME="Name" VALUE="GStreamer">
+             <PARAM NAME="Local" VALUE="gstreamer.htm">
+         </OBJECT>
+    <LI> <OBJECT TYPE="text/sitemap">
+             <PARAM NAME="Name" VALUE="Video">
+             <PARAM NAME="Local" VALUE="video.htm">
+         </OBJECT>
+    <LI> <OBJECT TYPE="text/sitemap">
+             <PARAM NAME="Name" VALUE="Transcription Files">
+             <PARAM NAME="Local" VALUE="xsc_files.htm">
+         </OBJECT>
+    <LI> <OBJECT TYPE="text/sitemap">
+             <PARAM NAME="Name" VALUE="Automation">
+             <PARAM NAME="Local" VALUE="automation.htm">
+         </OBJECT>
+    <LI> <OBJECT TYPE="text/sitemap">
+             <PARAM NAME="Name" VALUE="Commands for shortcuts and automation">
+             <PARAM NAME="Local" VALUE="cmnddoc.htm">
+         </OBJECT>
+    <LI> <OBJECT TYPE="text/sitemap">
+             <PARAM NAME="Name" VALUE="Transcription and Sound File commands">
+             <PARAM NAME="Local" VALUE="cmnddoc_files.htm">
+         </OBJECT>
+    <LI> <OBJECT TYPE="text/sitemap">
+             <PARAM NAME="Name" VALUE="Application, windows and preferences commands">
+             <PARAM NAME="Local" VALUE="cmnddoc_app.htm">
+         </OBJECT>
+    <LI> <OBJECT TYPE="text/sitemap">
+             <PARAM NAME="Name" VALUE="Playing commands">
+             <PARAM NAME="Local" VALUE="cmnddoc_playing.htm">
+         </OBJECT>
+    <LI> <OBJECT TYPE="text/sitemap">
+             <PARAM NAME="Name" VALUE="Looping commands">
+             <PARAM NAME="Local" VALUE="cmnddoc_looping.htm">
+         </OBJECT>
+    <LI> <OBJECT TYPE="text/sitemap">
+             <PARAM NAME="Name" VALUE="Text block commands">
+             <PARAM NAME="Local" VALUE="cmnddoc_textblocks.htm">
+         </OBJECT>
+    <LI> <OBJECT TYPE="text/sitemap">
+             <PARAM NAME="Name" VALUE="Marker and navigation commands">
+             <PARAM NAME="Local" VALUE="cmnddoc_markers.htm">
+         </OBJECT>
+    <LI> <OBJECT TYPE="text/sitemap">
+             <PARAM NAME="Name" VALUE="View commands">
+             <PARAM NAME="Local" VALUE="cmnddoc_view.htm">
+         </OBJECT>
+    <LI> <OBJECT TYPE="text/sitemap">
+             <PARAM NAME="Name" VALUE="Selection commands">
+             <PARAM NAME="Local" VALUE="cmnddoc_selection.htm">
+         </OBJECT>
+    <LI> <OBJECT TYPE="text/sitemap">
+             <PARAM NAME="Name" VALUE="Audio Effects commands">
+             <PARAM NAME="Local" VALUE="cmnddoc_fx.htm">
+         </OBJECT>
+    <LI> <OBJECT TYPE="text/sitemap">
+             <PARAM NAME="Name" VALUE="Organising Many Transcriptions">
+             <PARAM NAME="Local" VALUE="organise.htm">
+         </OBJECT>
+    <LI> <OBJECT TYPE="text/sitemap">
+             <PARAM NAME="Name" VALUE="Interpreting the Spectrum">
+             <PARAM NAME="Local" VALUE="spectrum.htm">
+         </OBJECT>
+    <LI> <OBJECT TYPE="text/sitemap">
+             <PARAM NAME="Name" VALUE="Note and Chord Guessing">
+             <PARAM NAME="Local" VALUE="guess.htm">
+         </OBJECT>
+    <LI> <OBJECT TYPE="text/sitemap">
+             <PARAM NAME="Name" VALUE="Note Frequencies">
+             <PARAM NAME="Local" VALUE="notefreq.htm">
+         </OBJECT>
+    <LI> <OBJECT TYPE="text/sitemap">
+             <PARAM NAME="Name" VALUE="Speech Transcription">
+             <PARAM NAME="Local" VALUE="speech.htm">
+         </OBJECT>
+    <LI> <OBJECT TYPE="text/sitemap">
+             <PARAM NAME="Name" VALUE="Play-Along Practice">
+             <PARAM NAME="Local" VALUE="playalong.htm">
+         </OBJECT>
+    <LI> <OBJECT TYPE="text/sitemap">
+             <PARAM NAME="Name" VALUE="Old and Slow Machines">
+             <PARAM NAME="Local" VALUE="slow.htm">
+         </OBJECT>
+    <LI> <OBJECT TYPE="text/sitemap">
+             <PARAM NAME="Name" VALUE="Contact and Support">
+             <PARAM NAME="Local" VALUE="contact.htm">
+         </OBJECT>
+    <LI> <OBJECT TYPE="text/sitemap">
+             <PARAM NAME="Name" VALUE="License Agreement">
+             <PARAM NAME="Local" VALUE="license.htm">
+         </OBJECT>
+    <LI> <OBJECT TYPE="text/sitemap">
+             <PARAM NAME="Name" VALUE="Evaluating and Buying Transcribe!">
+             <PARAM NAME="Local" VALUE="buying.htm">
+         </OBJECT>
+    <LI> <OBJECT TYPE="text/sitemap">
+             <PARAM NAME="Name" VALUE="FAQ">
+             <PARAM NAME="Local" VALUE="faq.htm">
+         </OBJECT>
+    <LI> <OBJECT TYPE="text/sitemap">
+             <PARAM NAME="Name" VALUE="Troubleshooting">
+             <PARAM NAME="Local" VALUE="trouble.htm">
+         </OBJECT>
+    <LI> <OBJECT TYPE="text/sitemap">
+             <PARAM NAME="Name" VALUE="Acknowledgements">
+             <PARAM NAME="Local" VALUE="ack.htm">
+         </OBJECT>
+</UL>
+</BODY></HTML>

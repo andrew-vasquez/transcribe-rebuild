@@ -1,0 +1,46 @@
+Transcribe! : Overview
+ | 
+Overview
+ | 
+The Transcribe! application is an assistant for people who sometimes want to work out a piece of music from a recording, in order to write it out or play it themselves. Transcribe! is also used by many people for play-along practice, and also for speech transcription.
+The usual technique for transcribing music is to listen repeatedly to each bit, using your ear and your brain to work out what is happening. Unless you have perfect pitch then you also need a piano or a guitar handy to check which note is which.
+However, conventional music players (whether hardware or software) are really designed for people who want to listen to whole tracks. They are very inconvenient for transcribing music as they are not designed for this purpose.
+Transcribe! does not fundamentally change the process of listening and working it out, but it provides help to make it easier and quicker. The music is presented as a scrolling waveform display, you can place markers for sections, measures and beats and give those markers names so you always know where you are. The playback interface is flexible and responsive - for instance you can change loop points, playback speed, pitch etc while playback continues. The "navigation bar" gives an overall picture of the piece and the markers you have placed. You can click on it to jump to any point immediately. Multiple loops can be saved and recalled. There are many commands related to selection and playback, and you can control them from fully configurable keyboard shortcuts. You can use various kinds of pedals to control playback if you want, allowing hands-free operation - start & stop playback with your feet. You can configure "global shortcuts" - that is, keyboard shortcuts which work even when Transcribe! is not the active application. So you could be using a music notation package to write your transcription, while still being able to control Transcribe! for playback using the keyboard (or indeed pedals, if you have any).
+Other features:
+"Piano Roll" view showing Transcribe!'s attempts to guess the notes being played.
+Spectrum analysis feature which can help to identify the notes being played at any selected moment.
+Chord guessing, based on the note guesses.
+Built-in piano keyboard which you can click on to provide reference notes.
+Choice of normal stereo playback or flexible channel mixer including "karaoke" (phase-reversed mix) mode.
+31 band graphic EQ.
+Tuning control plus/minus 3 octaves, in hundreths of a semitone (cents).
+Special handling for transposing instruments.
+Speed control from 1/20 speed to double speed.
+Display video if present, synchronised to the audio.
+Support for video subtitles.
+Support for multiple sound tracks (e.g. different languages).
+Export sound & video files with altered speed/pitch etc, suitable for playing in other programs.
+Automation - you can use a script file to tell Transcribe! to do things automatically, such as processing sound files or playing them.
+The "text zone" where you can add arbitrary textual annotations (lyrics, chord symbols, comments, etc).
+Tempo computation, based on markers placed by you.
+It is important to understand that Transcribe! does not attempt to do the transcribing for you,
+processing an audio file and outputting musical notation or MIDI - this would be nice,
+but is a currently unsolved research problem for polyphonic music. Transcribe! cannot
+work out where the beat is, and although the spectrum analysis feature is very useful
+for working out those hard-to-hear chords, you must still use your ear and brain to
+decide which of the peaks in the spectrum are notes being played, which are merely
+harmonics, and which are just the result of noise and broad-spectrum instruments such
+as drums. If you have never worked out even a simple piece of music by ear then
+Transcribe! will probably not help you, but if you do sometimes work out recorded
+music by ear then Transcribe! can make the job a lot quicker and easier.
+Transcribe! takes no interest in MIDI files - these already contain explicit
+information about what notes are to be played and when, and there are plenty of
+programs available which can display this information. Transcribe! deals with audio
+sample data files, referred to here as "sound files".
+Transcribe! is not an editor. It records, reads and plays sound files but does
+not modify them. It can also export modified sound files (e.g. with pitch or speed change applied) although this is not its primary purpose.
+Transcribe! is Copyright © 1998-2026 Seventh String Software. All Rights Reserved.
+Installing, Uninstalling, and System Requirements
+Click here for information on Installing, Uninstalling, and System Requirements.
+Getting Started
+Click here to get started with Transcribe!, if you are a new user.

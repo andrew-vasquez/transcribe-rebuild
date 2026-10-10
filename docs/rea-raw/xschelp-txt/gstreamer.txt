@@ -1,0 +1,12 @@
+Transcribe! : GStreamer
+ | 
+GStreamer
+ | 
+GStreamer
+GStreamer is an open source library for handling audio and video media on Windows, Mac and Linux.
+Transcribe! uses GStreamer for all video handling on Windows, Mac, and Linux.
+We include GStreamer as part of the Transcribe! installation, so you don't need to install it yourself.
+Transcribe! has its own native readers for various sound file formats. If these are not able to open the file then it will use GStreamer and if this also fails then it will use "AVFoundation" (which is part of macOS).
+The use of GStreamer is enabled by default but you can change this by holding down the <shift> key when you launch.
+If Transcribe! nevertheless tells you that you need to enable GStreamer to do something then this means that in the past you have disabled it. So you should hold down the <shift> key when you launch Transcribe!, in order to re-enable it.
+For more information about GStreamer please see the GStreamer page in the Resources section of the Seventh String website https://www.seventhstring.com/resources/gstreamer.html

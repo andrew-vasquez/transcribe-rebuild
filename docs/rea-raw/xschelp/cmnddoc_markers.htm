@@ -1,0 +1,79 @@
+
+
+
+
+
+
+
+<HTML><HEAD><TITLE>Transcribe! : Commands: Markers and navigation</TITLE></HEAD>
+<BODY BGCOLOR=#ffffff TEXT=#000000 LINK=#ff0000 ALINK=#ff0000 VLINK=#ff0000>
+
+<TABLE BORDER="0" CELLSPACING="0" CELLPADDING="0" WIDTH="100%">
+   <TR>
+      <TD ALIGN="CENTER" VALIGN="MIDDLE"><H2>Commands: Markers and navigation</H2></TD>
+      <TD ALIGN="RIGHT" VALIGN="MIDDLE">
+<A HREF="contents.htm"><img align=center src="contents.png" BORDER=0 ALT="Home"></A>
+<A HREF="cmnddoc.htm"><img align=center src="up.png" BORDER=0 ALT="Up"></A>
+<A HREF="cmnddoc_textblocks.htm"><img align=center src="back.png" BORDER=0 ALT="Previous"></A>
+<A HREF="cmnddoc_view.htm"><img align=center src="forward.png" BORDER=0 ALT="Next"></A>
+      </TD>
+   </TR>
+</TABLE>
+
+
+<HR>
+
+
+
+<center><h3>Commands that can be used as Keyboard, Pedal, or Midi shortcuts as well as automation.</h3></center><p>
+
+<b>MarkerNewSection</b>: Create new section marker at currently playing point, or prompt for instructions if not playing.<p>
+<b>MarkerNewMeasure</b>: Create new measure marker at currently playing point, or prompt for instructions if not playing.<p>
+<b>MarkerNewBeat</b>: Create new beat marker at currently playing point, or prompt for instructions if not playing.<p>
+<b>MarkerNewSectionSilent</b>: Create new section marker at currently playing point if playing, else pause point if paused, else current point.<p>
+<b>MarkerNewMeasureSilent</b>: Create new measure marker at currently playing point if playing, else pause point if paused, else current point.<p>
+<b>MarkerNewBeatSilent</b>: Create new beat marker at currently playing point if playing, else pause point if paused, else current point.<p>
+<b>MarkerNewSectionCurrent</b>: Create new section marker at the current point.<p>
+<b>MarkerNewMeasureCurrent</b>: Create new measure marker at the current point.<p>
+<b>MarkerNewBeatCurrent</b>: Create new beat marker at the current point.<p>
+<b>MarkersDelete</b>: Delete all markers in the selected region.<p>
+<b>MarkersEqualSpace</b>: Equally space the markers in the selected region. See the Help for the Markers menu for details.<p>
+<b>ComputeTempo</b>: Compute tempo, based on markers in selected region.<p>
+<b>MarkerNewSectionEE</b>: Create new section markers at each end of the current selection.<p>
+<b>MarkerNewMeasureEE</b>: Create new measure markers at each end of the current selection.<p>
+<b>MarkerNewBeatEE</b>: Create new beat markers at each end of the current selection.<p>
+<b>MarkerEditMostRecent</b>: Edit the most recently created or edited marker.<p>
+<b>MarkerEditNearestCurrent</b>: Edit the marker nearest to the current point.<p>
+<b>MarkerEditNearestPlaying</b>: Edit the marker nearest to the playing or paused point.<p>
+<b>ViewNavBarShow</b>: Show Navigation Bar<p>
+<b>ViewNavBarHide</b>: Hide Navigation Bar<p>
+<b>ViewNavBarToggle</b>: Toggle Navigation Bar<p>
+<b>ViewNavbarMeasuresOn</b>: Include measure markers on the navigation bar.<p>
+<b>ViewNavbarMeasuresOff</b>: Do not include measure markers on the navigation bar.<p>
+<b>ViewNavbarMeasuresToggle</b>: Toggle inclusion of measure markers on the navigation bar.<p>
+<b>ViewNavbarMeasuresMenuOn</b>: Include measure markers on the navigation bar's context menu.<p>
+<b>ViewNavbarMeasuresMenuOff</b>: Do not include measure markers on the navigation bar's context menu.<p>
+<b>ViewNavbarMeasuresMenuToggle</b>: Toggle inclusion of measure markers on the navigation bar's context menu.<p>
+<b>ScrollToStart</b>: Scroll to start of piece. No change to current point or selection.<p>
+<b>ScrollToEnd</b>: Scroll to end of piece. No change to current point or selection.<p>
+<b>ScrollLineLeft</b>: Scroll to left, like buttoning the left arrow on the scrollbar. No change to current point or selection.<p>
+<b>ScrollLineRight</b>: Scroll to right, like buttoning the right arrow on the scrollbar. No change to current point or selection.<p>
+<b>ScrollPageLeft</b>: Scroll to left, like buttoning the scrollbar to the left of the thumb. No change to current point or selection.<p>
+<b>ScrollPageRight</b>: Scroll to right, like buttoning the scrollbar to the right of the thumb. No change to current point or selection.<p>
+<b>ScrollSelectionIntoView</b>: Scroll the current point or selection into view. No change to current point or selection.<p>
+<b>ScrollPlayingIntoView</b>: Scroll the currently playing or paused point view. No change to current point or selection. This is unnecessary if scroll mode is on.<p>
+<b>TimestampCopyCurrentPoint</b>: Copies a timestamp representing the position of the current point (the little red triangle) in the form "mm:ss" (minutes and seconds) so you can paste it to somewhere else. If you have a non-empty selection then you will also get the length of the selection, after a comma.<p>
+<b>TimestampCopyPlayingPoint</b>: Copies a timestamp representing the position of the currently playing point (or paused point if you are paused, or current point if you are stopped) in the form "mm:ss" (minutes and seconds) so you can paste it to somewhere else.<p>
+
+You can also export markers to a text file : see the MarkersAndTextBlocksExport command in the "Text blocks" section.<p>
+
+
+<hr>
+<center><h3>Commands that require parameters, which can only be used for <A HREF="automation.htm">Automation</A>.</h3></center><p>
+
+<b>MarkerNewSeconds(text, double)</b>: Create a new marker.<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Parameter 1: "S" "M" or "B" for section, measure, or beat marker.<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Parameter 2: marker position in seconds.<br>
+If the position is beyond the end of the track, the command will be silently ignored.<p>
+
+</HTML>

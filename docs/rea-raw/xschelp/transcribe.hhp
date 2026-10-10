@@ -1,0 +1,92 @@
+[OPTIONS]
+Compatibility=1.1
+Full-text search=Yes
+Contents file=transcribe.hhc
+Compiled file=transcribe.chm
+Default Window=Help
+Default topic=contents.htm
+Charset=utf-8
+Index file=transcribe.hhk
+Title=Transcribe!
+
+[WINDOWS]
+Help=,"transcribe.hhc","transcribe.hhk","contents.htm",,,,,,0x2420,,0x380e,,,,,0,,,
+
+[FILES]
+contents.htm
+overview.htm
+install.htm
+getstarted.htm
+gs_obtain.htm
+gs_create.htm
+gs_window.htm
+gs_startxsc.htm
+menus.htm
+app_menu.htm
+prefs_general.htm
+prefs_newwindows.htm
+prefs_playback.htm
+prefs_export.htm
+prefs_markers.htm
+prefs_frets.htm
+prefs_toolbar.htm
+kb.htm
+kb925.htm
+vidami.htm
+midi.htm
+footpedal.htm
+file_menu.htm
+record.htm
+stems.htm
+view_menu.htm
+play_menu.htm
+markers_menu.htm
+text_menu.htm
+pianoroll_menu.htm
+window_menu.htm
+help_menu.htm
+toolbar.htm
+mouse.htm
+fx.htm
+fx_mix.htm
+fx_eq.htm
+fx_tuning.htm
+fx_transposition.htm
+fx_speed.htm
+fx_misc.htm
+various.htm
+introxsc.htm
+sound.htm
+gstreamer.htm
+video.htm
+xsc_files.htm
+automation.htm
+cmnddoc.htm
+cmnddoc_files.htm
+cmnddoc_app.htm
+cmnddoc_playing.htm
+cmnddoc_looping.htm
+cmnddoc_textblocks.htm
+cmnddoc_markers.htm
+cmnddoc_view.htm
+cmnddoc_selection.htm
+cmnddoc_fx.htm
+organise.htm
+spectrum.htm
+guess.htm
+notefreq.htm
+speech.htm
+playalong.htm
+slow.htm
+contact.htm
+license.htm
+buying.htm
+faq.htm
+trouble.htm
+ack.htm
+
+[ALIAS]
+#include "transcribe_alias.h"
+
+[MAP]
+#include "transcribe_ids.h"

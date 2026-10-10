@@ -1,0 +1,309 @@
+<!DOCTYPE HTML PUBLIC "-//IETF//DTD HTML//EN">
+<HTML>
+<HEAD>
+<meta name="GENERATOR" content="HelpBlocks">
+<!-- Sitemap 1.0 -->
+</HEAD><BODY>
+<OBJECT type="text/site properties">
+</OBJECT>
+<UL>
+  <LI><OBJECT type="text/sitemap">
+      <param name="Name" value="Contents">
+      <param name="Local" value="contents.htm">
+      </OBJECT>
+  <LI><OBJECT type="text/sitemap">
+      <param name="Name" value="Overview">
+      <param name="Local" value="overview.htm">
+      </OBJECT>
+  <LI><OBJECT type="text/sitemap">
+      <param name="Name" value="Installing, Uninstalling, and System Requirements">
+      <param name="Local" value="install.htm">
+      </OBJECT>
+  <LI><OBJECT type="text/sitemap">
+      <param name="Name" value="Getting Started">
+      <param name="Local" value="getstarted.htm">
+      </OBJECT>
+  <UL>
+    <LI><OBJECT type="text/sitemap">
+        <param name="Name" value="Obtaining a Sound File">
+        <param name="Local" value="gs_obtain.htm">
+        </OBJECT>
+    <LI><OBJECT type="text/sitemap">
+        <param name="Name" value="Creating a New Transcription">
+        <param name="Local" value="gs_create.htm">
+        </OBJECT>
+    <LI><OBJECT type="text/sitemap">
+        <param name="Name" value="The Transcription Window">
+        <param name="Local" value="gs_window.htm">
+        </OBJECT>
+    <LI><OBJECT type="text/sitemap">
+        <param name="Name" value="Starting to Transcribe">
+        <param name="Local" value="gs_startxsc.htm">
+        </OBJECT>
+  </UL>
+  <LI><OBJECT type="text/sitemap">
+      <param name="Name" value="Menus and Toolbar">
+      <param name="Local" value="menus.htm">
+      </OBJECT>
+  <UL>
+    <LI><OBJECT type="text/sitemap">
+        <param name="Name" value="Application Menu">
+        <param name="Local" value="app_menu.htm">
+        </OBJECT>
+    <UL>
+      <LI><OBJECT type="text/sitemap">
+          <param name="Name" value="Preferences - General">
+          <param name="Local" value="prefs_general.htm">
+          </OBJECT>
+      <LI><OBJECT type="text/sitemap">
+          <param name="Name" value="Preferences - New Windows">
+          <param name="Local" value="prefs_newwindows.htm">
+          </OBJECT>
+      <LI><OBJECT type="text/sitemap">
+          <param name="Name" value="Preferences - Playback">
+          <param name="Local" value="prefs_playback.htm">
+          </OBJECT>
+      <LI><OBJECT type="text/sitemap">
+          <param name="Name" value="Preferences - Export">
+          <param name="Local" value="prefs_export.htm">
+          </OBJECT>
+      <LI><OBJECT type="text/sitemap">
+          <param name="Name" value="Preferences - Markers">
+          <param name="Local" value="prefs_markers.htm">
+          </OBJECT>
+      <LI><OBJECT type="text/sitemap">
+          <param name="Name" value="Preferences - Fret Display">
+          <param name="Local" value="prefs_frets.htm">
+          </OBJECT>
+      <LI><OBJECT type="text/sitemap">
+          <param name="Name" value="Preferences - Toolbar">
+          <param name="Local" value="prefs_toolbar.htm">
+          </OBJECT>
+      <LI><OBJECT type="text/sitemap">
+          <param name="Name" value="Keyboard Shortcuts">
+          <param name="Local" value="kb.htm">
+          </OBJECT>
+      <LI><OBJECT type="text/sitemap">
+          <param name="Name" value="Keyboard Shortcuts 9.25 Update">
+          <param name="Local" value="kb925.htm">
+          </OBJECT>
+      <LI><OBJECT type="text/sitemap">
+          <param name="Name" value="Vidami Pedal">
+          <param name="Local" value="vidami.htm">
+          </OBJECT>
+      <LI><OBJECT type="text/sitemap">
+          <param name="Name" value="MIDI Shortcuts">
+          <param name="Local" value="midi.htm">
+          </OBJECT>
+      <LI><OBJECT type="text/sitemap">
+          <param name="Name" value="Foot Pedals">
+          <param name="Local" value="footpedal.htm">
+          </OBJECT>
+    </UL>
+    <LI><OBJECT type="text/sitemap">
+        <param name="Name" value="File menu">
+        <param name="Local" value="file_menu.htm">
+        </OBJECT>
+    <UL>
+      <LI><OBJECT type="text/sitemap">
+          <param name="Name" value="Record New Sound File">
+          <param name="Local" value="record.htm">
+          </OBJECT>
+      <LI><OBJECT type="text/sitemap">
+          <param name="Name" value="Stem Files">
+          <param name="Local" value="stems.htm">
+          </OBJECT>
+    </UL>
+    <LI><OBJECT type="text/sitemap">
+        <param name="Name" value="View menu">
+        <param name="Local" value="view_menu.htm">
+        </OBJECT>
+    <LI><OBJECT type="text/sitemap">
+        <param name="Name" value="Play Menu">
+        <param name="Local" value="play_menu.htm">
+        </OBJECT>
+    <LI><OBJECT type="text/sitemap">
+        <param name="Name" value="Markers Menu">
+        <param name="Local" value="markers_menu.htm">
+        </OBJECT>
+    <LI><OBJECT type="text/sitemap">
+        <param name="Name" value="Text Menu">
+        <param name="Local" value="text_menu.htm">
+        </OBJECT>
+    <LI><OBJECT type="text/sitemap">
+        <param name="Name" value="Piano Roll Menu">
+        <param name="Local" value="pianoroll_menu.htm">
+        </OBJECT>
+    <LI><OBJECT type="text/sitemap">
+        <param name="Name" value="Window Menu">
+        <param name="Local" value="window_menu.htm">
+        </OBJECT>
+    <LI><OBJECT type="text/sitemap">
+        <param name="Name" value="Help Menu">
+        <param name="Local" value="help_menu.htm">
+        </OBJECT>
+    <LI><OBJECT type="text/sitemap">
+        <param name="Name" value="Toolbar">
+        <param name="Local" value="toolbar.htm">
+        </OBJECT>
+    <LI><OBJECT type="text/sitemap">
+        <param name="Name" value="Mouse Commands">
+        <param name="Local" value="mouse.htm">
+        </OBJECT>
+  </UL>
+  <LI><OBJECT type="text/sitemap">
+      <param name="Name" value="Audio Effects and Controls Window">
+      <param name="Local" value="fx.htm">
+      </OBJECT>
+  <UL>
+    <LI><OBJECT type="text/sitemap">
+        <param name="Name" value="Mono/Karaoke">
+        <param name="Local" value="fx_mix.htm">
+        </OBJECT>
+    <LI><OBJECT type="text/sitemap">
+        <param name="Name" value="EQ">
+        <param name="Local" value="fx_eq.htm">
+        </OBJECT>
+    <LI><OBJECT type="text/sitemap">
+        <param name="Name" value="Tuning">
+        <param name="Local" value="fx_tuning.htm">
+        </OBJECT>
+    <LI><OBJECT type="text/sitemap">
+        <param name="Name" value="Transposition">
+        <param name="Local" value="fx_transposition.htm">
+        </OBJECT>
+    <LI><OBJECT type="text/sitemap">
+        <param name="Name" value="Speed">
+        <param name="Local" value="fx_speed.htm">
+        </OBJECT>
+    <LI><OBJECT type="text/sitemap">
+        <param name="Name" value="Misc">
+        <param name="Local" value="fx_misc.htm">
+        </OBJECT>
+  </UL>
+  <LI><OBJECT type="text/sitemap">
+      <param name="Name" value="Various Topics">
+      <param name="Local" value="various.htm">
+      </OBJECT>
+  <UL>
+    <LI><OBJECT type="text/sitemap">
+        <param name="Name" value="Introduction to Transcribing Music">
+        <param name="Local" value="introxsc.htm">
+        </OBJECT>
+    <LI><OBJECT type="text/sitemap">
+        <param name="Name" value="Sound Files">
+        <param name="Local" value="sound.htm">
+        </OBJECT>
+    <LI><OBJECT type="text/sitemap">
+        <param name="Name" value="GStreamer">
+        <param name="Local" value="gstreamer.htm">
+        </OBJECT>
+    <LI><OBJECT type="text/sitemap">
+        <param name="Name" value="Video">
+        <param name="Local" value="video.htm">
+        </OBJECT>
+    <LI><OBJECT type="text/sitemap">
+        <param name="Name" value="Transcription Files">
+        <param name="Local" value="xsc_files.htm">
+        </OBJECT>
+    <LI><OBJECT type="text/sitemap">
+        <param name="Name" value="Automation">
+        <param name="Local" value="automation.htm">
+        </OBJECT>
+    <LI><OBJECT type="text/sitemap">
+        <param name="Name" value="Commands for shortcuts and automation">
+        <param name="Local" value="cmnddoc.htm">
+        </OBJECT>
+    <UL>
+      <LI><OBJECT type="text/sitemap">
+          <param name="Name" value="Transcription and Sound File commands">
+          <param name="Local" value="cmnddoc_files.htm">
+          </OBJECT>
+      <LI><OBJECT type="text/sitemap">
+          <param name="Name" value="Application, windows and preferences commands">
+          <param name="Local" value="cmnddoc_app.htm">
+          </OBJECT>
+      <LI><OBJECT type="text/sitemap">
+          <param name="Name" value="Playing commands">
+          <param name="Local" value="cmnddoc_playing.htm">
+          </OBJECT>
+      <LI><OBJECT type="text/sitemap">
+          <param name="Name" value="Looping commands">
+          <param name="Local" value="cmnddoc_looping.htm">
+          </OBJECT>
+      <LI><OBJECT type="text/sitemap">
+          <param name="Name" value="Text block commands">
+          <param name="Local" value="cmnddoc_textblocks.htm">
+          </OBJECT>
+      <LI><OBJECT type="text/sitemap">
+          <param name="Name" value="Marker and navigation commands">
+          <param name="Local" value="cmnddoc_markers.htm">
+          </OBJECT>
+      <LI><OBJECT type="text/sitemap">
+          <param name="Name" value="View commands">
+          <param name="Local" value="cmnddoc_view.htm">
+          </OBJECT>
+      <LI><OBJECT type="text/sitemap">
+          <param name="Name" value="Selection commands">
+          <param name="Local" value="cmnddoc_selection.htm">
+          </OBJECT>
+      <LI><OBJECT type="text/sitemap">
+          <param name="Name" value="Audio Effects commands">
+          <param name="Local" value="cmnddoc_fx.htm">
+          </OBJECT>
+    </UL>
+    <LI><OBJECT type="text/sitemap">
+        <param name="Name" value="Organising Many Transcriptions">
+        <param name="Local" value="organise.htm">
+        </OBJECT>
+    <LI><OBJECT type="text/sitemap">
+        <param name="Name" value="Interpreting the Spectrum">
+        <param name="Local" value="spectrum.htm">
+        </OBJECT>
+    <LI><OBJECT type="text/sitemap">
+        <param name="Name" value="Note and Chord Guessing">
+        <param name="Local" value="guess.htm">
+        </OBJECT>
+    <LI><OBJECT type="text/sitemap">
+        <param name="Name" value="Note Frequencies">
+        <param name="Local" value="notefreq.htm">
+        </OBJECT>
+    <LI><OBJECT type="text/sitemap">
+        <param name="Name" value="Speech Transcription">
+        <param name="Local" value="speech.htm">
+        </OBJECT>
+    <LI><OBJECT type="text/sitemap">
+        <param name="Name" value="Play-Along Practice">
+        <param name="Local" value="playalong.htm">
+        </OBJECT>
+    <LI><OBJECT type="text/sitemap">
+        <param name="Name" value="Old and Slow Machines">
+        <param name="Local" value="slow.htm">
+        </OBJECT>
+    <LI><OBJECT type="text/sitemap">
+        <param name="Name" value="Contact and Support">
+        <param name="Local" value="contact.htm">
+        </OBJECT>
+    <LI><OBJECT type="text/sitemap">
+        <param name="Name" value="License Agreement">
+        <param name="Local" value="license.htm">
+        </OBJECT>
+    <LI><OBJECT type="text/sitemap">
+        <param name="Name" value="Evaluating and Buying Transcribe!">
+        <param name="Local" value="buying.htm">
+        </OBJECT>
+    <LI><OBJECT type="text/sitemap">
+        <param name="Name" value="FAQ">
+        <param name="Local" value="faq.htm">
+        </OBJECT>
+    <LI><OBJECT type="text/sitemap">
+        <param name="Name" value="Troubleshooting">
+        <param name="Local" value="trouble.htm">
+        </OBJECT>
+    <LI><OBJECT type="text/sitemap">
+        <param name="Name" value="Acknowledgements">
+        <param name="Local" value="ack.htm">
+        </OBJECT>
+  </UL>
+</UL>
+</BODY></HTML>

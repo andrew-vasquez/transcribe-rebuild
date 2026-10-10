@@ -1,0 +1,82 @@
+
+
+
+
+
+
+
+<HTML><HEAD><TITLE>Transcribe! : Note and Chord Guessing</TITLE></HEAD>
+<BODY BGCOLOR=#ffffff TEXT=#000000 LINK=#ff0000 ALINK=#ff0000 VLINK=#ff0000>
+
+<TABLE BORDER="0" CELLSPACING="0" CELLPADDING="0" WIDTH="100%">
+   <TR>
+      <TD ALIGN="CENTER" VALIGN="MIDDLE"><H2>Note and Chord Guessing</H2></TD>
+      <TD ALIGN="RIGHT" VALIGN="MIDDLE">
+<A HREF="contents.htm"><img align=center src="contents.png" BORDER=0 ALT="Home"></A>
+<A HREF="various.htm"><img align=center src="up.png" BORDER=0 ALT="Up"></A>
+<A HREF="spectrum.htm"><img align=center src="back.png" BORDER=0 ALT="Previous"></A>
+<A HREF="notefreq.htm"><img align=center src="forward.png" BORDER=0 ALT="Next"></A>
+      </TD>
+   </TR>
+</TABLE>
+
+
+<HR>
+
+Transcribe! will attempt some interpretation of the spectrum for you if you turn on "note guessing" and/or "chord guessing" on the View menu. Note guesses are displayed as green (in tune) and red (out of tune) blobs on the piano keyboard. Chord guesses are displayed by name at the top right of the area where the spectrum graph is. Transcribe! will report at the left of the spectrum whether it is the spectrum of your selection, or is the spectrum at the playing point or paused point or whatever.<p>
+
+If chord guessing is turned on then you can control-click the chord guess box, to get a popup menu that will allow you to insert one of the chord guesses into the <A HREF="text_menu.htm">Text zone</A>.
+The popup menu will include enharmonic alternative spellings, for instance if the box shows a guessed chord of C# then the popup menu will allow you to choose either C# or Db.<p>
+
+Transcribe! also offers a <A HREF="pianoroll_menu.htm">Piano Roll view</A> which shows note guesses in the style of a piano roll from left to right, alongside the waveform profile. You can also see the chord guesses in that view if you want to.<p>
+
+In order for this to work, it's necessary to make sure (by adjusting tuning or transposition) that the pitches of the notes being played (the peaks in the spectrum) do appear more or less centred over the middle of the corresponding piano keyboard notes. See the <A HREF="fx_tuning.htm">Tuning</A> and <A HREF="fx_transposition.htm">Transposition</A> pages.<p>
+
+
+<H3>Note Guessing</H3>
+
+Note guesses are based on the spectrum of course, so if the spectrum is messy then the note guesses are unlikely to be useful.
+See <A HREF="spectrum.htm">Interpreting the Spectrum</A> for discussion of how to get a clean spectrum. But if the overall sound is messy - for instance many instruments playing in a reverberant acoustic, or the presence of loud percussion - then it may simply not be possible to get a good result. However on suitable material the results can be very usable indeed.<P>
+
+Note guessing basically looks for peaks in the spectrum. It checks whether a peak could be a harmonic of some lower note being played, and discounts it to some extent if it could be, depending on the relative magnitudes of the peak found and of the corresponding lower note. It marks the piano keyboard with circular blobs accordingly, with the size of the blob indicating the degree of confidence that the peak found represents a note being played and not merely a harmonic.<P>
+
+It uses a green blob in the centre of the note to indicate a note reasonably close to the correct pitch, or a red blob at the side of the note to indicate a seriously out-of-tune note. If you are seeing a lot of red blobs then it might simply be that you need to adjust the tuning of the piece, see above. The presence of red blobs will prevent good chord guessing, see below.<p>
+
+This is purely guesswork and will frequently be wrong. To give one example for illustration, sometimes a brass instrument playing a single completely solo note can have stronger harmonics than the notes of a full major chord strummed on a guitar. I mean that an open D major chord in dropped-D guitar tuning can contain less F# in its spectrum than a single saxophone playing that low D does. This is despite the fact that the ear has no difficulty recognising that the guitar chord contains an F#, whereas the saxophone is playing a single note. This takes us deep into the realm of psychoacoustics, where Transcribe! is not equipped to venture. So Transcribe! will sometimes think a major chord is a single note, or vice versa. Along with many other similar possibilities for error.<P>
+
+Note guesses (and hence chord guesses too) will be particularly useless at moments when notes and chords are starting, stopping, or changing.<P>
+
+
+<H3>Chord Guessing<A NAME="chords"></A></H3>
+
+Chord guesses in turn are based on the note guesses, so of course if the note guesses are not good then the chord guesses won't be useful. In particular, badly out-of-tune notes (represented as red blobs by the note guessing) really spoil chord recognition. If a chord has many notes and Transcribe! cannot find a match then it may try discarding some upper notes to get a match. This means that high out-of-tune notes are not necessarily fatal, but low out-of-tune notes will prevent any chord match being found.<p>
+
+Chord guessing takes the list of notes identified by note guessing and attempts to match them against a list of known chord types. It will display the chord names for possible matches at the right of the spectrum, with the best match at the top.<P>
+
+Transcribe! uses the conventional chord symbols of western music ("C" to mean a C major triad, "C7" for the addition of a Bb, etc.). I am not going to write an essay on standard chord notation here : if you want to find out more then look up "chord symbols" (with the quotes) on your favourite search engine,
+or go to http://en.wikipedia.org/wiki/Chord_%28music%29<P>
+
+You do need to know what you are doing to use this feature effectively. On suitable material, if you turn on Live Spectrum (in Preferences) and set the music playing slowly, then Transcribe! will show you all the right chords - truly! But it will also show you a lot of wrong ones from moment to moment, so if you can't tell which are right and which are wrong, then the information will be pretty much useless. If you know enough to figure out chords for yourself then the information provided by Transcribe! may enable you to get the job done a lot quicker. But if you don't understand this stuff and you see Transcribe! saying "C#13b9#11/E#" then it might be a good idea to ask for advice from a more knowledgeable friend before deciding that that's really the correct thing to write on your transcription.<P>
+
+Transcribe! regards the lowest notes as more important in determining the basic nature of a chord, which means that if there is a walking bass line then you will need to select carefully which moments to analyse. Transcribe! is more likely to name the chord correctly at a moment when the bass is playing the root or 3rd of the chord, rather than say the 2nd or 4th. There are many types of material on which you won't get a useful result - for instance I've just been listening to a recording of a big band with congas bashing away - the congas play a loud and somewhat pitched sound which is not in tune with the horns and anyway has no relation to the chords. Transcribe! stands no chance.<P>
+
+Using <A HREF="prefs_general.htm#prefs_livespectrum">Live Spectrum</A> with slow playback is the quick and cheerful approach to using chord guessing, but if you want to get more serious then you should use the mouse to select just the chord you are interested in, to get a cleaner spectrum. If you see unwanted notes showing up as note guesses (blobs on the piano keyboard, green or red) then these will prevent good recognition, but there is a solution for this : command-click (and optionally drag) on the piano keyboard, to remove notes from consideration for chord guessing. This will cause the notes to appear grey. Command-click again to restore them.<p>
+
+There are three main reasons for removing notes from consideration in this way : one is mains hum which, if present, adds a spurious bottom note which will really mess up chord guessing. European hum at 50Hz shows up around G, two-and-a-half octaves below middle C. American hum at 60Hz is the B above that. So command-click on the piano keyboard to grey out these notes. Another reason is that some recordings show a lot of miscellaneous stuff low down - below the bass - which comes and goes randomly, you will see it on the spectrum jumping around at the bottom end. So once again, grey out these notes. And another reason is if chords are being played low down by guitar or piano while more complicated stuff goes on higher up such as a high-pitched solo. In that case it may be useful to grey out the entire upper range, so chord guessing looks at the lower notes only.<p>
+
+Notes which are off the end of the visible part of the piano keyboard will not be used for chord guessing, so you can also remove a range of notes from consideration by dragging the piano keyboard side-to-side so the notes in question are not visible.<P>
+
+Also remember that the settings of the EQ graphic equaliser do affect the spectrum, so this is yet another way of emphasizing or removing certain ranges from consideration. This can be useful in recordings where the bass is very powerful, because in this situation upper notes being played may be so quiet by comparison that Transcribe! decides to ignore them for note and chord guessing. The result is that Transcribe! correctly names the bass note but claims there is "no chord". So use the EQ to reduce the volume of the bass, so the higher notes become more noticeable by comparison and Transcribe! stops ignoring them.<P>
+
+Here are some specific notes about Transcribe!'s use of chord symbol notation.
+<UL>
+<LI>We use slashes in the usual way to indicate alternative bottom notes, so "C/E" means a first inversion of a C major triad. But we never do this for bottom notes that don't actually belong to the chord named, so we will never say anything like "F/B" for instance. In fact Transcribe! will name this combination of notes as "B7b9#11", with "Dm13/B" as a second choice.
+<LI>Where there is a chord with no 3rd, a musician might distinguish by context whether major or minor, but we have no way of doing that. So we only name a chord as minor if the minor 3rd is present.
+<LI>Dominant chords with several added or altered notes, we may allow to match even if they are missing the root or the 3rd (but not both).
+<LI>We say "b13" to indicate the presence of both natural 5th and #5th. But you must use your judgement : it may be that really it's just a #5, and the natural 5th only appears as an unusually strong harmonic of the root.
+<LI>We say "dim" to mean a triad such as C,Eb,Gb whereas we say "dim7" to mean a full four-note dimished.
+<LI>We name chords independently of context, which means for instance that the IV chord in the key of Ab will be called C#. Sorry about that.
+</UL><P>
+
+
+</HTML>

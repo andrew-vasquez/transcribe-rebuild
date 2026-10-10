@@ -1,0 +1,39 @@
+Transcribe! : Preferences - New Windows
+ | 
+Preferences - New Windows
+ | 
+Here you can specify your preferences for the initial state of new transcriptions,
+when they are first created by loading a sound file.
+Once a transcription (xsc) file has been saved, many things about the transcription are saved there and will be reloaded when you load that transcription file again. But when you load a sound file to create a new transcription, there is no transcription file yet so default values will be used.
+"Set position from previous session"
+You can choose how the position and size of Transcribe!'s first transcription window opened is determined. If you check this box then it will be set from the position of the last window open when you last closed Transcribe!. Otherwise it will be set from a stored default position which you can set by first moving your transcription window to the desired position, then check "Set defaults from current window" and press "Ok".
+If you check the "Set defaults from current window" box then when you press "Ok" your preferences will be set from the state of the current window. There are three choices regarding the saving of Audio Effects settings :
+None by default.
+This means that newly created transcriptions will not have any effects applied.
+Keep existing defaults.
+As it says. This option is only displayed if you have saved default Fx settings in the past.
+Set defaults from current transcription.
+As it says. You could, for instance, set half speed and then use this option. If you do, then newly created transcriptions will start with half speed already set.
+Here is a list of things saved when you "Set defaults from current window" :
+The position and size of the transcription window.
+All Audio Effects (optionally, as described above).
+Whether to show the text zone, and the font to be used.
+Whether to show the piano roll.
+Whether to show the piano at the left of the piano roll, and its position (top and bottom notes).
+The sensitivity of note display in the piano roll.
+Whether to show video, and the default video size.
+Whether to show the navigation bar.
+Whether to show the spectrum.
+Whether to show note guesses.
+Whether to show chord guesses.
+Whether to show the waveform as mono.
+Whether to show dB calibration lines on the waveform.
+Whether to show the time line above the waveform and in the navigation bar.
+Whether to show the loop line above the waveform and in the navigation bar.
+Whether to "Fit whole file" (horizontal scaling).
+Loop mode on/off, and whether to apply loop delay.
+Scroll mode on/off.
+Piano range (the top and bottom notes).
+Splitter position.
+Horizontal scaling of view.
+Whether to show the stem selector (below the upper toolbar).

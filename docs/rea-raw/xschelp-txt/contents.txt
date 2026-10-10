@@ -1,0 +1,56 @@
+Transcribe! : Transcribe! Help Contents
+ | 
+Transcribe! Help Contents
+ | 
+Version 9.70.1 for Mac OS-X
+Copyright © 1998-2026 Seventh String Software. All Rights Reserved.
+Overview
+Installing, Uninstalling, and System Requirements
+Getting Started
+Obtaining a Sound File
+Creating a New Transcription
+The Transcription Window
+Starting to Transcribe
+Menus and Toolbar
+Application Menu
+File Menu
+View Menu
+Play Menu
+Markers Menu
+Text Menu
+Piano Roll Menu
+Window Menu
+Help Menu
+Toolbar
+Mouse Commands
+Audio Effects and Controls Window
+Mono/Karaoke
+EQ
+Tuning
+Transposition
+Speed
+Misc
+Various Topics
+Introduction to Transcribing Music
+Sound Files
+GStreamer
+Video
+Transcription Files
+Automation
+Commands for shortcuts and automation
+Organising Many Transcriptions
+Interpreting the Spectrum
+Note and Chord Guessing
+Note Frequencies
+Speech Transcription
+Play-Along Practice
+Old and Slow Machines
+Contact and Support
+License Agreement
+Buying Transcribe!
+Frequently Asked Questions
+Troubleshooting
+Acknowledgements
+You can visit the home page of Seventh String at www.seventhstring.com
+where you can find more information about Transcribe! and Seventh String Software.
+You can contact Seventh String by email at andy@seventhstring.com

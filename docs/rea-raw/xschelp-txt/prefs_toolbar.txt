@@ -1,0 +1,5 @@
+Transcribe! : Preferences - Toolbar
+ | 
+Preferences - Toolbar
+ | 
+On this preferences page is a list of all the available toolbar buttons. You can choose which ones actually appear in the toolbar by checking the checkboxes. See also the Toolbar page

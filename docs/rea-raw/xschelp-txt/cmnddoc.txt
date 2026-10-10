@@ -1,0 +1,16 @@
+Transcribe! : Commands for shortcuts and automation
+ | 
+Commands for shortcuts and automation
+ | 
+Internally, Transcribe! has over 400 commands which are used to control its operation. These commands are normally triggered by you selecting an item from a menu or pressing a button on the toolbar, but you can also access these commands as shortcuts from the keyboard, from MIDI, from Pedals, and also by putting them into a "Script" file for automation.
+Some commands have "parameters" (extra information required to run the command) and these can only be used for automation, not for shortcuts. For instance "FileOpen" can be used as a shortcut and it will bring up the dialog for you to select a file to open. On the other hand "FileOpenNamed" does not bring up a dialog, instead it opens a specific named file. So "FileOpenNamed" cannot be used as a shortcut because it needs to be told what the name of the file is.
+Here is a complete list of all available commands, divided into 10 categories. In each category the commands available for shortcuts (having no parameters) are listed first, then the commands which do have parameters and which can only be used for automation. For more details about how to use parameters, see Automation.
+Application, windows, prefs
+Files
+View
+Playing
+Selection
+Looping
+Markers and navigation
+Text blocks
+Audio Effects

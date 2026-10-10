@@ -1,0 +1,13 @@
+Transcribe! : Installing, Uninstalling, and System Requirements
+ | 
+Installing, Uninstalling, and System Requirements
+ | 
+System Requirements
+macOS 10.10 or later.
+Transcribe! is also available for Windows and Linux.
+Installing Transcribe!
+If you are reading this then you probably already have installed it. But for completeness : Transcribe! for Mac is distributed as a dmg (disk image) file. That means that when you download it, you should double-click the dmg and it will open to show you the Transcribe! application. Drag the application to your Applications folder. Then you can eject and delete the dmg, you don't need it any more.
+Beware of deleting the application, even if you have dragged it into the dock. Remember that dragging an application to the dock does not create a copy of it. If you drag the application to the dock and then trash the application from where it was, then it will disappear the next time the trash is emptied.
+If you want to back up Transcribe! then you should control-click the application and "Compress" which will get you a zip file to save somewhere safe.
+If You Want To Uninstall Transcribe!
+Simply drop the Transcribe! application in the recycle bin.

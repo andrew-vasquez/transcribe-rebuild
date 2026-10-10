@@ -1,0 +1,123 @@
+Transcribe! : Keyboard Shortcuts
+ | 
+Keyboard Shortcuts
+ | 
+Keyboard shortcuts can be used for controlling most aspects of Transcribe!'s operation. You can configure these shortcuts as you wish, apart from a few standard shortcuts used by the system such as Cut, Copy, Paste, Undo, Redo, which can't be changed.
+NOTE about updating from pre-9.25 versions of Transcribe!:
+In version 9.25 we have changed and improved the keyboard shortcut system. If you have created shortcuts of your own in a pre-9.25 version then you may find that you need to update some of the keystrokes which trigger those commands (depending on what keystrokes you used).
+Click here for more info.
+When you create a shortcut for a Transcribe! command which corresponds to a command on one of Transcribe!'s menus then the shortcut will be displayed on the menu too.
+Depending on how your computer is set up, various keystroke combinations may be "grabbed" by the operating system before Transcribe! sees them, for instance option-tab usually switches between windows. Such combinations cannot be used for Transcribe! shortcuts, but this should not be a problem as there are plenty more you can use.
+If you use "Spaces" on the Mac, then it is possible that the arrow-key shortcuts used by Spaces will prevent those arrow-key shortcuts from working in Transcribe!. You can get around that either by telling Spaces to use different shortcuts, or creating different shortcuts for Transcribe! as described on this page.
+On Mac, the <control> key cannot be used for keyboard shortcuts. Shortcuts which would use <control> on Windows use <command> instead on Mac.
+The <command> key on a Mac is the key showing an Apple and/or a cloverleaf.
+Keyboards and their drivers are in fact a very quirky area what with different language layouts, hot keys, OEM-specific extra keys and so on. So you may find that some key combinations may not show up at all in the "Type a key" box (see below) in which case you can't use them as shortcuts in Transcribe!, or they may show up wrongly - either the key itself or the modifiers used may be reported incorrectly - in which case you can use them despite being named incorrectly. If it's a problem, just use a different keystroke for your shortcut.
+These shortcuts only work when one of your transcription windows is active, because other windows may want the keystrokes themselves. If you have been adjusting something in the Audio Effects and Controls window, for instance, then the keyboard shortcuts listed here won't work. All you have to do, though, is press the Escape key which will take you back to the transcription window where shortcuts have their usual effect. If you are working with video then shortcuts do work in the video window. See also the section about Global Shortcuts, below.
+Transcribe! has various keyboard shortcuts configured by default, here is a list of them. If you press the Default button in the Keyboard Shortcuts dialog then these shortcuts will be restored, but additional shortcuts you have defined will not be deleted. Please Note that some new default shortcuts may appear in this list from time to time with new Transcribe! releases. Transcribe! will not automatically load these in case they overwrite shortcuts defined by you. So press the Default button if you want to be sure of having all the shortcuts listed here.
+Application
+ | Command - O | Open
+ | Command - S | Save
+ | Command-shift - S | Save As
+ | Command - W | Close window
+ | Command - P | Previous window
+ | Command - N | Next window
+ | F1 | Help
+Playing
+ | Spacebar | Start Play from current point, or Pause if already playing.
+ | Shift - Spacebar | Start Play after a delay (see Preferences - Playback - "Playback start delay").
+ | Enter | Resume playback from paused point, or pause if already playing.
+ | . (period, full stop) | Stop.
+ | , (comma) | Pause / Unpause.
+ | C | Cue (skip rapidly forwards).
+ | R | Review (skip rapidly backwards).
+ | O | Scrub backwards.
+ | P | Scrub forwards.
+ | A | Loop A-B (set loop start and end while playing). Press twice to set start and end.
+ | Command - L | Loop mode on/off.
+ | Command - R | Scroll mode.
+ | Command - 1, 2, 3, 4 | Speed 100%, 50%, 35%, 25%
+ | Command - 7, 8, 9, 0 | Speed -3%, -1%, +1%, +3%
+ | Z | When pressed : Play only as long as the key is held down. When released : pause playback.
+ | ; (semicolon) | When pressed : if paused then resume playback. If stopped then start playback as if spacebar was pressed. Play only as long as the key is held down. When released : pause playback. The effect of this is that this key can be used to play back progressively, resuming playback each time the key is pressed at the point where playback paused when the key was last released.
+ | - (minus) | Decrease volume.
+ | = (equals) | Increase volume.
+Markers
+ | S | New Section
+ | M | New Measure
+ | B | New Beat
+ | Shift - S | New Section (silent)
+ | Shift - M | New Measure (silent)
+ | Shift - B | New Beat (silent)
+Text Blocks
+ | T | New Text Block
+ | Shift - T | New Text Block (silent)
+Current point & Selection
+ | Left arrow | Enlarge the selection at the left.
+ | Right arrow | Reduce the selection at the left.
+ | Shift - Left arrow | Reduce the selection at the right.
+ | Shift - Right arrow | Enlarge the selection at the right.
+ | [ | Move selection or current point to left.
+ | ] | Move selection or current point to right.
+ | Shift - [ | Move selection or current point to previous marker.
+ | Shift - ] | Move selection or current point to next marker.
+ | Command - [ | Move selection or current point to previous measure or section marker.
+ | Command - ] | Move selection or current point to next measure or section marker.
+ | Option - [ | Move selection or current point to previous section marker.
+ | Option - ] | Move selection or current point to next section marker.
+ | E | Set the current point to the currently playing or paused point.
+ | J, K, L | These create a small (1, 2 or 3 tenths of a second respectively) selection, centred on the currently playing point. This is intended to allow instant looping of a single note (if you have loop mode switched on).
+ | D | Select from the current point to the currently playing or paused point.
+ | 1, 2, 3, 4 | Set the current point to the left by 10, 5, 2, or 1 seconds.
+ | U, I | These cancel any existing selection, placing the current point at either the left or the right edge (respectively) of where the selection was.
+Zoom zoom
+ | Command - Right arrow | Horizontal zoom in.
+ | Command - Left arrow | Horizontal zoom out.
+ | Command - Up arrow | Vertical zoom in.
+ | Command - Down arrow | Vertical zoom out.
+ | Command - G | Fit whole file.
+ | Command - F | Fit selection.
+Scrolling
+ | Up arrow | Small scroll to left.
+ | Down arrow | Small scroll to right.
+ | Page Up | Big scroll to left.
+ | Page Down | Big scroll to right.
+ | Home | Scroll to start.
+ | End | Scroll to end.
+ | Q | Scroll selection into view.
+ | W | Scroll the currently playing or paused point into view.
+Miscellaneous
+ | 0 | Turn video subtitles on/off.
+Configuring Keyboard Shortcuts
+As already mentioned, the above list shows the default configuration but you can change it with the Keyboard Shortcuts dialog.
+Transcribe! has hundreds of commands which can be triggered by a keystroke if you want. Each command has a unique name which is fairly short and uses mixed case and no spaces, for instance "PlayPauseOn" pauses playback and "RecentFile7" loads the seventh file on the Recent Files list. You can find a complete list here.
+The list box at the top of the dialog shows all currently configured shortcuts. The first column shows the keystroke, the second column shows the name of the command to trigger when the key is pressed, the third column shows the name of the command to trigger when the key is released (if any). You can click on any line to display its details in the "Shortcut Details" box, and this is where you can change its function if you want.
+To create a new shortcut, first click on the "Type a key" box, then type the key you want to define a shortcut for. Its description should appear in the box. Then press the "Create or Edit shortcut" button. If there was already a shortcut for this keystroke then it will show it to you. Otherwise it will create a new one, with no commands yet defined for it. Press either of the "Select" buttons to specify a command for pressing and/or releasing this keystroke.
+You can also change the keystroke which triggers an existing shortcut command. To do this you select the shortcut whose keystroke you want to change in the listbox at the top of the dialog, you type the new keystroke into the "Type a key" box, and then you press the button in the "Change the keystroke" box.
+You can make a single keystroke do two things by doing one on press, the other on release. If you want a single keystroke to recall a stored loop position and start playback then set its "press" command to e.g. "LoopRecall6" and its "release" command to "PlaySelectionStart".
+Or to select a whole measure around the current point set its "press" command to "SelectionIncreaseRightMeasure" and its "release" command to "SelectionIncreaseLeftMeasure".
+Then to advance the selection to the next whole measure, program another key with its "press" command to "SelectionIncreaseRightMeasure" and its "release" command to "SelectionDecreaseLeftMeasure".
+This is just to give you an idea of the sort of thing you can do.
+The "Select Command" Dialog
+This shows a list of the commands available so you can select one (or "none" at the top of the list). They are divided into categories so you should click one of the radio buttons to display the commands in that category. If the currently selected command does not belong to the selected category then the currently selected command will be added to the list anyway so you can see it, just below the "none" entry.
+Click on any of these and a description of its action appears below the listbox. You can find a complete list here. Of course, many of them correspond to commands you already know about if you are familiar with Transcribe! : commands found on the menus and toolbar.
+Pedals which pretend to be keyboards
+Some pedals send keystrokes as if from a keyboard - that is, they send text characters to the currently active application exactly as a keyboard does. If you have such a pedal then you can always configure Transcribe!'s responses using the Keyboard Shortcuts dialog in the usual way, that is:
+(1) Click on the "Type a key" box with the mouse.
+(2) Press the pedal buttons to see what characters arrive.
+(3) Select responses just as you would for a regular keyboard.
+And in fact it is a good idea to try tapping the buttons in this way anyway, just to check that the pedal really is sending text characters, and to see what characters you get. Some pedals - in particular the Vidami - send one character when you tap a button, and a different character if you hold it for a slightly longer time. Also some pedals (including the Vidami) always send the key press event immediately followed by the key release, even if you have not released the button yet. Of course this only makes a difference if you program a command for Transcribe! to do when the key is released.
+You are perfectly welcome to configure the responses however you want, but if you press the "Quick Setup for pedals which pretend to be keyboards" button then you will find that we provide some default setups which you may find useful. We provide default setups for one-button, two-button, and three-button pedals, and also the Vidami five-button pedal. But you can use them on pedals with any number of buttons - for example you could use a three-button quick setup to set up three of the buttons on a pedal which in fact has more buttons than that, and then program the other buttons manually in the main Keyboard Shortcuts dialog.
+Be aware that this (obviously) changes the meaning of the same keystrokes when you type them on the regular keyboard. But you can always restore Transcribe!'s default shortcuts by pressing the Default button in the main Keyboard Shortcuts dialog. If you want to know what keystrokes have been configured for the pedal then in the main Keyboard Shortcuts dialog click on the "Type a key" box with the mouse, then press the pedal buttons to see what characters arrive. You will also see the characters displayed when you press the pedal buttons while doing the quick setup.
+The one-button, two-button, and three-button setups are explained in messages you will see when you set them up. The Vidami is more complicated because it has ten commands in total, since each of the five buttons generates one character for a short tap and a different one for a longer press. So you can find full details of the three Vidami setups we offer, on this page here.
+Global Shortcuts
+You can create "global" shortcuts as well as the normal kind. That means shortcuts which remain active even when Transcribe! is not the active application. So you could be entering notes into a music notation package, or typing text into a word processor, and you might not even be able to see Transcribe! at all - but you can still control Transcribe!'s playback with global shortcuts. It is also possible to control Transcribe! with pedals when in the background. If you want Transcribe! to play when in the background, you must turn on Preferences - Playback - Keep playing when in background.
+Of course, you should use global shortcuts very sparingly because those keystrokes then become unavailable to other applications. It's best to stick to function keys and the numeric keypad. If you define a shortcut using "modifiers" such as shift or option then that key can still be used without those modifiers for its usual purpose.
+In the listing, global shortcuts appear first (before normal ones) and start with the word "Global". They show the keystroke with its modifiers (such as "shift" etc) naturally, and they can also have additional modifiers listed. When you type keystrokes into the "Type a key here" box it reports what it sees, in the same way, so you can find out what is going on.
+The additional modifiers you might see on Mac are: "Control" and "Numpad". This means that you can use these modifiers for global shortcuts even though they can't be used for normal shortcuts. The Numpad modifier distinguishes between keystrokes on the numpad, and the same keystroke not on the numpad. So a global shortcut triggered by e.g. Option-'7' on the numpad, will not be triggered if you type Option-'7' using the digits on the main part of the keyboard.
+Transcribe!'s global shortcuts "bypass" other applications, and they also bypass Transcribe!'s "Audio Effects and Controls" and "Transcription Info" windows (Transcribe!'s normal shortcuts stop working when one of those windows is in front). Transcribe!'s global shortcuts even "bypass" Transcribe!'s normal shortcuts! In other words you can define normal and global shortcuts for the same keystroke but there isn't much point as the global one would take precedence.
+Export and Import Keyboard Shortcuts
+These commands allow you to export your current keyboard shortcut list to a text file and subsequently import it again. The file created contains two versions of the list. First a machine-readable version which is the part that would be read by the Import command, then a human-readable version which is ignored by the Import command but which may be useful to you if you want to print out a list of your shortcuts for reference.
+Remember that this will export the commands as they currently are in the dialog. So if you make changes and then Export the file, it will include those changes. If you then do not "Ok" the dialog then those changes will not be kept, so the exported file will not match the reality of the program.
+If unusual characters appear when you load this file into a text editor then you may need to tell the editor to load as UTF8 since that's how it's saved.
+Importing is particularly useful if you are running Transcribe! on more than one computer. Having created a collection of shortcuts on one computer you can transfer that list by export and import, rather than having to re-create it. This works between different OS's (Windows / Mac / Linux) but be aware that commmands using the Control key on Windows or Linux will be understood as using the Command key on Mac, and vice-versa.
+Also be aware that if you transfer shortcuts between two different species of computer then global shortcuts will probably not work as they are tied to the hardware of the keyboard. You will probably need to use the "Change the keystroke" box to make them work on the new machine.

@@ -1,0 +1,70 @@
+
+
+
+
+
+
+
+<HTML><HEAD><TITLE>Transcribe! : Misc Effects Page</TITLE></HEAD>
+<BODY BGCOLOR=#ffffff TEXT=#000000 LINK=#ff0000 ALINK=#ff0000 VLINK=#ff0000>
+
+<TABLE BORDER="0" CELLSPACING="0" CELLPADDING="0" WIDTH="100%">
+   <TR>
+      <TD ALIGN="CENTER" VALIGN="MIDDLE"><H2>Misc Effects Page</H2></TD>
+      <TD ALIGN="RIGHT" VALIGN="MIDDLE">
+<A HREF="contents.htm"><img align=center src="contents.png" BORDER=0 ALT="Home"></A>
+<A HREF="fx.htm"><img align=center src="up.png" BORDER=0 ALT="Up"></A>
+<A HREF="fx_speed.htm"><img align=center src="back.png" BORDER=0 ALT="Previous"></A>
+<A HREF="various.htm"><img align=center src="forward.png" BORDER=0 ALT="Next"></A>
+      </TD>
+   </TR>
+</TABLE>
+
+
+<HR>
+
+This page has a simple volume control at the right, which is always active and only affects the current view, which is why this page does not have the usual "Active/Bypass" and "Apply to all views of this transcription" controls.<br>
+This control works by scaling the sample values, which is a quite separate matter from your computer's volume control which will also work. If you turn it up high you will get digital overload - you should instead turn up your computer's volume control if you want to increase the overall level. Transcribe!'s volume control is useful for bringing up the level of a sound file which was originally recorded too quiet. Transcribe! has a compressor/limiter so if you do turn the volume too high you will get compression rather than distortion, and a red bar will appear below the volume slider in the lower toolbar to show you the amount of compression.<P>
+
+There are in fact several other ways of adjusting the volume too. There is a slider in the <A HREF="gs_window.htm#btmbar">lower toolbar</A>. There are <A HREF="kb.htm">keyboard shortcuts</A>, and you can use a <A HREF="midi.htm">MIDI continuous controller</A>.<P>
+
+At the far right is the "Clicks" slider. If you set this to any value greater than zero then it will add metronome clicks during playback, wherever there is a marker. The sound used was recorded from a genuine old wooden metronome. To use it you will probably need to add beat markers if you haven't already, but remember that you can often do this most easily using automatic subdivisions (see the Help for the Markers menu). If you are getting an uneven beat then remember that there is an "Equally space markers" command on the Markers menu. Also be aware that if the music was originally played organically (not to a click track) then there can be subtle variations of timing between one measure and another. This is not an error or inaccuracy, it's called music! However if the music is played at an exactly constant tempo then you should be able to get accurate placement of markers with the "Equally space markers" command.
+<br>It can happen that when you tap the keyboard shortcuts to add markers while the music is playing, the markers end up late. In that case please see the <A HREF="prefs_markers.htm">Latency setting here</A>.<p>
+
+At the upper left there used to be text entry boxes "At" and "Selected". These have gone because you can now edit these values directly in the <A HREF="gs_window.htm#btmbar">lower toolbar</A>.<P>
+
+<H3>Loops</H3>
+
+Here you can store and recall any number of positions/selections, possibly for use as loops though they don't have to be. If you set a position and/or selection using the mouse on the waveform profile in the usual way and then shift-click one of the loop buttons then the position/selection will be remembered there and can be recalled with a click whenever you want. Remember that you will only get looping playback if, on the Play menu, "Loop" is on.<p>
+
+If you want to then you can also store Fx settings (speed, EQ etc) along with any loop, and those Fx settings will be restored when you select that loop. This means you can, for instance, store not only the loop position but also the speed or volume at which it is to be played.<p>
+
+Each loop button displays its number at the left, then it will say "Fx" if this loop has Fx settings stored with it, then there is space for a name which you can give it, and then a "Location indicator", giving an approximate graphical indication of where this loop is. Section markers are shown, along with the position of the stored loop. The full width of the Location indicator represents the full length of the track.<p>
+
+You can have as many loops as you want, and you will always have at least 20. Only 10 are displayed at a time, and you can scroll them with the scrollbar at the right. It can be useful to configure Recall commands as <A HREF="kb.htm">keyboard shortcuts</A> if you use them a lot. Commands from LoopStore1 and LoopRecall1 up to LoopStore20 and LoopRecall20 are available, which access the correspondingly numbered loops. Loop numbers higher than 20 can only be accessed by pressing their buttons, not by keyboard shortcuts.<p>
+
+If you double-click an occupied loop then the loop will be selected and will start playing. If you double-click a vacant loop then the current position or selection will be stored in it.<p>
+
+If you control-click a loop button then you get a pop-up menu allowing you to do various things:
+<ul>
+<li><i>Store:</i> stores the current position/selection in this loop (same as shift-click).</li>
+<li><i>Clear:</i> clears the content of this loop, leaving it empty.</li>
+<li><i>Delete:</i> removes this loop altogether, moving subsequent loops up by one.
+<li><i>Insert Before or After:</i> these insert a new empty loop, moving subsequent loops down by one.
+<li><i>Name:</i> this allows you to give the loop a name, or edit its name if it already has one.
+<li><i>Color:</i> this allows you to color the loop button, to help you remember what different loops might mean, if you have lots.
+<li><i>Store Fx:</i> stores the current Fx settings in this loop.</li>
+<li><i>Recall Fx:</i> recalls the Fx settings from this loop (if there are any), without changing your current position or selection.</li>
+<li><i>Clear Fx:</i> clears the Fx settings from this loop (if there are any).</li>
+</ul><p>
+
+You can reorder loops by clicking and dragging any loop to a new location.<p>
+
+If you choose to <A HREF="view_menu.htm#show_loopline">"Show Loop Line"</A> on the View menu then you will see these same loops displayed on the Loop Line in the main window, and you can create and select loops there instead.<p>
+
+<H3>Move</H3>
+These buttons move your current position/selection to the left or right by various amounts. For this purpose, beat markers and automatically generated subdivision markers are considered equivalent.
+If you hold down the &lt;shift&gt; key then the button will increase the selection at the relevant end. And if you hold down both &lt;shift&gt; and &lt;command&gt; keys then the button will decrease the selection at the relevant end.<br>
+There are many more commands of this nature available for configuring as <A HREF="kb.htm">keyboard shortcuts</A> if you want to.<P>
+
+</HTML>

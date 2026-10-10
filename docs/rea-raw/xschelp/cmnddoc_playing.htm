@@ -1,0 +1,81 @@
+
+
+
+
+
+
+
+<HTML><HEAD><TITLE>Transcribe! : Commands: Playing</TITLE></HEAD>
+<BODY BGCOLOR=#ffffff TEXT=#000000 LINK=#ff0000 ALINK=#ff0000 VLINK=#ff0000>
+
+<TABLE BORDER="0" CELLSPACING="0" CELLPADDING="0" WIDTH="100%">
+   <TR>
+      <TD ALIGN="CENTER" VALIGN="MIDDLE"><H2>Commands: Playing</H2></TD>
+      <TD ALIGN="RIGHT" VALIGN="MIDDLE">
+<A HREF="contents.htm"><img align=center src="contents.png" BORDER=0 ALT="Home"></A>
+<A HREF="cmnddoc.htm"><img align=center src="up.png" BORDER=0 ALT="Up"></A>
+<A HREF="cmnddoc_app.htm"><img align=center src="back.png" BORDER=0 ALT="Previous"></A>
+<A HREF="cmnddoc_looping.htm"><img align=center src="forward.png" BORDER=0 ALT="Next"></A>
+      </TD>
+   </TR>
+</TABLE>
+
+
+<HR>
+
+
+
+<center><h3>Commands that can be used as Keyboard, Pedal, or Midi shortcuts as well as automation.</h3></center><p>
+
+<b>PlaySelectionStart</b>: Play the current selection if there is one, else play from the current point (the little red triangle).<p>
+<b>PlaySelectionDelayStart</b>: Play the current selection if there is one, else play from the current point (the little red triangle), with initial delay if you have specified any in Preferences.<p>
+<b>PlaySpacebarDelayStart</b>: If not playing then start play, with initial delay if you have specified any in Preferences. If already playing then pause, with rewind if you have specified any in Preferences.<p>
+<b>PlaySpacebar</b>: If not playing then start play. If already playing then pause, with rewind if you have specified any in Preferences.<p>
+<b>PlaySpacebarNoRewind</b>: If not playing then start play. If already playing then pause, without any rewind.<p>
+<b>PlayResume</b>: If already playing then pause, with rewind if you have specified any in Preferences. If paused or cue or review then resume playing. If stopped then start play.<p>
+<b>PlayResumeNoRewind</b>: If already playing then pause, without any rewind. If paused or cue or review then resume playing. If stopped then start play.<p>
+<b>PlayTapRelease</b>: If paused or stopped then no action. If have been playing for only a short time then no action. If have been playing for longer then pause, with rewind if you have specified any in Preferences.<br>
+Intended as the release command to be used with the press commands "PlaySpacebar" or "PlayResume".<p>
+<b>PlayTapReleaseNoRewind</b>: If paused or stopped then no action. If have been playing for only a short time then no action. If have been playing for longer then pause, without any rewind.<br>
+Intended as the release command to be used with the press command "PlayResume".<p>
+<b>PlayToolbar</b>: Start playing from the current point (red triangle).<p>
+<b>PlayAll</b>: Start playing from the start of the track, without changing the current point or selection.<p>
+<b>PlayStop</b>: Launches you and your computer into orbit around Saturn. Oops no, sorry, my mistake. This one stops playback.<p>
+<b>PlayPauseOn</b>: Pause playback, with rewind if you have specified any in Preferences.<p>
+<b>PlayPauseOnNoRewind</b>: Pause playback, without any rewind.<p>
+<b>PlayPauseOff</b>: Resume playback if it was paused, else no action.<p>
+<b>PlayPauseToggle</b>: Switch between pause and play, with rewind-on-pause if you have specified any in Preferences.<p>
+<b>PlayPauseToggleNoRewind</b>: Switch between pause and play, without any rewind-on-pause.<p>
+<b>PlayScrollOn</b>: Switch on scrolling of the profile display while playing.<p>
+<b>PlayScrollOff</b>: Switch off scrolling of the profile display while playing.<p>
+<b>PlayScrollToggle</b>: Switch on/off scrolling of the profile display while playing.<p>
+<b>PlayCueStart</b>: Skip rapidly forwards while playing.<p>
+<b>PlayCueToggle</b>: Start or stop skipping rapidly forwards while playing.<p>
+<b>PlayReviewStart</b>: Skip rapidly backwards while playing.<p>
+<b>PlayReviewToggle</b>: Start or stop skipping rapidly backwards while playing.<p>
+<b>PlayCueReviewEnd</b>: Return from Cue/Review to normal playback.<p>
+<b>PlayScrubForwardsPause</b>: Scrub forwards, going into Pause mode after 0.75 seconds<p>
+<b>PlayScrubBackwardsPause</b>: Scrub backwards, going into Pause mode after 0.75 seconds<p>
+<b>PlayScrubForwardsContinue</b>: Scrub forwards continuously. This is very similar to normal playback except that it always plays to the end of the file and will not loop.<p>
+<b>PlayScrubBackwardsContinue</b>: Scrub backwards continuously. This always plays to the start of the file and will not loop.<p>
+<b>PlayFromStart</b>: Play from the start of the track, without affecting the current point or selection.<p>
+<b>PlayFromMousePointer</b>: Play from the position of the mouse pointer, without affecting the current point or selection.<p>
+<b>PlaySpeedUp</b>: Looping playback, with gradual speed-up, using a dialog to select options.<p>
+<b>PlaySpeedUpAgain</b>: Looping playback, with gradual speed-up, using the same settings as before.<p>
+
+<hr>
+<center><h3>Commands that require parameters, which can only be used for <A HREF="automation.htm">Automation</A>.</h3></center><p>
+
+<b>PlayFromNamedMarker(text)</b>: Play from the named marker, without affecting the current point or selection.<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Parameter: the marker name.<br>
+Marker name comparison is case insensitive. The whole name must match. If there is more than one marker with the same name then the first one will be used.<p>
+<b>PlayFromSeconds(double)</b>: Play from the point in the track specified in seconds, without affecting the current point or selection.<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Parameter: position in seconds.<br>
+If the position is beyond the end of the track, the command will be silently ignored.<p>
+<b>PlaySpeedUpParams(int, int, int, int)</b>: Looping playback, with gradual speed-up.<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Parameter 1: starting speed, as a percentage.<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Parameter 2: how many times to play at each speed.<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Parameter 3: how many percent to increase speed by.<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Parameter 4: final speed, as a percentage.<p>
+
+</HTML>

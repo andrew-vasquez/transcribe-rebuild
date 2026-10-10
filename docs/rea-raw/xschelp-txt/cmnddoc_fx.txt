@@ -1,0 +1,151 @@
+Transcribe! : Commands: Audio Effects
+ | 
+Commands: Audio Effects
+ | 
+Commands that can be used as Keyboard, Pedal, or Midi shortcuts as well as automation.
+FxClear: Clear all audio Fx to default settings. Equivalent to all of FxMonoClear, FxEqClear, FxTuningClear, FxTranspositionClear, FxSpeedClear, FxMiscClear.
+FxMonoClear: Clears the mix setup and sets Bypass
+FxMonoActive: Active Mono/Karaoke
+FxMonoBypass: Bypass Mono/Karaoke
+FxMonoToggle: Active/Bypass Mono/Karaoke
+FxMonoLeft: Listen to left channel only, as mono.
+FxMonoCentre: Mono mix.
+FxMonoRight: Listen to right channel only, as mono.
+FxMonoKaraoke: Karaoke mix (phase reverse).
+FxEqClear: Sets the effect Active but sets the controls to have no effect on the sound.
+FxEqActive: Active EQ
+FxEqBypass: Bypass EQ
+FxEqToggle: Active/Bypass EQ
+EQPreset1 ... EQPreset20: Load a saved EQ preset.
+FxTuningClear: Sets the effect Active but sets the controls to have no effect on the sound.
+FxTuningActive: Active Tuning
+FxTuningBypass: Bypass Tuning
+FxTuningToggle: Active/Bypass Tuning
+TuningOctavePlus2: Set tuning to +2 octaves
+TuningOctavePlus1: Set tuning to +1 octaves
+TuningOctave0: Set tuning to 0 octaves
+TuningOctaveMinus1: Set tuning to -1 octaves
+TuningOctaveMinus2: Set tuning to -2 octaves
+TuningSemitone0: Set tuning to 0 semitones
+TuningSemitonePlus1: Raise tuning by 1 semitone
+TuningSemitoneMinus1: Lower tuning by 1 semitone
+TuningCent0: Set tuning to 0 cents
+TuningCentPlus1: Raise tuning by 1 cent
+TuningCentMinus1: Lower tuning by 1 cent
+FxTranspositionClear: Sets the effect Active but sets the controls to have no effect.
+FxTranspositionActive: Active Transposition
+FxTranspositionBypass: Bypass Transposition
+FxTranspositionToggle: Active/Bypass Transposition
+FxSpeedClear: Sets the effect Active but sets the controls to have no effect on the sound.
+FxSpeedActive: Active Speed
+FxSpeedBypass: Bypass Speed
+FxSpeedToggle: Active/Bypass Speed
+Speed5: Set speed to 5%
+Speed10: Set speed to 10%
+Speed15: Set speed to 15%
+Speed20: Set speed to 20%
+Speed25: Set speed to 25%
+Speed30: Set speed to 30%
+Speed35: Set speed to 35%
+Speed40: Set speed to 40%
+Speed45: Set speed to 45%
+Speed50: Set speed to 50%
+Speed55: Set speed to 55%
+Speed60: Set speed to 60%
+Speed65: Set speed to 65%
+Speed70: Set speed to 70%
+Speed75: Set speed to 75%
+Speed80: Set speed to 80%
+Speed85: Set speed to 85%
+Speed90: Set speed to 90%
+Speed95: Set speed to 95%
+Speed100: Set speed to 100%
+Speed110: Set speed to 110%
+Speed120: Set speed to 120%
+Speed130: Set speed to 130%
+Speed140: Set speed to 140%
+Speed150: Set speed to 150%
+Speed160: Set speed to 160%
+Speed170: Set speed to 170%
+Speed180: Set speed to 180%
+Speed190: Set speed to 190%
+Speed200: Set speed to 200%
+SpeedPlus1: Increase speed by 1%
+SpeedPlus3: Increase speed by 3%
+SpeedPlus5: Increase speed by 5%
+SpeedPlus10: Increase speed by 10%
+SpeedMinus1: Decrease speed by 1%
+SpeedMinus3: Decrease speed by 3%
+SpeedMinus5: Decrease speed by 5%
+SpeedMinus10: Decrease speed by 10%
+SpeedButtonCycleLtoR: Cycle through speed buttons from left to right.
+In Preferences you can create whatever series of speed buttons you want.
+SpeedButtonCycleRtoL: Cycle through speed buttons from right to left.
+In Preferences you can create whatever series of speed buttons you want.
+AnalogLockOnSpeed: Turn on analog lock, holding speed constant.
+AnalogLockOnTuning: Turn on analog lock, holding tuning constant.
+AnalogLockOff: Analog lock off
+FxMiscClear: Set volume to 50 (normal)
+Volume0: Set volume to 0 (off)
+Volume50: Set volume to 50 (normal)
+Volume100: Set volume to 100 (max)
+VolumePlus1: Increase volume by 1
+VolumeMinus1: Decrease volume by 1
+PlayClicksOn: Switch on metronome clicks at markers (the volume is set on the Misc page of the Fx window).
+PlayClicksOff: Switch off metronome clicks at markers (the volume is set on the Misc page of the Fx window).
+PlayClicksToggle: Switch on/off metronome clicks at markers (the volume is set on the Misc page of the Fx window).
+Commands that require parameters, which can only be used for Automation.
+FxMonoSetFromText(text): Set mix from text supplied.
+     Parameter: text specifying the mix. For discussion, see below.
+Summary: Active 0/1, XscWide 0/1, Mix 0-200 (100 is centre), PhaseReverse 0/1
+Example: "1,0,100,1" sets Karaoke mode (phase reverse)
+FxEqSetFromText(text): Set EQ from text supplied.
+     Parameter: text specifying the EQ. For discussion, see below.
+All dB figures can have one decimal place and are in the range from -80 to +20
+Summary: Active 0/1, XscWide 0/1, Overall gain dB, then slider settings. The slider settings themselves are a list of 31 dB numbers separated by colons.
+Example: "1,0,0.0,2.0:7.5:9.0:7.5:2.0:0.5:0.0:0.0:0.0:0.5:2.5:5.0:5.5:5.0:2.5:0.5:0.0:0.0:-0.5:-2.5:-8.0:-12.5:-8.0:-2.5:-0.5:0.0:0.0:-1.0:-3.0:-7.5:-10.0" sets a complex EQ profile. Note the distinction between the comma separators and the colon separators.
+FxTuningSetFromText(text): Set tuning from text supplied.
+     Parameter: text specifying the tuning. For discussion, see below.
+Summary: Active 0/1, XscWide 0/1, Octaves -2 to +2, Semitones -12 to +12, Cents -60 to +60, Analog lock 0/1, Tuning note pitch 48 to 72 (MIDI notenum), Tuning note volume 0 to 100, Play tuning note 0/1
+Example: "1,0,0,3,9,0,60,50,0" sets pitch to 3 semitones and 9 cents sharp.
+TuningOctaveSet(int): Set tuning octaves.
+     Parameter: Octaves -2 to +2.
+TuningSemitoneSet(int): Set tuning semitones.
+     Parameter: Semitones -12 to +12.
+TuningSemitoneIncrement(int): Increment tuning semitones.
+     Parameter: amount to add, any whole number though the result after adding will be restricted to -12 to +12.
+TuningCentSet(int): Set tuning cents.
+     Parameter: Cents -60 to +60.
+TuningCentIncrement(int): Increment tuning cents.
+     Parameter: amount to add, any whole number though the result after adding will be restricted to -60 to +60.
+FxTranspositionSetFromText(text): Set transposition from text supplied.
+     Parameter: text specifying the transposition. For discussion, see below.
+Summary: Active 0/1, XscWide 0/1, Octaves -2 to +2, Semitones -12 to +12, Cents -60 to +60
+Example: "1,0,-1,3,0" sets transposition for Alto Saxophone.
+TranspositionOctaveSet(int): Set transposition octaves.
+     Parameter: Octaves -2 to +2.
+TranspositionSemitoneSet(int): Set transposition semitones.
+     Parameter: Semitones -12 to +12.
+TranspositionCentSet(int): Set transposition cents.
+     Parameter: Cents -60 to +60.
+FxSpeedSetFromText(text): Set speed from text supplied.
+     Parameter: text specifying the speed. For discussion, see below.
+Summary: Active 0/1, XscWide 0/1, Speed 5000 - 200000 in thousandths of a percent (i.e. 5% to 200%), Analog lock 0/1
+Example: "1,0,50000,0" sets half speed.
+SpeedSet(double): Set speed.
+     Parameter: Speed 0.05 to 2.0 meaning 5% speed to double speed. Up to five decimal places are accepted.
+SpeedIncrement(double): Increment speed.
+     Parameter: amount to add, any number but the result after adding will be restricted to 0.05 to 2.0. Up to five decimal places are accepted.
+FxMiscSetFromText(text): Set misc Fx (volume) from text supplied.
+     Parameter: text specifying the volume. For discussion, see below.
+Summary: Active 0/1, XscWide 0/1, Volume 0 to 100 (50 is standard, no change). Volume settings are always "Active" and never "Transcription-wide".
+Example: "1,0,60" sets volume to 60.
+VolumeSet(double): Set volume.
+     Parameter: Volume 0 to 100 (50 is normal, no change).
+VolumeIncrement(double): Increment volume.
+     Parameter: amount to add, any number though the result after adding will be restricted to 0 to 100.
+The six Fx...SetFromText commands above are intended to allow the setting of all Fx controls, since some are not accessible through commands otherwise. For instance there would otherwise be no way of setting the EQ sliders from a command. This method is clumsy but better than nothing. The text you use consists of values (numbers) separated by commas, with no spaces. Where a value is described as "0/1" it means that "0" will be interpreted as "no", and "1" as "yes".
+The text used is the same as Transcribe! stores in transcription (xsc) files to record Fx settings, so if you want to decide what is the appropriate text to set a specific EQ profile then one way of doing it would be to set up that profile in the Audio Effects dialog in the usual way, then save the transcription and load the xsc file into a text editor. You will find a line saying e.g.:
+FX_EQ,1,0,0.0,2.0:7.5:9.0:7.5:2.0:0.5:0.0:0.0:0.0:0.5:2.5:5.0:5.5:5.0:2.5:0.5:0.0:0.0:-0.5:-2.5:-8.0:-12.5:-8.0:-2.5:-0.5:0.0:0.0:-1.0:-3.0:-7.5:-10.0
+Remove the initial "FX_EQ," off the front and the remainder is the text which will set that EQ profile when passed to the FxEqSetFromText command.
+All of these start with two "0/1" vaues indicating whether the effect is "Active" (as opposed to Bypass) and whether it is "Transcription wide" ("apply to all views of this transcription" - only relevant if you have "Split" the view).

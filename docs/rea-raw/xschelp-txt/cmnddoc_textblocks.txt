@@ -1,0 +1,21 @@
+Transcribe! : Commands: Text blocks
+ | 
+Commands: Text blocks
+ | 
+Commands that can be used as Keyboard, Pedal, or Midi shortcuts as well as automation.
+ViewTextZoneOn: Show Text Zone
+ViewTextZoneOff: Hide Text Zone
+ViewTextZoneToggle: Show/Hide Text Zone
+ViewTextZoneFitHeight: Adjust the height of the text zone so that all the text blocks are visible.
+TextBlockNew: Create new text block at currently playing point, or prompt for instructions if not playing.
+TextBlockNewSilent: Create new text block at currently playing point if playing, else pause point if paused, else current point.
+TextBlockNewCurrent: Create new text block at the current point.
+TextBlockActivatePrevious: Activate the previous text block.
+TextBlockActivateNext: Activate the next text block.
+TextBlockActiveEdit: Edit the active text block.
+TextBlockActiveDelete: Delete the active text block.
+TextBlocksDelete: Delete all text blocks in selected region.
+TextBlockFont: Select the font to be used for text blocks.
+MarkersAndTextBlocksExport: Export markers and text blocks to a text file.
+Commands that require parameters, which can only be used for Automation.
+None.

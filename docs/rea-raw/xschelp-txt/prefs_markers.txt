@@ -1,0 +1,14 @@
+Transcribe! : Preferences - Markers
+ | 
+Preferences - Markers
+ | 
+Auto labelling : These options, and lots more about markers, are discussed here.
+Latency when tapping to place markers : On some machines, depending on your hardware,
+there is latency in sound playback which is out of Transcribe's control, and it means that when you tap the keyboard
+shortcuts to insert markers while the music is playing, they end up late.
+Increasing the latency here will cause the markers to appear earlier
+(this only affects newly placed markers, not those already existing).
+This is particularly important if you are using metronome clicks. If you have a transcription
+where the markers are consistently late then it's easy to move them all slightly to one side, see
+here for how to move multiple markers.
+This setting also adjusts the relationship between the moment of sound you are hearing and the position of the visible playing position indicator moving across the waveform display.

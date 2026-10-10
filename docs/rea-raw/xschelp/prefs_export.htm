@@ -1,0 +1,63 @@
+
+
+
+
+
+
+
+<HTML><HEAD><TITLE>Transcribe! : Preferences - Export</TITLE></HEAD>
+<BODY BGCOLOR=#ffffff TEXT=#000000 LINK=#ff0000 ALINK=#ff0000 VLINK=#ff0000>
+
+<TABLE BORDER="0" CELLSPACING="0" CELLPADDING="0" WIDTH="100%">
+   <TR>
+      <TD ALIGN="CENTER" VALIGN="MIDDLE"><H2>Preferences - Export</H2></TD>
+      <TD ALIGN="RIGHT" VALIGN="MIDDLE">
+<A HREF="contents.htm"><img align=center src="contents.png" BORDER=0 ALT="Home"></A>
+<A HREF="app_menu.htm"><img align=center src="up.png" BORDER=0 ALT="Up"></A>
+<A HREF="prefs_playback.htm"><img align=center src="back.png" BORDER=0 ALT="Previous"></A>
+<A HREF="prefs_markers.htm"><img align=center src="forward.png" BORDER=0 ALT="Next"></A>
+      </TD>
+   </TR>
+</TABLE>
+
+
+<HR>
+
+<UL>
+<LI>Default exported sound files to the same folder as the sound file.
+</UL>
+By default when you export a sound file, the initial folder for saving will be the same folder you last exported a sound file to. Of course you can then select any folder you want. However if you check this box then the initial folder for exporting will instead be the same folder that the sound file is located in. This will not be useful if the sound file is in a read-only location such as an audio CD.<P>
+
+
+<UL>
+<LI>Sound Compression Settings
+</UL>
+The "Export Sound File" and "Record New Sound File" commands cause Transcribe! to produce a sound file on disk, and they allow you to choose a compressed audio format if you want to produce a smaller file. This preferences page allows you to configure the type of compression used.<P>
+
+We use GStreamer to produce compressed sound files, and we offer presets on this page for mp3, m4a, and Ogg Vorbis, each in high quality (approx 256 kbits/sec for stereo) or medium quality (approx 128 kbits/sec for stereo). So the simplest thing is to select one of those.<p>
+
+However you can also use custom settings of your own. If you want, for example, to produce an m4a at a different bitrate then you should (1) click on "High quality m4a" (2) click the "Custom settings..." button. This brings up a dialog showing the actual GStreamer elements used for this compression. You can see the numbers 256000 and 160000 being used for stereo and mono respectively - these are the bitrates, so you can change them. Not all bitrates are allowed by all encoders. Then "OK", and you will see that now the "Custom" radio button is selected, for your custom settings. Click "OK" again to save these settings and exit the dialog.<p>
+
+For more details about GStreamer elements see GStreamer documentation at https://gstreamer.freedesktop.org/
+
+It's best to search online for how to use any given encoder. E.g. you can find instructions online for how to re-encode a file as ogg on the command line in a console:<br>
+&nbsp;&nbsp;&nbsp;gst-launch-1.0 filesrc location=&lt;filename&gt; ! decodebin ! vorbisenc quality=0.5 ! oggmux ! filesink location=&lt;filename.ogg&gt;<br>
+So the relevant elements for Transcribe! are "vorbisenc quality=0.5 ! oggmux" because vorbisenc performs the encoding and then oggmux packs the result into an ogg file.<p>
+
+<UL>
+<LI>Video Compression Settings
+</UL>
+
+When you are exporting video, if the original video is very high quality then you might want to reduce the quality to get a smaller exported file. With this setting you can limit the bit rate (specified here in MBytes per minute) of the exported video. This limit applies to the video and does not include the audio, so the exported video will be somewhat bigger that this figure suggests, due to the addition of the audio track. This limit only has any effect if the bit rate of the original video is higher that the number you specify here.<br>
+Strictly speaking, this limit specifies MBytes per minute of the original video rather than of the exported video. If you export one minute of video at normal speed and 10 MBytes per minute then the video part of the export (as opposed to the audio part) will be 10 MBytes in size. If you repeat the export at half speed then the exported video will be two minutes long but will still be 10 MBytes in size. This makes sense because even though the exported video is twice as long as before, it still contains exactly the same number of video frames.<br>
+A setting of 0 means do not apply any limit. A setting of 10 gives reasonable quality, and 20 gives good quality. If you are not too bothered about quality then you can go as low as 2 or 3 and still get something watchable.<br>
+Min: 0  Max: 20  Default: 20.<p>
+
+"Bitrate for audio in video" means what it says, though it specifies the bit rate to be used for stereo. If the video soundtrack is mono then the bitrate will be lower.<p>
+
+<UL>
+<LI>Append timestamp to filename
+</UL>
+This only applies when you are exporting a part of the full track. If you are exporting the whole track then you don't need a timestamp to tell you that it starts at time zero.<p>
+
+</HTML>

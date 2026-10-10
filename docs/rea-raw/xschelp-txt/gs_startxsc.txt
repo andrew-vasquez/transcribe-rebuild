@@ -1,0 +1,41 @@
+Transcribe! : Starting to Transcribe
+ | 
+Starting to Transcribe
+ | 
+As mentioned already, there is a general discussion of how to transcribe here : Introduction to Transcribing Music. Here are some suggestions relating specifically to Transcribe!
+Click the "Fx" button on the Toolbar to bring up the Audio Effects and Controls window, if it isn't already visible. It has many useful controls.
+Use the "Tuning" page of the Audio Effects and Controls window
+to adjust (if necessary) to concert pitch (and indeed to change key
+if, for example, the piece is in F# but you want to transcribe it in G).
+Place section, measure and beat markers
+to give you points of reference. The easiest way is to use the keyboard shortcuts -
+play the piece through and tap S, M, B in time, e.g. "SBBBMBBBMBBBMBBB" would mark
+a 4-measure section of 4/4. You can also place and edit markers by double-clicking
+in the "marker zone" (the grey stripe above the waveform display).
+Markers are given default names but you can give any marker its own name (double
+click it).
+Use the various playback commands for listening to the bits you want to
+transcribe. Use the buttons in the lower toolbar to start and stop playback, and select what you want to hear by clicking on the waveform. There are many commands and keyboard shortcuts available for controlling selection and playback : check out the buttons on the Misc page, and also Keyboard Shortcuts. By default : <spacebar> to play, <comma> to pause, <period> (<full stop>) to stop, and many more, but you can also configure your own keyboard shortcuts.
+If you want to loop playback then first, be aware that "markers" have nothing to do with looping. You choose what to loop by selecting it with the mouse. So: (Step 1) On the "Play" menu, select "Loop" so that it has a tick mark against it. In fact this is the default anyway, as long as you haven't changed it. (Step 2) Select the section you want to loop - that is, sweep the mouse over the waveform display with the button pressed, so the desired section is selected (highlit). (Step 3) Press the Play button on the toolbar. That's it.
+There is also an "AB" loop button on the toolbar. This is convenient for setting loop points in tempo while the music is playing. If you press the button on the first beat of a measure (setting the "A" point), then press again on the first beat of the next measure (setting the "B" point) then you will have a loop exactly one measure long.
+Use the slider in the lower toolbar, or the Speed page, to slow down playback if there are very fast bits.
+Or control-click the Speed button on the toolbar to select from a menu of preset speeds.
+Or you can use Keyboard Shortcuts to change speed.
+You can "scrub" forwards and backwards at any point in the music using the keyboard 'O' and 'P' shortcuts, or mouse wheel if you have one.
+See Mouse Commands for full documentation about this feature.
+The Mono/Karaoke page can be useful for emphasizing an instrument you want to hear, or removing one that you don't.
+The Split command (View menu)
+allows you to have multiple views of the same transcription - handy if you want
+to compare the first & last chorus of a tune, or if you want to switch between
+one EQ setting (for instance) and another by clicking on one view or the other.
+Try the Piano Roll : on some material, its note & chord guesses can be very useful.
+For more accurate analysis at a specific point, you can use the Spectrum display.
+To analyse a chord, you can just click at the point where the chord is and its spectrum will be displayed
+if you have turned on the Spectrum in the View menu.
+Or for more accurate analysis select the chord in question (press & hold the mouse button and sweep over the chord
+in the display). The lower pane of the display shows the pitches in the chord.
+The longer the selection, the better the pitch resolution, especially for low notes (up to a maximum of one second).
+If you click on the keyboard graphic with the mouse, the note plays. Move the mouse
+side-to-side to scroll the keyboard, up-and-down to adjust the keyboard volume.
+If you have turned on note and chord guessing in the View menu then note guesses will be displayed as green (in tune) and red (out of tune) blobs on the piano keyboard, and chord guesses will be named at the upper right of the spectrum area. Don't expect miracles. If the spectrum is a mess then the note and chord guesses will not be useful. On the other hand with a clean spectrum, the guesses can be surprisingly useful.
+Once you have got the hang of these basics, read the whole of this Help file and the FAQ on the website.

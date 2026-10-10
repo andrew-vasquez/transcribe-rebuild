@@ -1,0 +1,253 @@
+Transcribe! : Introduction to Transcribing Music
+ | 
+Introduction to Transcribing Music
+ | 
+1. What Does it Mean to Transcribe Music?
+What I am talking about here is the process of working out 
+how to play and/or write out a piece of music starting with just a recording 
+of the piece - a commercially released CD perhaps. We would usually be 
+talking about non-classical music as most classical music can be obtained 
+as printed music.
+You will also hear classical musicians speak of "transcribing" 
+ to mean adapting a piece of music written for one instrument to be played 
+ on another. So when John Williams plays Scarlatti sonatas (originally 
+ written for keyboard) on the guitar, these would be called "transcriptions" 
+ although he didn't need to work them out from a recording because you 
+ can buy the published sheet music (for keyboard) in a shop. Non-classical 
+ musicians don't often use the word this way because they customarily rearrange 
+ music for their own combination of instruments all the time anyway.
+The effort involved in transcribing music from recordings 
+ varies enormously depending on the complexity of the music, how good you 
+ ear is and how detailed you want your transcription to be. If you merely 
+ want to write down the chords to a very simple song then if your ear is 
+ good you may be able to scribble them down in real time while the music 
+ is playing. At the other extreme if you are attempting a detailed transcription 
+ of complex music then it can take hours to transcribe a single minute 
+ of music.
+By the way, "the dots" is an abbreviation meaning 
+ the written-out music, because of the visual appearance of written music 
+ as dots on a stave.
+2. Why Transcribe Music?
+Because you want to play a tune but you don't have the dots for it, 
+ you only have a recording. Of course you might start by looking for 
+ the dots (if it's a jazz tune try the Fake Book Index at
+ https://www.seventhstring.com/fbindex.html)
+ but if you can't find them what are you going to do? 
+ Also, even if you can find the dots they will often be a disappointment 
+ when compared to the version you've been listening to and enjoying. 
+ Good players will usually make more out of a piece than the standard 
+ published dots will show, so you will have to listen to the recording 
+ to find out what they're doing. I'm talking about reharmonisation, embellishing 
+ chords, added figures and riffs, good bass-line movement, voice leading, 
+ etc.
+Jazz musicians regard transcribing as an important educational method. 
+ Jazz has a strong emphasis on listening and improvising. Transcribing 
+ other people's improvised solos is good for improving your ear and also 
+ for gaining insight into the musical ideas they use.
+There are also quite a number of professional transcribers around. 
+ For instance, if you buy the sheet music for a popular song then this 
+ music will often have been transcribed from the record by a professional 
+ who works for the publisher.
+3. Prerequisites
+As far as your own musicianship is concerned we could say 
+ that there is only one prerequisite which is the ability to tell whether 
+ your transcription is right or wrong when you play it and compare it to 
+ the original. The extent to which you really can't tell is the extent 
+ of possible inaccuracy in your transcription. As long as you can 
+ tell, you can keep working at it until your transcription sounds right. 
+ How long this takes depends on your ear. If you are having difficulty 
+ figuring out the chords then it might be they are too complex for you. 
+ Don't despair however. Some people seem to develop a good ear very quickly 
+ but I think most people can develop a good ear in time as long as they 
+ keep working at it. I think that it's very important to play a chordal 
+ instrument (piano or guitar) in order to understand chords and recognise 
+ their sound. When I was starting out, a 7#9 chord sounded to 
+ me like a pleasantly scrunchy sound but I wouldn't have a clue what the 
+ chord was. After a few years playing the guitar and using such chords, 
+ an association develops in the mind between playing a 7#9 and the particular 
+ flavour of the sound that comes out. Now when I hear someone play a 7#9 
+ I recognise it immediately as an old friend. I think that almost anyone 
+ can learn this kind of familiarity with chords but for most of us it doesn't 
+ happen by magic and it doesn't happen overnight, it's the result of years 
+ of playing, practicing, listening and indeed transcribing.
+Familiarity with the musical style is one of the biggest 
+ factors in making it easy to transcribe. If you have played lots of music 
+ in the same style as the piece you're transcribing then you'll find it 
+ much easier to understand what they're doing. An anecdote : when I was 
+ about 15 and knew almost nothing I tried to transcribe Charles Mingus's 
+ "Jelly Roll" from the album "Ah Um". Listening to 
+ it now it's perfectly obvious that it's a blues (14 bar as far as I remember) 
+ but I didn't know that then. I listened hard to what the piano player 
+ does, thinking that would tell me what the chords are. What I didn't know 
+ is that in this kind of music, jazz piano players typically play all sorts 
+ of notes with the right hand which don't obviously belong to the chord. 
+ If the basic harmony at some particular point is, say, C7 then almost 
+ any note except B can be used to construct a harmony which might work 
+ in this style. If you don't understand this then trying to work out the 
+ chords from the pianist's right hand is a recipe for disaster (I should 
+ have started with the bass line). My final result had the melody correct 
+ but the chord symbols I came up with were totally wrong and unusable. 
+ I'm not suggesting that it was wasted effort though. You have to accept 
+ that your first efforts will be of doubtful value but we all have to start 
+ somewhere and if you persevere you will improve.
+As far as equipment is concerned, obviously you need a means 
+ of playing the recording to listen to it. Some ways are easier than others 
+ for the purpose of transcribing and every transcriber has their own favourite 
+ way of working. Here are my views.
+Vinyl
+ This was the only option back in the stone age. No "loop" 
+ facility, very difficult to play from a specific point in the piece 
+ and a steady hand needed for lifting the needle and putting it back 
+ down again without damaging the record. This was transcribing for heroes. 
+ On the other hand if you had a player with 16 RPM speed you could slow 
+ the music down for the fiddly bits. Some players (the Garrard 401 for 
+ instance) allowed fine control over the speed, useful for tuning adjustment.
+Cassette
+ I considered this to be a big step forward, and used a Walkman quite 
+ heavily for the purpose. Advantages : portability, the tape counter 
+ which although inaccurate does give some idea of where you are, and 
+ the easier start/stop/rewind controls. You could listen to the same 
+ bit again by briefly pressing the rewind button while in play mode which 
+ was very handy. Slow down was no longer possible but if I really needed 
+ it I would copy to my two-speed reel-to-reel machine then copy back 
+ to cassette at half speed so my cassette tape would then have two versions, 
+ one of them full speed and the other half speed.
+CD/MiniDisc
+ Finally the digit was discovered (in the Peruvian jungle at the far 
+ end of the Andes) and tamed. These devices give accurate timing indication 
+ for the first time so you really can find any given point reliably. 
+ The more expensive models will also loop and some even permit tuning 
+ adjustment and speed adjustment. If you choose the right model then 
+ these are excellent transcription tools.
+Computer Software - Transcriber's Assistants
+ These days pretty much all desktop computers are capable of recording 
+ and playing audio and there are various computer based player programs 
+ intended to help you transcribe music. Transcribe! from Seventh 
+ String Software is of course the best!
+ The features offered by such programs are limited only by the imagination 
+ of the program designer (and of course by what is technically possible). 
+ It is usual to be able to set multiple loop points, adjust tuning and 
+ slow down the music without pitch change. Transcribe! can also analyse
+ the sound and will attempt to guess the notes being played, and indeed
+ the chords too. On some kinds of material this can be very useful.
+Computer Software - Automatic Transcription
+ The most ambitious programs attempt to actually do the transcribing 
+ for you, processing an audio file and outputting MIDI or musical notation. 
+ I admire their courage in making the attempt, but my impression is that 
+ they are not really all that useful. On music where multiple notes are 
+ being played at the same time by multiple instruments (i.e. almost all 
+ music!) they make so many mistakes that it's difficult to see them as 
+ useful for serious purposes. We will not discuss them further in this document.
+This document is a discussion of how to transcribe music regardless of 
+ what device you use for playing the music on.
+4. Transcribing
+First try to get hold of the dots! Some people will tell 
+ you you shouldn't because transcribing is "good for you". I 
+ certainly agree that transcribing is good for you but if you are at all 
+ active musically then there will always be things you want to play for 
+ which you can't get the dots, so I think you should save your transcribing 
+ time and energy for those. Also, as I mentioned above, if you are listening 
+ to a recording you like then the chances are that the sheet music will 
+ not show the nice things the musicians are doing which make the recording 
+ special. So you will still end up doing some transcribing, but the dots 
+ may help as a starting point.
+Map out the structure of the piece - verse, chorus, middle 
+ section and so on. Even if you don't intend to transcribe the whole thing 
+ it's often useful to have a complete map because if the chords are unclear 
+ to you at some point then if you know that the same thing happens elsewhere 
+ in the piece then you could listen to it there - it may be clearer second 
+ time. So listen through the whole thing making a note of what happens 
+ where. For instance if you're using a CD player then you could list the 
+ sections on a piece of paper with the start time of each section taken 
+ from the CD player's display so you can find it again. On Transcribe!,
+ you would place markers.
+If necessary then adjust the tuning of the playback to match 
+ your instrument. If the playback device you are using does not permit 
+ this then you may instead be able to adjust the tuning of your instrument 
+ to match the piece. By the way, some people recommend transcribing without 
+ any instrument in your hands, by the use of pure ear-power. That's great 
+ if you can do it but this document is aimed at less experienced transcribers. 
+ I would recommend having a guitar or keyboard handy and constantly checking 
+ your transcription by playing along and asking yourself if it sounds right.
+Now it's time to start transcribing. This is rather like 
+ doing a jigsaw. When you do a jigsaw you start with the easy bits. Once 
+ enough of these are done then you can hope that the hard bits will fall 
+ into place. In the same way, start your transcription with the things 
+ you can hear easily. That usually means any prominent single-note instrument 
+ (including vocal). Hearing the inner voices of a chord is hard so don't 
+ start with that. Start with the melody. Loop it a phrase at a time and 
+ play along until you find the notes. Write them down and move on. Then 
+ tackle the bass part. If it is murky or unclear then try raising its pitch 
+ - Transcribe! will allow you to raise the pitch by 
+ an octave without speeding the music up. This can give the bass part much 
+ better definition. The bass part is crucial when you come to figure out 
+ the chords because bass players frequently play the root of the chord, 
+ or else the 3rd or 5th, so knowing the bass part gives huge clues to what 
+ the chord is. Also remember that if in doubt you should listen to other 
+ points in the piece where the same sequence occurs, to get a second opinion.
+Write down any other prominent riffs and backing figures 
+ in the same way.
+Now start on the harmonies. This is the hardest part so 
+ again we pick away at it bit by bit. Pick out whatever single notes you 
+ can hear in the chords - often the top note of a chord is easier to distinguish 
+ so write down whatever notes you can hear in any of the chords. Often 
+ "voice leading" is used in harmony - this is where you hear 
+ a prominent note (a "voice", but not necessarily vocal - could 
+ be any instrument) in the harmony, which moves to the next note above 
+ or below or stays the same when the chord changes. These are usually easy 
+ to hear so work them out and write them down. When you've picked out as 
+ many specific notes as you can then you try to identify the chords. This 
+ is where your experience and your knowledge of the musical style you're 
+ dealing with make a big difference. If you are experienced in the style 
+ then you will know what kinds of chords and chord progressions are likely. 
+ The bass line, melody line and top line of harmony that you have already 
+ worked out will narrow the possibilities right down and you can try out 
+ the possible chords on your instrument to see what fits. On the other 
+ hand if the chord is an altered dominant and you don't know what an altered 
+ dominant is then it won't be so easy, though you may still be able to 
+ find something that works even if you don't know what to call it. A useful 
+ technique to get further clues is to try playing single notes on your 
+ instrument, when the chord comes in the track. Try a C, does it fit? C#? 
+ D? When you find a note which fits, perhaps it belongs in the chord. Transcribe!'s 
+ spectrum analysis feature is also useful here.
+The approach just described assumes that your transcription 
+ will include chord symbols but of course sometimes you will be aiming 
+ for a complete note-for-note transcription of the performance. In this 
+ case it's up to you to listen closely for each note! It can still be helpful 
+ to think in terms of chords, to help understand what is happening.
+Here's a tip (courtesy of Charles Alexander) for determining 
+ the correct key that a piece is in. This often causes confusion because 
+ although for many pieces the first chord is also the key, there are many 
+ pieces where this is not so. You should look instead at the end of the 
+ piece. Play up to the end then whistle a "shave and a haircut" 
+ ending like this (written here in C major) :
+ Whistle it in whatever key sounds right for the piece. The last note of 
+ the "shave and a haircut" ending is the key of the piece. This 
+ works for major keys. For minor keys I think it's usually true that the 
+ starting chord of the melody is the key, unless the title contains the 
+ word "Autumn" (Autumn Leaves, Autumn in New York). However just 
+ because a piece starts on a minor chord doesn't mean it's in a minor key 
+ - for instance "It Don't Mean A Thing" starts on G minor but 
+ is in Bb major, as the "shave and a haircut" test reveals.
+Here's a tip for determining rhythmic values of fast notes. 
+ Suppose someone plays two notes quite quickly, "duh-duh" and 
+ you're asking yourself are they eighth notes? Sixteenths? Part of a triplet? 
+ The answer is to tap your hand in time with the quarter-note pulse of 
+ the piece and sing along with the "duh-duh" notes but extend 
+ them to an endless sequence at the same speed "duh-duh-duh-duh...". 
+ Then all you have to do is count how many fit into a quarter note. Two? 
+ then they're eighth notes. Six? then they're triplet sixteenths. For more 
+ complicated phrases learn the phrase so you can sing it accurately, then 
+ sing it on your own with your hand tapping the beat (switch off playback) 
+ then get slower and subdivide the beat by tapping your hand more rapidly. 
+ When you subdivide the beat into small enough pieces then you will find 
+ every note of the phrase will be on one of the subdivisions so by noting 
+ how many subdivisions per quarter note you are tapping and which subdivision 
+ each note falls on, you can work out the rhythm.
+Finally, here's a heretical suggestion. If the purpose of 
+ your transcription is to perform the piece yourself then remember that 
+ it isn't necessary for your transcription to be totally accurate. If there's 
+ something complicated going on and you just can't figure it out, remember 
+ that it's always an option to just make up something else to play at that 
+ point. As long as it sounds good, who's going to complain? You may even get praised for your "creative reharmonisation".
+© 1998-2026 Andy Robinson, Seventh String Software

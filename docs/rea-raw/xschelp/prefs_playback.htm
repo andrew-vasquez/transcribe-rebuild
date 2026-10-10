@@ -1,0 +1,100 @@
+
+
+
+
+
+
+
+<HTML><HEAD><TITLE>Transcribe! : Preferences - Playback</TITLE></HEAD>
+<BODY BGCOLOR=#ffffff TEXT=#000000 LINK=#ff0000 ALINK=#ff0000 VLINK=#ff0000>
+
+<TABLE BORDER="0" CELLSPACING="0" CELLPADDING="0" WIDTH="100%">
+   <TR>
+      <TD ALIGN="CENTER" VALIGN="MIDDLE"><H2>Preferences - Playback</H2></TD>
+      <TD ALIGN="RIGHT" VALIGN="MIDDLE">
+<A HREF="contents.htm"><img align=center src="contents.png" BORDER=0 ALT="Home"></A>
+<A HREF="app_menu.htm"><img align=center src="up.png" BORDER=0 ALT="Up"></A>
+<A HREF="prefs_newwindows.htm"><img align=center src="back.png" BORDER=0 ALT="Previous"></A>
+<A HREF="prefs_export.htm"><img align=center src="forward.png" BORDER=0 ALT="Next"></A>
+      </TD>
+   </TR>
+</TABLE>
+
+
+<HR>
+
+<UL>
+<LI>Restrict Cue/Review to the zone now playing.<BR>
+Suppose that you are playing a loop which you have selected. Ordinarily if you use Cue/Review then this will take you outside the loop and across the full length of the track. However if you check this box then Cue/Review will not take you outside the selected area.<BR>
+
+<LI>Use compressor to prevent digital overload.<BR>
+Transcribe! has a compressor/limiter so if you turn the volume or EQ too high you will get compression rather than distortion, and a red bar will appear below the volume slider in the lower toolbar to show you the amount of compression. Here you can turn it off if you don't like it.<BR>
+
+<LI>Paused playback point follows selection.<A NAME="pausefs"></A><BR>
+Some people like to stay in Pause mode when not playing, and never press the Stop button. In that case it is useful to select this option. It means that whenever you change the selection or current point (for instance by clicking on the waveform), if you are paused then the paused point moves to the newly selected point.<BR>
+
+<LI>Fat play position indicator (for better visibility).<BR>
+On some screens it can be difficult to see the play position indicator. This makes it fatter.<BR>
+
+<LI>Keep playing when in background.<A NAME="playinbg"></A><BR>
+The question is, when you click on some other application to bring it to the front, do you want Transcribe! to keep playing or stop? Be aware that Transcribe!'s Help Viewer and Video Viewer are effectively different applications, so if you uncheck this option then playback will stop when you bring either of those windows to the front.<BR>
+
+<LI>Auto play on load.<BR>
+When you load a file it will immediately start playing as if you had pressed the Play button on the toolbar.<BR>
+
+<LI>Use mousewheel for scrubbing.<BR>
+With this option selected you can use the mousewheel over the waveform profile or over the video window for scrubbing backwards and forwards. See <A HREF="mouse.htm#scrub">Mouse Commands</A> for full documentation about this feature.<br>
+If this option is not selected then using the mousewheel over the waveform profile will scroll the waveform instead.<BR>
+
+<LI>High quality slowdown and tuning.<BR>
+This is about the algorithm used for adjustment of speed and pitch during playback. You can choose between the old method (which was the only method in Transcribe! versions 9.6 and earlier) which requires less processing power, or the new method which uses more CPU but provides better quality. In fact the new method should be ok on any recent computer. You will notice the difference in various ways but especially in the handling of transients when slowing down.<p>
+
+<LI>Playback loop delay.<A NAME="playloopdelay"></A><BR>
+When looping playback is on, you
+can choose to have a pause after each time the segment is played before it starts to
+play again. This gives you a bit of time to think and to write down what you hear.<BR>
+Min: 0  Max: 100  Default: 0  (tenth-seconds).<BR>
+There is a "LoopDelay" command on the Play menu where you can activate your chosen loop delay, or deactivate it.<BR>
+Note for experienced users: for rapid adjustment of delay, there is a command called "PlayLoopDelaySetCurrent" which sets the delay equal to the length of the current selection. This is provided because some people like the delay to be the same length as the selected loop. Or if you want a delay of one measure then just select a measure (any measure) and this command will set the delay. There is no menu entry or default keyboard shortcut for this command so you will need to configure a
+<A HREF="kb.htm">keyboard shortcut</A> for it yourself if you want to use it.<br>
+
+<LI>Playback start delay.<BR>
+There is a command PlaySelectionDelayStart (default shortcut shift-spacebar) which will start playback after a delay, to give you time to prepare yourself before playback starts. This preference is where you set the amount of delay, and it affects only this command.<BR>
+Min: 0  Max: 100  Default: 0  (tenth-seconds).<BR>
+If you have updated from a previous version of Transcribe! then the shift-spacebar shortcut will not be automatically defined, you will need to configure a
+<A HREF="kb.htm">keyboard shortcut</A> to it yourself if you want to use it. Or press the Default button in the keyboard shortcuts dialog.<br>
+
+<LI>Rewind on pause.<A NAME="rewindop"></A><BR>
+When you pause playback, you can choose to have the paused point stepped back a bit from where you were
+up to when you pressed pause. The effect is that when you unpause, you will hear again the last thing you were listening to.<br>
+Min: 0  Max: 50  Default: 0  (tenth-seconds).<BR>
+It won't let you go back before the current playback start-point. If you want to work on an earlier part of the file, click on the waveform to set the current point further back.<br>
+Note for experienced users: if you like configuring <A HREF="kb.htm">keyboard shortcuts</A> then you can have rewind versions and no-rewind versions both available. If you set a Rewind-on-pause then the commands affected are PlayPauseOn, PlayPauseToggle, PlaySpacebar. So we provide alternative versions PlayPauseOnNoRewind, PlayPauseToggleNoRewind, PlaySpacebarNoRewind which bypass any rewind you have set up. So you might for instance assign the keystroke option-comma as PlayPauseToggleNoRewind so plain comma will pause with rewind and option-comma will pause without rewind.<br>
+
+<LI>Playback buffer size.<A NAME="playbuf"></A><BR>
+When Transcribe! has prepared some audio to be played it puts it in the playback
+buffer and hands it to the sound driver to be queued for playing. If the buffer
+is too short then you may get "drop-outs" - short
+slivers of silence. If the buffer is long then Transcribe!'s response to such
+things as volume and pitch changes gets slow, as these changes can only take
+effect after the present buffer contents have been played. Depending on your OS and sound card and drivers, you may find that there are system configuration options regarding soundcard setup. If you change this while playing then you will need to stop playback and start again before it takes effect.<BR>
+Min: 2  Max: 10  Default: 4 (tenths of a second).<BR>
+
+<LI>Audio Output Device.<A NAME="playdevice"></A><BR>
+Normally the "Use default device" box is checked. However if you have more than one sound output device then you can uncheck this box, and select the device to be used for playback output.<BR>
+
+
+<LI>Output Sample Rate.<A NAME="play_srate"></A><BR>
+Regardless what the sample rate of the source audio file might be, Transcribe! always plays at 44100Hz (CD sample rate) or 22050Hz (half that rate). These are very common sample rates which nearly all modern sound cards can use, so by converting to these rates, Transcribe! can play any sound file regardless of its rate.<BR>
+Here you select which of these rates to use. Normally you should use 44100 as the quality is higher. See <A HREF="slow.htm">here</A> for why you might want to use the slower rate.<BR>
+
+<LI>Cue and Review speed.<BR>
+You can separately choose how fast Cue (fast forwards) and Review (rewind) should be, as a multiple of normal playback speed. And what's more you can have them accelerate over a number of seconds if you want. You can specify the initial speed, the final speed, and the number of seconds to take in reaching the final speed. If you don't want to accelerate, then just set the initial and final speeds both the same.<BR>
+Default is to accelerate from 4x to 20x over 8 seconds.<BR>
+
+<LI>Cue and Review volume.<BR>
+The little "Vol" slider to the right of the Cue/Review speed controls is for controlling the volume of Cue/Review playback, because it is often pleasant to have Cue/Review playback quieter than normal playback. Default is 60%, meaning that Cue/Review volume is less than normal playback volume.<BR>
+
+</UL><P>
+
+</HTML>

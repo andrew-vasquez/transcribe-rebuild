@@ -1,0 +1,17 @@
+Transcribe! : Keyboard Shortcuts 9.25 Update
+ | 
+Keyboard Shortcuts 9.25 Update
+ | 
+In version 9.25 we have changed and improved the keyboard shortcut system. If you have created shortcuts of your own in a pre-9.25 version then you may find that you need to update some of the keystrokes which trigger those commands (depending on what keystrokes you used).
+We now allow the previously hard-wired
+shortcuts (like F1 and '.' and 'M' etc) to be reprogrammed just like any other keystroke,
+and if a menu command corresponds to a keyboard shortcut then we display the shortcut on
+the menu as an accelerator (in the past we only displayed those hard-wired ones).
+Also we now distinguish between some keystrokes which we used to regard as identical,
+e.g. PageUp/Down on the main keyboard, and PageUp/Down on the Num keypad.
+If you have programmed a shortcut for one of those keys then you may need to reprogram
+it if you want it to work for the other one of the pair.
+We now report and recognise keyboard shortcuts always by the main character which appears on the physical keytop. It should always have been this way really. So if, for example, you had a shortcut created in a previous version of Transcribe! for alt-shift-! then this will not be recognised in version 9.25 because that same keystroke is now recognised as alt-shift-1.
+To fix this, you should use the keyboard shortcuts dialog, highlight the shortcut in question in the list box, type the desired keystroke in the "type a key" box, and then in the "Change the keystroke" box press the "Use normal shortcut" button.
+This replaces the keystroke which triggers the shortcut in question. It's still the same keystroke, just described differently.
+I apologise for the inconvenience but the new way is definitely better. It only has to be done once and remember that if you have more than one computer then you can Export keyboard shortcuts from one machine and Import them on another.

@@ -1,0 +1,82 @@
+
+
+
+
+
+
+
+<HTML><HEAD><TITLE>Transcribe! : Commands: Transcription and Sound Files</TITLE></HEAD>
+<BODY BGCOLOR=#ffffff TEXT=#000000 LINK=#ff0000 ALINK=#ff0000 VLINK=#ff0000>
+
+<TABLE BORDER="0" CELLSPACING="0" CELLPADDING="0" WIDTH="100%">
+   <TR>
+      <TD ALIGN="CENTER" VALIGN="MIDDLE"><H2>Commands: Transcription and Sound Files</H2></TD>
+      <TD ALIGN="RIGHT" VALIGN="MIDDLE">
+<A HREF="contents.htm"><img align=center src="contents.png" BORDER=0 ALT="Home"></A>
+<A HREF="cmnddoc.htm"><img align=center src="up.png" BORDER=0 ALT="Up"></A>
+<A HREF="cmnddoc.htm"><img align=center src="back.png" BORDER=0 ALT="Previous"></A>
+<A HREF="cmnddoc_app.htm"><img align=center src="forward.png" BORDER=0 ALT="Next"></A>
+      </TD>
+   </TR>
+</TABLE>
+
+
+<HR>
+
+
+
+<center><h3>Commands that can be used as Keyboard, Pedal, or Midi shortcuts as well as automation.</h3></center><p>
+
+<b>FileOpen</b>: Open either an existing transcription (.xsc) file, or a sound file, or a script (.xscscpt) file.<p>
+<b>RecentFilesClear</b>: Empty the list of Recent Files.<p>
+<b>RecentFilesClearNoVeto</b>: Empty the list of Recent Files, with no confirmation dialog.<p>
+<b>RecentFile1 ... RecentFile32</b>: Load recent file from the list.<p>
+<b>RecentFoldersClear</b>: Empty the list of Recent Folders.<p>
+<b>RecentFoldersClearNoVeto</b>: Empty the list of Recent Folders, with no confirmation dialog.<p>
+<b>RecentFolder1 ... RecentFolder32</b>: Open a file in a recent folder from the list.<p>
+<b>StemFilesManage</b>: Manage the list of Stem Files.<p>
+<b>StemFile1 ... StemFile32</b>: Load a Stem file from the list.<p>
+<b>StemFilePrev</b>: Select the previous stem file from the list current loaded for this transcription.<p>
+<b>StemFileNext</b>: Select the next stem file from the list current loaded for this transcription.<p>
+<b>FileSave</b>: Save the current transcription as an xsc file (does not save any sound file).<p>
+<b>FileSaveAs</b>: Save the current transcription as an xsc file with a new name (does not save any sound file).<p>
+<b>FileImportSound</b>: Change the sound file associated with this transcription by allowing you to choose a new one.<p>
+<b>FileExportSound</b>: Copy all or part of the sound file associated with this transcription to a new sound file. Processing such as speed or pitch change can optionally be applied.<p>
+<b>FileExportSoundSplit</b>: Copy separate parts (determined by markers) of the sound file associated with this transcription to new sound files. Processing such as speed or pitch change can optionally be applied.<p>
+<b>FileExportVideo</b>: Copy all or part of the video associated with this transcription to a new mp4 video file. Processing such as speed or pitch change can optionally be applied.<p>
+<b>FileExportVideoSplit</b>: Copy separate parts (determined by markers) of the video associated with this transcription to new mp4 videos. Processing such as speed or pitch change can optionally be applied.<p>
+<b>FileRecord</b>: Record audio input to a new sound file.<p>
+<b>FileCloseCanSaveCanVeto</b>: Close the current transcription leaving its window open but empty. Gives the option to Save first, or Veto.<p>
+<b>FileCloseNoSaveNoVeto</b>: Immediately close the current transcription leaving its window open but empty. No option to Save first.<br>
+Be careful if you create a shortcut to this command. Choose a key combination that you won't hit by accident.<p>
+
+<hr>
+<center><h3>Commands that require parameters, which can only be used for <A HREF="automation.htm">Automation</A>.</h3></center><p>
+
+<b>FileOpenFromFolder(text)</b>: Open either an existing transcription (.xsc) file, or a sound file, or a script (.xscscpt) file.<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Parameter: the initial folder for the "Open" dialog.<br>
+You must terminate the folder name with the filename separator character, backslash on Windows, slash on Mac or Linux, or for portability use the escape sequence "+/".<br>
+Alternatively you can specify a full filename with folder : the filename part will be ignored.<p>
+<b>FileOpenNamed(text)</b>: Open either an existing transcription (.xsc) file, or a sound file, or a script (.xscscpt) file.<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Parameter: the name of the file.<p>
+<b>StemFile(int)</b>: Select the specified stem file from the list current loaded for this transcription.<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Parameter: the stem file number from 1 to however many there are for this transcription.<p>
+<b>FileSaveNamed(text)</b>: Save the current transcription as an xsc file (does not save any sound file).<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Parameter: the name of the file.<p>
+<b>FileImportSoundNamed(text)</b>: Change the sound file associated with this transcription by importing a new one.<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Parameter: the name of the file.<p>
+<b>FileExportSoundNamed(text)</b>: Copy the sound file associated with this transcription to a new sound file.<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Parameter: the name of the file.<br>
+This will export the selected part if there is a selection, otherwise the whole file. The file name extension must be .wav or .aiff or whatever extension you have set up for compressed files in Preferences - Export. It will apply whatever audio effects are active.<p>
+<b>FileExportSoundNamedRR(text, int, int)</b>: Copy the sound file associated with this transcription to a new sound file.<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Parameter 1: the name of the file.<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Parameter 2: the sample rate of the audio. 0 means same-as-source.<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Parameter 3: repetitions. Usually 1.<br>
+This will export the selected part if there is a selection, otherwise the whole file. The file name extension must be .wav or .aiff or whatever extension you have set up for compressed files in Preferences - Export. It will apply whatever audio effects are active.<p>
+<b>FileExportVideoNamed(text, int, int)</b>: Copy the video associated with this transcription to a new mp4 video file.<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Parameter 1: the name of the file.<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Parameter 2: the sample rate of the audio. 0 means same-as-source.<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Parameter 3: repetitions. Usually 1.<br>
+This will export the selected part if there is a selection, otherwise the whole file. The file name extension must be mp4. It will apply whatever audio effects are active.<p>
+
+</HTML>

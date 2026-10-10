@@ -1,0 +1,14 @@
+Transcribe! : Speed Effects Page
+ | 
+Speed Effects Page
+ | 
+This page has controls for the speed of playback, from 5% (one twentieth speed) to 200% (double speed). There are various preset buttons, a slider you can drag, and a box where you can type a speed percentage with up to 3 decimal places.
+There are also several other ways of setting the speed:
+There is a slider in the lower toolbar (though this will only adjust from 20% to 100%).
+There are buttons for various preset speeds in the toolbar. You can choose what speed buttons appear on the toolbar, in Preferences - Toolbar.
+You can adjust the speed by holding the mouse over the "Speed" button on the toolbar and using the mousewheel if you have one.
+You can define keyboard shortcuts.
+You can use a continuous MIDI controller.
+A script can control the speed.
+There is also an "Analog lock" checkbox. When you check this box, pitch and speed are interlocked in the same way as an analog recording device (vinyl record, cassette tape) so that if you halve the speed, the pitch goes down an octave. For more information about this see the Tuning page which also has this checkbox
+At the bottom there are boxes for "Original speed" and "Altered speed" in beats per minute. If you have placed markers and then you make a selection which includes at least two markers, then Transcribe! can compute the tempo - see the Compute Tempo command for more about this. If these boxes are blank then it normally means you don't currently have a selection which includes at least two markers. If the boxes are blank when you think they shouldn't be then try the Compute Tempo command and it will tell you what the problem was.

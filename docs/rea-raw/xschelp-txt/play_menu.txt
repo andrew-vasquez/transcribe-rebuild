@@ -1,0 +1,31 @@
+Transcribe! : Play Menu
+ | 
+Play Menu
+ | 
+You don't often need to use the Play menu. Most of its commands are duplicated on the toolbar and the lower toolbar, and also with keyboard shortcuts, and these are usually the most convenient way to start and stop playback.
+The Commands on the Play Menu
+Play Selection
+This command begins playback, playing the currently selected (highlit) segment if any, else playing from the current point.
+Stop
+This command stops playback.
+Pause
+This command pauses playback, or resumes playback if it was paused.
+You can set up a "Rewind on pause" if you want to - see Preferences.
+Loop
+This command turns loop mode on and off. In loop mode the music to be played
+will be played repeatedly, otherwise it is played once and then stop. A checkmark
+appears alongside the menu item when loop mode is on.
+You can choose to have a pause after each time the segment is played before it
+starts to play again - see Playback loop delay.
+Loop Delay
+The amount of loop delay (a delay each time you go round a loop) is set in Preferences - Playback, but here you can switch loop delay on or off, and of course this setting will be saved when you save your transcription.
+Scroll
+This command turns scroll mode on and off. In scroll mode, the waveform
+display scrolls automatically while playing, in order to keep the music being
+played visible on the screen. A checkmark appears alongside the menu item when scroll mode is on.
+Clicks
+The volume of the clicks (which happen each time playback passes a marker) can be set on the Misc page of the Fx window, but here you can switch them on or off.
+Speed Up
+Added in response to popular demand, this is for people who are using Transcribe! for play-along practice. It causes Transcribe! to play repeatedly with gradually increasing speed. You can select the initial and final speeds, how many times, or how many seconds, to play at each speed, and by how much to increase the speed by each time. Wear safety goggles, a hard hat, and protective footwear.
+If loop mode is on then when it reaches the final speed it will keep looping until you stop it.
+You can use the Pause button in the lower toolbar (or the ',' shortcut) to pause and resume as you would expect, but any other command you use will cause the Speed Up sequence to be abandoned.

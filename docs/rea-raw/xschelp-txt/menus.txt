@@ -1,0 +1,15 @@
+Transcribe! : Menus and Toolbar
+ | 
+Menus and Toolbar
+ | 
+Application Menu
+File Menu
+View Menu
+Play Menu
+Markers Menu
+Text Menu
+Piano Roll Menu
+Window Menu
+Help Menu
+Toolbar
+Mouse Commands

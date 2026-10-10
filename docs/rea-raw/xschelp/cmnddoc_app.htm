@@ -1,0 +1,91 @@
+
+
+
+
+
+
+
+<HTML><HEAD><TITLE>Transcribe! : Commands: Application, windows, prefs</TITLE></HEAD>
+<BODY BGCOLOR=#ffffff TEXT=#000000 LINK=#ff0000 ALINK=#ff0000 VLINK=#ff0000>
+
+<TABLE BORDER="0" CELLSPACING="0" CELLPADDING="0" WIDTH="100%">
+   <TR>
+      <TD ALIGN="CENTER" VALIGN="MIDDLE"><H2>Commands: Application, windows, prefs</H2></TD>
+      <TD ALIGN="RIGHT" VALIGN="MIDDLE">
+<A HREF="contents.htm"><img align=center src="contents.png" BORDER=0 ALT="Home"></A>
+<A HREF="cmnddoc.htm"><img align=center src="up.png" BORDER=0 ALT="Up"></A>
+<A HREF="cmnddoc_files.htm"><img align=center src="back.png" BORDER=0 ALT="Previous"></A>
+<A HREF="cmnddoc_playing.htm"><img align=center src="forward.png" BORDER=0 ALT="Next"></A>
+      </TD>
+   </TR>
+</TABLE>
+
+
+<HR>
+
+
+
+<center><h3>Commands that can be used as Keyboard, Pedal, or Midi shortcuts as well as automation.</h3></center><p>
+
+<b>Undo</b>: Undo. Currently for marker and text block operations only.<br>
+<p>
+<b>Redo</b>: Redo. Currently for marker and text block operations only.<br>
+<p>
+<b>ScriptAbort</b>: Stop execution of script.<p>
+<b>Preferences</b>: Global preferences controlling Transcribe!'s operation.<p>
+<b>PreferencesToolbar</b>: Select which buttons should appear in the toolbar.<p>
+<b>MidiShortcuts</b>: View and configure Transcribe!'s response to MIDI messages.<p>
+<b>KeyboardShortcuts</b>: View and configure keyboard shortcuts.<p>
+<b>FootPedals</b>: View and configure Transcribe!'s response to USB (not MIDI) foot pedals.<p>
+<b>QuitCanSaveCanVeto</b>: Quit, giving the option to Save first, or Veto.<p>
+<b>QuitNoSaveNoVeto</b>: Quit immediately without giving the option to Save first.<br>
+Be careful if you create a shortcut to this command. Choose a key combination that you won't hit by accident.<p>
+<b>DocWindowCloseCanSaveCanVeto</b>: Close the current transcription and the window which contains it. Gives the option to Save first, or Veto. If this is the only open transcription and you have not selected "Closing last window closes application immediately" in preferences then the window will be left open but empty.<p>
+<b>DocWindowCloseNoSaveNoVeto</b>: Immediately close the current transcription and the window which contains it. No option to Save first. If this is the only open transcription and you have not selected "Closing last window closes application immediately" in preferences then the window will be left open but empty.<br>
+Be careful if you create a shortcut to this command. Choose a key combination that you won't hit by accident.<p>
+<b>DocWindowReposition</b>: Reposition the current window to the upper left of the screen and limit its size to two thirds of the screen size.<p>
+<b>WindowFXDlgShow</b>: Show Effects Window<p>
+<b>WindowFXDlgHide</b>: Hide Effects Window<p>
+<b>WindowFXDlgToggle</b>: Show/Hide Effects Window<p>
+<b>WindowSFDlgShow</b>: Show Transcription Info<p>
+<b>WindowSFDlgHide</b>: Hide Transcription Info<p>
+<b>WindowSFDlgToggle</b>: Show/Hide Transcription Info<p>
+<b>WindowAllToFront</b>: Bring all Transcribe!'s windows to the front.<p>
+<b>WindowVideoToFront</b>: Bring the video window to the front.<p>
+<b>WindowPrevious</b>: Bring previous transcription window to the front (if you have more than one transcription open).<p>
+<b>WindowNext</b>: Bring next transcription window to the front (if you have more than one transcription open).<p>
+<b>WindowThis</b>: Bring current transcription window to the front.<p>
+<b>WindowToFront1 ... WindowToFront32</b>: Bring a transcription window to the front.<p>
+<b>Help</b>: Help for using Transcribe!<p>
+<b>FAQ</b>: Visit the FAQ (Frequently Asked Questions) on the Seventh String web site.<p>
+<b>CheckUpdates</b>: Check for updates on the Seventh String web site.<p>
+<b>SystemInfo</b>: Display the System Info window. Shows information about your computer, Transcribe! itself, and recent errors.<p>
+<b>LicenseInfo</b>: Display information about whether this copy of Transcribe! has been licensed, expiry of trial period, and allows entry of license key.<p>
+<b>About</b>: Shows version and copyright information for Transcribe!<p>
+
+<hr>
+<center><h3>Commands that require parameters, which can only be used for <A HREF="automation.htm">Automation</A>.</h3></center><p>
+
+<b>ScriptWait(double)</b>: Causes your script file to wait before executing the next command.<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Parameter: how many seconds to wait.<br>
+This is intended to make it possible to play (or wait silently) in a script file. You would issue a Play command to start playback, then wait. If you are playing and you specify a waiting time of zero then it will wait until playback stops, so you should switch off Loop mode first! (of course you can always stop it by manual control with the mouse). This counts real seconds not sound file seconds, which would be different if speed change is happening.<p>
+<b>ScriptWaitLoops(int)</b>: Causes your script file to wait before executing the next command.<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Parameter: how many loops to wait.<br>
+This is intended to make it possible to play and loop in a script file. You would issue a Play command to start playback, then wait. Waiting will end when the specified number of loops have been completed.<p>
+<b>ScriptMessage(text)</b>: Displays a message box with Ok and Cancel buttons.<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Parameter: the text to display in the box.<br>
+If you press "Ok" then the script will continue. "Cancel" will stop the script.<p>
+<b>VersionCheck(int, int, int)</b>: Checks that the version of Transcribe! is at least what you specify.<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Parameter 1: the major version number.<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Parameter 2: the minor version number.<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Parameter 3: the micro version number.<br>
+E.g. (7,51,2) will check for at least version 7.51.2 and stop the script if not.<p>
+<b>CreateFile(text, text)</b>: Create a file with the given text content.<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Parameter 1: the absolute name of the file.<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Parameter 2: the text content.<br>
+This will fail if the file already exists, but you could DeleteFile first if you want to be sure that won't happen. This is intended to allow other programs to know that a job has been done. For instance if you are exporting a large sound file then you could make this the next command. Then another program, on seeing this file appear, will know the sound file export has finished.<p>
+<b>DeleteFile(text)</b>: Delete a file.<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Parameter: the absolute name of the file.<br>
+This will not complain if the file doesn't exist. It can be used to make sure that a file doesn't exist before running some other command that will fail if it does. It can also be used for communication with other programs in a similar way to the CreateFile command.<p>
+
+</HTML>

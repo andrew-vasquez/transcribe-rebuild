@@ -1,0 +1,58 @@
+Transcribe! : Record New Sound File
+ | 
+Record New Sound File
+ | 
+This command is a straightforward recording facility, where you feed sound into your
+computer either from a microphone or (more likely) an audio cable from your CD or cassette
+player or directly from the machine's built-in CD player, and use this command to record
+the result to disk as a sound file suitable for transcription.
+You can also use this command for capturing output from other programs on your computer. That is, if you want to capture the audio from a YouTube video or from some proprietary sound player then there might be a clever way of downloading or converting the file, but a quick and simple technique is to plug a lead from the headphone output to the line or mic input, and record the sound while it's playing.
+If you have an audio CD and your computer has a CD drive then it is better to copy digitally if possible - see here for instructions.
+This command creates WAV or AIFF or compressed format files (mp3 by default).
+See Preferences - Export for settings relating to compressed file exporting (e.g. to select the type of file and the quality).
+Sound Source
+There is a pop-up menu where you can select from whatever input devices may be available on your system.
+There is also a volume slider and a status message.
+File to Record to
+Here you select the format (WAV or AIFF or Compressed) you want to record, and the name and folder to use for the sound file.
+Note: make sure you select (use the Browse button) a folder on a suitable hard disk with plenty of room. For example, Transcribe! cannot record to an audio CD because it is not writable.
+Note: it's a good idea to give the sound file a descriptive name before pressing the Record button to start recording. Anyway, make sure that you select a different name from any other sound file you have already recorded. If you select a sound file which already exists then Transcribe! will ask for confirmation before it is overwritten. Don't tell Transcribe! to overwrite it unless you are sure you don't need the old one. If you overwrite a file which Transcribe! already had opened for transcribing, then when you next try to play it Transcribe! will report errors trying to read it.
+VU Meters
+These show the levels Transcribe! is currently "hearing" whether recording or not. Adjust the volume to get a good level without hitting the end.
+Here's a useful tip if you are using this command for copying old analogue
+recordings to your computer : instead of worrying too much about adjusting
+the recording level, keep the level on the low side for safety, so Transcribe!'s "Margin dB"
+might be as much as 10dB or 20dB when done. Make a note of what the margin was,
+and use the EQ page of the Audio Effects and Controls window to boost the level
+by slightly less than that number of dB. Transcribe! will not actually pass the signal
+through the EQ processing if you merely use it to adjust level like this (i.e. this
+causes no unnecessary signal degradation). Then, when using the "Export Split
+Sound File" command, make sure to tick the EQ box so this boost is applied,
+and the output files will have good level. You might think you're losing some
+dynamic range by doing this but in fact the dynamic range of 16 bit digital
+is so enormously greater than old analogue media that you are not losing
+anything meaningful.
+For another method of determining the maximum signal level in your recording,
+see Show dB Lines.
+Margin
+This is so you can see whether your recording level has overloaded, it tells you how much safety margin there was for the loudest sound so far seen. If it says "0" then there may have been an overload.
+Time
+Time available : how much free space on disk. It reports on the disk which contains the folder selected in "File to Record to" (above). It will say "0" if you have selected an unsuitable disk such as an audio CD.
+However this time calculation assumes uncompressed WAV or AIFF format. If you are recording to a compressed format
+then you will have much more time available than reported here, and this dialog's brain is not big enough to figure it out.
+Time recorded : as it says.
+Auto stop : this is useful if want Transcribe! to record unattended, but you don't want it to record forever and fill your hard disk. Use the spin control to select a number of minutes, then check the "Auto stop" box. Transcribe! will stop recording when this many minutes have been recorded.
+Record / Stop Recording
+These start and stop recording, to the file name that you have specified.
+If you select a sound file which already exists then Transcribe! will ask for confirmation before it is overwritten. Don't tell Transcribe! to overwrite it unless you are sure you don't need the old one.
+When you stop recording, Transcribe! will offer to open a new transcription for the sound file you have recorded.
+You can pause and resume while recording. The little light to the right of the button will flash red while recording and green while paused.
+If It Doesn't Work
+By far the most common problem is that you must select the appropriate recording source, or else you
+will just record silence. Instructions for doing this are above. Even though the music is playing into the "line" input while you Record, if you have selected "Mic" input for recording then you will record silence.
+Are the VU meters jumping up and down while the music plays? If not then Transcribe!
+is not "hearing" the sound, probably because the correct source has not been selected.
+If the recording is successful but the sound is faint and obscured by a lot of background
+noise, then you are probably recording from the internal microphone. Clap your hands to
+see if the VU meters respond. It is not a good idea to record from the internal mic as
+the quality will be very poor.

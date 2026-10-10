@@ -1,0 +1,154 @@
+Transcribe! : Commands: Selection
+ | 
+Commands: Selection
+ | 
+Commands that can be used as Keyboard, Pedal, or Midi shortcuts as well as automation.
+SelectionFromCurrent: Select from the current point or the left of the current selection, to the playing or paused point.
+SelectionFromCurrentRight: Select from the current point or the right of the current selection, to the playing or paused point.
+SelectionMakeZero: Set current point to the playing or paused point,
+or centred on the current selection if not playing or paused.
+SelectionMakeMs100: Make a 0.1 sec selection centred on the playing or paused point,
+or centred on the current selection if not playing or paused.
+SelectionMakeMs200: Make a 0.2 sec selection centred on the playing or paused point,
+or centred on the current selection if not playing or paused.
+SelectionMakeMs300: Make a 0.3 sec selection centred on the playing or paused point,
+or centred on the current selection if not playing or paused.
+SelectionMakeAll: Select the whole track.
+SelectionCollapseLeft: Collapse selection to a point, at the left of the existing selection.
+SelectionCollapseCentre: Collapse selection to a point, at the centre of the existing selection.
+SelectionCollapseRight: Collapse selection to a point, at the right of the existing selection.
+SelectionWindowLeft: Set current point to the left of the visible window.
+SelectionWindowCentre: Set current point to the centre of the visible window.
+SelectionWindowRight: Set current point to the right of the visible window.
+SelectionResetStart: Stop playback, cancel any selection, and move to start of track.
+SelectionResetEnd: Stop playback, cancel any selection, and move to end of track.
+SelectionMoveLeftEnd: Move to start of track
+SelectionMoveRightEnd: Move to end of track
+SelectionIncreaseLeftEnd: Extend selection to start of track
+SelectionIncreaseRightEnd: Extend selection to end of track
+SelectionDecreaseLeftEnd: Move to end of track
+SelectionDecreaseRightEnd: Move to start of track
+SelectionMoveLeftSection: Move to previous section
+SelectionMoveRightSection: Move to next section
+SelectionIncreaseLeftSection: Increase selection at left by section
+SelectionIncreaseRightSection: Increase selection at right by section
+SelectionDecreaseLeftSection: Decrease selection at left by section
+SelectionDecreaseRightSection: Decrease selection at right by section
+SelectionMoveLeftMeasure: Move to previous measure
+SelectionMoveRightMeasure: Move to next measure
+SelectionIncreaseLeftMeasure: Increase selection at left by measure
+SelectionIncreaseRightMeasure: Increase selection at right by measure
+SelectionDecreaseLeftMeasure: Decrease selection at left by measure
+SelectionDecreaseRightMeasure: Decrease selection at right by measure
+SelectionMoveLeftBeat: Move to previous beat
+SelectionMoveRightBeat: Move to next beat
+SelectionIncreaseLeftBeat: Increase selection at left by beat
+SelectionIncreaseRightBeat: Increase selection at right by beat
+SelectionDecreaseLeftBeat: Decrease selection at left by beat
+SelectionDecreaseRightBeat: Decrease selection at right by beat
+SelectionMoveLeftMs10000: Move left 10 sec
+SelectionMoveRightMs10000: Move right 10 sec
+SelectionIncreaseLeftMs10000: Increase selection at left by 10 sec
+SelectionIncreaseRightMs10000: Increase selection at right by 10 sec
+SelectionDecreaseLeftMs10000: Decrease selection at left by 10 sec
+SelectionDecreaseRightMs10000: Decrease selection at right by 10 sec
+SelectionMoveLeftMs5000: Move left 5 sec
+SelectionMoveRightMs5000: Move right 5 sec
+SelectionIncreaseLeftMs5000: Increase selection at left by 5 sec
+SelectionIncreaseRightMs5000: Increase selection at right by 5 sec
+SelectionDecreaseLeftMs5000: Decrease selection at left by 5 sec
+SelectionDecreaseRightMs5000: Decrease selection at right by 5 sec
+SelectionMoveLeftMs4000: Move left 4 sec
+SelectionMoveRightMs4000: Move right 4 sec
+SelectionIncreaseLeftMs4000: Increase selection at left by 4 sec
+SelectionIncreaseRightMs4000: Increase selection at right by 4 sec
+SelectionDecreaseLeftMs4000: Decrease selection at left by 4 sec
+SelectionDecreaseRightMs4000: Decrease selection at right by 4 sec
+SelectionMoveLeftMs3000: Move left 3 sec
+SelectionMoveRightMs3000: Move right 3 sec
+SelectionIncreaseLeftMs3000: Increase selection at left by 3 sec
+SelectionIncreaseRightMs3000: Increase selection at right by 3 sec
+SelectionDecreaseLeftMs3000: Decrease selection at left by 3 sec
+SelectionDecreaseRightMs3000: Decrease selection at right by 3 sec
+SelectionMoveLeftMs2000: Move left 2 sec
+SelectionMoveRightMs2000: Move right 2 sec
+SelectionIncreaseLeftMs2000: Increase selection at left by 2 sec
+SelectionIncreaseRightMs2000: Increase selection at right by 2 sec
+SelectionDecreaseLeftMs2000: Decrease selection at left by 2 sec
+SelectionDecreaseRightMs2000: Decrease selection at right by 2 sec
+SelectionMoveLeftMs1000: Move left 1 sec
+SelectionMoveRightMs1000: Move right 1 sec
+SelectionIncreaseLeftMs1000: Increase selection at left by 1 sec
+SelectionIncreaseRightMs1000: Increase selection at right by 1 sec
+SelectionDecreaseLeftMs1000: Decrease selection at left by 1 sec
+SelectionDecreaseRightMs1000: Decrease selection at right by 1 sec
+SelectionMoveLeftMs500: Move left 0.5 sec
+SelectionMoveRightMs500: Move right 0.5 sec
+SelectionIncreaseLeftMs500: Increase selection at left by 0.5 sec
+SelectionIncreaseRightMs500: Increase selection at right by 0.5 sec
+SelectionDecreaseLeftMs500: Decrease selection at left by 0.5 sec
+SelectionDecreaseRightMs500: Decrease selection at right by 0.5 sec
+SelectionMoveLeftMs100: Move left 0.1 sec
+SelectionMoveRightMs100: Move right 0.1 sec
+SelectionIncreaseLeftMs100: Increase selection at left by 0.1 sec
+SelectionIncreaseRightMs100: Increase selection at right by 0.1 sec
+SelectionDecreaseLeftMs100: Decrease selection at left by 0.1 sec
+SelectionDecreaseRightMs100: Decrease selection at right by 0.1 sec
+SelectionMoveLeftMs30: Move left 0.03 sec
+SelectionMoveRightMs30: Move right 0.03 sec
+SelectionIncreaseLeftMs30: Increase selection at left by 0.03 sec
+SelectionIncreaseRightMs30: Increase selection at right by 0.03 sec
+SelectionDecreaseLeftMs30: Decrease selection at left by 0.03 sec
+SelectionDecreaseRightMs30: Decrease selection at right by 0.03 sec
+SelectionMoveLeftMs10: Move left 0.01 sec
+SelectionMoveRightMs10: Move right 0.01 sec
+SelectionIncreaseLeftMs10: Increase selection at left by 0.01 sec
+SelectionIncreaseRightMs10: Increase selection at right by 0.01 sec
+SelectionDecreaseLeftMs10: Decrease selection at left by 0.01 sec
+SelectionDecreaseRightMs10: Decrease selection at right by 0.01 sec
+SelectionMoveLeftPix10: Move left 10 pixels
+SelectionMoveRightPix10: Move right 10 pixels
+SelectionIncreaseLeftPix10: Increase selection at left by 10 pixels
+SelectionIncreaseRightPix10: Increase selection at right by 10 pixels
+SelectionDecreaseLeftPix10: Decrease selection at left by 10 pixels
+SelectionDecreaseRightPix10: Decrease selection at right by 10 pixels
+SelectionMoveLeftPix1: Move left 1 pixel
+SelectionMoveRightPix1: Move right 1 pixel
+SelectionIncreaseLeftPix1: Increase selection at left by 1 pixel
+SelectionIncreaseRightPix1: Increase selection at right by 1 pixel
+SelectionDecreaseLeftPix1: Decrease selection at left by 1 pixel
+SelectionDecreaseRightPix1: Decrease selection at right by 1 pixel
+SelectionStepLeft: Move the selection to the left by its own length, with overlap if you have specified any "rewind" in Preferences.
+SelectionStepLeftNoRewind: Move the selection to the left by its own length, with no overlap.
+SelectionStepRight: Move the selection to the right by its own length, with overlap if you have specified any "rewind" in Preferences.
+SelectionStepRightNoRewind: Move the selection to the right by its own length, with no overlap.
+SelectionToActiveTextBlock: Move the selection to the currently active text block, if any (the one showing little editing handles).
+SelectionToNextTextBlock: Move the selection to the nearest text block after the current point.
+SelectionToPreviousTextBlock: Move the selection to the nearest text block before the current point.
+Commands that require parameters, which can only be used for Automation.
+ViewSetSelection(double, double): Set the current point and selection in seconds.
+     Parameter 1: one end of the selection.
+     Parameter 2: the other end of the selection.
+You can specify left & right in either order. If they are both the same then you are setting the current point with no selection.
+ViewSetSelectionSeconds(double, double): Set the current point and selection in seconds.
+     Parameter 1: the start of the selection.
+     Parameter 2: the length of the selection.
+If length is 0 then you are setting the current point with no selection. Note that there are many commands above which can adjust the selection size to the nearest marker in either direction, etc.
+SelectionMoveSeconds(double): Move the current point or selection in seconds.
+     Parameter: distance to move in seconds. Negative means move left.
+SetSelectionSizeSeconds(double): Set the size of the selection in seconds.
+     Parameter: the new size in seconds. If 0 then you are setting the current point with no selection.
+SelectionMake(double): Make a selection centred on the playing or paused point,
+or centred on the current selection if not playing or paused.
+     Parameter: size of selection in seconds.
+SelectionMovePix(int): Move whole selection in pixels
+SelectionSizePix(int): Change size of selection in pixels
+SelectionToNamedMarkerCurrent(text): This sets the current point to a named marker.
+     Parameter: the marker name.
+Marker name comparison is case insensitive. The whole name must match. If there is more than one marker with the same name then the first one will be used.
+SelectionToNamedMarkerLeft(text): This sets the left of the current selection to a named marker.
+     Parameter: the marker name.
+Marker name comparison is case insensitive. The whole name must match. If there is more than one marker with the same name then the first one will be used.
+SelectionToNamedMarkerRight(text): This sets the right of the current selection to a named marker.
+     Parameter: the marker name.
+Marker name comparison is case insensitive. The whole name must match. If there is more than one marker with the same name then the first one will be used.

@@ -1,0 +1,46 @@
+Transcribe! : Troubleshooting
+ | 
+Troubleshooting
+ | 
+If you are having difficulty with some aspect of using Transcribe! then please first make sure you have read the relevant parts of the Help as you may well find the answer there. That means:
+For basic use of Transcribe! : the Overview, and Getting Started.
+The Help for the specific area you are having a problem with.
+The FAQ.
+If something strange is happening then there may be additional information in the System Info command on the Application menu. Run this command, and see what it says. There may be technical information there which won't mean anything to you but which might mean something to me. Also if you have been seeing an error message pop up, then its text will also appear in System Info so copying from there is the easiest way to report what it said to me.
+If you think there is a bug in Transcribe! then please check that you are running the latest version, and update if you aren't. Use the "Check for Updates" command on the Application menu.
+Generally Strange Behaviour
+If your Mac is behaving oddly not just with Transcribe! - can't open files, whatever - Run Applications / Utilities / Disk Utility and "First Aid" on your startup disk and any other relevant disk drives. This has been recommended to me as the first thing you should do whenever you get strange behaviour from any application. And in fact it does sometimes cure the strangest problems.
+Errors reported by the OS
+If macOS itself has errors to report about Transcribe! or anything else, then you may be able to see error messages as follows:
+Go to Applications - Utilities and double-click the "Console" application.
+If there is any problem with the location Transcribe! is using for temporary files then you can override this by setting the environment variable TMPDIR to the full name of the folder to use for temp files (without a terminating separator).
+Problems with playback
+No sound / "Play" button is disabled
+First, have you successfully loaded a sound file? The wavy black line of its profile should be visible if you have, see the picture here for comparison. If you have not loaded the sound file then read Getting Started for instructions.
+Can't load sound file
+Check here to see if it is of a type supported by Transcribe!. Maybe the file is faulty - will it load and play into other software? What software?
+Waveform profile is displayed but still no sound
+Press the Play button. Does the play position indicator (vertical black line) move across the waveform and the scroll bar? If so then Transcribe! thinks it is playing... maybe the speakers aren't plugged in or something. Transcribe! does also have a volume control, see Audio Effects, make sure it is not at zero.
+Check Transcribe!'s selection of output device. This is in Preferences - Playback.
+Drop-outs (brief silent gaps interrupting playback)
+Is any other program running at the same time and possibly using the disk heavily? If so, trying stopping that program.
+Also see here for advice about this one.
+Problems with Video
+If Transcribe! won't load or play some video file then first make sure it plays ok in other software on your computer.
+If a video is playing in a jerky way or takes a long time to get synchronised with the audio then try using the Export Video command to create a copy. The copy will be in a format which Transcribe! may be able to do a better job of displaying.
+See here in the Help for more information about video in Transcribe!, and see https://www.seventhstring.com/xscribe/video.html on the website.
+Problems Recording
+By far the commonest problem is that you must select the appropriate source to
+record from. If the VU meter in the "Record new sound file" dialog is not jumping up and down
+with the music then probably the recording input selection is not set correctly.
+See here for more information about how to fix this.
+Make sure you are recording to a disk which is writable (not a CD) and which has sufficient free space.
+Can any other software on your machine record successfully?
+Reporting Problems / Asking For Help
+Please remember to check the FAQ on the Seventh String website first, as it might have more up to date information than this Help file has got.
+See here for information on contacting Seventh String.
+Please give as clear and complete description of the problem as you can manage.
+I need information about your Transcribe! version and computer type, etc. Most of this information is provided by the System Info command on the Application menu. Run this command, Copy the info and Paste the whole thing into the email you send me. Yes, the "License state" entry tells me whether you are in your free evaluation period or have bought Transcribe!. But you do get support during the evaluation period.
+Please also tell me :
+What make and model of computer you have.
+What make and model of sound hardware you have.

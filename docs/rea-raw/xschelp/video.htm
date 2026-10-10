@@ -1,0 +1,107 @@
+
+
+
+
+
+
+
+<HTML><HEAD><TITLE>Transcribe! : Video</TITLE></HEAD>
+<BODY BGCOLOR=#ffffff TEXT=#000000 LINK=#ff0000 ALINK=#ff0000 VLINK=#ff0000>
+
+<TABLE BORDER="0" CELLSPACING="0" CELLPADDING="0" WIDTH="100%">
+   <TR>
+      <TD ALIGN="CENTER" VALIGN="MIDDLE"><H2>Video</H2></TD>
+      <TD ALIGN="RIGHT" VALIGN="MIDDLE">
+<A HREF="contents.htm"><img align=center src="contents.png" BORDER=0 ALT="Home"></A>
+<A HREF="various.htm"><img align=center src="up.png" BORDER=0 ALT="Up"></A>
+<A HREF="gstreamer.htm"><img align=center src="back.png" BORDER=0 ALT="Previous"></A>
+<A HREF="xsc_files.htm"><img align=center src="forward.png" BORDER=0 ALT="Next"></A>
+      </TD>
+   </TR>
+</TABLE>
+
+
+<HR>
+
+Transcribe! can display videos, synchronised to the audio at any speed. This can be very helpful if you are transcribing music from a video of an actual performance.<p>
+
+Transcribe! uses GStreamer to display video on Windows, Mac &amp; Linux.
+On Mac starting with version 9.10 we include GStreamer as part of the Transcribe! installation, so you don't need to install it yourself.<p>
+
+See the <A HREF="trouble.htm">Troubleshooting</A> section if you are having problems displaying video.<p>
+
+You can also find more help with videos on the Seventh String website
+https://www.seventhstring.com/xscribe/video.html<p>
+
+When you load a video file then Transcribe! will display the video in a separate window. You can choose whether the video window is displayed or not, see Transcribe!'s <A HREF="view_menu.htm#show_spectrum">View menu</A>.<p>
+
+You can control-click the video window to get a pop-up menu of commands. This is especially useful when you are in full-screen mode, when the normal window menu is not available.<p>
+
+You can adjust the size by dragging the edges of the Video Viewer window, or by using the Zoom command on the View menu. The View menu also has a Full Screen option.<p>
+
+The Video Viewer has two toolbars which may appear at the bottom of the window - the "Time Offset" toolbar and the "Play Controls" toolbar. When in Full Screen you always get the "Play Controls" toolbar. When not in Full Screen can can choose, on the View menu, which of them you want.<p>
+
+When you drag the thumb of the slider on the Play Controls toolbar then this sets Transcribe!'s Current Point. But if you drag the thumb with the command key pressed then it will play from that point without changing the current point or selection. This is analagous to clicking on the waveform in the main window with the command key pressed, which also plays from that point without changing the selection.<p>
+
+Some videos do not have the sound and picture properly synchronised. The "Time Offset" slider allows you to offset the picture up to a second either way from the sound, so as to synchronise them. If you are near the beginning or end of the video then the time offset slider theoretically could take you beyond the end, but of course it cannot show you video frames which do not exist, so the picture won't change.<p>
+
+
+On the Video Viewer's View menu there are also "Mirror" and "Vertical Flip" commands : this will flip the video left-right or top-bottom, making e.g. a left handed guitarist appear right handed, etc. This can be useful when trying to decipher the player's fingerings. Vertical Flip can present you with the same view of the fingerboard that you have yourself when playing : when you watch a guitarist playing, the highest pitched string is the lowest in your field of view. But when you play and look at the fingerboard, the highest pitched string is the highest in your field of view.<p>
+
+
+
+When playback is paused you will get a still frame at the paused point. When stopped you will get a still frame at the current point (red triangle). When you have a still display, you can use the "time offset" slider to examine the video frame by frame on either side of the still point. Video formats are designed to be played forwards so you may get a jerky result when you move the slider to the left, effectively playing backwards.<p>
+
+Transcribe!'s audio playback should remain as rapidly responsive as ever, but depending on your system
+and on the video file, it may take up to half a second or so for the video to get
+locked in when playback starts or loops. If this is a problem then the answer is to
+start playback (or start your loop) a little before the part you are interested in,
+so that the video will be in sync by the time you get there.<p>
+
+Transcribe! will scan the entire movie before you can play it
+so it's a good idea to keep tracks reasonably short to save time. In other words
+if you are copying from a DVD to a video file, just copy the scene you want,
+not the whole DVD (if the copying software you are using allows this).<p>
+
+If a video won't play smoothly then you may be able to improve matters by using the Video Export command to create a copy and then use that. Regardless of the original format of the video, Video Export will always save in a format which I hope is portable and will play smoothly in Transcribe! (mp4 with H264 video and aac audio, with frequent key frames). So if you have a video which plays jerkily, the solution is to use the Video Export command to create a copy of it, and then load that instead. It may also be helpful to export the copy at a lower bitrate so as to produce a smaller file. You can do this: see <A HREF="prefs_export.htm">Preferences - Export</A> for this setting.<p>
+
+<p>
+
+If you are creating videos yourself and plan to slow them down, then bear in mind that higher frame-rates give a smoother result when slowing down.<p>
+
+You can use keyboard shortcuts for controlling Transcribe! when the Video Viewer is in front, but the response will be a little slower. The &lt;escape&gt; key will return you to the main transcription window.<p>
+
+If "Use mousewheel for scrubbing" is checked in Preferences - Playback then you can use the mousewheel over the waveform profile or over the video window for scrubbing backwards and forwards. See <A HREF="mouse.htm#scrub">Mouse Commands</A> for full documentation about this feature.<p>
+
+<B>Subtitles<A NAME="subtitles"></A></B><P>
+
+Transcribe! does not support the creation of subtitles but if the video you have loaded has integral subtitle tracks, or if you have an external subtitle file (e.g. an srt file) then you can tell Transcribe! to display those subtitles superimposed on the video.<p>
+
+Subtitle files are text files containing subtitles for some particular video, with timing information about when to display them.
+Subtitle files for films can often be found online, and may be available in languages that the original film does not have.<p>
+
+The command to select subtitles for display is on the View menu of the Video Viewer. The "background rectangle" option may or may not work, depending on what OS and what GStreamer version is installed.<p>
+
+If the original video is low resolution then you may find that the subtitles are also displayed with poor resolution even when you enlarge the video. In this case you can use the "De-blur Subtitles" command on the View menu of the Video Viewer. This will turn off cropping however - you can't use de-blur and cropping at the same time.<p>
+
+There are some subtitle formats which we don't support, such as ttml. You will easily find tools online for converting such formats to srt files.<p>
+
+<B>Cropping<A NAME="crop"></A></B><P>
+
+If you have a music video showing for example the player's hands, and you want to enlarge that part of the image and lose the rest then you can do that by cropping the video. You do this by using the mouse to drag the video edges with the &lt;command&gt; key pressed. If command-click has some other effect as a shortcut on your computer then you can instead press the command key after you have already started dragging the window edge.<p>
+
+Another option (instead of using the command key) is to turn on "Crop Mode" on the Video Viewer's Crop menu. This will cause all subsequent edge-dragging to be interpreted as cropping, until you turn Crop Mode off.<p>
+
+Playback will be stopped while you are cropping the video, though of course you can resume playing once you have set up the crop that you want.<p>
+
+You cannot use "De-blur subtitles" while a crop is in force.<p>
+
+Once you have created a crop you can switch between cropped and uncropped views by toggling the "Crop Active" menu item on the Crop menu of the video viewer.<p>
+
+<B>Reset<A NAME="reset"></A></B><P>
+
+Occasionally the video viewer may become confused by cropping the video or de-blurring subtitles, giving you a black area where the video should be (and also some error messages in Transcribe's System Info if you look there). In that case you can use the Reset command on the Crop menu to get back to a simple un-cropped state without de-blur.<p>
+
+If that doesn't fix it then try the Total Reset command which will disable cropping and also disable adjustment of the display pixel aspect ratio. These features can cause problems on some systems.
+
+</HTML>

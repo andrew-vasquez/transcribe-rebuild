@@ -1,0 +1,18 @@
+Transcribe! : Old and Slow Machines
+ | 
+Old and Slow Machines
+ | 
+Transcribe! does not, by default, make any attempt to baby old and slow machines. When you start using audio effects such as speed and pitch changes, along with mp3 or other compressed file decoding, you are using a lot of processing power. And remember that stereo doubles the work.
+If your machine is old and slow then it may not be able to keep up, you will get drop-outs (brief moments of silence interrupting playback). Do not despair, there are various things you can do, of varying degrees of drasticness.
+Select "Reduced CPU" this is in Preferences.
+Deselect "High quality slowdown and tuning" this is in Preferences.
+Increase the playback buffer size: this is in Preferences.
+Increase the playback buffer size: this is in Preferences.
+Turn off "Live Spectrum": this is in Preferences.
+Turn off "Compute Piano Roll while playing": this is in Preferences.
+Use an uncompressed sound file on hard disk: reading files from audio CD, and also decoding compressed formats such as mp3, ogg etc, can be expensive. So use Transcribe!'s Export Sound File command, or other tools, to make an uncompressed (WAV or AIFF) copy of the sound file on your hard disk. Then open a new transcription of that file.
+Use mono playback: stereo requires both channels to be processed separately, doubling the workload. So use the Mono/Karaoke page to mix to mono.
+Lower the sample rate: in Preferences tell Transcribe! to play at 22050 instead of 44100 sample rate. This halves the rate at which Transcribe! has to process data.
+Try "analog lock": this is on the Speed page. This requires less computation than adjusting the pitch and speed independently.
+If All Of These Things Fail
+Set the effects (speed, pitch etc) the way you want, then use the Export Sound File command, so you have a new uncompressed sound file with the effects already applied. Then start a new transcription of this modified sound file, and don't use any more effects while playing. This requires very little processing power and should be possible on any machine, even very slow ones.

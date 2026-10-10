@@ -1,0 +1,24 @@
+Transcribe! : Various Topics
+ | 
+Various Topics
+ | 
+Introduction to Transcribing Music
+Sound Files
+GStreamer
+Video
+Transcription Files
+Automation (Scripts)
+Commands for shortcuts and automation
+Organising Many Transcriptions
+Interpreting the Spectrum
+Note and Chord Guessing
+Note Frequencies
+Speech Transcription
+Play-Along Practice
+Old and Slow Machines
+Contact and Support
+License Agreement
+Evaluating and Buying Transcribe!
+Frequently Asked Questions
+Troubleshooting
+Acknowledgements

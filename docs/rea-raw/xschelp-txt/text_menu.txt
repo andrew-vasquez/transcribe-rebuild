@@ -1,0 +1,61 @@
+Transcribe! : Text Menu
+ | 
+Text Menu
+ | 
+About Text Blocks and the Text Zone
+Text blocks (and the Text Zone in which they are displayed) are for adding miscellaneous information to your transcription while you work.
+People have told me they want to add standard musical notation, chord symbols, lyrics, tablature, guitar chord diagrams, miscellaneous textual comments, "ABC" music notation, "Music XML", and other things. It's clearly (well, clear to me anyway) not practical to add full editing capability for all these things to Transcribe!, but I am hoping that the ability to add arbitrary amounts of text should go some way to helping with some of these requests.
+You can create text blocks which are each attached to a particular point in the transcription (in much the same way that markers are). Strictly speaking it is the left edge of the text block which is attached to a specific point. If you change the horizontal scaling of the transcription then the right edge of the text block will align with a different point in the music because the width of the text block on the screen stays the same. Text blocks are displayed in the "text zone" which is a strip running above the waveform profile and scrolling with it. Display of the text zone is optional of course.
+You can export the text to a file for use with other programs, or other programs can find the text by reading the
+transcription (xsc) file
+which is where Transcribe! stores it. You can select colours independently for each block. This is not just for cosmetic effect : when you export the text you can select which colours to export. So if you do the lyrics in one colour and the chord symbols in another then you can later export just the lyrics or just the chord symbols or both, as you wish.
+You can Undo/Redo all text block operations, using the usual Undo/Redo menu commands or keyboard shortcuts.
+Text blocks and markers are similar in some ways. However markers are primarily intended for navigating around the piece while text blocks are intended for adding arbitrary information. Here is a summary of the differences.
+Markers :
+Work best if placed at regular intervals such as section, measure, and beat.
+They appear in the Navigation Bar for quickly jumping to any point.
+Transcribe! can calculate tempo based on marker placement.
+Although you can give a marker a textual label these labels can only be one line and are best kept very short or they will overlap.
+Text Blocks :
+Place them wherever you want to add extra information.
+Each text block can have arbitrary amounts of multi-line text.
+They are displayed in the Text Zone whose height you can adjust as you wish, so you can have multiple text blocks at the same point in the transcription without them overlapping, by separating them vertically.
+If you click on a text block then it becomes "active" which means it is displayed with editing handles which you can drag with the mouse to move it or change its size. Transcribe! will set its height automatically to contain the text which is in it. There can only be one active text block at a time.
+For the purpose of exporting text or copying, moving, or deleting multiple blocks, you may want to select multiple text blocks. You do this by selecting the relevant part of the piece in the usual way by dragging the mouse over the waveform profile. The selected text blocks are indicated by having a solid bar displayed down the left edge of the block. This is a quite separate matter from the active block. If there is an active block then it may or may not be within any region of waveform that you might select.
+You can create a new text block while the music is playing with the "New text block" keyboard shortcut 'T', or by double clicking in the text zone. New text blocks are initially created with the same size and colour as the most recently active block if there is one.
+If you control-click in the text zone then you will get a popup menu from which you can select various text block related
+commands. If you clicked on an existing text block then you can edit or delete it. Otherwise you will be offered choices for creating a new text block at the clicked point. You also get a "Go To Block" submenu which lists text blocks either side of the point you clicked, showing the first few words of text in each block. Select one of these to go to the block in question.
+If you want to delete a lot of text blocks then select the relevant section of the piece (so the waveform profile is highlit) and then use the Delete Selected Text Blocks command (below).
+Editing Text Blocks
+When a text block is active it shows sizing handles - little black squares. You can drag these to change the block's size. You can't directly change its height because Transcribe! automatically sets the height to fit the text that's in it. You can drag the box edge (not on a handle) to move the whole thing. If you drag with the Command key pressed, then the movement will be constrained to horizontal or vertical only.
+If you click inside the box you get a dialog where you can edit the text and change the colour. There is also an option "Adjust text block width to fit the text" which will set the width of the text block to fit the width of the longest line in it, instead of breaking the lines to fit the width of the box. You can use the <enter> key in the text entry field in the usual way but if you type <shift>-<enter> then this will end the dialog as if you had pressed "Ok".
+If a text block has "Adjust text block width to fit the text" set, then you will not be able to adjust its width by dragging its handles with the mouse.
+Copying a Text Block
+Hold down the Alt key while you drag the box edge to create a copy of the selected text block, instead of moving the original. If you drag with both the Alt and Command key pressed, then the copy will be constrained to horizontal or vertical movement only.
+Moving or Copying Multiple Text Blocks
+For the purpose of exporting text or copying, moving, or deleting multiple blocks, you may want to select multiple text blocks. You do this by selecting the relevant part of the piece in the usual way by dragging the mouse over the waveform profile. The selected text blocks are indicated by having a solid bar displayed down the left edge of the block. This is a quite separate matter from the active block. If there is an active block then it may or may not be within any region of waveform that you might select.
+If you want to move or copy multiple blocks at the same time then first select the relevant blocks (so the waveform profile is highlit) and then click on any one of them to make it active so it shows editing handles. Then drag the active block holding the Alt key (if you want to copy rather than move) but also with the Shift key pressed, which tells Transcribe! to move or copy all the selected blocks, not just the one you are dragging.
+If you also drag with the Command key pressed, then dragging will be constrained to horizontal or vertical only.
+The Commands on the Text Menu
+Show Text Zone
+The text zone is the strip above the waveform profile where the text blocks are displayed. If the text zone is not shown then you cannot use any of the text block commands. You can adjust the height of the text zone by dragging the splitter bar which separates it from the waveform profile.
+Fit Text Zone Height
+This will show the text zone if it is not already shown, and if there are any text blocks then it will adjust the height of the text zone so that all the text blocks are visible. It does this by adjusting the height of the containing window.
+Text Block Font
+Here you can select the font to be used in text blocks. Fixed width fonts (where all the characters have the same width) are particularly useful if you are making such things as guitar chord diagrams. If you want to set a default font to be used in new transcriptions then go to Preferences - New Windows and select "Set defaults from current window". The text block font is one of the many things saved as a Preference when you do this.
+"System" means the system's default dialog font.
+"Preference" means that this transcription should use the font you have chosen as a preference, as just described (rather than having a specific font of its own which might be different).
+New Text Block
+This creates a new text block at the currently playing point.
+If music is not playing then you will be
+offered the option of placing the new text block at the current point or
+at the paused play point if you are paused.
+Previous Text Block
+Next Text Block
+If there is a currently active text block (showing dragging handles) then these activate the previous or next block.
+Edit Active Text Block
+If there is a currently active text block (showing dragging handles) then this brings up the Edit Text Block dialog so you can edit the text and change the colour. There is a default shortcut <enter>.
+Delete Active Text Block
+As it says. For deleting a single text block.
+Delete Selected Text Blocks
+For deleting many text blocks at once. First select (by dragging the mouse over the waveform profile) an area which includes the left edges of the text blocks you want to delete, so their left edges show a black stripe. Then select this command to delete them.

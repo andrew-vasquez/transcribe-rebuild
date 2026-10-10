@@ -1,0 +1,53 @@
+Transcribe! : Commands: Transcription and Sound Files
+ | 
+Commands: Transcription and Sound Files
+ | 
+Commands that can be used as Keyboard, Pedal, or Midi shortcuts as well as automation.
+FileOpen: Open either an existing transcription (.xsc) file, or a sound file, or a script (.xscscpt) file.
+RecentFilesClear: Empty the list of Recent Files.
+RecentFilesClearNoVeto: Empty the list of Recent Files, with no confirmation dialog.
+RecentFile1 ... RecentFile32: Load recent file from the list.
+RecentFoldersClear: Empty the list of Recent Folders.
+RecentFoldersClearNoVeto: Empty the list of Recent Folders, with no confirmation dialog.
+RecentFolder1 ... RecentFolder32: Open a file in a recent folder from the list.
+StemFilesManage: Manage the list of Stem Files.
+StemFile1 ... StemFile32: Load a Stem file from the list.
+StemFilePrev: Select the previous stem file from the list current loaded for this transcription.
+StemFileNext: Select the next stem file from the list current loaded for this transcription.
+FileSave: Save the current transcription as an xsc file (does not save any sound file).
+FileSaveAs: Save the current transcription as an xsc file with a new name (does not save any sound file).
+FileImportSound: Change the sound file associated with this transcription by allowing you to choose a new one.
+FileExportSound: Copy all or part of the sound file associated with this transcription to a new sound file. Processing such as speed or pitch change can optionally be applied.
+FileExportSoundSplit: Copy separate parts (determined by markers) of the sound file associated with this transcription to new sound files. Processing such as speed or pitch change can optionally be applied.
+FileExportVideo: Copy all or part of the video associated with this transcription to a new mp4 video file. Processing such as speed or pitch change can optionally be applied.
+FileExportVideoSplit: Copy separate parts (determined by markers) of the video associated with this transcription to new mp4 videos. Processing such as speed or pitch change can optionally be applied.
+FileRecord: Record audio input to a new sound file.
+FileCloseCanSaveCanVeto: Close the current transcription leaving its window open but empty. Gives the option to Save first, or Veto.
+FileCloseNoSaveNoVeto: Immediately close the current transcription leaving its window open but empty. No option to Save first.
+Be careful if you create a shortcut to this command. Choose a key combination that you won't hit by accident.
+Commands that require parameters, which can only be used for Automation.
+FileOpenFromFolder(text): Open either an existing transcription (.xsc) file, or a sound file, or a script (.xscscpt) file.
+     Parameter: the initial folder for the "Open" dialog.
+You must terminate the folder name with the filename separator character, backslash on Windows, slash on Mac or Linux, or for portability use the escape sequence "+/".
+Alternatively you can specify a full filename with folder : the filename part will be ignored.
+FileOpenNamed(text): Open either an existing transcription (.xsc) file, or a sound file, or a script (.xscscpt) file.
+     Parameter: the name of the file.
+StemFile(int): Select the specified stem file from the list current loaded for this transcription.
+     Parameter: the stem file number from 1 to however many there are for this transcription.
+FileSaveNamed(text): Save the current transcription as an xsc file (does not save any sound file).
+     Parameter: the name of the file.
+FileImportSoundNamed(text): Change the sound file associated with this transcription by importing a new one.
+     Parameter: the name of the file.
+FileExportSoundNamed(text): Copy the sound file associated with this transcription to a new sound file.
+     Parameter: the name of the file.
+This will export the selected part if there is a selection, otherwise the whole file. The file name extension must be .wav or .aiff or whatever extension you have set up for compressed files in Preferences - Export. It will apply whatever audio effects are active.
+FileExportSoundNamedRR(text, int, int): Copy the sound file associated with this transcription to a new sound file.
+     Parameter 1: the name of the file.
+     Parameter 2: the sample rate of the audio. 0 means same-as-source.
+     Parameter 3: repetitions. Usually 1.
+This will export the selected part if there is a selection, otherwise the whole file. The file name extension must be .wav or .aiff or whatever extension you have set up for compressed files in Preferences - Export. It will apply whatever audio effects are active.
+FileExportVideoNamed(text, int, int): Copy the video associated with this transcription to a new mp4 video file.
+     Parameter 1: the name of the file.
+     Parameter 2: the sample rate of the audio. 0 means same-as-source.
+     Parameter 3: repetitions. Usually 1.
+This will export the selected part if there is a selection, otherwise the whole file. The file name extension must be mp4. It will apply whatever audio effects are active.

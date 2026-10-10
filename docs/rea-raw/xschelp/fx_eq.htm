@@ -1,0 +1,60 @@
+
+
+
+
+
+
+
+<HTML><HEAD><TITLE>Transcribe! : EQ Effects Page</TITLE></HEAD>
+<BODY BGCOLOR=#ffffff TEXT=#000000 LINK=#ff0000 ALINK=#ff0000 VLINK=#ff0000>
+
+<TABLE BORDER="0" CELLSPACING="0" CELLPADDING="0" WIDTH="100%">
+   <TR>
+      <TD ALIGN="CENTER" VALIGN="MIDDLE"><H2>EQ Effects Page</H2></TD>
+      <TD ALIGN="RIGHT" VALIGN="MIDDLE">
+<A HREF="contents.htm"><img align=center src="contents.png" BORDER=0 ALT="Home"></A>
+<A HREF="fx.htm"><img align=center src="up.png" BORDER=0 ALT="Up"></A>
+<A HREF="fx_mix.htm"><img align=center src="back.png" BORDER=0 ALT="Previous"></A>
+<A HREF="fx_tuning.htm"><img align=center src="forward.png" BORDER=0 ALT="Next"></A>
+      </TD>
+   </TR>
+</TABLE>
+
+
+<HR>
+
+This is a straightforward 31 band graphic equaliser. One third of an octave per band.<P>
+
+You can also use it to apply a volume adjustment accurately specified in dB. If you adjust the gain but leave the other sliders flat then the EQ processing is bypassed and you get a simple volume adjustment. See also <A HREF="view_menu.htm#show_db">Show dB Lines</A>.<p>
+
+If you use too much boost then you will get digital overload. Transcribe! will use its compressor to prevent horrible distortion,
+and a red bar will appear below the volume slider in the lower toolbar to show you the amount of compression.
+If that happens then use the overall gain control at the right to correct it. Many commercial CDs are recorded as close to the 16-bit limit as they can get, so overload can occur very easily when you boost any frequencies.<P>
+
+While you hold down the mouse button on a slider, the neighbouring sliders will move towards it in an elasticated sort of way. You can hold down the shift key to make this go faster, or control-click the slider to prevent this happening at all.<p>
+
+The gain on each slider varies smoothly from +20dB down to -20dB but then becomes much more drastic at the bottom part of the range, reaching -80dB which effectively means the complete removal of the band in question. This is useful for completely removing parts of the spectrum you don't want to hear, which can help to hear - or remove - a specific instrument in the mix. Another useful technique for picking out individual instruments is the <A HREF="fx_mix.htm">Mono/Karaoke effect</A>.<p>
+
+Remember that the naming of notes on the piano keyboard of the Spectrum display in the main transcription window ("C3", "C4" etc) corresponds to the naming of the notes listed across the top of the EQ sliders here. So you can determine the pitch of a note by selecting it in the main window and looking at the resulting spectrum, and then you can find the corresponding EQ slider to cut or boost it. Each slider covers a third of an octave, i.e. about 4 semitones. But of course, notes have harmonics so removing the fundamental pitch will not remove the note entirely - you'll still hear the harmonics unless you remove those higher frequencies too.<p>
+
+At the right of the page is the "Presets" box. These are preset EQ settings intended to help isolate or remove specific instruments. These presets are shared globally across all transcriptions, and are saved in your Preferences. The default presets provided are to help you get started, but you will need to adjust them - and perhaps create new presets if you like - for best results with any particular instrument and track.<p>
+
+It would be meaningless, misleading even, to provide lots of presets for different instruments because ranges in fact overlap so much. The "Tenor" preset may be suitable for tenor sax, trombone, guitar; The "Soprano" for violin, mandolin... but you can't expect to separate the tenor sax from the guitar since their ranges are pretty much the same. Unless one of them happens to be playing quite high on the instrument and the other quite low, in which case you may be able to get some separation if you experiment. Don't expect miracles.<p>
+
+Also remember that the small built-in speakers on laptops don't really produce much sound below middle C at all. So adjustments you make to the lower sliders will make no audible difference on such speakers. Use headphones.<p>
+
+The listbox shows the currently available presets, in alphabetical order. Below it are some buttons:<br>
+<UL>
+<LI>Load : this loads the currently selected preset (if any) from the list box into your EQ sliders (you can also double-click the list box item instead).
+<LI>Save : this saves your current EQ slider settings. By default it will offer to replace whichever preset is currently selected in the list box, but you can type a new name in order to create a new preset if you want.
+<LI>Rename : this allows you to rename whichever preset is currently selected in the list box.
+<LI>Defaults : this reloads Transcribe!'s built-in default presets. It won't delete any other presets you have defined.
+<LI>Delete : this deletes the currently selected preset (if any) from the list box.
+<LI>Export : this exports your presets to a text file. It's useful if you want to transfer presets to a different computer.
+<LI>Import : this imports presets from a text file. It ignores presets which duplicate those you already have.
+</UL>
+<P>
+
+You can also control-click the EQ button in the upper tooolbar of the main window, to get a menu allowing you to select one of your preset EQs.<p>
+
+</HTML>

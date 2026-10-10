@@ -1,0 +1,48 @@
+Transcribe! : Commands: Markers and navigation
+ | 
+Commands: Markers and navigation
+ | 
+Commands that can be used as Keyboard, Pedal, or Midi shortcuts as well as automation.
+MarkerNewSection: Create new section marker at currently playing point, or prompt for instructions if not playing.
+MarkerNewMeasure: Create new measure marker at currently playing point, or prompt for instructions if not playing.
+MarkerNewBeat: Create new beat marker at currently playing point, or prompt for instructions if not playing.
+MarkerNewSectionSilent: Create new section marker at currently playing point if playing, else pause point if paused, else current point.
+MarkerNewMeasureSilent: Create new measure marker at currently playing point if playing, else pause point if paused, else current point.
+MarkerNewBeatSilent: Create new beat marker at currently playing point if playing, else pause point if paused, else current point.
+MarkerNewSectionCurrent: Create new section marker at the current point.
+MarkerNewMeasureCurrent: Create new measure marker at the current point.
+MarkerNewBeatCurrent: Create new beat marker at the current point.
+MarkersDelete: Delete all markers in the selected region.
+MarkersEqualSpace: Equally space the markers in the selected region. See the Help for the Markers menu for details.
+ComputeTempo: Compute tempo, based on markers in selected region.
+MarkerNewSectionEE: Create new section markers at each end of the current selection.
+MarkerNewMeasureEE: Create new measure markers at each end of the current selection.
+MarkerNewBeatEE: Create new beat markers at each end of the current selection.
+MarkerEditMostRecent: Edit the most recently created or edited marker.
+MarkerEditNearestCurrent: Edit the marker nearest to the current point.
+MarkerEditNearestPlaying: Edit the marker nearest to the playing or paused point.
+ViewNavBarShow: Show Navigation Bar
+ViewNavBarHide: Hide Navigation Bar
+ViewNavBarToggle: Toggle Navigation Bar
+ViewNavbarMeasuresOn: Include measure markers on the navigation bar.
+ViewNavbarMeasuresOff: Do not include measure markers on the navigation bar.
+ViewNavbarMeasuresToggle: Toggle inclusion of measure markers on the navigation bar.
+ViewNavbarMeasuresMenuOn: Include measure markers on the navigation bar's context menu.
+ViewNavbarMeasuresMenuOff: Do not include measure markers on the navigation bar's context menu.
+ViewNavbarMeasuresMenuToggle: Toggle inclusion of measure markers on the navigation bar's context menu.
+ScrollToStart: Scroll to start of piece. No change to current point or selection.
+ScrollToEnd: Scroll to end of piece. No change to current point or selection.
+ScrollLineLeft: Scroll to left, like buttoning the left arrow on the scrollbar. No change to current point or selection.
+ScrollLineRight: Scroll to right, like buttoning the right arrow on the scrollbar. No change to current point or selection.
+ScrollPageLeft: Scroll to left, like buttoning the scrollbar to the left of the thumb. No change to current point or selection.
+ScrollPageRight: Scroll to right, like buttoning the scrollbar to the right of the thumb. No change to current point or selection.
+ScrollSelectionIntoView: Scroll the current point or selection into view. No change to current point or selection.
+ScrollPlayingIntoView: Scroll the currently playing or paused point view. No change to current point or selection. This is unnecessary if scroll mode is on.
+TimestampCopyCurrentPoint: Copies a timestamp representing the position of the current point (the little red triangle) in the form "mm:ss" (minutes and seconds) so you can paste it to somewhere else. If you have a non-empty selection then you will also get the length of the selection, after a comma.
+TimestampCopyPlayingPoint: Copies a timestamp representing the position of the currently playing point (or paused point if you are paused, or current point if you are stopped) in the form "mm:ss" (minutes and seconds) so you can paste it to somewhere else.
+You can also export markers to a text file : see the MarkersAndTextBlocksExport command in the "Text blocks" section.
+Commands that require parameters, which can only be used for Automation.
+MarkerNewSeconds(text, double): Create a new marker.
+     Parameter 1: "S" "M" or "B" for section, measure, or beat marker.
+     Parameter 2: marker position in seconds.
+If the position is beyond the end of the track, the command will be silently ignored.

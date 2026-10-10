@@ -1,0 +1,42 @@
+Transcribe! : Application Menu
+ | 
+Application Menu
+ | 
+The Application menu has commands which apply to the application
+as a whole, and also the usual system commands. Only the commands which apply
+to Transcribe! specifically are described here.
+The Commands on the Application Menu
+About Transcribe!
+This command displays the version number and other information about
+this copy of Transcribe!
+Preferences
+The Preferences dialog has options for configuring Transcribe!. It has several pages dealing with different aspects of Transcribe!'s behaviour.
+On Mac, preferences information is stored in a file called "~/Library/Preferences/Transcribe!7 Preferences" where "~" is your home folder. The Mac by default hides your Library folder, so you should use "Go To Folder..." on Finder's "Go" menu, and type "~/Library".
+If you are a long time user of Transcribe! then if you look inside the preferences file you may find duplicate sections with and without a
+"_U" at the end of the section name (e.g. "[Play]" and "[Play_U]"). The "_U" preferences are the real ones, the others were used by much older versions of Transcribe! and are now redundant.
+If you want to edit your Preferences manually (which is not normally necessary but some people like doing this sort of thing) then you should do it while Transcribe! is not running. Otherwise when you exit Transcribe! it will save its preferences, which will erase any manual edits you made.
+Here is Help for each of the Preferences pages.
+Preferences - General
+Preferences - New Windows
+Preferences - Playback
+Preferences - Export
+Preferences - Markers
+Preferences - Fret Display
+Preferences - Toolbar
+Keyboard shortcuts
+This command gets a page of its own.
+MIDI shortcuts
+This command gets a page of its own.
+Foot Pedals (non-keyboard)
+This command gets a page of its own.
+Check for Updates...
+This will tell you what version of Transcribe! you are running, and then launch your default web browser and take you to the Download page on the Seventh String website, where you can check what is the latest version available.
+System Info
+This displays version and other information about Transcribe! itself and the computer it is running on. Also the text of recent error messages, and other messages not necessarily errors. See Troubleshooting for why you might want this.
+License Info
+This displays information about your "license key", and allows you to enter a key if you have bought Transcribe! and so have obtained a license key from Seventh String. It's exactly the same dialog as comes up when you launch Transcribe!, if you don't have a license key. Click here for more about this.
+Hide Transcribe!
+Just as it says, this hides Transcribe! without quitting the app.
+Click on Transcribe!'s icon in the Dock to bring it back.
+Quit
+Use this command to end your Transcribe! session. Transcribe! prompts you to save transcriptions with unsaved changes.

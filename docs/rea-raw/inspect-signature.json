@@ -1,0 +1,184 @@
+{
+  "ok": true,
+  "data": {
+    "evidence_id": "ev_3586892bee388ad0422fad88edb2961090db74d9cd21030f53afc49326010565",
+    "subject": {
+      "name": "Transcribe!",
+      "digest": {
+        "sha256": "83594347cfde8aadf300b9e11b71d69af9883e4e6f9af86c150c1b9626bd32d0"
+      },
+      "format": "mach-o",
+      "architecture": "arm64",
+      "local_path": "/Applications/Transcribe!.app/Contents/MacOS/Transcribe!"
+    },
+    "provider": {
+      "id": "native-macos",
+      "name": "macOS native inspection utilities",
+      "version": null
+    },
+    "analysis_profile": null,
+    "predicate_type": "rea.analysis",
+    "operation": "inspect_signature",
+    "parameters": {},
+    "raw_result": {
+      "provenance": [
+        {
+          "tool": "codesign",
+          "command": [
+            "/usr/bin/codesign",
+            "-d",
+            "--verbose=4",
+            "$ARTIFACT"
+          ],
+          "tool_version": null,
+          "version_reason": "Tool exposes no uniform stable version flag; executable SHA-256 is a prelaunch file sample and does not prove atomic OS image binding.",
+          "executable_sha256": "7fccb3fc6b28743c766b008b7b2c48fe7fe33cf81d86ddd31f20eb79be4c42ba",
+          "exit": {
+            "code": 0,
+            "signal": null
+          },
+          "stdout_bytes": 0,
+          "stderr_bytes": 1120
+        },
+        {
+          "tool": "codesign",
+          "command": [
+            "/usr/bin/codesign",
+            "-d",
+            "-r-",
+            "$ARTIFACT"
+          ],
+          "tool_version": null,
+          "version_reason": "Tool exposes no uniform stable version flag; executable SHA-256 is a prelaunch file sample and does not prove atomic OS image binding.",
+          "executable_sha256": "7fccb3fc6b28743c766b008b7b2c48fe7fe33cf81d86ddd31f20eb79be4c42ba",
+          "exit": {
+            "code": 0,
+            "signal": null
+          },
+          "stdout_bytes": 324,
+          "stderr_bytes": 101
+        },
+        {
+          "tool": "codesign",
+          "command": [
+            "/usr/bin/codesign",
+            "-d",
+            "--entitlements",
+            ":-",
+            "$ARTIFACT"
+          ],
+          "tool_version": null,
+          "version_reason": "Tool exposes no uniform stable version flag; executable SHA-256 is a prelaunch file sample and does not prove atomic OS image binding.",
+          "executable_sha256": "7fccb3fc6b28743c766b008b7b2c48fe7fe33cf81d86ddd31f20eb79be4c42ba",
+          "exit": {
+            "code": 0,
+            "signal": null
+          },
+          "stdout_bytes": 509,
+          "stderr_bytes": 189
+        }
+      ]
+    },
+    "normalized_result": {
+      "signed": true,
+      "identifier": "com.seventhstring.transcribe",
+      "team_identifier": "BLF9LDX5CW",
+      "format": "Mach-O thin (arm64)",
+      "cdhashes": [
+        "7f1c18f405dd43837fa2adb7536d9d191361fd96"
+      ],
+      "hash_algorithms": [
+        "sha256"
+      ],
+      "authorities": [
+        "Developer ID Application: Seventh String Ltd (BLF9LDX5CW)",
+        "Developer ID Certification Authority",
+        "Apple Root CA"
+      ],
+      "designated_requirement": "anchor apple generic and identifier \"com.seventhstring.transcribe\" and (certificate leaf[field.1.2.840.113635.100.6.1.9] /* exists */ or certificate 1[field.1.2.840.113635.100.6.2.6] /* exists */ and certificate leaf[field.1.2.840.113635.100.6.1.13] /* exists */ and certificate leaf[subject.OU] = BLF9LDX5CW)",
+      "entitlements": {
+        "com.apple.security.automation.apple-events": true,
+        "com.apple.security.cs.allow-dyld-environment-variables": true,
+        "com.apple.security.cs.allow-unsigned-executable-memory": true,
+        "com.apple.security.cs.disable-library-validation": true,
+        "com.apple.security.device.audio-input": true
+      },
+      "timestamp": "Sep 30, 2026 at 4:12:00 AM",
+      "hardened_runtime": true,
+      "provenance": [
+        {
+          "tool": "codesign",
+          "command": [
+            "/usr/bin/codesign",
+            "-d",
+            "--verbose=4",
+            "$ARTIFACT"
+          ],
+          "tool_version": null,
+          "version_reason": "Tool exposes no uniform stable version flag; executable SHA-256 is a prelaunch file sample and does not prove atomic OS image binding.",
+          "executable_sha256": "7fccb3fc6b28743c766b008b7b2c48fe7fe33cf81d86ddd31f20eb79be4c42ba",
+          "exit": {
+            "code": 0,
+            "signal": null
+          },
+          "stdout_bytes": 0,
+          "stderr_bytes": 1120
+        },
+        {
+          "tool": "codesign",
+          "command": [
+            "/usr/bin/codesign",
+            "-d",
+            "-r-",
+            "$ARTIFACT"
+          ],
+          "tool_version": null,
+          "version_reason": "Tool exposes no uniform stable version flag; executable SHA-256 is a prelaunch file sample and does not prove atomic OS image binding.",
+          "executable_sha256": "7fccb3fc6b28743c766b008b7b2c48fe7fe33cf81d86ddd31f20eb79be4c42ba",
+          "exit": {
+            "code": 0,
+            "signal": null
+          },
+          "stdout_bytes": 324,
+          "stderr_bytes": 101
+        },
+        {
+          "tool": "codesign",
+          "command": [
+            "/usr/bin/codesign",
+            "-d",
+            "--entitlements",
+            ":-",
+            "$ARTIFACT"
+          ],
+          "tool_version": null,
+          "version_reason": "Tool exposes no uniform stable version flag; executable SHA-256 is a prelaunch file sample and does not prove atomic OS image binding.",
+          "executable_sha256": "7fccb3fc6b28743c766b008b7b2c48fe7fe33cf81d86ddd31f20eb79be4c42ba",
+          "exit": {
+            "code": 0,
+            "signal": null
+          },
+          "stdout_bytes": 509,
+          "stderr_bytes": 189
+        }
+      ],
+      "limitations": [
+        "Entitlements and designated requirements require separate bounded commands.",
+        "Inspected a digest-verified Mach-O byte snapshot; filesystem-bound signing context and trust validation are not examined."
+      ]
+    },
+    "confidence": "observed",
+    "authority": "shipped-artifact",
+    "environment": null,
+    "limitations": [
+      "Entitlements and designated requirements require separate bounded commands.",
+      "Inspected a digest-verified Mach-O byte snapshot; filesystem-bound signing context and trust validation are not examined."
+    ],
+    "locations": [],
+    "evidence_links": []
+  },
+  "meta": {
+    "command": "inspect-signature",
+    "duration": "1691ms"
+  }
+}

@@ -1,0 +1,10 @@
+Transcribe! : Getting Started
+ | 
+Getting Started
+ | 
+Here we give a brief introduction to get you started with using Transcribe! to transcribe music. If you have never transcribed music from recordings before then it might be a good idea to start by reading this more general discussion :
+Introduction to Transcribing Music.
+1. Obtaining a Sound File
+2. Creating a New Transcription
+3. The Transcription Window
+4. Starting to Transcribe

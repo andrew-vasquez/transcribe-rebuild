@@ -1,0 +1,35 @@
+Transcribe! : Window Menu
+ | 
+Window Menu
+ | 
+The main window used by Transcribe! is the transcription window which displays your current transcription - the sound file waveform etc. You can have multiple transcriptions open at the same time and you will then have one transcription window for each transcription. You can also have multiple views of a single transcription but in that case they will appear as a split view inside the transcription window - see the Split command.
+The other two windows used are Audio Effects and Controls which does exactly what it says, and Transcription Info which gives the name of the sound file and other information about this transcription. You only ever get one each of these two windows. If you have several transcriptions open then these two windows work on whichever transcription is currently active (is in front of the others).
+This is perhaps the best place for a little chat about differences between Windows/Linux and Mac regarding application windows. The Mac, unlike any other GUI OS I know of, normally allows you to close all the open windows of an application without closing the app. This is possible because the Mac menu bar is at the top of the screen rather than being in an app window, so a Mac app can have a menu bar without having any open windows. Nevertheless, it's not a very useful state for an app to be in. You can't drag-n-drop a file onto it, and if you wanted to use the app's toolbar to open a new document then you can't, because there's no toolbar. It seems to me that Apple have tacitly acknowledged the limited usefulness of this state, by decreeing that if you click the dock icon of an app with no open window, it creates a new empty document. Also quite a few of Apple's own OS-X apps close down the app when you close its main window.
+For Transcribe!, I wanted consistent behaviour between the various OS's supported, but without doing anything that would surprise people familiar with whichever OS they are using.
+On Windows/Linux when you close Transcribe!'s last application window, the app quits as you would expect.
+On Mac, when you close Transcribe!'s last application window it closes the transcription in it, but leaves you with an empty "new" transcription document - this is not quite standard Mac behaviour, but it is standard in that it avoids closing the app when the last window is closed. It effectively bypasses the "no window" state, as if you had clicked on Transcribe!'s dock icon after closing the last window. If you now close this window again then it really closes and Transcribe! quits. This is because it is empty : closing an empty last window will always quit Transcribe!.
+This means that on all OS's, Transcribe! always has at least one window open as long as it is running (which I think is a good idea, for the reasons already mentioned). I have just described the default behaviour, but you can actually choose which of these behaviours you prefer, whichever OS you have. See Preferences, Closing last window closes application immediately.
+Note about Mac "Spaces". If you have a transcription window in one space while the Fx window is in another space, then when you click the Fx button in the transcription window, you will be taken to the space containing the Fx window. You could of course move the Fx window to the same space as the transcription window but even if you don't, pressing <escape> will return you to the space you came from, where the transcription window is.
+The Commands on the Window Menu
+Audio Effects and Controls
+This selects whether or not the Audio Effects and Controls window is visible.
+After you have clicked on this window, normal keyboard shortcuts for controlling playback etc won't work because the keystrokes are going to this window instead of the transcription window. Hit <escape> to return to the transcription window.
+Transcription Info
+This selects whether or not the Transcription Info window is visible.
+This window shows you the name and location of the transcription file (if you have created one by using the "Save" command) and information about the sound file which you are working on.
+After you have clicked on this window, normal keyboard shortcuts for controlling playback etc won't work because the keystrokes are going to this window instead of the transcription window. Hit <escape> to return to the transcription window.
+Bring All to Front
+This will bring all Transcribe!'s windows in front of other applications.
+You can get the same effect by clicking the Transcribe! icon in the dock.
+Close this Window
+Close the current transcription window. See above for a note about whether this will cause Transcribe! to quit.
+Reposition this Window
+This is for if the window is too big, or off screen, so you can move it back to a reasonable position and size. It will reposition the current window to the upper left of the screen and limit its size to two thirds of the screen size.
+Previous Window
+If you have more than one transcription open then this will cycle through them.
+Next Window
+If you have more than one transcription open then this will cycle through them.
+Transcription windows...
+Transcribe! displays a list of currently open transcription windows at the bottom
+of the Window menu. A check mark appears in front of the transcription name of the
+active window. Choose a transcription from this list to make its window active.

@@ -1,0 +1,68 @@
+Transcribe! : MIDI Shortcuts
+ | 
+MIDI Shortcuts
+ | 
+The MIDI Shortcuts dialog enables you to set up Transcribe!'s response to MIDI input, so you can use MIDI messages to start and stop Transcribe!'s playback, or indeed to trigger any of Transcribe!'s commands you want to. Transcribe! does not output MIDI at all.
+The point about this is that when you are transcribing you will often have pencil
+and paper in your hands, or a musical instrument, or both. It is therefore very
+useful to be able to operate Transcribe! "hands free" - to start and stop playback
+with your feet. To use this feature you need to have some kind of device capable
+of sending MIDI to your computer. Typically you might use :
+The sustain pedal attached to your MIDI keyboard instrument.
+Program change pedals such as those used by guitarists.
+Organ pedals intended for playing bass notes with your feet.
+A "MIDI Controller" device which has buttons intended for controlling recording software etc. Although you don't usually operate these with your feet.
+Respond to MIDI
+Here you can select :
+Never. Do not respond to MIDI.
+Only when in foreground. When you click another application to bring it to the front, Transcribe! will stop listening to MIDI.
+Always. Transcribe! will continue to respond to MIDI even when in the background. If you want Transcribe! to be able to play when in the background then you must also select
+Keep playing when in background.
+Note: if you unplug or otherwise disable your MIDI interface then Transcribe!, not being able to find it, will set "Respond to MIDI" to "Never" in order to avoid endless error messages as long as the thing is missing. So when you plug it back in again, you will need to run this dialog to switch responses back on again.
+Allow auto-repeat
+Some commands will auto-repeat if you hold the key or pedal down (e.g. the SelectionMoveRightMeasure command will then step forward from measure to measure until you release the command). If you want that to happen, then check this box.
+MIDI Device Status
+This reports on whether the MIDI input device was opened successfully and allows you to select a different one if you have more than one.
+When you press a note or pedal you should see its description appear in the "Press a MIDI controller" box.
+If nothing appears, maybe you plugged the MIDI cable in the wrong hole.
+Configuring the action for any MIDI event on press and release works exactly the same as configuring keyboard shortcuts, so read about it here.
+Invert action : it is sometimes possible for a controller's action to be "upside down",
+so that pressing it produces an "off" event and releasing it produces an "on" In this case you should check the "Invert action" checkbox to get correct behaviour.
+Continuous Control of Speed, Volume, Scrubbing, or Commands
+MIDI controllers are numbered from 0 to 121 and each can produce values from 0 to 127.
+They can be on/off buttons or pedals, typically producing the value 0 for "off" and 127 for "on", or they
+can be continuous controllers like volume pedals or rotary knobs, producing values continuously
+from 0 to 127.
+If you want, you can configure any controller to control Transcribe!'s speed, volume, scrubbing, or to issue specific commands. You do this by pressing
+the third "Select..." button, where it says "Continuous controller". Configuring a control
+as a continuous controller will prevent it being used for Press or Release commands, and vice-versa.
+In the "Specify Continuous Control" dialog you can say whether to control Speed, Volume, Scrubbing, or Commands.
+When you twiddle the selected control its minimum and maximum values will be displayed.
+For speed or volume control you should type "response" values
+into the boxes, specifying the speed (in percent, 5 to 200) or volume (0 - 100) you want to
+get. The "minimum" response is what you will get when the control is at its displayed "minimum" value,
+and the "maximum" response is what you will get when the control is at its displayed "maximum" value.
+This means that it is perfectly acceptable to type a "minimum" response which is in fact greater than or equal
+to the "maximum" response : it simply reverses the response range. You can also reverse the response with
+the "Invert action" checkbox in the main MIDI Shortcuts dialog.
+For scrubbing, response values are not used. Instead any controller
+position to the left of centre will be interpreted as scrub backwards, in the centre pause, and to the right, scrub forwards.
+However you must still twiddle the control to establish the range of values, else Transcribe! will not know what the central value is.
+See Mouse Commands for full documentation about scrubbing.
+The "Commands" option means that you can select up to 5 specific controller values which will generate a Transcribe! command every time that controller value is seen. This is unlikely to be useful with a standard controller generating values from 0 to 127, however there are some MIDI controllers which have knobs which rotate endlessly and can be configured to operate in "relative" mode where they generate a stream of events of one specific value while you turn them to the left, and a different value while you turn them to the right.
+For example the M-Audio Axiom which, in relative Binary Offset mode, sends a 65 for each increase and a 63 for each decrease.
+Therefore if you generate a SelectionMoveLeftMeasure for a 63, and a SelectionMoveRightMeasure for a 65, then turning the knob will jump your selection through the measures of the track (assuming you have placed measure markers). You can generate multiple commands from a single value by having more than one line with the same value.
+Special Notes About Transcribe! and MIDI
+Transcribe! can respond to any note on/off event, controller event or program
+change event, on any channel. You should be aware that program change events are a bit different from note
+on/off and controller on/off events. When you press a note, or a controller such as
+a sustain pedal, an "on" event is generated. Later when you release the note or controller
+an "off" event is generated. On the other hand a program change event is strictly a
+one-shot affair, there is no "end of program change" event. This means that a program
+change event is not as versatile for controlling Transcribe!, as note and controller
+events are. Also, most program change pedals will generate the same program change
+twice if you press the same pedal twice but they don't have to and if yours doesn't
+then that is more limiting still.
+This means that notes and on/off controllers behave very much like keys on the computer keyboard, with separate "press" and "release" events. However when Transcribe! sees a program change event it treats this as a press followed by an immediate release. So if you configure press and release commands for a program change event, both commands will happen when you press the program change pedal and nothing will happen when you release it.
+Export and Import MIDI Shortcuts
+These work the same as exporting and importing keyboard shortcuts, so read about it here.

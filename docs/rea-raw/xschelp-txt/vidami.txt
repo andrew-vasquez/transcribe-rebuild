@@ -1,0 +1,35 @@
+Transcribe! : Vidami Pedal
+ | 
+Vidami Pedal
+ | 
+Vidami distribute some special drivers for using their pedals with YouTube but you don't need to install these for use with Transcribe! (though Transcribe! doesn't mind if you do). The Vidami Blue has various modes but we assume here that you are using the default "Video Control Mode" which makes it the same as the Vidami (wired) pedal.
+Each button sends one character when you tap it, or a different character if you hold it for a slightly longer time, so you have ten commands available rather than just five. If you click with the mouse on the "Keystroke" box in the Keyboard Shortcuts dialog and try pressing some buttons, then you will see the characters that are sent.
+Here we describe the three different setups we offer for the Vidami pedal. Incidentally you may wonder why we need to ask you to press the buttons during configuration of this pedal - shouldn't Transcribe! already know what characters are sent by this pedal? The answer is that no, Transcribe! doesn't know what characters will arrive, because it depends on the language configuration of your computer. Remember that the Vidami pedal is pretending to be a keyboard.
+For a US or UK setup the characters you will see are:
+ TAP PRESS
+Speed button ` (back-blip). (period)
+Loop button ; (semicolon)/ (slash)
+Back button [ Shift-P
+Play/pause buttonShift-K \ (Mac) # (Windows)
+Forward button ] , (comma)
+The "speed" and "loop" buttons
+These work the same way in all of the three setups here.
+"speed": This uses the speed buttons in Transcribe!'s upper toolbar, which of course you can configure as you wish in Transcribe!'s Preferences.
+A short tap will step to the right through the buttons and a longer press will step to the left.
+"loop": This uses loops that you have stored (if you have stored any). These are on the Misc page of the Fx window.
+A short tap will step downwards through the list of loops and a longer press will step upwards.
+Setup 1 - Music with markers
+Personally I pretty much always start transcribing music by placing section and measure markers for the part which I intend to transcribe, and this setup is only useful if you have done this.
+"back": A short tap will move the current point (the red triangle) one measure backwards, and a longer press will move one section backwards.
+"play/pause": A short tap will start playing from the current point, or pause if you are already playing. A longer tap will pause or resume playback, allowing you to continue from the paused point.
+"forward": A short tap will move the current point (the red triangle) one measure forwards, and a longer press will move one section forwards.
+Setup 2 - No markers, jumping
+This navigates by jumping backwards or forwards by preset distances. We use 3 seconds and 10 seconds but you can change these if you want to. After you have completed the quick-setup configuration you can use the normal keyboard shortcuts configuration page to change the "move" commands to use different size jumps.
+"back": A short tap will move the current point (the red triangle) 3 seconds backwards, and a longer press will move 10 seconds backwards.
+"play/pause": A short tap will start playing from the current point, or pause if you are already playing. A longer tap will pause or resume playback, allowing you to continue from the paused point.
+"forward": A short tap will move the current point (the red triangle) 3 seconds forwards, and a longer press will move 10 seconds forwards.
+Setup 3 - No markers, Cue/Review
+This navigates by Cue and Review - that is, by skipping rapidly backwards or forwards. You can change the speeds used by Cue and Review in Transcribe!'s Preferences.
+"back": A short tap will start and stop skipping rapidly backwards, and a longer press will move the current point (the red triangle) 5 seconds backwards.
+"play/pause": A short tap will start playing from the currently paused point, or pause if you are already playing. A longer tap will start playing from the current point (the red triangle).
+"forward": A short tap will start and stop skipping rapidly forwards, and a longer press will move the current point (the red triangle) 5 seconds forwards.

@@ -1,0 +1,36 @@
+Transcribe! : Speech Transcription
+ | 
+Speech Transcription
+ | 
+Although Transcribe! is primarily intended for transcribing music, there is of course no reason
+why it can't be used for transcribing speech too. Here are some notes about this.
+Organising Your Work
+See Organising Many Transcriptions about this.
+Window Layout
+Naturally the piano keyboard and the spectrum display are of no interest for speech.
+So drag the splitter bar to the bottom so they are invisible.
+You may want to turn on the Time Line and the Navigation Bar (View menu).
+To make this the default for all newly created transcriptions, select Preferences, New Windows,
+"Set defaults from current window", and Ok.
+Remembering Where You Are Up To
+Speech transcriptions are often quite long compared with music transcriptions. The simplest way of keeping track is to click on the waveform, which will position the current point (the little red triangle). This is the point from which playback will begin if you press the "play" button. If you Save your transcription then the position of the current point is one of the things saved, so you can later resume from the same place. Transcribe! does also allow you to place multiple named markers and jump directly to any one using the navigation bar. You might for example use section markers for different sections of an interview, and measure markers for each utterance. However this would be overkill if you are simply going through the whole thing once, typing it out.
+Textual Annotations
+See the Text Menu about this. Annotations can be used for comments
+such as special requirements etc, and for the text of the transcription itself if you like.
+If you want the text zone to be visible by default in new transcriptions then set it visible (on the Text menu), then
+select Preferences, New Windows, "Set defaults from current window", and Ok.
+Speed
+If you press the Fx button to bring up the Fx window, then you can play at any speed you want from 5% (one twentieth speed) to 200% (double speed).
+Scrubbing
+You can use the mouse wheel, or keyboard shortcuts, to "scrub" forwards and backwards. See Mouse Commands for full documentation about this feature.
+Sound File formats
+Transcribe! supports some specialised speech formats - see Sound Files.
+For those formats not currently read by Transcribe!, it's necessary to convert to one of the more
+standard sound file formats such as mp3 etc. which Transcribe! can read.
+Foot Pedals and keyboard shortcuts
+See this page about using and configuring keyboard shortcuts. This includes "global" shortcuts which remain active even when Transcribe! is not the foreground application.
+Pedals are amazingly useful for controlling Transcribe! when transcribing speech, because you can keep both hands free for typing. For information about obtaining pedals see this page on our website: https://www.seventhstring.com/xscribe/pedals.html
+Some pedals emulate keyboards (they send keystrokes as if from a keyboard) so they should be configured udsing the Keyboard Shortcuts command.
+See this page about controlling Transcribe! from MIDI footpedals.
+See this page about controlling Transcribe! from other (non-keyboard, non-MIDI) footpedals.
+Remember that in Preferences you can select how much to "Rewind on pause" (so when you restart playback, you will hear the last bit again).

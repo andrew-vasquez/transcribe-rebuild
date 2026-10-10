@@ -1,0 +1,25 @@
+Transcribe! : License Agreement
+ | 
+License Agreement
+ | 
+Transcribe! is Copyright © 1998-2026 Seventh String Software. All Rights Reserved.
+Transcribe! is owned by Seventh String Software ("us"). We grant to the user ("you") a non-exclusive license to use Transcribe!.
+You may only use Transcribe! if you agree to this license agreement.
+See here for a more general chat about the practicalities.
+Evaluation Period and License Keys
+When Transcribe! is installed for the first time on a computer which it has not been installed on before, you will normally find that it will run for 30 days without requiring a "license key". If you want to use it beyond the 30 day evaluation period you must buy a license to use Transcribe! (the license described here). You will then receive a "license key" from Seventh String. This license key is only for the use of the person or organization to whom it is issued and may not be "shared" or distributed in any way, or posted online or otherwise made available to other people. You may only use a license key which has been issued directly to you by Seventh String or an authorized agent of Seventh String.
+We don't actually promise that Transcribe! will run for an evaluation period without a license key, but it normally should.
+If you need to install Transcribe! again (for instance, perhaps you upgraded your computer) then you will need your license key again and for this reason you should keep it safe, on a backup separate from your computer, and/or on paper. If you lose it then we may (at our discretion) replace it, or we may tell you to get lost and buy it again. So KEEP IT SAFE.
+This license may be revoked by Seventh String if you break its terms but is otherwise valid indefinitely for the current version of Transcribe! at the time you bought it. You may or may not have to pay for future upgrades if you want them, at our discretion. At the time of writing, updates to the current version are free for all paid-up users.
+Use
+A single license entitles you to run Transcribe! on one machine only, or on up to three machines as long as the program is for your exclusive use on all of them. If you buy multiple licenses then we may choose to issue just one license key, but give you permission to use it on multiple machines.
+While we make all reasonable efforts to ensure that Transcribe! is bug-free and performs as it should, we cannot guarantee that it will always perform as expected or accept any liability for any aspect of its use.
+Support
+Support is available from Seventh String Software via email only and is free.
+Usual Stuff
+You may not modify, decompile, reverse engineer, disassemble, or
+create derivative works of the Transcribe! software or any part of it.
+You may not sub-license, resell or otherwise transfer your license to anyone else.
+This License will be governed by the laws of the United Kingdom.
+If for any reason any part of this agreement is unenforceable,
+the remainder shall continue in full force and effect.

@@ -1,0 +1,25 @@
+Transcribe! : Tuning Effects Page
+ | 
+Tuning Effects Page
+ | 
+Tuning
+Here you can apply tuning (pitch) changes to the sound. There are three tuning sliders for octaves, semitones, and cents (hundredths of a semitone).
+The Cents slider is used for small adjustments, for instance if the original recording is slightly above or below standard concert pitch then you may want to adjust it to concert pitch so you can play along with your concert pitch instrument.
+You can tune the track by comparing its pitch to a real instrument, or to a reference note (see below) but sometimes the easiest way is to select a steady-sounding note so you can see its spectrum, then adjust tuning visually so the peak in the spectrum is aligned with the centre of the note.
+If you are using the spectrum then you can also adjust tuning by control-click on the spectrum and drag it left or right.
+The Semitones slider is used for larger adjustments, for instance if the original is in C (say) but you want to transcribe it as if it was in Eb then you can raise the pitch by three semitones to accomplish this. This slider is also duplicated in the lower toolbar of the main transcription window.
+The Octaves slider is for still larger adjustments. The commonest use is to ease the transcription of very low or very high notes, by bringing them into a more comfortable range. This is particularly useful for low, murky, bass parts : raise it by an octave or two and it becomes far easier to hear what the notes are.
+Above the sliders there is a text box showing "440" by default, followed by a message saying "becomes 440.00 Hz".
+When you adjust the tuning you do it in octaves, semitones and cents, but this displays the effect in Hz.
+Suppose you want to shift 438 Hz to 440 Hz, then you would type 438 into the text box, then slide the cents slider.
+You will find that with a tweak of +8 cents you will get 440.03 Hz - you can't get the exact number but clearly the maximum
+error is half a cent, that is a 200th of a semitone, a distinction that I doubt the human ear is capable of detecting.
+There is also an "Analog lock" checkbox. Normally (when this box is not checked) the tuning and speed controls are entirely independent, which is usually what you want. When you check this box however, pitch and speed are interlocked in the same way as an analog recording device (vinyl record, cassette tape) so that if you halve the speed, the pitch goes down an octave. Here are reasons why you might want to do this:
+Your sound file was derived from an analog recording which was running at the wrong speed. In that case, analog lock allows you to restore the original speed and pitch both at once.
+Your machine is old and slow and is having difficulty keeping up. Analog lock requires less processing than independent adjustment of pitch and speed.
+It's also worth mentioning that because analog lock processing is simpler, it introduces less artefacts into the processed sound.
+There is a second copy of this button on the Speed page.
+Reference note
+If you check the "Play note" box then Transcribe! will play a reference note at the specified pitch and volume. This can be useful for adjusting the tuning either of the track, or of a real instrument. Its pitch is not affected by adjustments you make to the tuning controls but, like the piano keyboard, it is affected by transposition. If there is a transposition in effect then you will see a warning message just above the Pitch and Volume sliders. See Transposition for more about this.
+Timbre
+These controls allow you to change the nature of the sound used for tuning notes, and in fact also the sound used for Transcribe!'s piano keyboard. You can choose triangle or square wave, and vary the amount of asymmetry for a harsher or milder sound. It's not a very pretty sound, but is only intended for use as a tuning reference.

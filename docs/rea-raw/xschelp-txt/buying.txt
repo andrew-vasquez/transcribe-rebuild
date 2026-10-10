@@ -1,0 +1,26 @@
+Transcribe! : Evaluating and Buying Transcribe!
+ | 
+Evaluating and Buying Transcribe!
+ | 
+General Chat
+You can read the License Agreement here.
+This page is intended to clarify the practicalities of how it works. Some of this information may change, so visit our website at https://www.seventhstring.com for the latest information. In particular, the FAQ section of the website.
+You can obtain Transcribe! as a download from the Seventh String website at https://www.seventhstring.com. You don't need to register or pay to do this.
+Having installed this on your computer you should find that you can run it for free for up to 30 days for the purpose of evaluation, and you have our permission to do this. However if you have installed a previous version of Transcribe! in the past, or if there is any problem with the system clock on your computer, then you may find it doesn't work (Transcribe! tells you your evaluation period has expired). If you feel that this is in error then do email us, but we don't guarantee to give you a free evaluation period. After all, many software packages don't. You could perhaps download Transcribe! onto a friend's computer and try it there if you really want to.
+Transcribe! really will stop working promptly after 30 days, and remember that the process of buying it may not be instant - some methods of payment take time. So if your want your transcribing to be uninterrupted, you should pay up in good time.
+Once your evaluation period has expired you will have to buy Transcribe! if you want to run it any more. When you buy it, you will receive your own individual "license key" from us (about 80 characters of thrillingly cryptic text). You should then copy this license key into Transcribe! (see below) so that Transcribe! will know that you have paid up, and will then run indefinately.
+You should keep this license key in a safe place! Back it up on disk to some location not on your computer, wherever you normally back up your work. You do back up your work don't you? Every hard disk dies (or is lost or stolen or encrypted by ransomware) one day, so I can promise you with absolute certainty that anything you don't back up, will one day be lost. You could also print it out and keep it safe. It would be a bit tedious to type in the 80 characters or so, but not impossible. It takes about two minutes in fact.
+The program is the same whether evaluating or paid-up. You don't need to download it again, just enter the license key as described below. There is no difference in functionality between the evaluation period and when paid up.
+If You Lose Your License Key
+It is your responsibility to look after your license key.
+If you lose your license key then we might, at our discretion, reissue it. Or we might not. Visit our website https://www.seventhstring.com/xscribe/reissue.html for the latest information.
+If we do not reissue it for any reason then you would need to buy Transcribe! again if you want to continue using it.
+How To Buy Transcribe!
+If you have not yet bought a license and entered the key into Transcribe! (see below) then a "Click here to buy Transcribe!" button will appear in the License Information dialog which appears when you launch Transcribe!. Click this button to go to a page where you can buy Transcribe!. If this doesn't work for any reason - for instance, perhaps the machine on which you are running Transcribe! is not connected to the internet - then you can use a different machine to visit the Seventh String website www.seventhstring.com and find the "Buy" page there. See also the FAQ on the website for more advice about this and related issues.
+Once a valid license key has been entered into Transcribe! then the "Click here to buy Transcribe!" button will no longer be available in the License Information dialog.
+If You Have Bought Transcribe! But Have Not Yet Received A License Key
+See the "Tracking Your Order" section near the bottom of the "Buy" page on the Seventh String website.
+License Information Dialog
+If Transcribe! is still in its time-limited evaluation period then every time you launch Transcribe! it will show you the "License Information" dialog. This tells you how much evaluation time you have left, and it will display a "Buy" button - see above about buying Transcribe!
+You can click the "View Or Enter License Key" button which will show you your present license key (if any). If you have obtained a license key from Seventh String or our authorized agent then you can click on the "Enter new license key" button to enter it. You are strongly advised to use copy-and-paste to do this as copying 80 or so characters by hand would be tedious. If you are in any doubt about how to do this, read the manual or Help which came with your computer, on the subjects of "copy" and "paste". Or see the FAQ on the Seventh String website.
+You can see this information again any time by selecting the "License Info" command on Transcribe!'s Application menu.

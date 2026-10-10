@@ -1,0 +1,164 @@
+
+
+
+
+
+
+
+<HTML><HEAD><TITLE>Transcribe! : The Transcription Window</TITLE></HEAD>
+<BODY BGCOLOR=#ffffff TEXT=#000000 LINK=#ff0000 ALINK=#ff0000 VLINK=#ff0000>
+
+<TABLE BORDER="0" CELLSPACING="0" CELLPADDING="0" WIDTH="100%">
+   <TR>
+      <TD ALIGN="CENTER" VALIGN="MIDDLE"><H2>The Transcription Window</H2></TD>
+      <TD ALIGN="RIGHT" VALIGN="MIDDLE">
+<A HREF="contents.htm"><img align=center src="contents.png" BORDER=0 ALT="Home"></A>
+<A HREF="getstarted.htm"><img align=center src="up.png" BORDER=0 ALT="Up"></A>
+<A HREF="gs_create.htm"><img align=center src="back.png" BORDER=0 ALT="Previous"></A>
+<A HREF="gs_startxsc.htm"><img align=center src="forward.png" BORDER=0 ALT="Next"></A>
+      </TD>
+   </TR>
+</TABLE>
+
+
+<HR>
+
+<IMG SRC="layoutmac.png" ALIGN="MIDDLE" BORDER="0"><P>
+
+
+From top to bottom, you can see:<P>
+
+<B>The Title Bar</B><P>
+The usual application title bar, showing the name of the transcription (<I>not</I> the sound file) you are working on. Its name ends in ".xsc". If you want to know the name of the sound file belonging to this transcription, see the <A HREF="window_menu.htm#wm_sfi">Transcription Info</A> window.<P>
+If you have made changes to the transcription (e.g. placed a marker, or changed the speed) and not yet saved them, then a bullet character will appear after the name.<P>
+
+
+<B>The Toolbar</B><P>
+The toolbar gives quick access to some commonly used commands.
+<A HREF="toolbar.htm">Click here</A> for more information.<P>
+
+<B>The Marker zone<A NAME="marker_zone"></A></B><P>
+The marker zone shows markers that you have placed. A little triangle lined up with the sound file waveform below shows the marker position, and the marker name appears as text above the triangle. This image shows a section marker "H", three measure markers "H2" "H3" and "H4" and unnamed beat markers between them. See <A HREF="markers_menu.htm">markers</A> for lots more information about how to use markers.<P>
+
+If you click on the marker then you can drag it to change its position. Double click to edit it, or double click where there isn't already a marker, to create a new one. You can also control-click to get a pop-up menu allowing you to edit existing markers or create new ones.<P>
+
+There is also the "current point" - a red triangle. This is the point from which playback will begin if you press the "play" button. If there is a selection then the current point splits into two little triangles marking the two ends of the selection. You set the current point by simply clicking on the waveform, or click and drag to make a selection. See below for more about the current point and selection.<P>
+
+<B>The Sound File Waveform<A NAME="waveform"></A></B><P>
+This shows the profile of the sound file data in a manner that will be familiar to you if you have used other audio software. The example here is stereo so the left channel is above and the right channel is below.<P>
+
+Near the middle is a highlit section : this is the "current selection", and the "current point" red triangles mark the start and end of the current selection. If, on the Play menu, you have selected "Loop" (the default) then when you press the play button on the toolbar, this selection will loop. You can change the current point and selection any time by clicking and dragging on the waveform. If you click in the middle of an existing selection then you can drag the whole selection around, and if you click near one end then you can adjust an existing selection. The shift key changes this behaviour : I won't explain in detail as you can tell by the mouse pointer shape what is going to happen if you click. Control-click will always adjust an existing selection. Double-click will collapse an existing selection. If you hold down the &lt;option&gt; key when clicking or dragging then the selection will "snap" to the nearest marker if there is one near. The &lt;option&gt; key may not work if it is used to bring up a system menu instead. In that case you can instead press &lt;command&gt; after you have started making your selection, for the same effect.<P>
+
+Within the current selection you can see a vertical line : this is the "play position indicator" which marks the currently playing point. While playing it moves from left to right. While paused (as in this picture) it is stationary. On some displays the play position can be difficult to see when it is moving : on the Preferences - Playback page you will find an option to make it thicker.<P>
+
+Double click the profile to start playback if you aren't playing already. Command-click the profile to start playback at the clicked point without changing the current point or selection.<P>
+
+When you Open a transcription, Transcribe! does of course have to read the whole sound file in order to display the whole profile. This can take some time, so Transcribe! will display a yellow band to represent those parts of the profile it hasn't read yet. You can start work right away however, you don't have to wait for this to complete.<P>
+
+<B>The Scroll Bar<A NAME="scroll_bar"></A></B><P>
+The scroll bar allows you to scroll the sound file waveform and markers which are above it, in the usual way. The "thumb" (the bit you can click on and drag) represents the part of the sound file you can see above, and the full width of the scrollbar track represents the whole of the sound file. However it also has some unusual features which is why it doesn't look quite like a normal scrollbar.<P>
+
+It shows the "play position indicator" which marks the currently playing point. In this picture it appears within the thumb, which is because the play position is within the visible part of the sound file waveform. However you could be playing any part of the sound file and the position of the play position indicator in the scrollbar shows you where in the sound file you are playing.<P>
+
+You can control-click the scrollbar and then drag left or right to adjust the horizontal scale of the view. There are also commands on the View menu for this, and a slider in the lower toolbar (below).<P>
+
+You can shift-click the scrollbar and then drag up or down to adjust the vertical scale of the view. There are also commands on the View menu for this.<P>
+
+<B>The Navigation Bar<A NAME="navbar"></A></B><P>
+The navigation bar shows markers over the whole length of the sound file and allows you to have an overall picture of the track, and to jump rapidly to any desired spot. In the picture above, the navigation bar is displaying section markers only (not measure or beat markers) and you can see that the piece has 16 sections. Some have plain letter names, others have been named "Intro" etc. You can click anywhere on the navigation bar to take you instantly to that point.<P>
+
+It is immediately below the scroll bar and is aligned with it. Understanding that the scroll bar thumb corresponds to the part of the sound file you can see above, you can see how the positions of the "H" section marker and the current point (in the navigation bar) and the play position indicator (in the scroll bar) are a miniature reproduction, in relation to the position of the scroll bar thumb, of those same features in the main waveform window. The current selection is also represented in the navigation bar as a black line along its top edge, but you can't see it here as it is so short.<P>
+
+Clicking in the navigation bar works the same as clicking on the waveform profile, so you can make a selection by click and drag, or start playback by double click.<P>
+
+If you control-click the navigation bar you get a popup menu showing section and optionally measure (not beat) markers in the vicinity, up to a maximum of 20 either side of the clicked point (adjustable in Preferences). Select one of these to jump to it.<P>
+
+Display of the navigation bar is optional - see <A HREF="view_menu.htm#navbar">View menu</A>.<P>
+
+<B>The Splitter Bar<A NAME="splitter_bar"></A></B><P>
+This splitter is grey with pimples and separates the waveform display area above from the spectrum and piano below. You can drag it up and down with the mouse.<P>
+
+If you <A HREF="view_menu.htm#split">split</A> the view then you will have two or more complete views and they will be separated by wider splitters (not shown). This is especially useful with videos that have multiple sound tracks (perhaps in different languages, or a stem file) as you can show a different sound track in each view.<P>
+
+<B>The Spectrum<A NAME="spectrum"></A></B><P>
+Transcribe! can compute the frequency spectrum of your current position or selection and display it here. This can be useful in figuring out what notes and chords are being played although it is not a magic solution. See <A HREF="spectrum.htm">Interpreting the Spectrum</A> for a more detailed discussion of this.<P>
+
+Transcribe! can also make guesses about what notes and chords are being played. See <A HREF="guess.htm">Note and Chord Guessing</A> for a more detailed discussion of this. You can turn the spectrum display on or off, and also the display of note and chord guessing, on the <A HREF="view_menu.htm#show_spectrum">View menu</A>. Note guesses are displayed as green (in tune) and red (out of tune) blobs on the piano keyboard. Chord guesses are displayed by name at the top right of the area where the spectrum graph is.<p>
+
+The spectrum displays a "snapshot" of one moment out of the track. For the most accurate result you should select the particular chord or note you want to see. If your selection is more than one second long then the spectrum will be limited to the first second of the selection. There would be no advantage to computing a longer spectrum. If the music does "stand still" for longer than a second then one second is still plenty for computing a spectrum.<P>
+
+You can also have a "Live Spectrum" meaning that the spectrum, and also note and chord guesses, are updated regularly to follow the music while it is playing. See <A HREF="prefs_general.htm#prefs_livespectrum">Preferences</A>. This uses extra processing power so don't use it if your computer can't keep up.<p>
+
+The spectrum graph is aligned with the piano keyboard below, so a peak in the graph corresponds to the note which it is above. In the example shown, the notes being played (on solo acoustic guitar) can be seen to be Bb, Ab, Bb, D, F, C ... it's a chord of Bb9. The F above middle C and the D above that might not really be being played - they could be harmonics of lower notes. Steady notes on a cleanly recorded solo instrument give a very nice spectrum. When several instruments are playing, the spectrum is much messier.<P>
+
+The chord guesses displayed at the right show "Bb9", "C9#5 / Bb", and "Ab (add 9) #11 / Bb". In this case it's clear that the first guess is good and the others should be ignored. But as a general matter you must use your judgement in deciding which chord guesses are good. There is no F in the second two guessed chords, so you can see that for these guesses Transcribe! is deciding that the F is indeed just a harmonic.<p>
+
+You can control-click these chord guesses and get a popup menu for inserting one of them into the text zone at the appropriate point in the track. The popup menu will include enharmonic alternative spellings, for instance if the box shows a guessed chord of C# then the popup menu will allow you to choose either C# or Db.<p>
+
+If you click on the spectrum then Transcribe! will display a symmetrical grid of lines indicating what notes above the clicked note might be harmonics of it, and what notes below the clicked point that this note might be a harmonic of. This can be helpful in telling the difference between played notes and harmonics. You also get a display of the pitch and frequency at the clicked point. If you have set a <A HREF="fx_transposition.htm">transposition</A> then the frequencies will change accordingly. Normally clicking "A" above middle C would report a frequency of 440Hz, but not if you have set a transposition. You can also control-click the piano itself, see below.<P>
+
+Transcribe! also has a <A HREF="pianoroll_menu.htm">Piano Roll</A> view (not shown here) which displays note guesses in a piano roll style, showing guesses for the whole track from left to right, aligned with the waveform profile.<p>
+
+<B>The Piano<A NAME="piano"></A></B><P>
+The piano keyboard has two purposes. It provides a visual reference for the spectrum above it so you can interpret the spectrum, and also you can click the piano keyboard to provide reference notes.<P>
+
+A circular blob appears on the key you have clicked, and the note
+plays. You can adjust the volume by moving the mouse forwards and backwards while it
+is playing. See <A HREF="fx_tuning.htm">Tuning</A> for information about adjusting the timbre of the notes played.<P>
+
+You can scroll the piano keyboard
+with the mouse (press and hold the mouse button on the piano keyboard, then drag to the right or
+left). Doing this over the middle third of the piano keyboard will scroll the whole
+keyboard (the mouse pointer changes to a double headed arrow). Doing it over either end of
+the piano keyboard will scroll that end, leaving the other end fixed, i.e. stretching
+or squeezing the keyboard graphic (the mouse pointer changes to a single headed arrow).<P>
+
+Pitches played by the piano keyboard are affected by any <A HREF="fx_transposition.htm">transposition</A> you have specified, and in this case a warning message appears on the upper left corner of the keyboard so you don't forget. You can control-click any note to pop up a box which names the note and gives its frequency. The frequencies will be of the note you are actually hearing, in other words they too are displaced by any transposition applied.<P>
+
+The box that pops up when you control-click a note also gives information about where to find that note on a stringed instrument. If you want to use this then you can set up your choice of instrument and tuning in <A HREF="prefs_frets.htm">Preferences</A>.<P>
+
+The "C"s are labelled using standard MIDI note numbering (C0, C1 etc) and C4 is
+labelled "Mid C4" as it is middle C (you can change this if you want, see
+<A HREF="prefs_general.htm#choose_midC">Preferences</A>). There are vertical black and white lines
+ascending from the middle of the black and white notes, reaching from the top of the
+note graphic to the spectrum graph line. These lines are positioned at the centre of
+the pitch of the note in question. You can tell Transcribe! to label the other notes
+too, if you want. See <A HREF="prefs_general.htm#label_piano">Preferences</A>.<P>
+
+Transcribe! can also make guesses about what notes and chords are being played. See "The Spectrum" above for more about this. You can turn the display of note guessing on or off, on the <A HREF="view_menu.htm#show_note_guesses">View menu</A>. Note guesses are displayed as green (in tune) and red (out of tune) blobs on the piano keyboard.<P>
+
+If you don't want to see the piano then simply drag the splitter bar right down so the piano is hidden.<P>
+
+
+<B>The Lower Toolbar<A NAME="btmbar"></A></B><P>
+The lower toolbar contains the play controls and other very frequently used controls. From left to right...<P>
+
+A slider for adjusting the horizontal scaling of the waveform.<p>
+
+A slider for adjusting volume. This duplicates the volume control on the <A HREF="fx_misc.htm">Misc</A> page of the Audio Effects window. This control works by scaling the sample values, which is a quite separate matter from your computer's volume control which will also work. If you turn it up high you will get digital overload - you should instead turn up your computer's volume control if you want to increase the overall level. Transcribe!'s volume control is useful for bringing up the level of a sound file which was originally recorded too quiet. Transcribe! has a compressor/limiter so if you do turn the volume too high you will get compression rather than distortion, and a red bar will appear below the volume slider to show you the amount of compression.<P>
+
+The "Now Playing" box, showing the time now playing (or paused) in minutes and seconds.<p>
+
+The "Track Length" box, showing the track length in minutes and seconds. Coloured orange to match the colour of the waveform display.<p>
+
+Buttons for Play, Pause, Stop, Review (skip backwards), Cue (skip forwards), Go To Start, and Go To End.<p>
+
+A slider for adjusting speed. This goes from 20% to 100% as this is the most commonly used speed range, but you can have speeds all the way from 5% to 200% if you use the <A HREF="fx_speed.htm">Speed</A> page of the Audio Effects window, or the toolbar speed buttons.<p>
+
+A slider for adjusting pitch (tuning) in semitones. You can also adjust pitch in cents (hundredths of a semitone) and octaves on the <A HREF="fx_tuning.htm">Tuning</A> page of the Audio Effects window. The text display below the pitch slider shows the true total pitch adjustment including any octave and cent adjustments as well as the semitones which the slider controls. In other words if you have added +20 cents using the Tuning page, then the slider will adjust from -11.80 to +12.20, in semitone steps.<p>
+
+If the transcription window is wide enough then you will get a longer speed slider which allows you to go up to 200% speed, and an additional tuning slider for adjustments in cents (hundredths of a semitone). Of course you can always adjust these things in the Audio Effects window even if you don't see these extra controls in the lower toolbar.<p>
+
+The "Current point" box, showing the current point or the start of the current selection, in minutes and seconds. Coloured red to match the current point triangle.<p>
+
+The "Selection length" box, showing the length of the current selection in minutes and seconds. Coloured blue to match the selected part of the waveform.<p>
+
+You can type new values into these boxes in the lower toolbar (except "Track Length"). Click on the box (or double-click to select all) and type away. When you have typed the number you want you can press &lt;return&gt; to update the display and end editing, or  &lt;command&gt;-&lt;return&gt; to update the display without ending editing. &lt;escape&gt; will discard your edits. In the boxes which display a time, a bare number will be understood as minutes unless it has a decimal point in which case it is seconds. You can write things like "1m", "1s", "1m3.6", "1:3.6" and so on but it's always minutes and seconds. Some menu shortcuts will stop working while you are editing text in this way, because it would be very confusing if typing 'm' in the box actually created a new marker as it otherwise would.<p>
+
+You can also use the up-arrow, down-arrow, page-up, and page-down keys to "nudge" the value in the box. Holding down the shift key will give a bigger nudge. With the time-related boxes (Now Playing, Current Point, Selection Length), using page-up or page-down with the shift key will jump to beat markers, the command key will jump to measure markers, and the option key will jump to section markers.<p>
+
+You can move from one box to another using Tab and shift-Tab, or alternatively by using the F5 and F6 function keys.<p>
+
+If you have a mouse wheel then you can use it to adjust any of the four sliders in the lower toolbar, and also the current point and the selection length. Two-finger swipes on a touchpad should also work.<p>
+
+</HTML>

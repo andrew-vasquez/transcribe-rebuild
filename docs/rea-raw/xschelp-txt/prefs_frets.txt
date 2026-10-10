@@ -1,0 +1,32 @@
+Transcribe! : Preferences - Fret Display
+ | 
+Preferences - Fret Display
+ | 
+This is relevant only if you play a string instrument. When
+you control-click the piano keyboard,
+a little window pops up telling you
+which strings at which fret would play the note. This initially defaults to standard six
+string guitar, but this is where you can specify other string
+instruments, the number of strings and tuning. This information will then be used
+when you subsequently control-click the keyboard.
+We speak here (and in the string info pop-up) of "frets". Of course, many string
+instruments don't have frets but I think our meaning should be clear anyway.
+The first control is "Show fret positions when click on piano". If you don't want the fret information to be shown when you control-click the piano keyboard then uncheck this box.
+Then there is "Highest fret for alternative fingerings". Transcribe! does not set this for you when you select
+an instrument, it's up to you to change it if you want. It doesn't actually have to
+be the highest fret on the instrument, you should set it to the highest fret which
+you want Transcribe! to consider using for alternative fingerings. The point is that
+most notes can be played on several different strings, at higher fret positions on
+lower-pitched strings. Transcribe! will report these alternate fingerings as long
+as they do not exceed the "highest fret" that you have specified. Transcribe! makes
+an exception for your highest-pitched string and will always report the fret number
+for this string no matter how high the note is.
+The "New Instrument" button allows you to name and specify another instrument to add to the default list which Transcribe! already knows about.
+The "Instrument" box specifies characteristics of your selected instrument. First there is a drop-down box where you can select one from the list of instruments.
+You can specify how many strings the instrument has, and what note each string is tuned to. When you select which note, a blob is shown on the piano keyboard. You may need to move the Preferences dialog to see it.
+One or two things to note about this page :
+Remember that guitar and bass are transposing
+instruments : they sound an octave lower than written. The top string of the guitar
+in standard tuning is correctly reported as E just above middle C.
+If you sometimes use a capo on a guitar, then this page is probably not the place to deal with it. Instead, treat guitar-with-capo as a transposing instrument. In fact you might want to treat guitar as a transposing instrument (by one octave) anyway.
+If you press the "default" button on this page then the instruments which Transcribe! knows about will all be restored to their standard tunings (in case you changed them) but new instruments you added will not be deleted.

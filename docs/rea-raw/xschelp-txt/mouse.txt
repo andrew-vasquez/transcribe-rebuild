@@ -1,0 +1,88 @@
+Transcribe! : Mouse Commands
+ | 
+Mouse Commands
+ | 
+For convenient reference, this is a list of mouse commands available in the
+Transcription Window. See that page for more detail
+about what the things in the Transcription Window are and how they work. This page is just a quick reference for mouse commands.
+On machines with a touchpad, two-finger swiping will generally have the same effect as twiddling a mouse wheel.
+From top to bottom...
+The Toolbar
+Click the buttons in the usual way of course.
+Control-click on a Speed or Tuning or EQ button will get you a context menu.
+Mouse-wheel on the Speed buttons will adjust speed.
+The Piano Roll
+Click to play a note and popup a box giving note information.
+Command-click to start playback at the clicked point without changing the current point or selection.
+Shift-click to popup a box showing chord guesses.
+Control-click to get a context menu for inserting chord symbols.
+Mouse-wheel will scroll the view.
+Command-Mouse-wheel will zoom in and out.
+At the left of the piano roll is (optionally) a piano : this works the same as the piano at the bottom of the window, so see further down this page for information.
+The Text Zone
+Click a text block to make it active.
+Drag its handles to change its size, or click its content to edit it.
+Drag its edge, not on a handle, to move it.
+Alt-drag it to copy it.
+Shift-drag will move or copy multiple selected text blocks.
+Control-click for a context menu.
+The Time Line
+Click to start playback at the clicked point without changing the current point or selection.
+The Loop Line
+Click on or near to a loop to set the current position/selection from that stored loop.
+Shift-click on a loop to extend the current selection to include that loop.
+Control-click to modify an existing loop or create a new one.
+The Marker zone
+Click and drag a marker triangle to move it.
+Alt-drag a marker triangle to copy it.
+Drag with the
+Command
+key pressed, to move or copy multiple markers at once.
+Double-click a marker triangle to edit the marker.
+Double-click not on a marker triangle, to create a new marker.
+Control-click a marker triangle to bring up a menu to change the marker.
+Control-click not on a marker triangle to bring up a menu to create a new marker.
+Shift-click a marker triangle to extend the current selection to this marker.
+The Sound File Waveform
+Click to set the current position (the red triangle).
+Click and drag to create a selection (the current position is the left end of the current selection).
+Click within an existing selection to drag the whole selection around.
+Click near one end of an existing selection to adjust the selection at that end.
+The shift key will change these behaviours : I won't go into detail because you can tell by the mouse pointer shape what is going to happen if you click.
+Control-click will also extend an existing selection.
+If you hold down the <option> key when clicking or dragging then the selection will "snap" to the nearest marker if there is one near.
+The <option> key may not work if it is used to bring up a system menu instead. In that case you can instead press <command> after you have started making your selection, for the same effect.
+Double-click to set the current point and start playback.
+Command-click to start playback at the clicked point without changing the current point or selection.
+If "Use mousewheel for scrubbing" is checked in Preferences - Playback then you can use the mousewheel over the waveform profile or over the video window for scrubbing backwards and forwards. See below for full documentation about this feature. Otherwise, using the mousewheel over the waveform profile will scroll the waveform instead.
+Command-Mouse-wheel will zoom in and out.
+The Scroll Bar
+Click in the usual way to scroll around.
+Control-click and drag left or right to adjust the horizontal scale of the view.
+Shift-click and drag up or down to adjust the vertical scale of the view.
+The Navigation Bar
+Control-click to bring up a menu for jumping to nearby markers - the menu will show up to 20 markers either side of the clicked point (adjustable in Preferences - General).
+All other mouse commands work the same as they do when clicking on the Sound File Waveform.
+The Time Line
+Control-click to bring up a menu for jumping to nearby markers - the menu will show up to 20 markers either side of the clicked point (adjustable in Preferences - General).
+Click to start playback at the clicked point without changing the current point or selection.
+The Splitter Bar
+Click and drag in the usual way.
+The Spectrum
+Click and hold (and move around if you want) to display a symmetrical grid of lines indicating what notes above the clicked note might be harmonics of it, and what notes below the clicked point that this note might be a harmonic of. You also get a display of the pitch and frequency at the clicked point.
+Control-click the chord-guessing box to get a context menu for inserting chord symbols.
+Control-click the spectrum and drag left or right to adjust the tuning - this is a fun alternative to using the controls on the Fx Tuning page. Do this with the shift key pressed and you can adjust transposition in the same way.
+The Piano
+Click to play the note.
+Drag up and down to adjust the volume.
+Drag side to side to slide the keyboard itself.
+Control-click a note to display its pitch and frequency, and a description of which string and fret would play this note, if you have configured an appropriate string instrument setup.
+Command-click (and optionally drag) to remove notes from consideration for chord guessing. This will cause the notes to appear grey. Command-click again to restore them.
+The Lower Toolbar
+If you have a mouse wheel then you can use it to adjust any of the four sliders in the lower toolbar, and also the current point and the selection length.
+About "scrubbing"
+Scrubbing is where you play backwards and forwards across some point in the music. Traditionally this was done by manually turning the spools of a reel-to-reel tape recorder back and forth. Transcribe!'s scrubbing however works by playing either backwards or forwards at the playback speed you have already selected. There are three ways of scrubbing.
+1: Using the mouse wheel over the waveform or over the video window. For this you must select "Use mousewheel for scrubbing"
+in Preferences - Playback. As long as you keep moving the mouse wheel playback will continue, forwards or backwards. When you stop, playback will pause after 0.75 seconds. If your mouse doesn't have a wheel, you can buy one which does at your local computer store. Most mice work fine on Windows, Mac, and Linux.
+2: Using keystrokes. By default the 'O' and 'P' keys will scrub backwards or forwards until you release the key. Transcribe! does not automatically load default keyboard shortcuts so you may need to go to File menu - "Keyboard Shortcuts" and press the Default button to load these shortcuts. There are also commands PlayScrubForwardsContinue and PlayScrubBackwardsContinue. These do not pause after 0.75 seconds, so the latter command effectively triggers continuous backwards playback. You would need to configure a keyboard shortcut yourself if you want to use it.
+3: Using a continuous midi controller - see here for details.

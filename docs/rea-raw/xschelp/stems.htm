@@ -1,0 +1,47 @@
+
+
+
+
+
+
+
+<HTML><HEAD><TITLE>Transcribe! : Stem Files</TITLE></HEAD>
+<BODY BGCOLOR=#ffffff TEXT=#000000 LINK=#ff0000 ALINK=#ff0000 VLINK=#ff0000>
+
+<TABLE BORDER="0" CELLSPACING="0" CELLPADDING="0" WIDTH="100%">
+   <TR>
+      <TD ALIGN="CENTER" VALIGN="MIDDLE"><H2>Stem Files</H2></TD>
+      <TD ALIGN="RIGHT" VALIGN="MIDDLE">
+<A HREF="contents.htm"><img align=center src="contents.png" BORDER=0 ALT="Home"></A>
+<A HREF="file_menu.htm"><img align=center src="up.png" BORDER=0 ALT="Up"></A>
+<A HREF="record.htm"><img align=center src="back.png" BORDER=0 ALT="Previous"></A>
+<A HREF="view_menu.htm"><img align=center src="forward.png" BORDER=0 ALT="Next"></A>
+      </TD>
+   </TR>
+</TABLE>
+
+
+<HR>
+
+Stem files are multiple sound tracks which between them add up to a finished mix. For a song that might be, for example, separate recordings of the vocal, the drums, the bass, the guitar, etc. In the old days stem files were hard to find because they would only exist if someone who had access to the original multitrack master tape of the recording session chose to create such files and distribute them. But these days thanks to the wonders of AI, it's possible to take a finished and mixed recording and separate it out into stems. If you look up
+"Spleeter by Deezer Research", "SigSep Open-UnMix", "MIT PixelPlayer", www.lalal.ai,
+then you will find some of these tools and there will probably be more by the time you read this.<P>
+
+You can find some example stem files on our website if you go to the FAQ about stem files at
+https://www.seventhstring.com/xscribe/faq3.html#q_stems<p>
+
+Sometimes stem files are in fact a single file (usually mp4, ogg, or mogg format) having multiple sound tracks within that one file. In that case all you have to do is load the file into Transcribe! and it will display any or all of the sound tracks in a single transcription window. The commands to do this are on the <A HREF="view_menu.htm#select_soundtrack">View menu</A> so go ahead, you don't need the rest of this page if you have this sort of file.<p>
+
+However stem files are frequently in the form of multiple separate files each containing just a single sound track. Transcribe! is not able to display multiple separate files in a single transcription window but what it can do is allow you to associate a list of sound files with a single transcription, and switch easily between them. This is similar to what the <A HREF="file_menu.htm#import_sound">Import Sound File</A> command does except that that command by itself does not provide any way to keep track of a number of sound files. By using the "Manage stem files" command on the File menu you can add sound files to the list used by your transcription. This means that a single transcription (an xsc file, displayed in a single window) can remember a list of sound files and switch easily between them, although you can only view one at a time. In fact, the Import Sound File command does load the new file as a new stem while still remembering the previous one, though you won't notice this unless you use the commands for working with stems.<p>
+
+The advantage of doing things this way rather than creating a separate transcription file for each stem is that it is more convenient, and more importantly your markers, text blocks, and loops etc are preserved when you switch from one stem to another.<p>
+
+<b>The Manage Stem Files dialog</b><p>
+
+The "Show stem selector..." checkbox will show a horizontal bar just below the upper toolbar, containing the stem names associated with this transcription. It is only shown if you have more than one stem. This is a very convenient way of switching from one stem to another though you can also do this using the relevant commands on the Stem Files submenu of the File menu. Remember that you can set the default for new transcriptions in Preferences - New windows - Set defaults from current window.<p>
+
+The list box shows all the stems current associated with this transcription. Each line show the stem name - by default "Stem 1", "Stem 2" etc. but you can give them names such as "Vocal", "Guitar", etc. - and the file name of the sound file.<p>
+
+The buttons allow you to add and remove stems and change their order. When you add a stem, Transcribe! will ask you to select the sound file(s) in question and will add it to the list but will not load it. After you OK the dialog you can click the name of the new stem in the Stem Selector to load it.<p>
+
+</HTML>

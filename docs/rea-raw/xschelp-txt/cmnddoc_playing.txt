@@ -1,0 +1,52 @@
+Transcribe! : Commands: Playing
+ | 
+Commands: Playing
+ | 
+Commands that can be used as Keyboard, Pedal, or Midi shortcuts as well as automation.
+PlaySelectionStart: Play the current selection if there is one, else play from the current point (the little red triangle).
+PlaySelectionDelayStart: Play the current selection if there is one, else play from the current point (the little red triangle), with initial delay if you have specified any in Preferences.
+PlaySpacebarDelayStart: If not playing then start play, with initial delay if you have specified any in Preferences. If already playing then pause, with rewind if you have specified any in Preferences.
+PlaySpacebar: If not playing then start play. If already playing then pause, with rewind if you have specified any in Preferences.
+PlaySpacebarNoRewind: If not playing then start play. If already playing then pause, without any rewind.
+PlayResume: If already playing then pause, with rewind if you have specified any in Preferences. If paused or cue or review then resume playing. If stopped then start play.
+PlayResumeNoRewind: If already playing then pause, without any rewind. If paused or cue or review then resume playing. If stopped then start play.
+PlayTapRelease: If paused or stopped then no action. If have been playing for only a short time then no action. If have been playing for longer then pause, with rewind if you have specified any in Preferences.
+Intended as the release command to be used with the press commands "PlaySpacebar" or "PlayResume".
+PlayTapReleaseNoRewind: If paused or stopped then no action. If have been playing for only a short time then no action. If have been playing for longer then pause, without any rewind.
+Intended as the release command to be used with the press command "PlayResume".
+PlayToolbar: Start playing from the current point (red triangle).
+PlayAll: Start playing from the start of the track, without changing the current point or selection.
+PlayStop: Launches you and your computer into orbit around Saturn. Oops no, sorry, my mistake. This one stops playback.
+PlayPauseOn: Pause playback, with rewind if you have specified any in Preferences.
+PlayPauseOnNoRewind: Pause playback, without any rewind.
+PlayPauseOff: Resume playback if it was paused, else no action.
+PlayPauseToggle: Switch between pause and play, with rewind-on-pause if you have specified any in Preferences.
+PlayPauseToggleNoRewind: Switch between pause and play, without any rewind-on-pause.
+PlayScrollOn: Switch on scrolling of the profile display while playing.
+PlayScrollOff: Switch off scrolling of the profile display while playing.
+PlayScrollToggle: Switch on/off scrolling of the profile display while playing.
+PlayCueStart: Skip rapidly forwards while playing.
+PlayCueToggle: Start or stop skipping rapidly forwards while playing.
+PlayReviewStart: Skip rapidly backwards while playing.
+PlayReviewToggle: Start or stop skipping rapidly backwards while playing.
+PlayCueReviewEnd: Return from Cue/Review to normal playback.
+PlayScrubForwardsPause: Scrub forwards, going into Pause mode after 0.75 seconds
+PlayScrubBackwardsPause: Scrub backwards, going into Pause mode after 0.75 seconds
+PlayScrubForwardsContinue: Scrub forwards continuously. This is very similar to normal playback except that it always plays to the end of the file and will not loop.
+PlayScrubBackwardsContinue: Scrub backwards continuously. This always plays to the start of the file and will not loop.
+PlayFromStart: Play from the start of the track, without affecting the current point or selection.
+PlayFromMousePointer: Play from the position of the mouse pointer, without affecting the current point or selection.
+PlaySpeedUp: Looping playback, with gradual speed-up, using a dialog to select options.
+PlaySpeedUpAgain: Looping playback, with gradual speed-up, using the same settings as before.
+Commands that require parameters, which can only be used for Automation.
+PlayFromNamedMarker(text): Play from the named marker, without affecting the current point or selection.
+     Parameter: the marker name.
+Marker name comparison is case insensitive. The whole name must match. If there is more than one marker with the same name then the first one will be used.
+PlayFromSeconds(double): Play from the point in the track specified in seconds, without affecting the current point or selection.
+     Parameter: position in seconds.
+If the position is beyond the end of the track, the command will be silently ignored.
+PlaySpeedUpParams(int, int, int, int): Looping playback, with gradual speed-up.
+     Parameter 1: starting speed, as a percentage.
+     Parameter 2: how many times to play at each speed.
+     Parameter 3: how many percent to increase speed by.
+     Parameter 4: final speed, as a percentage.

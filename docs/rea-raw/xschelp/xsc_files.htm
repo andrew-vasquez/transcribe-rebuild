@@ -1,0 +1,312 @@
+
+
+
+
+
+
+
+<HTML><HEAD><TITLE>Transcribe! : Transcription Files</TITLE></HEAD>
+<BODY BGCOLOR=#ffffff TEXT=#000000 LINK=#ff0000 ALINK=#ff0000 VLINK=#ff0000>
+
+<TABLE BORDER="0" CELLSPACING="0" CELLPADDING="0" WIDTH="100%">
+   <TR>
+      <TD ALIGN="CENTER" VALIGN="MIDDLE"><H2>Transcription Files</H2></TD>
+      <TD ALIGN="RIGHT" VALIGN="MIDDLE">
+<A HREF="contents.htm"><img align=center src="contents.png" BORDER=0 ALT="Home"></A>
+<A HREF="various.htm"><img align=center src="up.png" BORDER=0 ALT="Up"></A>
+<A HREF="video.htm"><img align=center src="back.png" BORDER=0 ALT="Previous"></A>
+<A HREF="automation.htm"><img align=center src="forward.png" BORDER=0 ALT="Next"></A>
+      </TD>
+   </TR>
+</TABLE>
+
+
+<HR>
+
+Transcription files have names ending in ".xsc". Transcribe! uses them to store information about a transcription such as the name of the sound file used, placement of markers, tuning adjustments, text blocks, etc. See <A HREF="file_menu.htm">here</A> for more discussion of this.<P>
+
+Here we give more detailed technical information about the content of transcription files which can be useful to advanced users.<P>
+
+<H3>General Format Information</H3>
+Transcription files are comma-delimited text files using UTF8 encoding and native line-ends for the platform on which they were produced. The content of these files is basically the same on all platforms.<P>
+
+This means that transcription files can be transferred between different OS versions of Transcribe! : if you have placed lots of markers in a transcription you are working on, and then you want to continue work on a different species of computer then you can copy the transcription file to the other machine (and the sound file too of course) and carry on.<P>
+
+Also, it is possible to import marker name and position data into other programs such as
+spreadsheets. Some people in the academic world find this useful for analysis of timing.<P>
+
+Clearly Transcribe! cannot allow the ',' character to appear within any field as it would be mistaken
+for a field delimiter when reading the file. Therefore Transcribe! saves any
+',' within a field as the pair '\C' and saves any '\' as the pair '\\'.
+Newline characters are saved as the pair '\n'.
+Transcribe! then performs the reverse translation on loading.<P>
+
+If you edit one of these files by hand then it's ok to add blank lines but do not insert any extraneous spaces or tabs. Not even at the end of a line.<P>
+
+<H3>Transferring Transcription Files between Windows, Mac and Linux</H3>
+
+First you should copy the sound file to the destination machine (or reload it
+from audio CD or whatever). It is best if the sound file is identical on the two
+machines. Any difference in length of lead-in will cause misalignment of markers.<P>
+
+Now copy the transcription file to the destination machine. You must ensure that the
+name of the transcription file ends with the four characters
+".xsc" (upper or lower case). Which it should do already.<P>
+
+Both Windows and Mac will sometimes hide the ".xsc" extension from you. On Windows File Explorer you should switch OFF "File menu" - "Change folder and Search Options" - View - "Hide extensions for known file types" to enable you to see the extension. On Mac in "Finder - Preferences - Advanced" you can turn on "Show all filename extensions"<P>
+
+Now start Transcribe! on the destination machine and use "File - Open" to load the transcription file. If you didn't put the sound file and the transcription file into the same folder then this will get you a dialog saying "Unable to find
+sound file". Don't worry : this means that the transcription file has loaded ok,
+but Transcribe! has been unable to locate the sound file which goes with it. The
+name and location (folder) of the sound file are stored in the transcription file
+but the folder information will not transfer between different machines as the filing
+system layouts are unlikely to be the same. So Transcribe! will look for a sound file
+of the right name in the same folder as the transcription file itself, and if it
+isn't there you get the dialog described. All you have to do is use the "Import Sound
+File" command to locate the sound file and your markers should now reappear and all is well.<P>
+
+<H3>Loading Transcription files into Spreadsheets</H3>
+
+Some people use Transcribe! for technical analysis of timing and find it useful to
+load marker timing information into a spreadsheet. The best way to do this will
+depend on what spreadsheet you are using, but here are a couple of tips:<P>
+
+On Mac : Using Excel, the "File - Open" command has an option to "Show Files
+of Type - All Files". If you select this then you will be able to load an xsc
+file directly. In the Text Import Wizard on Step 1 under "Original Data type"
+ensure "Delimited" is selected, then press "Next". On Step 2 select "Comma"
+as your "Delimiters Type" and in the text qualifier popup select "None", then
+press "Next" and "Finish". Also, TextEdit will happily load xsc files.<P>
+
+On Windows : rename the transcription file to give it the extension ".csv" (instead of ".xsc") : this is a standard extension indicating comma-separated text fields (but see the note above about Windows Explorer and file extensions). You may well find that
+double clicking it will now open it in your spreadsheet. If not, start your
+spreadsheet and either Open or Import the file. Alternatively you may get a
+result by opening the file in Notepad or WordPad, Copy the contents
+and Paste into your spreadsheet.<P>
+
+On Linux : follow the same instructions as for Windows. OpenOffice will open csv files.<P>
+
+<H3>Transcription File Format</H3>
+
+When you load an transcription file into a spreadsheet or text editor you will see its
+structure which is very simple and uses mnemonic names so is fairly self
+explanatory. It is divided into sections. We only document here the fields you're
+likely to be interested in, but if you want to understand any of the others
+you'll work them out easily enough.<P>
+
+In the "Main" section you may be interested in the sound file information.<BR>
+"SoundFileName" give the file name in short and long form.<BR>
+"SoundFileInfo" gives format type, format detail, channels, file size in bytes, sample rate, sample count, duration in seconds.<P>
+
+The "View0" section records FX and other view-related settings (that is, settings which can differ between one view and another if you have multiple split views of a single transcription). If you <I>do</I> have multiple views open when you save the transcription then you will see more "View" section.<P>
+
+Here is a typical (but short) "Markers" section. In fact, this is the markers section of the example shown in <A HREF="gs_window.htm">The Transcription Window</A> except that for brevity I have deleted everything except those from "H" to "H4".<P>
+
+SectionStart,Markers<BR>
+Howmany,13<BR>
+S,8654933,1,H,0,0:03:16.257<BR>
+B,8683630,1,,0,0:03:16.908<BR>
+B,8710610,1,,0,0:03:17.520<BR>
+B,8738274,1,,0,0:03:18.147<BR>
+M,8765749,1,H2,0,0:03:18.770<BR>
+B,8791198,1,,0,0:03:19.347<BR>
+B,8819388,1,,0,0:03:19.986<BR>
+B,8846902,1,,0,0:03:20.610<BR>
+M,8875071,1,H3,0,0:03:21.249<BR>
+B,8901942,1,,0,0:03:21.858<BR>
+B,8930884,1,,0,0:03:22.514<BR>
+B,8959282,1,,0,0:03:23.158<BR>
+M,8988170,1,H4,0,0:03:23.813<BR>
+SectionEnd,Markers<P>
+
+It tells you how many markers there are, then the markers themselves, one
+per line. Each line starts with "S", "M" or "B" indicating Section, Measure or
+Beat marker, then a number giving the location of the marker (as a sample number
+- divide by the sample rate to get the time) (or you may see -1 here which means
+get the position from the timestamp), then a 1 or 0 indicating whether
+or not the marker label is determined automatically (as opposed to being typed
+in by the user), then the label text itself. Then there is a number indicating
+automatic subdivision : 0 means same-as-previous, 1 means no, 2 or more means
+divide into this many subdivisions. Then there is a timestamp in hours, minutes and seconds with three decimal places.<P>
+
+Text blocks are stored in a similar way. "T", position as sample number or -1, vertical position and width in pixels, colour, position as timecode, and finally the text itself.<P>
+
+In fact starting with version 9, Transcribe! puts -1 for the sample number, and uses only the timestamp which now has six decimal places.
+
+
+<H3>Tips for working with transcription files in spreadsheets</H3>
+
+This section is rather old but I can't be bothered to update it...<p>
+
+Once you have loaded a transcription file into a spreadsheet program there are
+various things you can do with it which might not immediately occur to
+you if you are not familiar with spreadsheets. I will give here some examples of the kinds of things you can do.<P>
+
+Microsoft Excel is the spreadsheet I will discuss here, but others are similar.<P>
+
+The most powerful way of manipulating spreadsheets is with "macros"
+which are in fact programs you can write in Visual Basic as part of your
+spreadsheet. Before starting on these, though, here are some examples of the
+sort of thing you can do without needing macros.<P>
+
+TIP: To remove all markers in one category (e.g. beat markers) while leaving
+others unaffected.<P>
+<OL>
+<LI>Delete all rows from the spreadsheet except the markers.
+<LI>Select the columns with data in - that is, click on the header of
+column A and shift-click on the header of the last column with data
+in.
+<LI>Select "Sort" on the "Data" menu, and tell it to sort on column A
+- this is the column with "S", "M" or "B" in it, according to marker
+type. This will sort in alphabetical order so it will group all beat
+markers together, then all measure markers, then sections.
+<LI>Select and delete the rows containing the category of markers you
+want to lose (e.g. all beat markers).
+<LI>Select and sort again, but this time sort on column B which
+contains the sample numbers. This will restore correct order to the
+remaining markers.
+</OL><P>
+
+TIP: To add a new column giving timing information in seconds.<P>
+<OL>
+<LI>Click on the row which contains the first marker, in the first empty cell of that row (just to right of the hh:mm:ss timestamp). In the one I'm looking at, it's cell G40.
+<LI>In this cell, type "=B40/44100" (without the quotes). Replace the "40" with the correct row number, and the "44100" by the sample rate of the file (see above). This tells Excel to put a value in cell G40 which is calculated from cell B40 (the sample number) divided by the sample rate.
+<LI>Press &lt;enter&gt; so you are no longer editing the cell contents. The timing of this marker in seconds should now appear in the cell.
+<LI>Press and hold the little handle at the lower right of the cell. Drag it down over the cells below it, all the way to the last marker. Release the mouse. This copies the formula, and all the timings should now appear.
+</OL><P>
+
+What fun. But for anything more complicated we will need the full power
+of macros. This is genuine computer programming but don't let that put
+you off. The water is deep but you don't need to do more than dip your
+toes in it to get results. Even experts learn a new programming language
+by starting with examples written by others, then modify the examples to
+do what they want.<P>
+
+General tips on Excel / Visual Basic macros.<BR>
+- I'm not sure which versions of Excel support this - whether you need
+the "Professional" edition or not. Don't ask me - RTFM (Read The Manual).
+- You may need to run the Excel "Setup" program again (from the Excel
+installation disk), do a Custom Setup and tell it to install the Visual
+Basic Help for Excel. That way, you will be able to access Help about
+the functions you can call in Visual Basic, which "do things" to your
+Excel spreadsheet.<BR>
+- You may need to "unhide" your "Personal Macro Workbook" before Excel
+will let you edit the macro (this is done by selecting "unhide" in the
+"Window" menu). I think you can also get to the
+same point by going directly into Visual Basic Editor from the
+Tools:Macro:Visual Basic Editor. Then once you are in Visual Basic Editor
+you select Tools:Macros then select the relevant workbook from those listed
+in Macros In... (down the bottom of window), select your macro and select
+edit.<BR>
+- I am not an expert on Excel or Visual Basic. You are welcome to use
+the information and example programs here in any way you like, but if
+you run into trouble using Excel then that is not a Transcribe! issue
+and I do not offer technical support on Excel. Buy one of the many
+Excel books you will find in your local bookstore. Please let me know
+if you spot bugs in these examples, however.<P>
+
+Here's an easy way to create a new macro:<P>
+<OL>
+<LI>Select Tools - Macro - Record New Macro. Give it a name corresponding
+to what you want it to do ("DeleteBeats" in this example).
+<LI>You are now recording, and there is a little window on top with a
+square "stop" button. Press it to stop recording.
+<LI>Select Tools - Macro - Macros. You should get a window showing a
+list of macros including this new one (by name). Click once on its
+name, then press the Edit button. You should get the Visual Basic
+editor, showing something like this:<BR>
+Sub DeleteBeats()<BR>
+' DeleteBeats Macro<BR>
+End Sub<BR>
+Lines beginning with single-blip are comments. The macro is otherwise
+empty because we didn't type anything while we were recording.
+<LI>Now you can put whatever VB program you want between "Sub" and "End Sub"
+to make your macro do what you want. Try copying in the DeleteBeats
+example below.
+<LI>Run your macro by selecting Tools - Macro - Macros and double click
+the one you want to run.
+</OL><P>
+
+Now here are some example macros. They all assume that you have first
+deleted all non-marker lines from your spreadsheet.<P>
+
+' DeleteBeats removes the rows corresponding to beat markers<BR>
+Sub DeleteBeats()<BR>
+   Dim lineNum As Long<BR>
+   Dim markerType As String<BR>
+   ' loop thru the lines. terminate on first one which does not<BR>
+   ' start with "S" "M" or "B" (i.e. which is not a marker).<BR>
+   lineNum = 1<BR>
+   Do While True<BR>
+      markerType = Cells(lineNum, 1).Value<BR>
+      If markerType &lt;&gt; "S" And markerType &lt;&gt; "M" And markerType &lt;&gt; "B" Then Exit Do<BR>
+      ' so we have a line which is a marker. if it is a beat marker then<BR>
+      ' delete the row, and in this case we do not increment lineNum<BR>
+      If markerType = "B" Then<BR>
+         Rows(lineNum).Delete<BR>
+      Else<BR>
+         lineNum = lineNum + 1<BR>
+      End If<BR>
+   Loop<BR>
+End Sub<P>
+
+' GenerateTimecode adds another entry at the end of each marker line,
+<BR>' giving the timecode in the form hh:mm:ss.00
+<BR>' It's a bit redundant now that Transcribe! puts timestamps in for you, but remains
+<BR>' a useful example of programming technique.
+<BR>' It assumes sample rate of 44100 (CD rate), which you would obviously
+<BR>' need to change if it wasn't right. If you really want to get clever then
+<BR>' you could work on a complete transcription file and read the sample rate from the
+<BR>' "SoundFileInfo" line, but then you would also have to write stuff to
+<BR>' locate the "SectionStart Markers" to find where to start work.
+<BR>' WARNING : BEFORE RUNNING THIS, SET THE NUMBER FORMAT FOR THE
+<BR>' DESTINATION COLUMN TO "Text" ELSE EXCEL MAY CRASH!!!
+<BR>' This is done by select whole column, right click on it, "Format Cells",
+<BR>' "Number", "Text". I tried to do this within the macro by
+<BR>' Cells(lineNum, columnNum).NumberFormat = "Text"
+<BR>' but this causes a runtime error - anyone know the answer? Please tell me.
+<BR>Sub GenerateTimecode()
+<BR>   Dim lineNum As Long
+<BR>   Dim markerType As String
+<BR>   
+<BR>   Dim sampleRate As Double
+<BR>   sampleRate = 44100         ' or so we assume
+<BR>
+<BR>   Dim columnNum As Long
+<BR>   columnNum = 7              ' the column where we will put the timecodes
+<BR>
+<BR>   ' loop thru the lines. terminate on first one which does not
+<BR>   ' start with "S" "M" or "B" (i.e. which is not a marker).
+<BR>   lineNum = 1
+<BR>   Do While True
+<BR>      markerType = Cells(lineNum, 1).Value
+<BR>      If markerType &lt;&gt; "S" And markerType &lt;&gt; "M" And markerType &lt;&gt; "B" Then Exit Do
+<BR>      ' so we have a line which is a marker. add the timecode.
+<BR>      Dim markerPos100 As Long      ' marker pos in 100ths of a second
+<BR>      markerPos100 = Int((Cells(lineNum, 2).Value / sampleRate) * 100 + 0.5)
+<BR>      Dim hours, mins, secs As Long
+<BR>      hours = 0
+<BR>      Do While markerPos100 &gt;= 360000
+<BR>         hours = hours + 1
+<BR>         markerPos100 = markerPos100 - 360000
+<BR>      Loop
+<BR>      mins = 0
+<BR>      Do While markerPos100 &gt;= 6000
+<BR>         mins = mins + 1
+<BR>         markerPos100 = markerPos100 - 6000
+<BR>      Loop
+<BR>      secs = 0
+<BR>      Do While markerPos100 &gt;= 100
+<BR>         secs = secs + 1
+<BR>         markerPos100 = markerPos100 - 100
+<BR>      Loop
+<BR>      ' and markerPos100 has the remaining 100ths
+<BR>
+<BR>      Cells(lineNum, columnNum).Value = Format(hours, "00") + ":" + Format(mins, "00") _
+<BR>         + ":" + Format(secs, "00") + "." + Format(markerPos100, "00")
+<BR>   
+<BR>      lineNum = lineNum + 1
+<BR>   Loop
+<BR>End Sub<P>
+
+</HTML>

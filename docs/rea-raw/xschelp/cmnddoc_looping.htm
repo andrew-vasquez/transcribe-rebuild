@@ -1,0 +1,90 @@
+
+
+
+
+
+
+
+<HTML><HEAD><TITLE>Transcribe! : Commands: Looping</TITLE></HEAD>
+<BODY BGCOLOR=#ffffff TEXT=#000000 LINK=#ff0000 ALINK=#ff0000 VLINK=#ff0000>
+
+<TABLE BORDER="0" CELLSPACING="0" CELLPADDING="0" WIDTH="100%">
+   <TR>
+      <TD ALIGN="CENTER" VALIGN="MIDDLE"><H2>Commands: Looping</H2></TD>
+      <TD ALIGN="RIGHT" VALIGN="MIDDLE">
+<A HREF="contents.htm"><img align=center src="contents.png" BORDER=0 ALT="Home"></A>
+<A HREF="cmnddoc.htm"><img align=center src="up.png" BORDER=0 ALT="Up"></A>
+<A HREF="cmnddoc_playing.htm"><img align=center src="back.png" BORDER=0 ALT="Previous"></A>
+<A HREF="cmnddoc_textblocks.htm"><img align=center src="forward.png" BORDER=0 ALT="Next"></A>
+      </TD>
+   </TR>
+</TABLE>
+
+
+<HR>
+
+
+
+<center><h3>Commands that can be used as Keyboard, Pedal, or Midi shortcuts as well as automation.</h3></center><p>
+
+<b>PlayLoopOn</b>: Switch on looping-playback mode.<p>
+<b>PlayLoopOff</b>: Switch off looping-playback mode.<p>
+<b>PlayLoopToggle</b>: Switch on/off looping-playback mode.<p>
+<b>PlayLoopAB</b>: Set loop start and end points while playing.<p>
+<b>PlayLoopRelease</b>: Allows playback to continue out of the loop, to the end of the track.<p>
+<b>PlayLoopDelaySetCurrent</b>: Set loop delay from length of current selection. See Preferences - Playback.<p>
+<b>PlayLoopDelayOn</b>: Switch on loop delay (the amount of delay is set in Preferences.<p>
+<b>PlayLoopDelayOff</b>: Switch off loop delay (the amount of delay is set in Preferences.<p>
+<b>PlayLoopDelayToggle</b>: Switch on/off loop delay (the amount of delay is set in Preferences.<p>
+<b>LoopAppend</b>: Add a new (empty) loop at the end of the list on the Misc page of the Fx window.<br>
+You start with 20 loops but this way, you can have more.<p>
+<b>LoopStoreInsert</b>: This stores the current position and selection as a loop in the list on the Misc page of the Fx window. It creates a new loop and inserts it in sorted order into the existing list of loops.<p>
+<b>LoopRecallPrevious</b>: Recalls the loop before the most recently selected loop.<p>
+<b>LoopRecallSame</b>: Recall again the most recently selected loop.<p>
+<b>LoopRecallNext</b>: Recalls the loop after the most recently selected loop.<p>
+<b>LoopUpdateRecent</b>: Update the most recently selected or created loop, from the current selection.<p>
+<b>LoopDeleteRecent</b>: Delete the most recently selected or created loop.<p>
+<b>LoopStore1 ... LoopStore20</b>: Store a loop.<p>
+<b>LoopRecallFx1 ... LoopRecallFx20</b>: Recall the Fx of a loop.<p>
+<b>LoopRecall1 ... LoopRecall20</b>: Recall a loop.<p>
+
+<hr>
+<center><h3>Commands that require parameters, which can only be used for <A HREF="automation.htm">Automation</A>.</h3></center><p>
+
+<b>PlayLoopDelaySet(double)</b>: Set loop delay. See Preferences - Playback.<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Parameter: delay time in seconds.<p>
+<b>LoopStorePos(int, double, double)</b>: Store a loop at the specified position.<br>
+This sets the position for one of the loops listed on the Misc page of the Fx window.<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Parameter 1: index number of the loop.<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Parameter 2: loop start point in seconds.<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Parameter 3: loop length in seconds, or 0 if you just want to specify a position.<p>
+<b>LoopStoreName(int, text)</b>: This sets the name for one of the loops listed on the Misc page of the Fx window.<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Parameter 1: index number of the loop.<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Parameter 2: the name.<p>
+<b>LoopStoreColor(int, text)</b>: This sets the color for one of the loops listed on the Misc page of the Fx window.<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Parameter 1: index number of the loop.<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Parameter 2: the color : White, Grey, Red, Green, Blue, Turquoise, Orange, Yellow, Magenta.<p>
+<b>LoopClear(int)</b>: This clears (empties) one of the loops listed on the Misc page of the Fx window.<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Parameter: index number of the loop.<p>
+<b>LoopDelete(int)</b>: This deletes one of the loops listed on the Misc page of the Fx window.<br>
+Subsequent loops will be moved up by one position.<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Parameter: index number of the loop.<p>
+<b>LoopInsertBefore(int)</b>: Insert a new (empty) loop before the specified one, as listed on the Misc page of the Fx window.<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Parameter: index number of the loop to insert before.<p>
+<b>LoopInsertAfter(int)</b>: Insert a new (empty) loop after the specified one, as listed on the Misc page of the Fx window.<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Parameter: index number of the loop to insert after.<p>
+<b>LoopStore(int)</b>: This stores the current position and selection as a loop in the list on the Misc page of the Fx window.<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Parameter: the loop number.<br>
+This command will fail if you specify a loop which does not exist. You always have a minimum of 20 loops. The LoopAppend command creates more loops. Note that "LoopStore(20)" (for example) is exactly equivalent to "LoopStore20". However you can also say "LoopStore(21)" or higher, whereas there is no "LoopStore21" command.<br>
+<p>
+<b>LoopStoreFx(int)</b>: This stores the current audio Fx settings to a loop in the list on the Misc page of the Fx window.<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Parameter: index number of the loop.<p>
+<b>LoopClearFx(int)</b>: This clears (empties) any audio Fx settings from one of the loops listed on the Misc page of the Fx window.<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Parameter: index number of the loop.<p>
+<b>LoopRecallFx(int)</b>: This recalls the stored audio Fx settings from a loop in the list on the Misc page of the Fx window. It does not recall the stored position and selection of the loop.<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Parameter: index number of the loop.<p>
+<b>LoopRecall(int)</b>: This sets the current position and selection from a loop in the list on the Misc page of the Fx window. If the loop has Fx settings stored, then it will also set the current Fx from the stored settings.<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Parameter: the loop number.<br>
+This command will fail if you specify a loop which does not exist. You always have a minimum of 20 loops. The LoopAppend command creates more loops. Note that "LoopRecall(20)" (for example) is exactly equivalent to "LoopRecall20". However you can also say "LoopRecall(21)" or higher, whereas there is no "LoopRecall21" command.<p>
+
+</HTML>

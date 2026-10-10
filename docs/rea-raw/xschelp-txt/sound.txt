@@ -1,0 +1,62 @@
+Transcribe! : Sound Files
+ | 
+Sound Files
+ | 
+Supported Formats
+Transcribe! reads audio sample data files. There have been dozens of formats used
+for audio sample data on various computer systems at one time or another and it is
+not our intention to support the more esoteric ones. Transcribe! currently reads :
+WAV This is the old Microsoft standard.
+AIFF/AIFC This is the old Apple Macintosh standard.
+MP3 MPEG Layer III. This is a very popular compressed format.
+About MP3 versions : so called MP3 files are actually MPEG-1 (MPEG version 1) or
+MPEG-2 (MPEG version 2) both of which are recognised by Transcribe!. There is also
+a "Version 2.5" but this is not an official ISO standard.
+Within MPEG-1 and MPEG-2, audio can be encoded as Layer I, Layer II
+or Layer III. Layer II is basically an update on Layer I, offering the same sound
+quality in a smaller file. Layer III is more sophisticated, and is usually superior
+when very high compression is desired. Transcribe! reads Layers II & III but not
+Layer I as this is seldom seen these days, having been essentially superceded
+by Layers II & III. So, don't tell your MP3 encoder to produce Layer I.
+OGG Ogg Vorbis. This is a popular compressed format which has the advantage of being open source and patent-free.
+FLAC Free Lossless Audio Codec. This is a popular lossless compressed format which has the advantage of being open source and patent-free.
+CDA (Windows only) CD Audio. This is what you see when you look at an audio CD in Windows. The CDA file doesn't really contain the audio, it's just an index file. For this reason Transcribe! can only read these files in-place on the audio CD. It's usually better to copy the track to your hard disk first, then open that.
+DSS (Windows only) This is a proprietary speech recording format jointly developed by Grundig, Olympus and Philips, and used for dictation. You must have Olympus' "DSS Player Pro" software (Dictation or Transcription module) or "DSS Player 2002" installed in order for Transcribe! to read these files. Transcribe! will only read "standard mode" files, not "long mode".
+DCT This is a wrapper around a standard WAV file, used for dictation. See below about these.
+And many many more... because if Transcribe! doesn't have a native reader for any particular file then it will try GStreamer next (see the GStreamer help page), and then on Windows "Windows Media Foundation" (which is part of Windows), or on Mac "AVFoundation" (which is part of macOS).
+Video hosting sites such as YouTube and others offer no obvious way to download the video. However there are ways of downloading such videos, and you should be able to play them in Transcribe!. Visit https://www.seventhstring.com/xscribe/video.html where you will find discussion about handling and converting videos for Transcribe!
+To find out whether Transcribe! can open a file, set the Open dialog to show "All Files" and try it. Or drag-n-drop the file onto Transcribe!
+Workarounds: If Transcribe! cannot read the audio because it's in the wrong format, or it's DRM protected, or it's a commercial DVD, or streaming audio or video... here are a selection of general-purpose workarounds.
+Convert it to a suitable format - there are lots of programs out there for audio & video format conversion.
+Burn the track to an audio CD, then rip the audio CD back to a non-protected format such as mp3.
+Plug a cable from the headphone-out to the line-in and use Transcribe!'s "Record new sound file" command (or other audio recording software) to record it while it's playing. If you are using iTunes then you may need to start recording before launching iTunes, as iTunes will disable the ability to start recording once it starts running.
+If you have an iPod or other mp3 player then transfer the track to the iPod, plug the headphone output of the iPod into the line-in on your computer, then record the file while it is playing.
+There are applications capable of recording the audio which is playing on your computer. If you search the web for "audio capture Mac/Windows" (without the quotes) then you will find them.
+Uncompressed (WAV or AIFF) CD quality sound files (16 bit stereo at 44.1k) occupy about 10MB per minute. The various compressed formats produce smaller files but the act of compression usually involves some loss of quality.
+Streaming Services such as Spotify, Apple Music, etc.
+These services do not allow you to download tracks to your computer in such a way that other applications such as Transcribe! can play them. Please see the FAQ on the Seventh String website for solutions.
+MIDI and KAR (Karaoke) Files
+Transcribe! takes no interest in MIDI files (or KAR Karaoke files which are a variety of MIDI file) - these already contain explicit information about what notes are to be played and when, and there are plenty of programs available which can display this information. You would only be making life unnecessarily difficult for yourself if you use Transcribe! to transcribe such a file by listening to it.
+DRM (Digital Rights Management)
+Transcribe! cannot read files which are protected with DRM. Sorry.
+In particular, M4P is not supported. This is the DRM protected format which was used by the Apple Music Store until early 2009.
+However, Apple stopped using this format in early 2009 and these days all iTunes music downloads from the Apple music store are "iTunes Plus". "iTunes Plus" is a higher quality download and more to the point, it comes without DRM (digital rights management) - it's an "m4a" or "aac" file rather than an "m4p". This means you can play it on non-Apple devices and software, including Transcribe!
+It used to be possible to upgrade previously downloaded tracks to "iTunes Plus" but I am not sure if this is still possible. You can still buy tracks from the iTunes store, whether or not you have an Apple Music subscription, which you can download and play in Transcribe!. See the FAQ on the Seventh String website for details.
+DRM Workarounds: see above for workarounds, for getting the audio out of files which Transcribe! cannot read directly for any reason.
+.DCT Files
+File names ending in ".dct" are probably "dictation" files produced by ExpressDictate from NCH Swift Sound. They contain a combination of miscellaneous textual information and an embedded sound file.
+This is a standard WAV file, possibly compressed using a standard codec. Transcribe! won't open the DCT file directly as a sound file, but it will offer to split it into its separate text and WAV parts, saving the WAV as a new file on its own, which Transcribe! will then offer to open as a sound file (if it can). If Transcribe! won't read the WAV file (because it can't handle the codec used) then you may still be able to convert it to a standard (PCM) WAV using format conversion utility software.
+Transcribe! will show you the text and you can choose to save it to a text file alongside the wav file. If you have Transcribe! create a new transcription for the sound file, then you can also choose to have the text inserted into the transcription as a text block.
+Transcribe! does not at present support encrypted DCT files.
+Recording Sound Files
+If you don't have a sound file, you just have an audio recording (cassette, vinyl, etc)
+then you will need to record it to a disk file. Plug
+the audio signal into your computer's line-in or microphone socket and use
+the Record New Sound File command. There are also many other software packages available which allow you to record sound to your hard disk. Of course this technique can also be used with CDs, and to re-record sound files which can only be played with proprietary players.
+Other Software
+Sound file editing programs allow you to change sample size & sample rate,
+to filter and modify sound files in many other ways. Transcribe! is not an editing program, and it is not our intention that Transcribe! should wander into this territory which is already well served by existing applications.
+iTunes can also be used to copy CD tracks to your hard disk. You will need to find out where it put the file, so you can open it with Transcribe!. Or drag-n-drop from iTunes to Transcribe!.
+Finder will also copy tracks by the usual drag-n-drop from the CD to your hard disk.
+For utility software capable of converting sound file formats, recording and editing sound files, CD rippers, etc, 
+you will find links in the "Resources - Other" section of our website www.seventhstring.com

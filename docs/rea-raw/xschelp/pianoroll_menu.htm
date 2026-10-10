@@ -1,0 +1,73 @@
+
+
+
+
+
+
+
+<HTML><HEAD><TITLE>Transcribe! : Piano Roll Menu</TITLE></HEAD>
+<BODY BGCOLOR=#ffffff TEXT=#000000 LINK=#ff0000 ALINK=#ff0000 VLINK=#ff0000>
+
+<TABLE BORDER="0" CELLSPACING="0" CELLPADDING="0" WIDTH="100%">
+   <TR>
+      <TD ALIGN="CENTER" VALIGN="MIDDLE"><H2>Piano Roll Menu</H2></TD>
+      <TD ALIGN="RIGHT" VALIGN="MIDDLE">
+<A HREF="contents.htm"><img align=center src="contents.png" BORDER=0 ALT="Home"></A>
+<A HREF="menus.htm"><img align=center src="up.png" BORDER=0 ALT="Up"></A>
+<A HREF="text_menu.htm"><img align=center src="back.png" BORDER=0 ALT="Previous"></A>
+<A HREF="window_menu.htm"><img align=center src="forward.png" BORDER=0 ALT="Next"></A>
+      </TD>
+   </TR>
+</TABLE>
+
+
+<HR>
+
+<H3>About the Piano Roll</H3>
+
+The Piano Roll display is optional and it shows Transcribe!'s guesses about what notes are being played, in the style of a piano roll which will be familiar to you if you have ever used sequencing software. It may or may not be useful depending on the nature and complexity of the material. This is similar to the spectrum and note guesses displayed at the bottom of Transcribe!'s window, except that they relate to just one point at a time whereas the piano roll shows note guesses at every point in the track, from left to right alongside the waveform profile.<P>
+
+These note guesses are derived from a straight mono mix of the sound. If you have specified tuning or transposition adjustments then these will be displayed, but the Mono/Karaoke and EQ pages of the Fx (Audio Effects) window have no effect here. This is different from the spectrum at the bottom of Transcribe!'s window, which is affected by these things.<p>
+
+When you load a new sound file, Transcribe! will start calculating the note guesses for the piano roll.
+This will take some time, so Transcribe! will display a yellow band to represent those parts of the piano roll it hasn't calculated yet. You can start work right away however, you don't have to wait for this to complete.<P>
+
+Sometimes, on some machines, computing the piano roll data in the background while playing can cause playback interruptions (drop outs), or late marker placement (press 'M' while playing and the marker ends up rather later than the desired point). If this is happening to you then you can turn off "Compute Piano Roll while playing" in <A HREF="prefs_general.htm#prefs_prdp">Preferences</A>.<p>
+
+At the left side of the piano roll is a piano graphic. This works the same way as the piano displayed across the bottom of Transcribe!'s window. You can click it to play notes, click and drag sideways to change the volume, drag vertically to adjust the size or position of the piano (that is, how many notes should it display). <A HREF="gs_window.htm#piano">Click here</A> to read about it in more detail. You can choose (on the Piano Roll menu) not to display the piano in which case you won't be able to adjust which notes are displayed, but you can see more of the piano roll - you may need to do this if you want to see the piano roll for the very beginning of the track.<p>
+
+Then there is the piano roll itself, showing note guesses as lines. This is aligned with the waveform and markers below, and the piano roll also shows the marker positions as vertical lines. So it's a very good idea to place some measure markers to make the alignment visually clear. The piano roll display is closely related to a spectrum display but is not the same thing : it displays note guesses, so for example a harmonic which is present in the spectrum may not appear as a note guess, if Transcribe! decides that it is merely a harmonic and not a note being played. The thickness of the note's track indicates how confident Transcribe! is that there is a note there, while the darkness of the colour simply indicates its volume.<p>
+
+You can command-click on the piano roll to start playback at the clicked point without changing the current point or selection.<p>
+
+You can click on the piano roll to play the note clicked and get a report in a little yellow popup window, of what the note is.<p>
+
+You can shift-click on the piano roll to get a report of Transcribe!'s chord guesses at that point. This only takes account of notes actually visible on the piano roll - in other words you can remove notes from consideration by dragging the piano at the left, so the notes are off-screen. You can also remove notes from consideration for chord guessing by command-click on the piano : this works the same way as it does on the piano at the bottom so <A HREF="guess.htm#chords">click here</A> to read about it in more detail.<p>
+
+Bear in mind that low notes are particularly important for chord guessing, so if you adjust the piano so that the bass notes are off the bottom - not visible - then the chord guessing will ignore those low notes and so may produce strange results.<p>
+
+In order for chord guessing to work, it's necessary to make sure (by adjusting tuning or transposition) that the pitches of the notes being played do appear more or less centred in the middle of the corresponding piano keyboard notes. See the <A HREF="fx_tuning.htm">Tuning</A> and <A HREF="fx_transposition.htm">Transposition</A> pages.<p>
+
+You can control-click the piano roll to get a popup menu. This offers to insert the chord name as text above the piano roll, showing the chord at the clicked point - it offers the same list of chords that shift-click does, but in the form of a menu so you can select one of them. The popup menu will include enharmonic alternative spellings, for instance if shift-click shows a guessed chord of C# then the popup menu will allow you to choose either C# or Db. This actually makes use of the <A HREF="text_menu.htm">Text zone</A> which Transcribe! has had for a long time and which can be used for any kind of textual annotation, not just chord names.<p>
+
+So if you want to add chords then a typical way of working would be first to shift-click the piano roll and move the mouse around until you see the chord you want to insert, then control-click at the same point and select the chord to insert it as a new text block. Then you can drag the new text block to exactly where you want it, and edit its content if you want. See the <A HREF="text_menu.htm">Text zone</A> for more detailed information about using text blocks.<p>
+
+Transcribe! also offers a <A HREF="spectrum.htm">Spectrum view</A> which shows the spectrum itself as well as the note and chord guesses, and can be controlled more precisely. However it can only analyse one point at a time.<p>
+
+
+<HR><CENTER><H3>The Commands on the Piano Roll Menu</H3></CENTER>
+
+<H3>Show Piano Roll</H3>
+If the piano roll is not shown then you cannot use any of the other piano roll menu commands. You can adjust the height of the piano roll by dragging the splitter bars around.<P>
+
+<H3>Include Piano at left of piano roll</H3>
+It usually makes sense to have the piano displayed at the left, unless you want to see the piano roll right at the beginning of the track, when the piano gets in the way.<P>
+
+<H3>Increase sensitivity</H3>
+Transcribe! displays quieter note guesses in paler colours, disappearing altogether when very quiet. However if the music is in fact very quiet (does not fill very much of the height of the waveform profile) then you might want to boost sensitivity to see those very pale note guesses.<p>
+
+<H3>Decrease sensitivity</H3>
+Decrease the sensitivity of the note guesses.<p>
+
+
+</HTML>

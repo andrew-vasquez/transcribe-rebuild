@@ -1,0 +1,30 @@
+Transcribe! : Toolbar
+ | 
+Toolbar
+ | 
+The Commands on the Toolbar
+This is a list of all available toolbar buttons, but not all the buttons listed
+here appear in the toolbar by default. You can select which of these buttons actually do appear in the toolbar - see
+Preferences.
+If you have more than one view of the current transcription then this behaves like the Unsplit command, closing the current view. If you only have one view then it closes the transcription, leaving the window empty. If you want to close the window then use the Close button in the window titlebar, or the Close command on the Window menu.
+Open an existing file (transcription or sound file). Transcribe! displays the Open dialog box, in which you can locate and open the desired file.
+Save the active transcription file using the same file name. If you have not yet named the transcription document, Transcribe! displays the Save As dialog box.
+Record sound from your soundcard's input to a sound file on disk.
+Loop A-B. Press this button while playing, to set start and end points for a loop.
+This is convenient for setting loop points in tempo. If you press the button on the first beat of a bar (setting the "A" point), then press again on the first beat of the next bar (setting the "B" point) then you will have a loop exactly one bar long. The button displays as pressed when the "A" point has been set and it's waiting for the "B" point to start looping.
+Loop playback.
+Scroll the display while playing, to keep the currently playing point in view.
+Scale the waveform horizontally so it fits the window.
+Scale the waveform horizontally so the current selection (if any) fits the window.
+Switch the Speed alteration between Active and Bypass. When the button is pressed, the effect is active.
+Or you can control-click this button for a menu allowing you to select various preset speeds.
+You can also adjust the speed by holding the mouse over this button and using the mousewheel if you have one.
+Select speeds from 5% to 200%.
+You can in fact have buttons for any speed you want, from 5% to 200% of the original speed. See Preferences.
+In addition to adjusting the speed with the Speed alteration controls, there is also a slider in the lower toolbar, and keyboard shortcuts for setting half-speed, quarter-speed etc, and for incrementing and decrementing speed in steps.
+Or you can control-click these buttons for a menu allowing you to select various preset speeds.
+You can also adjust the speed by holding the mouse over these buttons and using the mousewheel if you have one.
+Show the Audio Effects and Controls window. Note this is not a toggle, it always shows the Fx window and brings it to the front (because I think this is more useful). If you want to hide the window you can do it on the Window menu, or by clicking the "close" cross on the Fx window's title bar.
+Switch the Mono/Karaoke effect between Active and Bypass. When the button is pressed, the effect is active.
+Switch the EQ (equaliser) between Active and Bypass. When the button is pressed, the effect is active. You can also control-click this button for a menu allowing you to select one of your preset EQs from the Fx page.
+Switch the Tuning alteration between Active and Bypass. When the button is pressed, the effect is active. You can also control-click this button for a menu allowing you to make octave adjustments without the need to use the tuning Fx page.

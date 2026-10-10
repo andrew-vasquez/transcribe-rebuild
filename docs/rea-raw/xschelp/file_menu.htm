@@ -1,0 +1,207 @@
+
+
+
+
+
+
+
+<HTML><HEAD><TITLE>Transcribe! : File Menu</TITLE></HEAD>
+<BODY BGCOLOR=#ffffff TEXT=#000000 LINK=#ff0000 ALINK=#ff0000 VLINK=#ff0000>
+
+<TABLE BORDER="0" CELLSPACING="0" CELLPADDING="0" WIDTH="100%">
+   <TR>
+      <TD ALIGN="CENTER" VALIGN="MIDDLE"><H2>File Menu</H2></TD>
+      <TD ALIGN="RIGHT" VALIGN="MIDDLE">
+<A HREF="contents.htm"><img align=center src="contents.png" BORDER=0 ALT="Home"></A>
+<A HREF="menus.htm"><img align=center src="up.png" BORDER=0 ALT="Up"></A>
+<A HREF="footpedal.htm"><img align=center src="back.png" BORDER=0 ALT="Previous"></A>
+<A HREF="record.htm"><img align=center src="forward.png" BORDER=0 ALT="Next"></A>
+      </TD>
+   </TR>
+</TABLE>
+
+
+<HR>
+
+<H3>Files used by Transcribe!</H3>
+First, here is a general note about sound files and transcription (xsc) files as used by Transcribe!. If you are new to Transcribe! then you should probably read this.<P>
+
+Transcribe! deals mainly with two kinds of files - sound files (named *.wav, *.aiff, *.mp3, etc) which are large and contain sampled sound, and transcription files (named *.xsc) which are small and are created and understood only by Transcribe!. When you "Save" (on Transcribe!'s File menu) you are saving a transcription file which contains information about markers, tuning and EQ settings, etc so these can be restored when you open this transcription file. The transcription file also contains the name of the sound file so that when the transcription file is opened, Transcribe! can find the appropriate sound file.<P>
+
+Transcribe! never alters your sound files in any way, and although Transcribe! is capable of creating new sound files if you ask it to (perhaps you want a new sound file with speed or pitch changes applied), it does not do this in normal operation. When you play at altered speed, for instance, Transcribe! reads the original sound file and performs the speed change on the fly while playing. It does not create an altered-speed copy on disk. Transcription (xsc) files do not contain sound, they contain text - in fact it can sometimes be useful to look at their content, see <A HREF="xsc_files.htm">here</A>. I am stressing this because many people start by imagining that xsc files contain sound, and this can lead to confusion.<P>
+
+When you start work on a new transcription there won't be a transcription (xsc) file for it yet, so naturally you open the sound file which causes Transcribe! to start a new transcription based on this sound file.<P>
+
+The "Transcription Info" window (Window menu) will show you the name and location of the transcription file (if you have created one by using the "Save" command) and the name and location of the sound file which you are working on. The title bar of the transcription window shows the name of the xsc file (or the name that will be used, by default, if it hasn't been saved yet).<P>
+
+If you save a transcription then, when you want to continue work on it, you should open the transcription file again (named *.xsc). It will appear on the "Recent Files" list on the File menu, so that's the easiest way to find it. If, instead, you open the sound file again then you would be starting a fresh transcription - markers etc that you previously saved in an xsc file will not appear, though of course they are still present in the previously saved xsc file. There is no law against having lots of different xsc files all referring to the same sound file, though it's unlikely to be useful.<P>
+
+If you load a sound file but don't save the transcription then there won't be a transcription file. It won't appear on the Recent Files list and if you want to load it again, you must load the sound file again.<P>
+
+If you open an xsc file and the sound file referred to in it cannot be found - perhaps it's been moved or deleted - then Transcribe! will complain that it can't find it. Look closely at the name and location of the sound file which Transcribe! reports as not found, and check out where this file is now. Then use the "Import Sound File" command to tell Transcribe! where it is. This problem can easily happen if the sound file is on a removable medium such as a CD. Although Transcribe! will allow you to open sound files directly from a CD it is usually a good idea to copy the sound file to your hard disk before opening a new transcription for it. Then Transcribe! will be able to find the sound file later even if you've removed the CD.<P>
+
+This problem can also happen if you copy a transcription to another machine to work on it there. Transcription files are compatible between Windows, Mac, and Linux but the filing systems on these operating systems are different. You must copy both the transcription file and the sound file but you may then have the problem of not finding the sound file, as in the previous paragraph which describes how to fix it. In fact if you copy both files to the same folder then it should not be a problem.<P>
+
+<HR><CENTER><H3>The Commands on the File Menu</H3></CENTER>
+
+<H3>Open<A NAME="open"></A></H3>
+
+Use this command to open an existing transcription (xsc) file, or to start a new one by opening a sound file.<P>
+
+If you are opening an existing transcription file then you may in fact find it easier to select it on the Recent Files list (below).<P>
+
+You can also open transcription files and sound files by drag-n-drop onto Transcribe!'s window.<P>
+
+If you are starting a new transcription by opening a sound file then you will need to make sure the file type selector in the "Open" dialog is set to display sound files, else you won't see them.<P>
+
+See above for more discussion of these matters, and see <A HREF="sound.htm">here</A> for discussion about sound file types.<P>
+
+Transcribe! will normally open a new window for the new transcription. If you would prefer the new transcription to replace the current one in the same window then hold the &lt;shift&gt; key down when you "ok" the File Open dialog or drop the file. This will only work if the current transcription has not been modified, so that it does not need to be saved.<p>
+
+
+<H3>Close<A NAME="close"></A></H3>
+This command closes the current transcription. If you have made changes to the transcription which have not been saved then Transcribe! will ask you if you want to save them.<P>
+
+
+<H3>Save<A NAME="save"></A></H3>
+This command saves the current transcription as a transcription (xsc) file. It does <I>not</I> create or save any sound file. See the discussion at the top of this page if this isn't clear to you.<P>
+
+
+<H3>Save As<A NAME="saveas"></A></H3>
+Saves a transcription (xsc) file to a specified file name. Transcribe! displays
+the "Save As" dialog box so you can name your transcription.<P>
+
+
+<H3>Recent files...<A NAME="recent"></A></H3>
+This is a list of up to 32 (you can change the number in Preferences) recently opened transcription (xsc) files. Select one of them to open it. It does not show sound files. If you start a new transcription by opening a sound file then the name of the new transcription will not appear in the Recent Files list until you "Save" the transcription (creating a transcription file on disk).<P>
+
+
+<H3>Recent folders...<A NAME="recent_folders"></A></H3>
+This is a list of up to 32 (you can change the number in Preferences) folders which you have used recently for transcription (xsc) files or sound files. Select one of them to bring up the "File Open" dialog for that folder.<P>
+
+
+<H3>Import sound file<A NAME="import_sound"></A></H3>
+This loads a new sound file into the current transcription, preserving existing markers and text blocks and any other settings. If you're not sure what that means then read the discussion at the top of this page.<P>
+
+This command is not often needed. If you load a transcription (xsc) file but the corresponding sound file has been moved or deleted, then Transcribe! will complain that it can't find it. Use this command to reload the sound file from its new location.<p>
+
+Another situation where you might want to use this command is if you have a new version of the sound file, perhaps processed or cleaned up somehow, which you want to substitute for the version you did have loaded.
+Transcribe! will keep track of the previous sound file name in this case, so you can easily switch back to it if you want to. If you want to know more about this then <A HREF="stems.htm">read about stem files here</A><P>
+
+<H3>Record new sound file</H3>
+This command gets a <A HREF="record.htm">page of its own</A>.<P>
+
+
+<H3>Stem files</H3>
+This command gets a <A HREF="stems.htm">page of its own</A>.<P>
+
+
+<H3>Export sound file<A NAME="export_sound"></A></H3>
+This command creates a new sound file, being a copy of all or part of the current sound file, optionally with
+processing effects applied. It's useful if, for instance, you want to create a slowed-down or pitch-changed copy of a track, to play on a different device or give to someone else.<P>
+
+This command creates WAV or AIFF or compressed format files (mp3 by default) regardless of the format of the original sound file.<P>
+
+See <A HREF="prefs_export.htm">Preferences - Export</A> for settings relating to compressed file exporting (e.g. to select the type of file and the quality). Also you will find an option for automatically adding timestamps to the names of exported files.<p>
+
+The options offered are as follows.
+<UL>
+<LI>Source (Whole file / Current selection) : if you select a region of the file
+before choosing this command, then you can select here whether to copy the whole
+file or only the selected region.
+<LI>How many repetitions : sometimes people like to create play-along practice tracks containing multiple repetitions of a selected short section. This is a really good way of filling up your hard disk very quickly. For this reason, the repetition count always defaults to 1.
+<LI>Effects : these checkboxes control which of the processing effects which are operating on the active view of the current transcription, will be applied to the copy file which is created. So the idea is, you first select the processing options (tuning, speed, etc) which you want in the usual way, then select Export Sound File and make sure the checkboxes are set for the effects you want in the file. If you clear all these checkboxes then you get a straight copy with no processing. "HQ Slowdown" (High Quality) refers to the choice of algorithm used if you are applying speed or tuning changes. You'll probably want to use this option but see <A HREF="prefs_playback.htm">Preferences - Playback</A> for more info.
+<LI>Format : select WAV or AIFF or Compressed.
+<LI>Sample Rate : if in doubt, select "Same as original". Except that if you want to burn the result to an audio CD then use 44100, as this is the audio CD sample rate.
+<LI>File name : select a destination name and folder for the new file.
+</UL><P>
+A large file on a slow machine will take some
+time : if you "Cancel" the operation then you will still get a valid sound file,
+complete up to the point where you cancelled.<P>
+
+
+<H3>Export split sound file<A NAME="export_split_sound"></A></H3>
+This command is very similar to the Export Sound File command just described, but it allows you to split a sound file into many separate destination files, based on the placement of markers. It creates new sound files and will not modify the source
+sound file in any way.<P>
+
+"Effects", "Format" and "Sample Rate" controls all work exactly the same as the Export Sound File command.<P>
+
+This command is not all that strongly related to transcription, however I wanted
+the feature, and it made sense to include it in Transcribe! rather than write a
+separate application, as Transcribe! already contains 90% of what is needed to
+support this feature. I sometimes copy old vinyl records, recordings of live gigs, etc. to hard disk and then
+split them into separate tracks. This means I regularly have audio files of perhaps 500MB to work through, locating the beginnings and
+ends of tracks, and saving individual tracks as sound files. I have not found
+any other tool which does this job quickly and easily. This command makes it easy.<P>
+
+<UL>
+<LI>Start a new transcription by loading the large sound file you want to split.
+<LI>Place a "section" marker at the beginning of each track you want and a
+"measure" marker at the end of each track. The cue and review buttons are
+particularly useful here.
+<LI>Save your work, if you like, in the usual transcription (xsc) file.
+<LI>Select the "Export split sound file" command.
+<LI>Use the "Browse" button to select a location for the resulting files.
+<LI>Check the listbox contents : it lists the tracks and their durations.
+<LI>If all is well, press OK.
+</UL><P>
+
+Obviously, we are not using markers here for their normally intended purpose,
+but they work fine nevertheless. Beat markers are entirely ignored. The opening
+section of the source file, up to the first section marker, will be deleted. If
+you want to keep the beginning, place your first section marker at the very start.
+If you place a measure marker at the end of a track then the source from here to
+the next track start (section marker) will be lost. If you want to keep the entire
+source then don't use a measure marker at all. A section marker not only starts a
+new track but also ends the last one, if it has not already been ended by a measure marker.<P>
+
+The "File prefix" display shows the location on disk for the new files, including
+the first part of the file name. Track file names
+will be constructed by appending suffixes to this. The suffix will normally be the
+number of the track as listed in the list box, but if you edit the section marker
+which begins the track, and give it a non-default label (the track name) then this
+will be used as a suffix instead.
+If you use characters not allowed in filenames, they will be replaced by underscores.<P>
+
+
+<H3>Export video<A NAME="export_video"></A></H3>
+This command creates a new video file, being a copy of all or part of the current video file, optionally with
+processing effects applied. It's very similar to the Export Sound File command described above, so see there for more details.<p>
+
+The video format created is always mp4 with aac-encoded audio and H264-encoded video with frequent key frames. We have chosen this format because it is highly portable. If you have a video which plays jerkily in Transcribe! then try using this command to create a copy, then load the copy.<p>
+
+If the original video is very high quality then you might want to reduce the quality to get a smaller exported file. You can do this: see <A HREF="prefs_export.htm">Preferences - Export</A> for this setting.<p>
+
+<H3>Export split video<A NAME="export_split_video"></A></H3>
+This command is very similar to the Export Split Sound File command just described, but it allows you to split a video into many separate destination files, based on the placement of markers. It creates new video files and will not modify the source video in any way.<P>
+
+
+<H3>Export Markers and Text Blocks<A NAME="export_textblock"></A></H3>
+This is for saving markers and/or text blocks to a text file on disk, so that you can import into other software. UTF8 encoding is always used. Here are the options offered in the dialog.<P>
+
+<B>Source</B><P>
+If you have a current selection then you can choose whether to export from the whole file, or only from the current selection.<P>
+
+<B>Include markers?</B><P>
+You can select which marker types (if any) to include. Markers generated by auto subdivision are considered to be beat markers in this context.<P>
+
+<B>Which colours to export</B><P>
+You get a checkbox for each colour in use, so you can select which to export. If you don't select any colour then you can export just the markers.<P>
+
+<B>Word wrapping</B><P>
+If you turn this on then lines will be broken if necessary so as not to exceed the specified number of characters.<P>
+
+<B>File name</B><P>
+Choose a name and location for the exported text file.<P>
+
+<B>Include UTF8 BOM (byte-order mark)</B><P>
+Since the exported text file is intended for loading into other software, this option is provided for compatibility. The UTF8 BOM is a three-byte sequence (hex EF, BB, BF) which can optionally appear at the very beginning of a file, to indicate that it is UTF8. If the software you are loading the file into is either failing to load unusual characters correctly or is loading with some extra rubbish at the beginning, try changing this option. Of course, you should also try explicitly telling the software to load as UTF8.<P>
+
+Defaults:<BR>
+<UL>
+<LI>Windows: Yes, because Notepad does, when saving UTF8.
+<LI>Mac: Yes, because TextEdit by default does not load it correctly without.
+<LI>Linux: No, it's not generally used.
+</UL><P>
+
+</HTML>

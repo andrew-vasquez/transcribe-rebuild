@@ -1,0 +1,95 @@
+Transcribe! : Markers Menu
+ | 
+Markers Menu
+ | 
+About the Current Point - the Little Red Triangle
+The little red triangle is a bit different from the Section, Measure and Beat markers - it is the current point, the place where playback will start if you press the Play button or the spacebar. And since playback always has to begin somewhere, you can't delete the current point. You can position the current point by clicking on the waveform. See Help - Getting Started for more information. Also there is a "Back to the beginning" button in the lower toolbar which will move the current point to the start of the track.
+About Markers
+Markers can be placed anywhere in the piece and come in three flavours : "Section", "Measure" (bar) and "Beat". Markers are displayed as little triangles, except beat markers which get just a little black tick line. Each marker type has a different color and each marker can have a text label which is displayed above the little triangle. See The Transcription Window for a picture showing all of these features. There can also be automatically generated subdivision markers, displayed as little red tick lines - these are described below.
+You can Undo/Redo all marker operations, using the usual Undo/Redo menu commands or keyboard shortcuts.
+Markers are displayed in the marker zone, a narrow strip above the waveform profile, and they are aligned to the corresponding point in the waveform, so naturally they scroll when the waveform scrolls.
+You can optionally have the navigation bar displayed. This is below the main scroll bar and, like the scroll bar, it always represents the entire duration of the piece. It shows section markers and optionally measure markers, and you can click on it to jump immediately to any part of the piece.
+Markers are for your benefit : Transcribe! doesn't care where you put them, or whether you use them at all. However, if you have ever transcribed music using conventional music players then you will know that finding your way around is always a bit tedious - when you want to hear the last bit again, how far should you wind back? When you want to hear the middle section again, where was it? By placing markers, you can locate the desired spot very easily. You don't, of course, need to place markers throughout the whole piece - only the part you are interested in.
+The "Export Markers and Text Blocks" command on the File menu can also export markers to a text file if you ask it to.
+Markers are primarily intended for navigation. If you want to add textual annotations to your transcription then you may find Text Blocks more useful.
+Markers can also help you to select precise numbers of beats or measures : if you
+hold down the <option> key
+when clicking or dragging the mouse on the waveform then the selection will "snap" to the nearest marker if there is one near.
+Usually the easiest way to place new markers is to set the piece playing and
+use the "New marker" keyboard shortcuts 'S', 'M' and 'B' for new section,
+measure (bar) and beat marker respectively. Thus tapping the keyboard in
+time with the music, "SBBBMBBBMBBBMBBB" marks a four measure section with
+four beats per measure. The measure markers mark the first beat of each
+measure (bar), and the section marker marks the first measure of the section.
+In other words you use a section marker instead of a measure marker to mark the first measure of a section, and
+you use a measure marker instead of a beat marker to mark the first beat of a measure.
+It can happen, if there is latency in your sound system, that markers placed this way end up placed consistently late in the track. You can adjust for this with the latency setting in Preferences - Markers. This will also have the effect of synchronizing the position of the moving play position indicator with the sound you are hearing.
+If you use these commands while music is not playing then you will be
+offered the option of placing the new marker at the current point or
+at the paused play point if you are paused. However if you hold the <Shift> key down when using
+the keyboard shortcuts 'S', 'M' and 'B' then this will bypass the dialog and
+the marker will be placed directly at the paused point (if paused) or the current point.
+You can also place a new marker by double clicking in the marker zone above the waveform. If you double click in the navigation bar below the scroll bar then this will start playback, just like double clicking on the waveform.
+Editing Markers
+If you control-click in the marker zone above the waveform then you will get a popup menu from which you can select various marker related commands. If you clicked on an existing marker then you can change its type, edit, or delete it. Otherwise you will be offered choices for creating a new marker at the clicked point. If you control-click in the navigation bar then you will get a popup menu offering to "go to" a particular marker.
+You can edit (change its type or label) or delete an existing marker by double clicking on it in the marker zone above the waveform.
+If you want to delete a lot of markers then select the relevant section of the piece (so the waveform profile is highlit) and then use the Delete Markers command (below).
+Moving a Marker
+You can move an existing marker by clicking on it in the marker zone above the waveform, and dragging.
+Copying a Marker
+Hold down the Alt key to create a copy, instead of moving the original.
+Moving or Copying Multiple Markers
+You can also move or copy multiple markers at once. 
+To do this you should drag with the Command key pressed (and the Alt key as well if you want to copy multiple markers).
+If there is a selection (highlight) on the waveform and you are dragging a marker whose original position is within that selection, then you will move or copy just those markers within the selection. Otherwise you will move (but not copy) all markers. If this would cause a marker to "fall off the end" then the marker will be moved to the end of the track.
+Marker subdivision
+The "Subdivide" options in the Edit Marker dialog refer to the automatic
+generation of subdivisions between markers. These are shown as little red tick
+lines. These are not true markers - they cannot be moved, edited or deleted individually.
+They are for your convenience : if a piece is in (say) 4/4 then you could
+decide to mark just the measures (bars), but tell Transcribe! to divide each
+into 4 which would effectively mark the beats. Or if it is in sections of 8
+measures you could mark just the section beginnings, but tell Transcribe! to divide
+each into 8 which would effectively mark the measures.
+You can specify the subdivisions for each marker individually if you want.
+The choices are :
+Same as previous (the default) : the same number of subdivisions will be used for this marker as were used for the last.
+No : no subdivisions.
+Yes, this many subdivisions : specify the number required by adjusting the number in the "spin control".
+Marker labelling
+Text labels are used to distinguish one marker from another. The text is
+displayed above the marker zone triangles. By default, section markers are automatically labelled A, B,
+C etc, measure markers are labelled using numbers appended to the section label
+thus A2, A3 etc. and beat markers are not labelled. By editing a marker you can
+override this and give it any label you want.
+You can also change the way in which automatic marker labelling is carried out, in Preferences. Here are the preference choices for Auto Labelling.
+Number measures continuously: If this is not checked then you get the default behaviour mentioned above, where measure numbers are reset to "1" by any section marker. However if you check this box then measure numbers increase continuously through section and measure markers.
+Numbering override tip: You can reset the measure numbering at any section or measure marker by editing the marker and giving it a label which ends in a number followed by ")". Thus a marker which you label as "Verse 3 (92)" will be considered to be measure 92 and the next will be 93 etc.
+Section: If you ask for a letter then automatically generated section labels will be lettered, going through the alphabet in order.
+Measure: If you ask for a letter then it will be the first letter from the most recent section marker.
+Beat: Automatic labelling of beats means simply numbering them.
+Remember though, that you can always edit any marker and give it any label you want.
+The Commands on the Markers Menu
+New Section/Measure/Beat Marker
+These do what they say. It's usually easier to use the keyboard shortcuts S/M/B.
+Delete Selected Markers
+For deleting many markers at once. First select an area which includes the markers you want to delete, so it is highlit. Then select this command to delete them.
+Equally Space Selected Markers
+For adjusting the spacing of existing markers. First select an area on the waveform which includes the markers you want to re-space, so it is highlit. Then select this command to re-space them.
+What this command actually does is locate the first and last Measure or Section markers in the selected section, and it will leave those unmoved but will distribute all the Measure and Section markers between those points with equal spacing. This means that you must have selected at least two Measure or Section markers. If there are beat markers then it will distribute those evenly within the measure they belong to.
+There is an entry in our FAQ that describes using this function to generate markers for a section of the piece. You will find it on this page https://www.seventhstring.com/xscribe/faq3.html look for "Can I generate markers automatically?"
+Compute Tempo
+This command computes the tempo of the piece in beats per minute. You must
+first use the mouse to select a
+region of the piece, and this region must have exactly one marker (section, measure,
+beat, or automatically generated subdivision marker) on each beat or the
+computation will be wrong. Transcribe! simply counts how
+many markers there are in the selected region, measures the time from the first
+marker to the last, does a division to get the average time per beat, and reports
+this in beats per minute. Transcribe! reports the tempo of the original file, and also the altered speed
+if a speed alteration is in force. The result is also displayed on the Speed page.
+This command also checks that the markers in the selected
+region are reasonably evenly spaced, and issues a warning if they're not.
+This is in case you accidentally put one marker on top of another, which would
+cause an incorrect tempo calculation.
+Transcribe! does assume that a measure marker is also the first beat of that measure, and a section marker is also the first measure of that section (and also, therefore, the first beat). So if you have placed a section or measure marker, you should not also place a beat marker at that point.
