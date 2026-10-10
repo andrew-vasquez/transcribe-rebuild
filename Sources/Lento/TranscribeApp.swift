@@ -345,6 +345,26 @@ final class KeyCatcherNSView: NSView {
         }
     }
 
+    /// The window consults performKeyEquivalent for EVERY key event before the first
+    /// responder — so the shortcut map keeps working after a slider/button steals
+    /// focus (otherwise S/M/B/space would die until the waveform is clicked again).
+    override func performKeyEquivalent(with event: NSEvent) -> Bool {
+        guard let model = KeyCatcherWindowAdapter.shared.model else { return false }
+        // ⌘-combos belong to menu accelerators; text editing contexts keep their keys.
+        if event.modifierFlags.contains(.command) { return false }
+        if isTypingContext() { return false }
+        let handled = model.handleKeyEvent(event, isKeyUp: false)
+        if handled {
+            // Restore the catcher as first responder (unless typing) so keyUp
+            // (play-while-held Z/;) reaches us.
+            if let w = window, !((w.firstResponder as? NSTextView)?.isEditable ?? false),
+               !(w.firstResponder is KeyCatcherNSView) {
+                w.makeFirstResponder(self)
+            }
+        }
+        return handled
+    }
+
     override func keyDown(with event: NSEvent) {
         if let model = KeyCatcherWindowAdapter.shared.model,
            model.handleKeyEvent(event, isKeyUp: false) {
@@ -359,5 +379,10 @@ final class KeyCatcherNSView: NSView {
             return
         }
         super.keyUp(with: event)
+    }
+
+    private func isTypingContext() -> Bool {
+        guard let fr = window?.firstResponder as? NSTextView else { return false }
+        return fr.isEditable
     }
 }

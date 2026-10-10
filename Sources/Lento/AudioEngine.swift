@@ -248,6 +248,9 @@ final class AudioSystem {
     /// compressor/limiter the original uses to prevent digital overload.
     private var compressorNode: AVAudioUnit?
     private var compressorAttached = false
+    /// True once the limiter's parameters have actually been set (factory defaults
+    /// are an audible −20 dB compressor, so never route audio through it unconfigured).
+    private var compressorReady = false
     private var chainAttached = false
     // Engine internals — not UI state. Ignored by observation; `nonisolated(unsafe)`
     // because `data` is immutable after load and `core` is NSLock-guarded internally.
@@ -273,7 +276,32 @@ final class AudioSystem {
         }
         eqNode.bypass = true
 
+        configureTimePitchQuality()
+
         instantiateDynamicsProcessor()
+    }
+
+    /// Quality tuning for the slow-down engine (AUNewTimePitch), per the SDK header:
+    /// - Smoothness (param 4, 3–32, default 8): "the generated output can be made to
+    ///   sound smoother by increasing the density of processing time frames… When
+    ///   slowing down percussive audio, lower values may be better." Lento exists to
+    ///   slow music down, so we take the percussive-friendly value 4.
+    /// - Spectral Coherence (param 6, 0–1, default 1): peak locking for a less
+    ///   "phasey"/reverberant sound. Pinned on explicitly.
+    private func configureTimePitchQuality() {
+        var raw: AudioUnit
+        if #available(macOS 27.0, *) {
+            raw = timePitchNode.withAudioUnit { $0 }
+        } else {
+            raw = timePitchNode.audioUnit
+        }
+        let smooth: AudioUnitParameterValue = 4.0
+        let coherence: AudioUnitParameterValue = 1.0
+        let s1 = AudioUnitSetParameter(raw, 4, kAudioUnitScope_Global, 0, smooth, 0)
+        let s2 = AudioUnitSetParameter(raw, 6, kAudioUnitScope_Global, 0, coherence, 0)
+        if s1 != noErr || s2 != noErr {
+            NSLog("Lento: TimePitch quality params failed (smooth=%d coherence=%d)", s1, s2)
+        }
     }
 
     private func instantiateDynamicsProcessor() {
@@ -292,28 +320,34 @@ final class AudioSystem {
         }
     }
 
+    /// Configures the DynamicsProcessor as the original uses its compressor: a
+    /// *safety limiter against digital overload*, not an audible compressor.
+    ///
+    /// Parameter IDs per AudioUnitParameters.h (kDynamicsProcessorParam_*):
+    /// 0=Threshold(dB, −40…20, default −20!), 1=HeadRoom(dB knee), 4=AttackTime
+    /// (**seconds**, 0.0001…0.2), 5=ReleaseTime(seconds), 6=OverallGain.
+    /// Note: this unit has no fixed ratio parameter — HeadRoom sets the knee depth.
+    /// The factory default (threshold −20 dB) audibly squashes program material —
+    /// which is exactly the distortion heard on slowed-down audio before this fix.
     private func configureDynamics(_ unit: AVAudioUnit) {
-        // kDynamicsProcessorParam_Threshold = 2000; soft limiting just below full scale
         var raw: AudioUnit
         if #available(macOS 27.0, *) {
             raw = unit.withAudioUnit { $0 }
         } else {
             raw = unit.audioUnit
         }
-        var threshold: Float32 = -3.0
-        AudioUnitSetParameter(raw, 2000, kAudioUnitScope_Global, 0, threshold, 0)
-        // kDynamicsProcessorParam_HeadRoom = 2001
-        var headroom: Float32 = 5.0
-        AudioUnitSetParameter(raw, 2001, kAudioUnitScope_Global, 0, headroom, 0)
-        // kDynamicsProcessorParam_Ratio = 2002
-        var ratio: Float32 = 20.0
-        AudioUnitSetParameter(raw, 2002, kAudioUnitScope_Global, 0, ratio, 0)
-        // kDynamicsProcessorParam_AttackTime = 2004
-        var attack: Float32 = 0.002
-        AudioUnitSetParameter(raw, 2004, kAudioUnitScope_Global, 0, attack, 0)
-        // kDynamicsProcessorParam_ReleaseTime = 2005
-        var release: Float32 = 0.1
-        AudioUnitSetParameter(raw, 2005, kAudioUnitScope_Global, 0, release, 0)
+        func setParam(_ id: AudioUnitParameterID, _ value: AudioUnitParameterValue, _ name: String) {
+            let status = AudioUnitSetParameter(raw, id, kAudioUnitScope_Global, 0, value, 0)
+            if status != noErr {
+                NSLog("Lento: DynamicsProcessor param %@ (id %u) failed: %d", name, id, status)
+            }
+        }
+        setParam(0, -2.0, "Threshold −2 dB")        // only engage near full scale
+        setParam(1, 4.0, "HeadRoom 4 dB")           // gentle soft knee
+        setParam(4, 0.001, "Attack 1 ms")           // seconds, not ms
+        setParam(5, 0.08, "Release 80 ms")
+        setParam(6, 0.0, "Overall gain 0 dB")
+        compressorReady = true
     }
 
     func startEngineIfNeeded() {
@@ -448,7 +482,7 @@ final class AudioSystem {
         engine.connect(sn, to: eqNode, format: format)
         engine.connect(eqNode, to: varispeedNode, format: format)
         engine.connect(varispeedNode, to: timePitchNode, format: format)
-        if let comp = compressorNode {
+        if let comp = compressorNode, compressorReady {
             if !compressorAttached {
                 engine.attach(comp)
                 compressorAttached = true

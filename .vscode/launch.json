@@ -1,0 +1,24 @@
+{
+    "configurations": [
+        {
+            "type": "swift",
+            "request": "launch",
+            "args": [],
+            "cwd": "${workspaceFolder:transcribe-rebuild}",
+            "name": "Debug Lento",
+            "target": "Lento",
+            "configuration": "debug",
+            "preLaunchTask": "swift: Build Debug Lento"
+        },
+        {
+            "type": "swift",
+            "request": "launch",
+            "args": [],
+            "cwd": "${workspaceFolder:transcribe-rebuild}",
+            "name": "Release Lento",
+            "target": "Lento",
+            "configuration": "release",
+            "preLaunchTask": "swift: Build Release Lento"
+        }
+    ]
+}
