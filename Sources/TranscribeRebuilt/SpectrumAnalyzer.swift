@@ -77,6 +77,8 @@ enum SpectrumAnalyzer {
         // FFT size: next power of two ≥ n (up to 1s @ 44.1k = 65536)
         let fftN = vDSP_Length(1 << (Int(log2(Double(n))) + 1))
         let fftNInt = Int(fftN)
+        // vDSP's setup and fft_zrip take log2(size), NOT the size itself.
+        let log2n = vDSP_Length(log2(Double(fftNInt)))  // fftN is a power of two → exact
 
         // Hann window + real FFT
         var window = [Float](repeating: 0, count: fftNInt)
@@ -90,7 +92,7 @@ enum SpectrumAnalyzer {
         var windowed = [Float](repeating: 0, count: fftNInt)
         vDSP_vmul(padded, 1, window, 1, &windowed, 1, vDSP_Length(fftNInt))
 
-        let setup = vDSP_create_fftsetup(fftN, FFTRadix(kFFTRadix2))!
+        guard let setup = vDSP_create_fftsetup(log2n, FFTRadix(kFFTRadix2)) else { return nil }
         defer { vDSP_destroy_fftsetup(setup) }
         var real = [Float](repeating: 0, count: fftNInt / 2)
         var imag = [Float](repeating: 0, count: fftNInt / 2)
@@ -102,7 +104,7 @@ enum SpectrumAnalyzer {
                         vDSP_ctoz(cp, 2, &split, 1, fftN / 2)
                     }
                 }
-                vDSP_fft_zrip(setup, &split, 1, fftN, FFTDirection(FFT_FORWARD))
+                vDSP_fft_zrip(setup, &split, 1, log2n, FFTDirection(FFT_FORWARD))
             }
         }
         var mags = [Float](repeating: 0, count: fftNInt / 2)
