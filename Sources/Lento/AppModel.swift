@@ -260,12 +260,15 @@ final class AppModel {
         let selection = doc.selection
         let playingPoint = audio.playingPoint
         let isPlaying = audio.isPlaying
+        let isPaused = audio.isPaused
         let eqActive = doc.fx.eqActive
         let eqGains = doc.fx.eqGains
         let tuningCents = doc.fx.tuningCentsTotal
         let noteGuessing = doc.showNoteGuesses
         let chordGuessing = doc.showChordGuesses
         let monoWindow = audio.monoWindow  // nonisolated; lock-guarded internals
+        let requestID = spectrumRequestID
+        spectrumRequestID += 1
 
         DispatchQueue.global(qos: .userInitiated).async { [weak self] in
             let center: TimeInterval
@@ -276,6 +279,10 @@ final class AppModel {
                 center = sel.lowerBound + span / 2
                 length = Int(span * AudioSystem.canonicalRate)
                 label = "Selection"
+            } else if isPaused {
+                center = playingPoint
+                length = Int(SpectrumAnalyzer.pointWindow * AudioSystem.canonicalRate)
+                label = "Paused point"
             } else {
                 center = playingPoint
                 length = Int(SpectrumAnalyzer.pointWindow * AudioSystem.canonicalRate)
@@ -291,9 +298,24 @@ final class AppModel {
                                                   noteGuessing: noteGuessing,
                                                   chordGuessing: chordGuessing)
             DispatchQueue.main.async {
-                self?.spectrum = result
-                self?.spectrumSourceLabel = label
+                // Drop stale results if a newer request has superseded this one.
+                guard let self, self.spectrumRequestID == requestID + 1 else { return }
+                self.spectrum = result
+                self.spectrumSourceLabel = label
             }
+        }
+    }
+
+    private var spectrumRequestID = 0
+
+    /// Debounced spectrum refresh for high-frequency triggers (selection drags).
+    private var spectrumDebounceTask: Task<Void, Never>?
+    func scheduleSpectrumRefresh() {
+        spectrumDebounceTask?.cancel()
+        spectrumDebounceTask = Task { @MainActor in
+            try? await Task.sleep(for: .milliseconds(60))
+            guard !Task.isCancelled else { return }
+            refreshSpectrum()
         }
     }
 

@@ -169,6 +169,14 @@ struct TranscriptionView: View {
                 }
             }
         }
+        .onChange(of: model.doc.selection) { _, _ in
+            model.scheduleSpectrumRefresh()
+        }
+        .onChange(of: model.audio.isPaused) { _, paused in
+            // The spectrum follows the paused point (the original reports it as
+            // "the spectrum at the paused point").
+            if paused { model.refreshSpectrum() }
+        }
     }
 
     private func handleDrop(providers: [NSItemProvider]) -> Bool {

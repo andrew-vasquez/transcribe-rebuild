@@ -433,11 +433,14 @@ final class AudioSystem {
                           userInfo: [NSLocalizedDescriptionKey: "No decodable audio found in this file."])
         }
 
-        // Convert per source channel to canonical 44.1 kHz
+        // Convert per source channel to canonical 44.1 kHz (high-quality rate
+        // conversion via AVAudioConverter — linear interpolation aliases badly on
+        // 48k/96k sources).
         var converted: [ContiguousArray<Float>] = []
         for c in 0..<chCount {
-            converted.append(resample(ContiguousArray(channelArrays[c]),
-                                      from: srcFormat.sampleRate, to: Self.canonicalRate))
+            converted.append(resampleHighQuality(channelArrays[c],
+                                                 from: srcFormat.sampleRate,
+                                                 to: Self.canonicalRate))
         }
         channelArrays.removeAll(keepingCapacity: false)
         // Reduce to stereo
@@ -458,6 +461,7 @@ final class AudioSystem {
         self.formatName = url.pathExtension.uppercased()
         self.fileName = url.lastPathComponent
         self.filePath = url.path
+        computeOverview()
 
         let core = self.core!
         let format = outputFormat
@@ -721,35 +725,96 @@ final class AudioSystem {
     }
 
     /// Peak data for waveform drawing: (min, max) pairs over a range.
-    /// Main-thread only (canvas drawing); scans in-memory audio — fast for visible ranges.
+    /// Main-thread only (canvas drawing). Two-level strategy:
+    /// 1. memoize the last request (during playback the visible range is constant,
+    ///    so 30 Hz redraws become cache hits), and
+    /// 2. when each drawn bucket spans ≥ one overview bucket, read from the
+    ///    precomputed 16k-bucket overview instead of scanning raw samples.
     func peaks(from startSec: Double, to endSec: Double, count: Int) -> [(min: Float, max: Float)] {
         guard let data, count > 0 else { return [] }
+        if let cache = peakCache, cache.start == startSec, cache.end == endSec, cache.count == count {
+            return cache.result
+        }
         let total = data.frameCount
         let s = max(0, Self.frame(forSeconds: startSec))
         let e = min(total, max(s + 1, Self.frame(forSeconds: endSec)))
         let span = max(1, e - s)
-        let bucket = Double(span) / Double(count)
         let asMono = displayAsMono
-        var result = [(Float, Float)](repeating: (0, 0), count: count)
-        for b in 0..<count {
-            let b0 = s + Int(Double(b) * bucket)
-            let b1 = min(e, s + Int(Double(b + 1) * bucket) + 1)
-            var mn: Float = 0, mx: Float = 0
-            var f = max(b0, 0)
-            while f < b1 {
-                var l = data.channels[0][f]
-                var r = l
-                if data.channels.count > 1 { r = data.channels[1][f] }
-                if asMono { l = (l + r) * 0.5; r = l }
-                if l < mn { mn = l }
-                if l > mx { mx = l }
-                if r < mn { mn = r }
-                if r > mx { mx = r }
-                f += 1
+
+        var result = [(min: Float, max: Float)](repeating: (0, 0), count: count)
+        if span >= count * overviewSpan, !overview.isEmpty {
+            // Coarse draw: pull from the precomputed overview (O(count)).
+            let bucket = Double(span) / Double(count)
+            for b in 0..<count {
+                let oStart = (s + Int(Double(b) * bucket)) / overviewSpan
+                let oEnd = min(min(s + Int(Double(b + 1) * bucket) + 1, e) / overviewSpan + 1, overview.count)
+                var mn: Float = 0, mx: Float = 0
+                if oStart < oEnd {
+                    for o in oStart..<oEnd {
+                        let p = overview[o]
+                        if p.min < mn { mn = p.min }
+                        if p.max > mx { mx = p.max }
+                    }
+                }
+                result[b] = (mn, mx)
             }
-            result[b] = (mn, mx)
+        } else {
+            // Fine zoom: scan raw samples (bounded by the visible range).
+            let bucket = Double(span) / Double(count)
+            for b in 0..<count {
+                let b0 = s + Int(Double(b) * bucket)
+                let b1 = min(e, s + Int(Double(b + 1) * bucket) + 1)
+                var mn: Float = 0, mx: Float = 0
+                var f = max(b0, 0)
+                while f < b1 {
+                    var l = data.channels[0][f]
+                    var r = l
+                    if data.channels.count > 1 { r = data.channels[1][f] }
+                    if asMono { l = (l + r) * 0.5; r = l }
+                    if l < mn { mn = l }
+                    if l > mx { mx = l }
+                    if r < mn { mn = r }
+                    if r > mx { mx = r }
+                    f += 1
+                }
+                result[b] = (mn, mx)
+            }
         }
+        peakCache = (startSec, endSec, count, result)
         return result
+    }
+
+    /// Precomputed coarse min/max pairs (16k buckets) covering the whole file.
+    @ObservationIgnored private var overview: [(min: Float, max: Float)] = []
+    /// Frames per overview bucket (rounded up).
+    @ObservationIgnored private var overviewSpan: Int = 1
+    @ObservationIgnored private var peakCache: (start: Double, end: Double, count: Int, result: [(min: Float, max: Float)])?
+
+    private func computeOverview() {
+        guard let data else { overview = []; overviewSpan = 1; return }
+        let buckets = 16384
+        let span = max(1, (data.frameCount + buckets - 1) / buckets)
+        var result = [(min: Float, max: Float)]()
+        result.reserveCapacity(data.frameCount / span + 1)
+        var f = 0
+        while f < data.frameCount {
+            let end = min(f + span, data.frameCount)
+            var mn: Float = 0, mx: Float = 0
+            var i = f
+            while i < end {
+                let l = data.channels[0][i]
+                let r = data.channels.count > 1 ? data.channels[1][i] : l
+                let lo = min(l, r), hi = max(l, r)
+                if lo < mn { mn = lo }
+                if hi > mx { mx = hi }
+                i += 1
+            }
+            result.append((mn, mx))
+            f = end
+        }
+        overview = result
+        overviewSpan = span
+        peakCache = nil
     }
 
     var displayAsMono = false
