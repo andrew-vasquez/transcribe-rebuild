@@ -2,14 +2,14 @@
 import PackageDescription
 
 let package = Package(
-    name: "TranscribeRebuilt",
+    name: "Lento",
     platforms: [
         .macOS("26.0")
     ],
     targets: [
         .executableTarget(
-            name: "TranscribeRebuilt",
-            path: "Sources/TranscribeRebuilt",
+            name: "Lento",
+            path: "Sources/Lento",
             swiftSettings: [
                 .swiftLanguageMode(.v5)
             ]

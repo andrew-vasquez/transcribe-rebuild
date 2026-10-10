@@ -6,23 +6,23 @@ cd "$(dirname "$0")/.."
 echo "── Building release…"
 swift build -c release
 
-BIN=$(swift build -c release --show-bin-path)/TranscribeRebuilt
-APP="build/Transcribe Rebuilt.app"
+BIN=$(swift build -c release --show-bin-path)/Lento
+APP="build/Lento.app"
 rm -rf "$APP"
 mkdir -p "$APP/Contents/MacOS"
 
 echo "── Bundling $APP"
-cp "$BIN" "$APP/Contents/MacOS/TranscribeRebuilt"
+cp "$BIN" "$APP/Contents/MacOS/Lento"
 
 cat > "$APP/Contents/Info.plist" <<'PLIST'
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
 <dict>
-    <key>CFBundleName</key>              <string>Transcribe Rebuilt</string>
-    <key>CFBundleDisplayName</key>      <string>Transcribe Rebuilt</string>
-    <key>CFBundleExecutable</key>        <string>TranscribeRebuilt</string>
-    <key>CFBundleIdentifier</key>        <string>com.rebuilt.transcribe.rebuilt</string>
+    <key>CFBundleName</key>              <string>Lento</string>
+    <key>CFBundleDisplayName</key>      <string>Lento</string>
+    <key>CFBundleExecutable</key>        <string>Lento</string>
+    <key>CFBundleIdentifier</key>        <string>com.andrewvasquez.lento</string>
     <key>CFBundlePackageType</key>       <string>APPL</string>
     <key>CFBundleShortVersionString</key><string>1.0.0</string>
     <key>CFBundleVersion</key>           <string>1.0.0</string>
@@ -34,7 +34,7 @@ cat > "$APP/Contents/Info.plist" <<'PLIST'
     <key>CFBundleDocumentTypes</key>
     <array>
         <dict>
-            <key>CFBundleTypeName</key>       <string>Transcribe! transcription document</string>
+            <key>CFBundleTypeName</key>       <string>Lento transcription document</string>
             <key>CFBundleTypeRole</key>        <string>Editor</string>
             <key>LSHandlerRank</key>          <string>Alternate</string>
             <key>LSItemContentTypes</key>     <array><string>public.data</string></array>

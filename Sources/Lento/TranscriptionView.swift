@@ -97,7 +97,7 @@ struct TranscriptionView: View {
         .background(Palette.surface)
         // NOTE: no SwiftUI .toolbar — the in-content HeaderBar above replaces it
         // (this macOS 27 beta corrupts the heap in NSToolbar's menu-form path).
-        .navigationTitle(model.doc.xscURL?.lastPathComponent ?? model.doc.fileInfo?.url.lastPathComponent ?? "Transcribe Rebuilt")
+        .navigationTitle(model.doc.xscURL?.lastPathComponent ?? model.doc.fileInfo?.url.lastPathComponent ?? "Lento")
         .sheet(item: $editingMarker) { marker in
             MarkerEditSheet(marker: marker)
                 .environment(model)

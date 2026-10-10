@@ -1,6 +1,6 @@
-# Transcribe Rebuilt
+# Lento
 
-A native macOS (arm64, SwiftUI + AppKit + AVAudioEngine) rebuild of **Seventh String's Transcribe! 9.70.1** — built entirely from shipped-artifact reverse-engineering evidence. The original is a C++ wxWidgets application; this rebuild uses the same OS surfaces it links (CoreAudio, AVFoundation, Accelerate) through modern Swift.
+**Lento** is a native macOS (arm64, SwiftUI + AppKit + AVAudioEngine) rebuild of **Seventh String's Transcribe! 9.70.1** — built entirely from shipped-artifact reverse-engineering evidence. The original is a C++ wxWidgets application; this rebuild uses the same OS surfaces it links (CoreAudio, AVFoundation, Accelerate) through modern Swift.
 
 **See [`docs/REVERSE-ENGINEERING-EVIDENCE.md`](docs/REVERSE-ENGINEERING-EVIDENCE.md) for the complete REA evidence report** — bundle inventory, Mach-O/linkage evidence, the application's own 71-page help book (extracted from `xschelp.htb`), runtime menu dumps, and the feature spec this rebuild implements against.
 
@@ -8,8 +8,8 @@ A native macOS (arm64, SwiftUI + AppKit + AVAudioEngine) rebuild of **Seventh St
 
 ```sh
 swift build -c release
-./scripts/make-app.sh          # bundles build/Transcribe Rebuilt.app (+ icon)
-open "build/Transcribe Rebuilt.app"
+./scripts/make-app.sh          # bundles build/Lento.app (+ icon)
+open "build/Lento.app"
 ```
 
 Or in dev: `swift run` (note: a few platform behaviors — window restoration polish, Launch Services registration — are better via the bundle).
@@ -54,7 +54,7 @@ All `@Observable` classes are `@MainActor`; background work (spectrum FFT, WAV e
 ## Layout
 
 ```
-Sources/TranscribeRebuilt/
+Sources/Lento/
 ├── TranscribeApp.swift        App entry, scenes, menus, shortcut map, doc-open events
 ├── AppModel.swift             Coordinator: every user command (transport, markers, loops…)
 ├── TranscriptionDocument.swift  Document model: markers, text blocks, loops, FX, undo

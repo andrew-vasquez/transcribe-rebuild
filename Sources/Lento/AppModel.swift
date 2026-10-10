@@ -97,7 +97,7 @@ final class AppModel {
                 } else {
                     let panel = NSOpenPanel()
                     panel.canChooseFiles = true
-                    panel.message = "Transcribe Rebuilt couldn't find the sound file for this transcription. Please locate it."
+                    panel.message = "Lento couldn't find the sound file for this transcription. Please locate it."
                     if panel.runModal() == .OK, let chosen = panel.url { soundURL = chosen } else { return }
                 }
             }

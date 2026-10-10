@@ -253,12 +253,12 @@ enum AboutPanel {
     static func show(model: AppModel) {
         let p = NSPanel(contentRect: NSRect(x: 0, y: 0, width: 380, height: 260),
                         styleMask: [.titled, .closable], backing: .buffered, defer: false)
-        p.title = "About Transcribe Rebuilt"
+        p.title = "About Lento"
         let view = VStack(spacing: 10) {
             Image(systemName: "waveform")
                 .font(.system(size: 44))
                 .foregroundStyle(.tint)
-            Text("Transcribe Rebuilt").font(.title2.bold())
+            Text("Lento").font(.title2.bold())
             Text("Version 1.0")
             Text("A native macOS rebuild of Seventh String's Transcribe! (9.70.1),\nbuilt from shipped-artifact evidence — see REVERSE-ENGINEERING-EVIDENCE.md.")
                 .font(.footnote)

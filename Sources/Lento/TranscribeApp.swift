@@ -2,13 +2,13 @@ import SwiftUI
 import AppKit
 
 @main
-struct TranscribeRebuiltApp: App {
+struct LentoApp: App {
     @State private var model = AppModel()
     @Environment(\.openWindow) private var openWindow
     @NSApplicationDelegateAdaptor(AppDelegate.self) private var appDelegate
 
     var body: some Scene {
-        WindowGroup("Transcribe Rebuilt") {
+        WindowGroup("Lento") {
             TranscriptionView()
                 .environment(model)
                 .frame(minWidth: 720, minHeight: 480)
@@ -25,16 +25,16 @@ struct TranscribeRebuiltApp: App {
         .restorationBehavior(.disabled)
         .commands {
             CommandGroup(replacing: .appInfo) {
-                Button("About Transcribe Rebuilt") { AboutPanel.show(model: model) }
+                Button("About Lento") { AboutPanel.show(model: model) }
             }
             CommandGroup(replacing: .help) {
-                Button("Transcribe Rebuilt Help") {
+                Button("Lento Help") {
                     NSWorkspace.shared.open(URL(string: "https://www.seventhstring.com/xscribe/overview.html")!)
                 }
                 Divider()
                 Button("Rebuild Notes (evidence & roadmap)") {
                     let p = URL(fileURLWithPath: #filePath)
-                        .deletingLastPathComponent()      // Sources/TranscribeRebuilt
+                        .deletingLastPathComponent()      // Sources/Lento
                         .deletingLastPathComponent()      // Sources
                         .deletingLastPathComponent()      // repo root
                         .appendingPathComponent("README.md")
@@ -268,7 +268,7 @@ extension AppModel {
 
 // MARK: - Command-line file opening (as the original supports)
 
-extension TranscribeRebuiltApp {
+extension LentoApp {
     /// The original can load a file given on the command line; so can we.
     /// Handles both argv paths and files delivered via Launch Services at launch.
     fileprivate func openCommandLineFileIfNeeded() {
