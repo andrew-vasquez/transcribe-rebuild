@@ -17,6 +17,8 @@ final class AppModel {
 
     // Scroll-follow ("Scroll" on the Play menu)
     var scrollFollow = true
+    /// Drives the eased zoom animation (Panels.swift extension animates it).
+    var zoomAnimTimer: Timer?
 
     private var liveTimer: Timer?
 

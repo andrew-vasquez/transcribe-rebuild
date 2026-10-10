@@ -20,20 +20,35 @@ struct WaveGeom {
 }
 
 enum Palette {
-    static let surface = Color(red: 0.11, green: 0.11, blue: 0.12)     // opaque analysis surface
-    static let surfaceEdge = Color.white.opacity(0.08)
-    static let wave = Color(red: 1.0, green: 0.62, blue: 0.04)          // amber waveform (matches the original's orange)
-    static let waveDim = Color(red: 1.0, green: 0.62, blue: 0.04).opacity(0.55)
-    static let selection = Color(red: 0.04, green: 0.52, blue: 1.0).opacity(0.25)
-    static let selectionEdge = Color(red: 0.04, green: 0.52, blue: 1.0)
-    static let currentPoint = Color(red: 1.0, green: 0.27, blue: 0.23)  // the little red triangle
-    static let playLine = Color.white
-    static let markerSection = Color(red: 0.48, green: 0.61, blue: 1.0)
-    static let markerMeasure = Color(red: 0.19, green: 0.82, blue: 0.35)
-    static let markerBeat = Color(white: 0.75)
-    static let spectrum = Color(red: 0.19, green: 0.82, blue: 0.35)
-    static let textOnSurface = Color.white.opacity(0.92)
-    static let textSecondaryOnSurface = Color.white.opacity(0.45)
+    // Adaptive palette: colors resolve per system appearance (Light/Dark/Auto).
+    // Dark = pro-tool identity (amber on near-black). Light = dark-ink strokes on paper,
+    // matching the original app's light look. The amber accent carries both modes.
+    private static func dyn(_ light: NSColor, _ dark: NSColor) -> Color {
+        Color(nsColor: NSColor(name: nil) { appearance in
+            if appearance.bestMatch(from: [.aqua, .vibrantLight]) != nil { return light }
+            return dark
+        })
+    }
+    private static func rgb(_ r: Double, _ g: Double, _ b: Double, a: Double = 1) -> NSColor {
+        NSColor(calibratedRed: CGFloat(r), green: CGFloat(g), blue: CGFloat(b), alpha: CGFloat(a))
+    }
+
+    static let surface = dyn(rgb(0.965, 0.965, 0.973), rgb(0.11, 0.11, 0.12))
+    static let surfaceEdge = dyn(rgb(0, 0, 0, a: 0.10), rgb(1, 1, 1, a: 0.08))
+    static let wave = dyn(rgb(0.78, 0.37, 0.0), rgb(1.0, 0.62, 0.04))
+    static let waveDim = wave.opacity(0.55)
+    static let selection = dyn(rgb(0.04, 0.52, 1.0, a: 0.18), rgb(0.04, 0.52, 1.0, a: 0.25))
+    static let selectionEdge = Color(nsColor: .systemBlue)
+    static let currentPoint = Color(nsColor: .systemRed)
+    static let playLine = dyn(rgb(0, 0, 0, a: 0.85), rgb(1, 1, 1, a: 0.9))
+    static let markerSection = dyn(rgb(0.31, 0.36, 0.78), rgb(0.48, 0.61, 1.0))
+    static let markerMeasure = dyn(rgb(0.05, 0.52, 0.19), rgb(0.19, 0.82, 0.35))
+    static let markerBeat = dyn(rgb(0, 0, 0, a: 0.55), rgb(0.75, 0.75, 0.75))
+    static let spectrum = dyn(rgb(0.0, 0.45, 0.16), rgb(0.19, 0.82, 0.35))
+    static let textOnSurface = dyn(rgb(0, 0, 0, a: 0.85), rgb(1, 1, 1, a: 0.92))
+    static let textSecondaryOnSurface = dyn(rgb(0, 0, 0, a: 0.45), rgb(1, 1, 1, a: 0.45))
+    static let tickLine = dyn(rgb(0, 0, 0, a: 0.25), rgb(1, 1, 1, a: 0.25))
+    static let tickText = dyn(rgb(0, 0, 0, a: 0.4), rgb(1, 1, 1, a: 0.4))
 
     static func color(for kind: MarkerKind) -> Color {
         switch kind {
@@ -47,6 +62,41 @@ enum Palette {
         .yellow, .green, .cyan, .pink, .orange, .purple, .mint, .red
     ]
     static func blockColor(_ i: Int) -> Color { blockColors[i % blockColors.count] }
+}
+
+extension Color {
+    var nsColor: NSColor { NSColor(self) }
+}
+
+// MARK: - Liquid Glass helpers (per swiftui-expert-skill liquid-glass.md)
+// Glass after layout modifiers · GlassEffectContainer for grouped glass · interactive only on
+// tappable elements · solid fallback when Reduce Transparency is on.
+
+@MainActor
+enum Liquid {
+    @ViewBuilder
+    static func chip<Content: View>(_ content: Content, interactive: Bool = true,
+                                    tint: Color? = nil, cornerRadius: CGFloat = 10) -> some View {
+        content.modifier(GlassChip(interactive: interactive, tint: tint, cornerRadius: cornerRadius))
+    }
+}
+
+struct GlassChip: ViewModifier {
+    var interactive: Bool
+    var tint: Color?
+    var cornerRadius: CGFloat
+    @Environment(\.accessibilityReduceTransparency) private var reduceTransparency
+
+    func body(content: Content) -> some View {
+        if reduceTransparency {
+            content.background(RoundedRectangle(cornerRadius: cornerRadius)
+                .fill(Color.primary.opacity(0.09)))
+        } else {
+            let base = tint.map { Glass.regular.tint($0) } ?? .regular
+            content.glassEffect(interactive ? base.interactive() : base,
+                                in: .rect(cornerRadius: cornerRadius))
+        }
+    }
 }
 
 // MARK: - Main transcription window
@@ -97,7 +147,10 @@ struct TranscriptionView: View {
         .background(Palette.surface)
         // NOTE: no SwiftUI .toolbar — the in-content HeaderBar above replaces it
         // (this macOS 27 beta corrupts the heap in NSToolbar's menu-form path).
-        .navigationTitle(model.doc.xscURL?.lastPathComponent ?? model.doc.fileInfo?.url.lastPathComponent ?? "Lento")
+        .navigationTitle((model.doc.modified ? "• " : "")
+                        + (model.doc.xscURL?.lastPathComponent
+                           ?? model.doc.fileInfo?.url.lastPathComponent
+                           ?? "Lento"))
         .sheet(item: $editingMarker) { marker in
             MarkerEditSheet(marker: marker)
                 .environment(model)
@@ -160,86 +213,132 @@ struct EmptyDropView: View {
     }
 }
 
-// MARK: - Header bar (in-content toolbar — like the original's wxWidgets toolbar;
-// avoids the beta's broken NSToolbar menu-form path entirely)
+// MARK: - Header bar (in-content toolbar — like the original's wxWidgets toolbar)
+// Glass control clusters with morphing active states. The Fx button is pinned with
+// layout priority so it can never be clipped at narrow window sizes; at very narrow
+// widths the fit buttons compress away (ViewThatFits) before anything else breaks.
 
 struct HeaderBar: View {
     @Environment(AppModel.self) private var model
     @Environment(\.openWindow) private var openWindow
+    @Namespace private var glassNS
 
     var body: some View {
-        HStack(spacing: 10) {
-            HeaderGroup {
-                headerButton("Open", "folder") { model.openPanel() }
-                headerButton("Save", "square.and.arrow.down", disabled: model.doc.fileInfo == nil) { model.save() }
-            }
-            HeaderGroup {
-                headerButton("Fit Selection", "rectangle.compress.vertical", disabled: !model.doc.hasSelection) { model.fitSelection() }
-                headerButton("Fit Whole File", "rectangle.expand.vertical", disabled: model.doc.fileInfo == nil) { model.fitWholeFile() }
-            }
-            HeaderGroup {
-                headerButton("Loop A-B", "repeat") { model.loopAB() }
-                let karaokeOn = model.doc.fx.mixActive && model.doc.fx.mixMode == .karaoke
-                headerButton(karaokeOn ? "Karaoke on" : "Mono/Karaoke",
-                             karaokeOn ? "waveform.path.badge.minus" : "waveform.path") {
-                    model.doc.fx.mixActive = !karaokeOn
-                    model.doc.fx.mixMode = !karaokeOn ? .karaoke : .stereo
-                    model.applyFX()
+        ViewThatFits(in: .horizontal) {
+            barContent(includeFit: true)
+            barContent(includeFit: false)
+        }
+        .padding(.horizontal, 10)
+        .frame(maxWidth: .infinity, alignment: .leading)
+        .background(.bar)
+    }
+
+    private func barContent(includeFit: Bool) -> some View {
+        HStack(spacing: 8) {
+            GlassEffectContainer(spacing: 2) {
+                HStack(spacing: 2) {
+                    headerButton("Open a sound file or transcription", "folder") { model.openPanel() }
+                    headerButton("Save transcription", "square.and.arrow.down",
+                                 disabled: model.doc.fileInfo == nil) { model.save() }
                 }
             }
-            // Speed presets
-            HeaderGroup {
-                ForEach([100.0, 70, 50, 35], id: \.self) { pct in
-                    Button {
-                        model.setSpeed(pct)
-                    } label: {
-                        Text(String(Int(pct)))
-                            .font(.system(size: 11, design: .rounded).weight(model.doc.fx.speed == pct ? .bold : .regular))
-                            .frame(width: 26, height: 20)
-                            .background(
-                                model.doc.fx.speed == pct
-                                    ? Palette.selectionEdge.opacity(0.35)
-                                    : Color.clear
-                            )
-                            .clipShape(RoundedRectangle(cornerRadius: 5))
+
+            if includeFit {
+                GlassEffectContainer(spacing: 2) {
+                    HStack(spacing: 2) {
+                        headerButton("Fit selection to window", "rectangle.compress.vertical",
+                                     disabled: !model.doc.hasSelection) {
+                            model.fitSelection(animated: true)
+                        }
+                        headerButton("Fit whole file to window", "rectangle.expand.vertical",
+                                     disabled: model.doc.fileInfo == nil) {
+                            model.fitWholeFile(animated: true)
+                        }
                     }
-                    .buttonStyle(.plain)
-                    .help("Speed \(Int(pct))%")
                 }
             }
-            Spacer()
+
+            GlassEffectContainer(spacing: 2) {
+                HStack(spacing: 2) {
+                    headerButton("Loop A-B — press A to set start, A again to set end", "repeat") {
+                        model.loopAB()
+                    }
+                    let karaokeOn = model.doc.fx.mixActive && model.doc.fx.mixMode == .karaoke
+                    headerButton(karaokeOn ? "Karaoke mixing on — click to bypass" : "Mono/Karaoke mixing",
+                                 karaokeOn ? "waveform.path.badge.minus" : "waveform.path",
+                                 active: karaokeOn) {
+                        withAnimation(LentoSpring.bouncy) {
+                            model.doc.fx.mixActive = !karaokeOn
+                            model.doc.fx.mixMode = !karaokeOn ? .karaoke : .stereo
+                            model.applyFX()
+                        }
+                    }
+                }
+            }
+
+            // Speed presets — glass pills with a morphing selection (Liquid Glass
+            // segmented-control pattern: one glassEffectID slides between pills).
+            GlassEffectContainer(spacing: 4) {
+                HStack(spacing: 4) {
+                    ForEach([100.0, 70, 50, 35], id: \.self) { pct in
+                        let selected = (model.doc.fx.speed == pct)
+                        Button {
+                            model.setSpeed(pct)
+                        } label: {
+                            Text(String(Int(pct)))
+                                .font(.system(size: 11, design: .rounded).weight(selected ? .bold : .regular))
+                                .frame(width: 30, height: 22)
+                        }
+                        .buttonStyle(.plain)
+                        .foregroundStyle(selected ? Color.white : Color.primary)
+                        .modifier(GlassChip(
+                            interactive: true,
+                            tint: selected ? .accentColor.opacity(0.85) : nil,
+                            cornerRadius: 7))
+                        .glassEffectID(selected ? "speed-selected" : "speed-\(Int(pct))", in: glassNS)
+                        .help("Speed \(Int(pct))%")
+                        .accessibilityLabel("Speed \(Int(pct)) percent")
+                    }
+                }
+            }
+
+            Spacer(minLength: 8)
+                .layoutPriority(1)
+
             Button {
                 openWindow(id: "fx")
             } label: {
                 Label("Fx", systemImage: "slider.horizontal.3")
             }
             .buttonStyle(.bordered)
-            .help("Audio Effects and Controls")
+            .layoutPriority(2)
+            .fixedSize()
+            .help("Audio Effects and Controls (speed, tuning, EQ, mono/karaoke)")
+            .accessibilityLabel("Audio Effects and Controls")
         }
-        .padding(.horizontal, 12)
-        .frame(maxWidth: .infinity, alignment: .leading)
-        .background(.bar)
     }
 
-    private func headerButton(_ label: String, _ icon: String, disabled: Bool = false, action: @escaping () -> Void) -> some View {
+    private func headerButton(_ help: String, _ icon: String, disabled: Bool = false,
+                              active: Bool = false, action: @escaping () -> Void) -> some View {
         Button(action: action) {
             Image(systemName: icon)
-                .frame(width: 28, height: 22)
+                .frame(width: 28, height: 24)
         }
-        .buttonStyle(.borderless)
+        .buttonStyle(.plain)
+        .foregroundStyle(active ? Color.accentColor : Color.primary)
         .disabled(disabled)
-        .help(label)
+        .modifier(GlassChip(interactive: !disabled, tint: active ? .accentColor.opacity(0.5) : nil,
+                             cornerRadius: 8))
+        .help(help)
+        .accessibilityLabel(help)
     }
 }
 
-struct HeaderGroup<Content: View>: View {
-    @ViewBuilder var content: Content
-    var body: some View {
-        HStack(spacing: 2) { content }
-            .padding(.horizontal, 6)
-            .padding(.vertical, 3)
-            .background(RoundedRectangle(cornerRadius: 8).fill(.quaternary.opacity(0.4)))
-    }
+/// Motion vocabulary for Lento (apple-design: damping 1.0 default, bounce only where
+/// momentum/state change reads as physical; emil: nothing keyboard-driven animates).
+enum LentoSpring {
+    static let ui = Animation.spring(response: 0.3, dampingFraction: 1.0)
+    static let bouncy = Animation.spring(response: 0.38, dampingFraction: 0.75)
 }
 
 // MARK: - Marker zone (triangles + labels; drag to move, double-click to edit/create)
@@ -249,32 +348,61 @@ struct MarkerZoneView: View {
     @Binding var editingMarker: Marker?
     @State private var dragging: Marker?
     @State private var dragStartTime: TimeInterval = 0
+    @State private var hoveredMarker: UUID?
+    @State private var pulseID = UUID()
 
     var body: some View {
         GeometryReader { geo in
             let g = WaveGeom(width: Double(geo.size.width), viewStart: model.viewStart, viewEnd: model.viewEnd)
-            Canvas { ctx, size in
-                var bg = Path()
-                bg.addRect(CGRect(x: 0, y: size.height - 0.5, width: size.width, height: 0.5))
-                ctx.fill(bg, with: .color(Palette.surfaceEdge))
+            ZStack {
+                Canvas { ctx, size in
+                    var bg = Path()
+                    bg.addRect(CGRect(x: 0, y: size.height - 0.5, width: size.width, height: 0.5))
+                    ctx.fill(bg, with: .color(Palette.surfaceEdge))
 
-                for m in model.doc.markersSorted() {
-                    let x = g.x(for: m.position)
-                    guard x >= -20, x <= size.width + 20 else { continue }
-                    var tri = Path()
-                    let base = size.height - 2
-                    tri.move(to: CGPoint(x: x - 5, y: base))
-                    tri.addLine(to: CGPoint(x: x + 5, y: base))
-                    tri.addLine(to: CGPoint(x: x, y: base - 10))
-                    tri.closeSubpath()
-                    ctx.fill(tri, with: .color(Palette.color(for: m.kind)))
-                    if !m.label.isEmpty {
-                        ctx.draw(Text(m.label).font(.system(size: 10, weight: .medium)).foregroundStyle(Palette.textOnSurface),
-                                 at: CGPoint(x: x, y: 7))
+                    for m in model.doc.markersSorted() {
+                        let x = g.x(for: m.position)
+                        guard x >= -20, x <= size.width + 20 else { continue }
+                        let hovered = (hoveredMarker == m.id)
+                        var tri = Path()
+                        let base = size.height - 2
+                        let s: CGFloat = hovered ? 1.25 : 1.0
+                        tri.move(to: CGPoint(x: x - 5 * s, y: base))
+                        tri.addLine(to: CGPoint(x: x + 5 * s, y: base))
+                        tri.addLine(to: CGPoint(x: x, y: base - 10 * s))
+                        tri.closeSubpath()
+                        ctx.fill(tri, with: .color(Palette.color(for: m.kind).opacity(hovered ? 1.0 : 0.92)))
+                        if !m.label.isEmpty {
+                            ctx.draw(Text(m.label)
+                                        .font(.system(size: 10, weight: hovered ? .semibold : .medium))
+                                        .foregroundStyle(Palette.textOnSurface),
+                                     at: CGPoint(x: x, y: 7))
+                        }
+                    }
+                }
+
+                // Springy pop when a marker is placed (apple-design: bounce only where
+                // the interaction carried energy — a deliberate placement action).
+                if let pos = model.doc.lastMarkerAddedAt {
+                    let x = g.x(for: pos)
+                    if x >= -10, x <= Double(geo.size.width) + 10 {
+                        MarkerPlacementPulse(id: pulseID)
+                            .frame(width: 22, height: 22)
+                            .position(x: x, y: geo.size.height - 7)
+                            .transition(.opacity)
                     }
                 }
             }
             .contentShape(Rectangle())
+            .onContinuousHover { phase in
+                switch phase {
+                case .active(let point):
+                    hoveredMarker = model.doc.markersSorted()
+                        .first { abs(g.x(for: $0.position) - Double(point.x)) < 7 }?.id
+                case .ended:
+                    hoveredMarker = nil
+                }
+            }
             .gesture(
                 DragGesture(minimumDistance: 0).onChanged { value in
                     let t = g.t(forX: Double(value.location.x))
@@ -300,7 +428,52 @@ struct MarkerZoneView: View {
                     editingMarker = m
                 }
             }
+            .contextMenu {
+                Button("New Section Marker here") {
+                    model.doc.addMarker(.section, at: model.markerInsertPoint)
+                }
+                Button("New Measure Marker here") {
+                    model.doc.addMarker(.measure, at: model.markerInsertPoint)
+                }
+                Button("New Beat Marker here") {
+                    model.doc.addMarker(.beat, at: model.markerInsertPoint)
+                }
+                Divider()
+                if let nearest = model.doc.markersSorted()
+                    .min(by: { abs($0.position - model.markerInsertPoint) < abs($1.position - model.markerInsertPoint) }),
+                   abs(nearest.position - model.markerInsertPoint) < 2.0 {
+                    Button("Edit Nearest Marker…") { editingMarker = nearest }
+                    Button("Delete Nearest Marker", role: .destructive) { model.doc.deleteMarker(nearest) }
+                }
+                Divider()
+                Button("Compute Tempo") { model.computeTempoAction() }
+            }
+            .onChange(of: model.doc.lastMarkerAddedAt) { _, newValue in
+                if newValue != nil { pulseID = UUID() }
+                DispatchQueue.main.asyncAfter(deadline: .now() + 0.7) {
+                    if model.doc.lastMarkerAddedAt == newValue {
+                        withAnimation(LentoSpring.ui) { model.doc.lastMarkerAddedAt = nil }
+                    }
+                }
+            }
         }
+    }
+}
+
+/// One-shot ring burst for a freshly placed marker.
+private struct MarkerPlacementPulse: View {
+    let id: UUID
+    @State private var shown = false
+
+    var body: some View {
+        Circle()
+            .stroke(Palette.markerMeasure, lineWidth: 2)
+            .scaleEffect(shown ? 1.0 : 0.3)
+            .opacity(shown ? 0 : 0.8)
+            .onAppear {
+                withAnimation(.spring(response: 0.4, dampingFraction: 0.6)) { shown = true }
+            }
+            .id(id)
     }
 }
 
@@ -340,6 +513,7 @@ struct TextZoneView: View {
 
 struct WaveformView: View {
     @Environment(AppModel.self) private var model
+    @State private var hoverX: Double?
 
     var body: some View {
         ZStack {
@@ -352,6 +526,43 @@ struct WaveformView: View {
                     model.scrollBy(dt)
                 }
             }
+            // Hover readout: hairline + time, in a small glass chip (Q7).
+            if let x = hoverX, let width = GeometryTracker.width {
+                let g = WaveGeom(width: width, viewStart: model.viewStart, viewEnd: model.viewEnd)
+                let t = g.t(forX: x)
+                Rectangle()
+                    .fill(Palette.tickLine)
+                    .frame(width: 1)
+                    .frame(maxHeight: .infinity)
+                    .position(x: x, y: 0)
+                    .ignoresSafeArea()
+                Text(TimeFormat.short(t))
+                    .font(.system(size: 9, design: .monospaced))
+                    .foregroundStyle(Palette.textOnSurface)
+                    .padding(.horizontal, 6)
+                    .padding(.vertical, 2)
+                    .modifier(GlassChip(interactive: false, cornerRadius: 6))
+                    .position(x: min(max(x, 34), width - 34), y: 14)
+            }
+        }
+        .onContinuousHover { phase in
+            switch phase {
+            case .active(let point): hoverX = Double(point.x)
+            case .ended: hoverX = nil
+            }
+        }
+        .contextMenu {
+            Button("Play from Current Point") { model.play() }
+            Button("Play from Here") { model.play(from: hoverPoint()) }
+            Divider()
+            Button("Loop A-B here") { model.loopAB() }
+            Divider()
+            Button("Fit Selection") { model.fitSelection(animated: true) }
+            Button("Fit Whole File") { model.fitWholeFile(animated: true) }
+            Divider()
+            Button("New Section Marker at Current Point") { model.addMarker(.section) }
+            Button("New Measure Marker at Current Point") { model.addMarker(.measure) }
+            Button("New Beat Marker at Current Point") { model.addMarker(.beat) }
         }
         .gesture(
             DragGesture(minimumDistance: 0)
@@ -383,6 +594,11 @@ struct WaveformView: View {
             model.doc.currentPoint = t
             model.play(from: t)
         }
+    }
+
+    private func hoverPoint() -> TimeInterval {
+        guard let x = hoverX else { return model.viewStart }
+        return time(at: x)
     }
 
     private func time(at x: CGFloat) -> TimeInterval {
@@ -450,8 +666,8 @@ struct WaveCanvas: View {
                         var p = Path()
                         p.move(to: CGPoint(x: 0, y: y))
                         p.addLine(to: CGPoint(x: size.width, y: y))
-                        ctx.stroke(p, with: .color(.white.opacity(0.12)), style: StrokeStyle(lineWidth: 0.5, dash: [2, 3]))
-                        ctx.draw(Text("\(Int(db))dB").font(.system(size: 8)).foregroundStyle(.white.opacity(0.3)),
+                        ctx.stroke(p, with: .color(Palette.tickLine.opacity(0.5)), style: StrokeStyle(lineWidth: 0.5, dash: [2, 3]))
+                        ctx.draw(Text("\(Int(db))dB").font(.system(size: 8)).foregroundStyle(Palette.tickText),
                                  at: CGPoint(x: 22, y: y - 7))
                     }
                 }
@@ -521,9 +737,9 @@ struct WaveCanvas: View {
             var p = Path()
             p.move(to: CGPoint(x: x, y: size.height - 10))
             p.addLine(to: CGPoint(x: x, y: size.height))
-            ctx.stroke(p, with: .color(.white.opacity(0.25)), lineWidth: 0.5)
+            ctx.stroke(p, with: .color(Palette.tickLine), lineWidth: 0.5)
             let label = t < 3600 ? TimeFormat.short(t) : String(format: "%.0f:%02.0f", t / 60, t.truncatingRemainder(dividingBy: 60))
-            ctx.draw(Text(label).font(.system(size: 9, design: .monospaced)).foregroundStyle(.white.opacity(0.4)),
+            ctx.draw(Text(label).font(.system(size: 9, design: .monospaced)).foregroundStyle(Palette.tickText),
                      at: CGPoint(x: x, y: size.height - 16))
             t += step
         }
@@ -563,13 +779,13 @@ struct ScrollBarView: View {
             let g = WaveGeom(width: Double(geo.size.width), viewStart: 0, viewEnd: model.doc.fileInfo?.duration ?? 1)
             Canvas { ctx, size in
                 // track
-                ctx.fill(Path(CGRect(origin: .zero, size: size)), with: .color(Color.white.opacity(0.05)))
+                ctx.fill(Path(CGRect(origin: .zero, size: size)), with: .color(Palette.tickLine.opacity(0.2)))
                 // thumb
                 let x0 = g.x(for: model.viewStart)
                 let x1 = g.x(for: model.viewEnd)
                 var thumb = Path()
                 thumb.addRect(CGRect(x: x0, y: 2, width: max(8, x1 - x0), height: size.height - 4))
-                ctx.fill(thumb, with: .color(Color.white.opacity(0.18)))
+                ctx.fill(thumb, with: .color(Palette.tickLine.opacity(0.7)))
                 // play position
                 if model.audio.isPlaying || model.audio.isPaused {
                     let xp = g.x(for: model.audio.playingPoint)
@@ -603,7 +819,7 @@ struct NavigationBarView: View {
         GeometryReader { geo in
             let g = WaveGeom(width: Double(geo.size.width), viewStart: 0, viewEnd: model.doc.fileInfo?.duration ?? 1)
             Canvas { ctx, size in
-                ctx.fill(Path(CGRect(origin: .zero, size: size)), with: .color(Color.white.opacity(0.03)))
+                ctx.fill(Path(CGRect(origin: .zero, size: size)), with: .color(Palette.tickLine.opacity(0.12)))
                 // selection as a thin line along the top edge
                 if let sel = model.doc.selection {
                     var p = Path()
@@ -622,7 +838,7 @@ struct NavigationBarView: View {
                     p.closeSubpath()
                     ctx.fill(p, with: .color(Palette.color(for: m.kind).opacity(m.kind == .section ? 1 : 0.55)))
                     if m.kind == .section, !m.label.isEmpty {
-                        ctx.draw(Text(m.label).font(.system(size: 8, weight: .medium)).foregroundStyle(.white.opacity(0.55)),
+                        ctx.draw(Text(m.label).font(.system(size: 8, weight: .medium)).foregroundStyle(Palette.tickText),
                                  at: CGPoint(x: min(max(x, 10), size.width - 10), y: 7))
                     }
                 }

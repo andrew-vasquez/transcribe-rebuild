@@ -138,6 +138,8 @@ final class TranscriptionDocument {
     /// Metronome clicks at markers (Play menu) and their volume (Misc page).
     var clicksOn = false
     var clickVolume: Double = 0.6
+    /// Transient position for the springy pop when a marker is placed (cleared by the view).
+    var lastMarkerAddedAt: TimeInterval?
 
     // View options
     var showSpectrum = true
@@ -224,6 +226,7 @@ final class TranscriptionDocument {
         withMarkerUndo("Add Marker") {
             markers.append(Marker(kind: kind, position: position, autoLabel: true, label: "", subdivision: 0))
         }
+        lastMarkerAddedAt = position
         _ = silent
     }
 

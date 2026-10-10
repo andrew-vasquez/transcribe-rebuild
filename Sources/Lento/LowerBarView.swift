@@ -1,43 +1,45 @@
 import SwiftUI
 import AppKit
 
-// MARK: - Lower toolbar: transport controls, sliders, and time boxes
-// Mirrors the original's lower toolbar, grouped into a glass control bar.
+// MARK: - Lower toolbar: transport controls, sliders with captions, time readouts.
+// Glass chips + active states; keyboard-driven state stays instant (no animation on
+// spacebar play etc.) — motion is reserved for pointer/menu-driven changes.
 
 struct LowerBarView: View {
     @Environment(AppModel.self) private var model
+    @Environment(\.accessibilityReduceMotion) private var reduceMotion
 
     var body: some View {
-        HStack(spacing: 12) {
-            // Horizontal scale slider
-            Slider(value: Binding(
-                get: { model.doc.secondsVisible },
-                set: { model.doc.secondsVisible = $0; model.clampView() }
-            ), in: 1...max(2, model.doc.fileInfo?.duration ?? 60))
-            .frame(width: 110)
-            .help("Horizontal zoom")
+        HStack(spacing: 10) {
+            // Horizontal scale — captioned ("little titles" per HIG label affordance)
+            CaptionedSlider(caption: "Zoom", help: "Horizontal zoom — ⌘-wheel or slider") {
+                Slider(value: Binding(
+                    get: { model.doc.secondsVisible },
+                    set: { model.doc.secondsVisible = $0; model.clampView() }
+                ), in: 1...max(2, model.doc.fileInfo?.duration ?? 60))
+                .frame(width: 100)
+            }
 
             // Volume + compression red bar (the original shows the compressor as a red bar)
-            VStack(spacing: 2) {
-                Slider(value: Binding(
-                    get: { model.doc.fx.volume },
-                    set: { model.doc.fx.volume = $0; model.applyFX() }
-                ), in: 0...200)
-                .frame(width: 90)
-                GeometryReader { geo in
-                    Rectangle()
-                        .fill(.clear)
-                        .overlay(alignment: .leading) {
-                            Rectangle()
-                                .fill(Color.red)
-                                .frame(width: min(geo.size.width, geo.size.width * model.audio.redLevel / 12))
+            CaptionedSlider(caption: "Vol", help: "Volume — keys − and = (red bar = compression)") {
+                VStack(spacing: 2) {
+                    Slider(value: Binding(
+                        get: { model.doc.fx.volume },
+                        set: { model.doc.fx.volume = $0; model.applyFX() }
+                    ), in: 0...200)
+                    .frame(width: 84)
+                    GeometryReader { geo in
+                        ZStack(alignment: .leading) {
+                            Capsule().fill(Color.primary.opacity(0.08))
+                            Capsule().fill(Color.red)
+                                .frame(width: min(geo.size.width,
+                                                  geo.size.width * model.audio.redLevel / 12))
                         }
+                    }
+                    .frame(height: 3)
                 }
-                .frame(height: 3)
             }
-            .help("Volume (− / =)")
 
-            // Now playing / Track length
             LowerTimeBox(title: "Now Playing",
                          color: Palette.textOnSurface,
                          text: TimeFormat.short(model.audio.isPlaying || model.audio.isPaused ? model.audio.playingPoint : 0),
@@ -48,50 +50,65 @@ struct LowerBarView: View {
                          editable: false)
 
             // Transport buttons
-            HStack(spacing: 2) {
-                LowerBarButton(icon: "backward.end.fill", help: "Go to start") { model.goToStart() }
-                LowerBarButton(icon: "backward.fill", help: "Review (skip back)") { model.review() }
-                LowerBarButton(icon: model.audio.isPlaying ? "pause.fill" : "play.fill",
-                               primary: true,
-                               help: "Play / Pause (space)") { model.spaceToggle() }
-                LowerBarButton(icon: "stop.fill", help: "Stop (.)") { model.stopPlayback() }
-                LowerBarButton(icon: "forward.fill", help: "Cue (skip forward)") { model.cue() }
-                LowerBarButton(icon: "forward.end.fill", help: "Go to end") { model.goToEnd() }
-                Toggle(isOn: Binding(get: { model.doc.loopMode }, set: { model.doc.loopMode = $0; model.applyFX() })) {
-                    Label("Loop", systemImage: "repeat")
+            GlassEffectContainer(spacing: 3) {
+                HStack(spacing: 3) {
+                    LowerBarButton(icon: "backward.end.fill", help: "Go to start") { model.goToStart() }
+                    LowerBarButton(icon: "backward.fill", help: "Review — skip back (R)") { model.review() }
+                    Button {
+                        model.spaceToggle()
+                    } label: {
+                        Image(systemName: model.audio.isPlaying ? "pause.fill" : "play.fill")
+                            .font(.system(size: 12, weight: .semibold))
+                            .frame(width: 32, height: 26)
+                    }
+                    .buttonStyle(.glassProminent)
+                    .symbolEffect(.bounce, value: model.audio.isPlaying)
+                    .disabled(model.doc.fileInfo == nil)
+                    .help("Play / Pause — spacebar")
+                    .accessibilityLabel(model.audio.isPlaying ? "Pause" : "Play")
+                    LowerBarButton(icon: "stop.fill", help: "Stop — . (period)") { model.stopPlayback() }
+                    LowerBarButton(icon: "forward.fill", help: "Cue — skip forward (C)") { model.cue() }
+                    LowerBarButton(icon: "forward.end.fill", help: "Go to end") { model.goToEnd() }
                 }
-                .toggleStyle(.button)
-                .labelStyle(.iconOnly)
-                .help("Loop mode (⌘L)")
             }
 
+            // Loop mode — glass chip with a visible on-state
+            Button {
+                withAnimation(reduceMotion ? nil : LentoSpring.bouncy) {
+                    model.doc.loopMode.toggle()
+                    model.applyFX()
+                }
+            } label: {
+                Image(systemName: "repeat")
+                    .frame(width: 26, height: 24)
+            }
+            .buttonStyle(.plain)
+            .foregroundStyle(model.doc.loopMode ? Color.white : Color.primary)
+            .modifier(GlassChip(interactive: true,
+                                tint: model.doc.loopMode ? .accentColor.opacity(0.85) : nil,
+                                cornerRadius: 8))
+            .help("Loop mode — ⌘L (loops the selection when one exists)")
+            .accessibilityLabel(model.doc.loopMode ? "Loop on" : "Loop off")
+
             // Speed slider (20–100% like the original's lower toolbar)
-            VStack(spacing: 1) {
+            CaptionedSlider(caption: "Speed \(Int(model.doc.fx.speed))%", help: "Speed — presets in the header, ⌘1–⌘4") {
                 Slider(value: Binding(
                     get: { min(max(model.doc.fx.speed, 20), 100) },
                     set: { model.setSpeed(max($0, 20)) }
                 ), in: 20...100)
-                .frame(width: 110)
-                Text("\(Int(model.doc.fx.speed))%")
-                    .font(.system(size: 9, design: .monospaced))
-                    .foregroundStyle(.secondary)
+                .frame(width: 96)
             }
-            .help("Speed (⌘1..⌘4 presets)")
 
-            // Pitch (semitones) slider with the true total displayed
-            VStack(spacing: 1) {
+            // Pitch (semitones) — the caption shows the true total including cents/octaves
+            CaptionedSlider(caption: String(format: "Pitch %+.2f st", model.doc.fx.tuningCentsTotal / 100),
+                            help: "Pitch in semitones — cents & octaves in the Fx window") {
                 Slider(value: Binding(
                     get: { Double(model.doc.fx.semitones) },
                     set: { model.doc.fx.semitones = Int($0.rounded()); model.applyFX() }
                 ), in: -12...12, step: 1)
-                .frame(width: 90)
-                Text(String(format: "%+.2f st", model.doc.fx.tuningCentsTotal / 100))
-                    .font(.system(size: 9, design: .monospaced))
-                    .foregroundStyle(.secondary)
+                .frame(width: 84)
             }
-            .help("Pitch in semitones (cents & octaves in the Fx window)")
 
-            // Current point / Selection length (editable)
             LowerTimeBox(title: "Current Point",
                          color: Palette.currentPoint,
                          text: TimeFormat.short(model.doc.currentPoint),
@@ -109,13 +126,8 @@ struct LowerBarView: View {
                 }
             }
 
-            // Always present (constant layout structure; empty when no message)
-            Text(model.statusMessage)
-                .font(.system(size: 10))
-                .foregroundStyle(.secondary)
-                .lineLimit(1)
-                .frame(maxWidth: 200, alignment: .leading)
-                .help(model.statusMessage)
+            // Status toast — springs in, fades out (transient feedback, not a delay)
+            StatusToast(message: model.statusMessage)
 
             Spacer(minLength: 0)
         }
@@ -125,26 +137,41 @@ struct LowerBarView: View {
     }
 }
 
+/// A caption + control group — the "little titles" that name each function.
+struct CaptionedSlider<Content: View>: View {
+    var caption: String
+    var help: String
+    @ViewBuilder var content: Content
+
+    var body: some View {
+        VStack(alignment: .center, spacing: 1) {
+            content
+            Text(caption)
+                .font(.system(size: 8, design: .monospaced))
+                .foregroundStyle(.secondary)
+                .lineLimit(1)
+        }
+        .help(help)
+        .accessibilityElement(children: .contain)
+        .accessibilityLabel(caption)
+    }
+}
+
 struct LowerBarButton: View {
     var icon: String
-    var primary = false
     var help: String
     var action: () -> Void
 
     var body: some View {
         Button(action: action) {
             Image(systemName: icon)
-                .frame(width: 28, height: 22)
+                .font(.system(size: 10, weight: .medium))
+                .frame(width: 28, height: 24)
         }
-        .buttonStyle(.borderless)
+        .buttonStyle(.plain)
+        .modifier(GlassChip(interactive: true, cornerRadius: 7))
         .help(help)
-        .foregroundStyle(primary ? Color.white : .primary)
-        .background {
-            if primary {
-                Capsule().fill(Color.accentColor)
-            }
-        }
-        .clipShape(Capsule())
+        .accessibilityLabel(help)
     }
 }
 
@@ -164,7 +191,7 @@ struct LowerTimeBox: View {
                 Text(text)
                     .font(.system(size: 11, design: .monospaced))
                     .foregroundStyle(color)
-                    .frame(minWidth: 52)
+                    .frame(minWidth: 50)
                     .contentShape(Rectangle())
                     .onTapGesture {
                         if editable {
@@ -177,7 +204,7 @@ struct LowerTimeBox: View {
                     .font(.system(size: 11, design: .monospaced))
                     .textFieldStyle(.plain)
                     .multilineTextAlignment(.center)
-                    .frame(minWidth: 52)
+                    .frame(minWidth: 50)
                     .onSubmit { onCommit(draft); editing = false }
                     .onExitCommand { editing = false }
             }
@@ -187,6 +214,37 @@ struct LowerTimeBox: View {
         }
         .padding(.horizontal, 6)
         .padding(.vertical, 3)
-        .background(RoundedRectangle(cornerRadius: 5).fill(.quaternary.opacity(0.5)))
+        .modifier(GlassChip(interactive: editable, cornerRadius: 6))
+        .help(editable ? "\(title) — click to type a time (m:ss)" : title)
+        .accessibilityLabel("\(title): \(text)")
+    }
+}
+
+/// Transient status message: springs in, quietly fades away.
+struct StatusToast: View {
+    var message: String
+    @State private var shown = false
+
+    var body: some View {
+        Text(message)
+            .font(.system(size: 10))
+            .foregroundStyle(.secondary)
+            .lineLimit(2)
+            .frame(maxWidth: 180, alignment: .leading)
+            .padding(.horizontal, 8)
+            .padding(.vertical, 4)
+            .modifier(GlassChip(interactive: false, cornerRadius: 8))
+            .opacity(shown ? 1 : 0)
+            .scaleEffect(shown ? 1 : 0.95)
+            .frame(maxWidth: shown ? 180 : 0, maxHeight: shown ? 40 : 0)
+            .animation(nil, value: shown)
+            .onChange(of: message) { _, new in
+                guard !new.isEmpty else { return }
+                withAnimation(LentoSpring.bouncy) { shown = true }
+                Task { @MainActor in
+                    try? await Task.sleep(for: .seconds(5))
+                    withAnimation(LentoSpring.ui) { shown = false }
+                }
+            }
     }
 }

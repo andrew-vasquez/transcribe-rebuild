@@ -27,6 +27,14 @@ struct LentoApp: App {
             CommandGroup(replacing: .appInfo) {
                 Button("About Lento") { AboutPanel.show(model: model) }
             }
+            CommandGroup(replacing: .undoRedo) {
+                Button("Undo") { model.doc.undo.undo() }
+                    .keyboardShortcut("z", modifiers: .command)
+                    .disabled(!model.doc.undo.canUndo)
+                Button("Redo") { model.doc.undo.redo() }
+                    .keyboardShortcut("z", modifiers: [.command, .shift])
+                    .disabled(!model.doc.undo.canRedo)
+            }
             CommandGroup(replacing: .help) {
                 Button("Lento Help") {
                     NSWorkspace.shared.open(URL(string: "https://www.seventhstring.com/xscribe/overview.html")!)
@@ -59,9 +67,9 @@ struct LentoApp: App {
             }
 
             CommandMenu("Play") {
-                Button("Play Selection") { model.play() }
-                Button("Stop") { model.stopPlayback() }
-                Button("Pause") { model.pauseToggle() }
+                Button("Play Selection — space") { model.play() }
+                Button("Stop — .") { model.stopPlayback() }
+                Button("Pause — ,") { model.pauseToggle() }
                 Divider()
                 Toggle("Loop", isOn: Binding(get: { model.doc.loopMode }, set: { model.doc.loopMode = $0; model.applyFX() }))
                     .keyboardShortcut("l", modifiers: .command)
@@ -71,9 +79,9 @@ struct LentoApp: App {
             }
 
             CommandMenu("Markers") {
-                Button("New Section Marker") { model.addMarker(.section) }
-                Button("New Measure Marker") { model.addMarker(.measure) }
-                Button("New Beat Marker") { model.addMarker(.beat) }
+                Button("New Section Marker — S") { model.addMarker(.section) }
+                Button("New Measure Marker — M") { model.addMarker(.measure) }
+                Button("New Beat Marker — B") { model.addMarker(.beat) }
                 Divider()
                 Button("Delete Selected Markers") { model.deleteMarkersInSelection() }
                 Button("Equally Space Selected Markers") { model.doc.equallySpaceMarkers() }
@@ -105,7 +113,7 @@ struct LentoApp: App {
             CommandMenu("Text") {
                 Toggle("Show Text Zone", isOn: Binding(get: { model.doc.showTextZone }, set: { model.doc.showTextZone = $0 }))
                 Divider()
-                Button("New Text Block") { model.doc.addTextBlock(at: model.markerInsertPoint) }
+                Button("New Text Block — T") { model.doc.addTextBlock(at: model.markerInsertPoint) }
             }
 
             // Merge into the system Window menu

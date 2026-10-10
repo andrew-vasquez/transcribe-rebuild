@@ -6,6 +6,7 @@ import AppKit
 struct FXPanelView: View {
     @Environment(AppModel.self) private var model
     @State private var page: FXPage = .speed
+    @Namespace private var glassNS
 
     enum FXPage: String, CaseIterable, Identifiable {
         case mono = "Mono/Karaoke"
@@ -19,28 +20,35 @@ struct FXPanelView: View {
 
     var body: some View {
         VStack(spacing: 0) {
-            // Page tabs, with the "bullet" indicating the page is active (as the original does)
-            HStack(spacing: 4) {
-                ForEach(FXPage.allCases) { p in
-                    let active = isActive(p)
-                    Button {
-                        page = p
-                    } label: {
-                        VStack(spacing: 1) {
-                            HStack(spacing: 3) {
+            // Page tabs — glass chips; the active page morphs a shared glass identity
+            // (Liquid Glass segmented pattern) and shows the original's "bullet".
+            GlassEffectContainer(spacing: 4) {
+                HStack(spacing: 4) {
+                    ForEach(FXPage.allCases) { p in
+                        let active = isActive(p)
+                        let selected = (page == p)
+                        Button {
+                            withAnimation(LentoSpring.bouncy) { page = p }
+                        } label: {
+                            HStack(spacing: 4) {
                                 if active { Circle().fill(.green).frame(width: 5, height: 5) }
-                                Text(p.rawValue).font(.callout.weight(active ? .semibold : .regular))
+                                Text(p.rawValue)
+                                    .font(.system(size: 11, weight: selected ? .semibold : .regular))
                             }
+                            .padding(.horizontal, 9)
+                            .padding(.vertical, 5)
                         }
-                        .padding(.horizontal, 10)
-                        .padding(.vertical, 6)
-                        .background(
-                            RoundedRectangle(cornerRadius: 7)
-                                .fill(page == p ? Color.primary.opacity(0.12) : .clear)
-                        )
+                        .buttonStyle(.plain)
+                        .foregroundStyle(selected ? Color.white : Color.primary)
+                        .modifier(GlassChip(interactive: true,
+                                            tint: selected ? .accentColor.opacity(0.8) : nil,
+                                            cornerRadius: 8))
+                        .glassEffectID(selected ? "fx-tab" : "fx-tab-\(p.id)", in: glassNS)
+                        .help("\(p.rawValue) page")
+                        .accessibilityLabel("\(p.rawValue) page\(active ? " — active, affecting playback" : "")")
                     }
-                    .buttonStyle(.plain)
                 }
+                .padding(.horizontal, 6)
             }
             .padding(8)
             .frame(maxWidth: .infinity)
@@ -492,7 +500,7 @@ struct LoopSlotView: View {
                 // Location indicator: rough position within the track
                 GeometryReader { geo in
                     let frac = model.doc.fileInfo.map { loop.position / max($0.duration, 0.001) } ?? 0
-                    Rectangle()
+                    RoundedRectangle(cornerRadius: 2)
                         .fill(Palette.blockColor(loop.colorIndex).opacity(0.85))
                         .frame(width: 3, height: geo.size.height)
                         .offset(x: min(max(0, frac) * (geo.size.width - 3), 0))
@@ -501,13 +509,13 @@ struct LoopSlotView: View {
             }
             .padding(.horizontal, 8)
             .padding(.vertical, 6)
-            .background(
-                RoundedRectangle(cornerRadius: 8)
-                    .fill(loop.hasPosition ? Palette.blockColor(loop.colorIndex).opacity(0.18) : Color.primary.opacity(0.08))
-            )
-            .overlay(RoundedRectangle(cornerRadius: 8).strokeBorder(Color.primary.opacity(0.15)))
         }
         .buttonStyle(.plain)
+        .modifier(GlassChip(
+            interactive: true,
+            tint: loop.hasPosition ? Palette.blockColor(loop.colorIndex).opacity(0.5) : nil,
+            cornerRadius: 9))
+        .overlay(RoundedRectangle(cornerRadius: 9).strokeBorder(Palette.blockColor(loop.colorIndex).opacity(0.25)))
         .simultaneousGesture(
             TapGesture().modifiers(.shift).onEnded {
                 model.storeLoop(index)

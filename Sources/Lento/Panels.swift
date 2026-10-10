@@ -27,18 +27,41 @@ extension AppModel {
         }
     }
 
-    func fitSelection() {
+    func fitSelection(animated: Bool = true) {
         guard let sel = doc.selection, sel.upperBound > sel.lowerBound else { statusMessage = "Fit Selection needs a selection"; return }
-        doc.secondsVisible = sel.upperBound - sel.lowerBound
-        doc.scrollCenter = (sel.upperBound + sel.lowerBound) / 2
-        clampView()
+        let span = sel.upperBound - sel.lowerBound
+        let center = (sel.upperBound + sel.lowerBound) / 2
+        if animated { animateViewRange(span: span, center: center) } else {
+            doc.secondsVisible = span; doc.scrollCenter = center; clampView()
+        }
     }
 
-    func fitWholeFile() {
+    func fitWholeFile(animated: Bool = true) {
         guard let dur = doc.fileInfo?.duration, dur > 0 else { return }
-        doc.secondsVisible = dur
-        doc.scrollCenter = dur / 2
-        clampView()
+        if animated { animateViewRange(span: dur, center: dur / 2) } else {
+            doc.secondsVisible = dur; doc.scrollCenter = dur / 2; clampView()
+        }
+    }
+
+    /// Eased zoom for mouse/menu-triggered view-range changes (keyboard actions stay
+    /// instant — emil-design-eng: never animate keyboard-initiated actions).
+    private func animateViewRange(span: Double, center: Double) {
+        zoomAnimTimer?.invalidate()
+        let fromSpan = doc.secondsVisible
+        let fromCenter = doc.scrollCenter
+        let steps = 10
+        var i = 0
+        let t = Timer.scheduledTimer(withTimeInterval: 0.025, repeats: true) { [weak self] timer in
+            guard let self else { timer.invalidate(); return }
+            i += 1
+            let p = min(1, Double(i) / Double(steps))
+            let e = 1 - pow(1 - p, 3) // ease-out cubic
+            self.doc.secondsVisible = fromSpan + (span - fromSpan) * e
+            self.doc.scrollCenter = fromCenter + (center - fromCenter) * e
+            self.clampView()
+            if i >= steps { timer.invalidate() }
+        }
+        RunLoop.main.add(t, forMode: .common)
     }
 
     func exportSoundFilePanel() {
