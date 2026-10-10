@@ -535,6 +535,51 @@ final class AudioSystem {
         peakState.withLock { let v = $0; $0 = 0; return v }
     }
 
+    /// One-shot high-quality sample-rate conversion via AVAudioConverter
+    /// (windowed-sinc, no aliasing). Falls back to the linear path only on failure.
+    private func resampleHighQuality(_ input: [Float], from inRate: Double, to outRate: Double) -> ContiguousArray<Float> {
+        if abs(inRate - outRate) < 0.5 || input.isEmpty {
+            return ContiguousArray(input)
+        }
+        let fallback: () -> ContiguousArray<Float> = { [input, inRate, outRate] in
+            self.resample(ContiguousArray(input), from: inRate, to: outRate)
+        }
+        guard let inFormat = AVAudioFormat(standardFormatWithSampleRate: inRate, channels: 1),
+              let outFormat = AVAudioFormat(standardFormatWithSampleRate: outRate, channels: 1),
+              let conv = AVAudioConverter(from: inFormat, to: outFormat),
+              let srcBuf = AVAudioPCMBuffer(pcmFormat: inFormat, frameCapacity: AVAudioFrameCount(input.count)) else {
+            return fallback()
+        }
+        srcBuf.frameLength = AVAudioFrameCount(input.count)
+        input.withUnsafeBufferPointer { buf in
+            srcBuf.floatChannelData![0].update(from: buf.baseAddress!, count: input.count)
+        }
+        conv.sampleRateConverterQuality = AVAudioQuality.max.rawValue
+
+        let estFrames = AVAudioFrameCount((Double(input.count) * outRate / inRate).rounded(.up) + 64)
+        guard let outBuf = AVAudioPCMBuffer(pcmFormat: outFormat, frameCapacity: estFrames) else {
+            return fallback()
+        }
+        outBuf.frameLength = estFrames
+        var fed = false
+        var convError: NSError?
+        let status = conv.convert(to: outBuf, error: &convError, withInputFrom: { _, inputStatus in
+            if fed {
+                inputStatus.pointee = .endOfStream
+                return nil
+            }
+            fed = true
+            inputStatus.pointee = .haveData
+            return srcBuf
+        })
+        guard status == .haveData || status == .endOfStream, convError == nil, outBuf.frameLength > 0,
+              let outData = outBuf.floatChannelData else {
+            return fallback()
+        }
+        return ContiguousArray(UnsafeBufferPointer(start: outData[0], count: Int(outBuf.frameLength)))
+    }
+
+    /// Linear resampling — fallback only.
     private func resample(_ input: ContiguousArray<Float>, from inRate: Double, to outRate: Double) -> ContiguousArray<Float> {
         if abs(inRate - outRate) < 0.5 { return input }
         let step = inRate / outRate
