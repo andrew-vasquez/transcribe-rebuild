@@ -62,6 +62,7 @@ struct LentoApp: App {
             CommandGroup(replacing: .saveItem) {
                 Button("Save") { model.save() }
                     .keyboardShortcut("s", modifiers: .command)
+                    .disabled(model.doc.fileInfo == nil)
                 Button("Save As…") { model.saveAs() }
                     .keyboardShortcut("s", modifiers: [.command, .shift])
             }

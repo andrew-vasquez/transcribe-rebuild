@@ -65,6 +65,13 @@ final class AppModel {
         NSLog("TR-DBG openSoundFile %@", url.path)
         do {
             try audio.load(url: url)
+            // Reject effectively-empty audio rather than showing a blank waveform.
+            guard audio.duration > 0.05 else {
+                audio.stopPlayback()
+                statusMessage = "“\(url.lastPathComponent)” contains no audio to transcribe."
+                NSSound.beep()
+                return
+            }
             doc = TranscriptionDocument()
             doc.fileInfo = SoundFileInfo(url: url, sampleRate: audio.sampleRate,
                                          channels: audio.channels, frames: Int(audio.duration * AudioSystem.canonicalRate),
@@ -74,7 +81,8 @@ final class AppModel {
             doc.secondsVisible = min(30, doc.fileInfo!.duration)
             doc.scrollCenter = doc.secondsVisible / 2
             applyFX()
-            statusMessage = "Opened \(url.lastPathComponent)"
+            statusMessage = audio.loadWarning.map { "Opened \(url.lastPathComponent) — \($0)" }
+                ?? "Opened \(url.lastPathComponent)"
             addRecentFile(url)
         } catch {
             statusMessage = "Cannot open: \(error.localizedDescription)"

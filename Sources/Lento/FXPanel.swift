@@ -28,7 +28,7 @@ struct FXPanelView: View {
                         let active = isActive(p)
                         let selected = (page == p)
                         Button {
-                            withAnimation(LentoSpring.bouncy) { page = p }
+                            withMotion { page = p }
                         } label: {
                             HStack(spacing: 4) {
                                 if active { Circle().fill(.green).frame(width: 5, height: 5) }

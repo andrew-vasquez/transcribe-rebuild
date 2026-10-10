@@ -83,6 +83,13 @@ final class RenderCore {
     func seek(to frame: Int) {
         lock.lock()
         config.readFrame = max(0, min(frame, data.frameCount))
+        // Seeking outside the active loop range breaks the loop — otherwise the next
+        // render pass would snap playback straight back to the loop start, making
+        // cue/review/click-to-seek feel dead while looping.
+        if config.hasLoopRange,
+           config.readFrame < config.loopStartFrame || config.readFrame >= config.loopEndFrame {
+            config.hasLoopRange = false
+        }
         clickRemaining = 0
         resyncMarkerCursor()
         lock.unlock()
@@ -227,6 +234,8 @@ final class AudioSystem {
     var duration: TimeInterval = 0
     var fileLoaded = false
     var formatName = ""
+    /// Set when a file decoded only partially (damaged/VBR/capped) — surfaced by the UI.
+    var loadWarning: String?
     var onPlayEnded: (() -> Void)?
 
     // Graph
@@ -324,35 +333,88 @@ final class AudioSystem {
             sourceNode = nil
         }
 
-        let file = try AVAudioFile(forReading: url)
-        let srcFormat = file.processingFormat
-        let totalFrames = AVAudioFrameCount(file.length)
-        guard let srcBuf = AVAudioPCMBuffer(pcmFormat: srcFormat, frameCapacity: totalFrames) else {
-            throw NSError(domain: "Audio", code: 1, userInfo: [NSLocalizedDescriptionKey: "Cannot allocate buffer"])
+        // --- Decode. MP3s (especially VBR) often misreport their length and can
+        // throw mid-stream, so we decode in chunks and keep what decodes cleanly —
+        // never trusting file.length for the full read.
+        let (file, srcFormat): (AVAudioFile, AVAudioFormat)
+        if let f = try? AVAudioFile(forReading: url, commonFormat: .pcmFormatFloat32, interleaved: false) {
+            file = f; srcFormat = f.processingFormat
+        } else if let f = try? AVAudioFile(forReading: url) {
+            file = f; srcFormat = f.processingFormat
+        } else {
+            throw NSError(domain: "LentoAudio", code: 1,
+                          userInfo: [NSLocalizedDescriptionKey: "This file isn't a sound file Lento can read (unknown or unsupported format)."])
         }
-        try file.read(into: srcBuf, frameCount: totalFrames)
-
-        // Convert to canonical Float32 stereo 44.1k, deinterleaved
-        var channelArrays: [ContiguousArray<Float>] = []
         let chCount = Int(srcFormat.channelCount)
-        guard let deinter = srcBuf.floatChannelData else { throw NSError(domain: "Audio", code: 2) }
-        let frames = Int(srcBuf.frameLength)
+        let chunkFrames: AVAudioFrameCount = 65536
+        guard let chunkBuf = AVAudioPCMBuffer(pcmFormat: srcFormat, frameCapacity: chunkFrames),
+              let chunkData = chunkBuf.floatChannelData else {
+            throw NSError(domain: "LentoAudio", code: 2,
+                          userInfo: [NSLocalizedDescriptionKey: "Not enough memory to decode this file."])
+        }
 
-        // Convert per source channel to 44.1k
+        // Decode in chunks until end-of-file. AVAudioFile.length can misreport for VBR
+        // MP3s (and decoders can throw mid-stream), so the loop trusts the reads, not
+        // the header. Sanity cap = ~2 hours, purely to bound pathological files.
+        var channelArrays = [[Float]](repeating: [], count: chCount)
+        let reportedFrames = Int(file.length)
+        if reportedFrames > 0 {
+            let reserve = min(reportedFrames + 65536, 360_000_000)
+            for c in 0..<chCount { channelArrays[c].reserveCapacity(reserve) }
+        }
+        let hardCapFrames = 360_000_000
+        var decodedFrames = 0
+        var hitCap = false
+        while decodedFrames < hardCapFrames {
+            chunkBuf.frameLength = 0
+            do {
+                try file.read(into: chunkBuf, frameCount: chunkFrames)
+            } catch {
+                break // decoder hit a snag mid-file (common with VBR MP3) — keep what we have
+            }
+            let n = Int(chunkBuf.frameLength)
+            if n == 0 { break }
+            if decodedFrames + n > hardCapFrames {
+                hitCap = true
+                break
+            }
+            for c in 0..<chCount {
+                channelArrays[c].append(contentsOf: UnsafeBufferPointer(start: chunkData[c], count: n))
+            }
+            decodedFrames += n
+        }
+        if reportedFrames > 0 && decodedFrames < reportedFrames - Int(srcFormat.sampleRate) {
+            // Decoded noticeably less than the header promised (VBR MP3 or a damaged
+            // file): keep going with what we have, but say so.
+            loadWarning = String(format: "Decoded %.0f of %.0f seconds — the file may be damaged or mislabelled.",
+                                 Double(decodedFrames) / srcFormat.sampleRate,
+                                 Double(reportedFrames) / srcFormat.sampleRate)
+        } else if hitCap {
+            loadWarning = "Only the first two hours were loaded."
+        } else {
+            loadWarning = nil
+        }
+        guard decodedFrames > 0 else {
+            throw NSError(domain: "LentoAudio", code: 3,
+                          userInfo: [NSLocalizedDescriptionKey: "No decodable audio found in this file."])
+        }
+
+        // Convert per source channel to canonical 44.1 kHz
         var converted: [ContiguousArray<Float>] = []
         for c in 0..<chCount {
-            var raw = ContiguousArray<Float>(repeating: 0, count: frames)
-            for i in 0..<frames { raw[i] = deinter[c][i] }
-            converted.append(resample(raw, from: srcFormat.sampleRate, to: Self.canonicalRate))
+            converted.append(resample(ContiguousArray(channelArrays[c]),
+                                      from: srcFormat.sampleRate, to: Self.canonicalRate))
         }
+        channelArrays.removeAll(keepingCapacity: false)
         // Reduce to stereo
+        let stereo: [ContiguousArray<Float>]
         if converted.count == 1 {
-            channelArrays = [converted[0], converted[0]]
-        } else if converted.count >= 2 {
-            channelArrays = [converted[0], converted[1]]
+            stereo = [converted[0], converted[0]]
+        } else {
+            stereo = [converted[0], converted[1]]
         }
 
-        let data = AudioData(channels: channelArrays, click: Self.makeClick())
+        let data = AudioData(channels: stereo, click: Self.makeClick())
         self.data = data
         self.core = RenderCore(data: data)
         self.channels = 2

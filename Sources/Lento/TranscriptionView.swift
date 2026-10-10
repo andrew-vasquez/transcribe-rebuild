@@ -113,7 +113,7 @@ struct TranscriptionView: View {
             let spectrumH = (geo.size.height - 56 - 44 - 14 - 20 - 30) * (1.0 - splitterFraction)
             VStack(spacing: 0) {
                 HeaderBar()
-                    .frame(height: 40)
+                    .frame(height: 48)
                 if model.doc.fileInfo != nil {
                     MarkerZoneView(editingMarker: $editingMarker)
                         .frame(height: 30)
@@ -237,21 +237,21 @@ struct HeaderBar: View {
         HStack(spacing: 8) {
             GlassEffectContainer(spacing: 2) {
                 HStack(spacing: 2) {
-                    headerButton("Open a sound file or transcription", "folder") { model.openPanel() }
-                    headerButton("Save transcription", "square.and.arrow.down",
-                                 disabled: model.doc.fileInfo == nil) { model.save() }
+                    headerButton("Open a sound file or .xsc transcription", "folder", caption: "Open") { model.openPanel() }
+                    headerButton("Save transcription as an .xsc file", "square.and.arrow.down",
+                                 caption: "Save", disabled: model.doc.fileInfo == nil) { model.save() }
                 }
             }
 
             if includeFit {
                 GlassEffectContainer(spacing: 2) {
                     HStack(spacing: 2) {
-                        headerButton("Fit selection to window", "rectangle.compress.vertical",
-                                     disabled: !model.doc.hasSelection) {
+                        headerButton("Zoom the selection to fill the window", "rectangle.compress.vertical",
+                                     caption: "Fit Sel", disabled: !model.doc.hasSelection) {
                             model.fitSelection(animated: true)
                         }
-                        headerButton("Fit whole file to window", "rectangle.expand.vertical",
-                                     disabled: model.doc.fileInfo == nil) {
+                        headerButton("Zoom the whole file into view", "rectangle.expand.vertical",
+                                     caption: "Fit All", disabled: model.doc.fileInfo == nil) {
                             model.fitWholeFile(animated: true)
                         }
                     }
@@ -260,14 +260,16 @@ struct HeaderBar: View {
 
             GlassEffectContainer(spacing: 2) {
                 HStack(spacing: 2) {
-                    headerButton("Loop A-B — press A to set start, A again to set end", "repeat") {
+                    headerButton("Loop A-B — press A to set the loop start, A again at the end", "repeat",
+                                 caption: "Loop A-B") {
                         model.loopAB()
                     }
                     let karaokeOn = model.doc.fx.mixActive && model.doc.fx.mixMode == .karaoke
                     headerButton(karaokeOn ? "Karaoke mixing on — click to bypass" : "Mono/Karaoke mixing",
                                  karaokeOn ? "waveform.path.badge.minus" : "waveform.path",
+                                 caption: karaokeOn ? "Karaoke" : "Mono",
                                  active: karaokeOn) {
-                        withAnimation(LentoSpring.bouncy) {
+                        withMotion {
                             model.doc.fx.mixActive = !karaokeOn
                             model.doc.fx.mixMode = !karaokeOn ? .karaoke : .stereo
                             model.applyFX()
@@ -318,13 +320,21 @@ struct HeaderBar: View {
         }
     }
 
-    private func headerButton(_ help: String, _ icon: String, disabled: Bool = false,
-                              active: Bool = false, action: @escaping () -> Void) -> some View {
+    private func headerButton(_ help: String, _ icon: String, caption: String,
+                              disabled: Bool = false, active: Bool = false,
+                              action: @escaping () -> Void) -> some View {
         Button(action: action) {
-            Image(systemName: icon)
-                .frame(width: 28, height: 24)
+            VStack(spacing: 0) {
+                Image(systemName: icon)
+                    .frame(width: 30, height: 22)
+                Text(caption)
+                    .font(.system(size: 7.5))
+                    .foregroundStyle(active ? Color.accentColor : Color.secondary)
+                    .lineLimit(1)
+            }
+            .frame(width: 36, height: 36)
         }
-        .buttonStyle(.plain)
+        .buttonStyle(PressableButtonStyle())
         .foregroundStyle(active ? Color.accentColor : Color.primary)
         .disabled(disabled)
         .modifier(GlassChip(interactive: !disabled, tint: active ? .accentColor.opacity(0.5) : nil,
@@ -339,6 +349,17 @@ struct HeaderBar: View {
 enum LentoSpring {
     static let ui = Animation.spring(response: 0.3, dampingFraction: 1.0)
     static let bouncy = Animation.spring(response: 0.38, dampingFraction: 0.75)
+}
+
+/// Runs a bouncy spring animation unless the user has Reduce Motion enabled
+/// (HIG 11.3 — substitute, don't just remove).
+@MainActor
+func withMotion(_ body: () -> Void) {
+    if NSWorkspace.shared.accessibilityDisplayShouldReduceMotion {
+        body()
+    } else {
+        withAnimation(LentoSpring.bouncy, body)
+    }
 }
 
 // MARK: - Marker zone (triangles + labels; drag to move, double-click to edit/create)
@@ -577,6 +598,12 @@ struct WaveformView: View {
                         let t = time(at: value.location.x)
                         model.doc.hasSelection = false
                         model.doc.currentPoint = t
+                        // Click-to-seek: while playing, jump playback to the clicked
+                        // point too (like the original's responsive scrubbing).
+                        if model.audio.isPlaying || model.audio.isPaused {
+                            model.audio.seek(to: t)
+                            model.audio.playingPoint = t
+                        }
                     }
                 }
         )
